@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // --- Initializations ---
     const DOMElements = {
-        html: document.documentElement,
-        themeToggle: document.getElementById('theme-toggle'),
         hamburger: document.querySelector(".hamburger"),
         navMenu: document.querySelector(".nav-menu"),
         header: document.querySelector('.main-header'),
@@ -16,16 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm: document.getElementById('contact-form'),
         formSuccessMessage: document.getElementById('form-success-message')
     };
-
-    // --- Theme (Dark/Light Mode) ---
-    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    DOMElements.html.setAttribute('data-theme', savedTheme);
-    DOMElements.themeToggle.checked = savedTheme === 'dark';
-    DOMElements.themeToggle.addEventListener('change', () => {
-        const newTheme = DOMElements.themeToggle.checked ? 'dark' : 'light';
-        DOMElements.html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-    });
 
     // --- Hero Content Animation ---
     setTimeout(() => DOMElements.heroContent?.classList.add('animate-in'), 300);
@@ -48,9 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
             headers: { 'Accept': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams(formData).toString()
         }).then(() => {
-            this.style.opacity = '0';
-            this.style.pointerEvents = 'none';
-            DOMElements.formSuccessMessage.classList.remove('hidden');
+            this.style.display = 'none'; // Hide the form itself
+            DOMElements.formSuccessMessage.classList.add('show'); // Show the success message
         }).catch(error => alert('An error occurred. Please try again.'));
     });
 
@@ -69,7 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const fadeInObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.hidden').forEach((el) => fadeInObserver.observe(el));
+    document.querySelectorAll('.hidden').forEach((el) => {
+        if (el.id !== 'form-success-message') { // Don't apply fade-in to the initially hidden success message
+            fadeInObserver.observe(el);
+        }
+    });
 
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
