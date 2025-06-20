@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         header: document.querySelector('.main-header'),
         backToTopBtn: document.querySelector('.back-to-top-btn'),
         typingHeadline: document.getElementById('typing-headline'),
+        heroContent: document.querySelector('.hero-content'),
         sections: document.querySelectorAll('[data-section]'),
         navLinks: document.querySelectorAll('[data-link]'),
         cookieBanner: document.getElementById('cookie-banner'),
@@ -21,13 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const textToType = "Building the Future, Together.";
     let i = 0;
     function typeWriter() {
-        if (i < textToType.length) {
+        if (DOMElements.typingHeadline && i < textToType.length) {
             DOMElements.typingHeadline.innerHTML += textToType.charAt(i);
             i++;
             setTimeout(typeWriter, 80);
         }
     }
-    typeWriter();
+    // Delay animation start slightly for better visual flow
+    setTimeout(typeWriter, 500);
+    // Also fade in the rest of the hero content
+    setTimeout(() => DOMElements.heroContent?.classList.add('animate-in'), 300);
 
     // --- Cookie Consent ---
     if (!localStorage.getItem('cookieConsent')) {
