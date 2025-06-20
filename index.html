@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ADDED: Meta description for SEO -->
+    <meta name="description" content="DuoFine is a technology startup building innovative applications like Common Ground to connect people. Available on the App Store and Google Play.">
     <title>DuoFine | Company</title>
     <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- ADDED: Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,9 +21,10 @@
         <nav class="navbar">
             <a href="#" class="nav-logo">DuoFine</a>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#project" class="nav-link">Our Project</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <!-- UPDATED: Added data-link attribute for JS -->
+                <li class="nav-item"><a href="#about" class="nav-link" data-link="about">About</a></li>
+                <li class="nav-item"><a href="#project" class="nav-link" data-link="project">Our Project</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link" data-link="contact">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -34,42 +43,32 @@
             </div>
         </section>
 
-        <section id="about" class="content-section hidden">
+        <!-- UPDATED: Added data-section attribute for JS -->
+        <section id="about" class="content-section hidden" data-section="about">
             <h2>About Us</h2>
             <p>DuoFine is a Turkey-based technology startup, founded by two young co-founders. Our team is passionate about pushing boundaries and achieving excellence through innovative software.</p>
         </section>
 
-        <!-- UPDATED: Project section with new description and store buttons -->
-        <section id="project" class="content-section bg-light hidden">
+        <!-- UPDATED: Added data-section attribute for JS -->
+        <section id="project" class="content-section bg-light hidden" data-section="project">
             <h2>Our Flagship Project</h2>
             <h3 class="project-title">Common Ground</h3>
             <p class="project-description">Common Ground is a platform engineered to bring people together under the most optimal, fun, and efficient conditions based on their location. Empowering users with features like instant messaging, live location tracking, and a seamless meetup evaluation system, our application maximizes the potential for meaningful connections.</p>
-            
-            <!-- ADDED: App Store and Google Play buttons -->
             <div class="store-buttons">
-                <!-- Replace '#' with your actual store links -->
                 <a href="#" class="store-button">Download on the <strong>App Store</strong></a>
                 <a href="#" class="store-button">Get it on <strong>Google Play</strong></a>
             </div>
         </section>
 
-        <section id="contact" class="content-section hidden">
+        <!-- UPDATED: Added data-section attribute for JS -->
+        <section id="contact" class="content-section hidden" data-section="contact">
             <h2>Contact Us</h2>
             <p>Have a project in mind or want to learn more? Email us at <a href="mailto:duofinetr@gmail.com">duofinetr@gmail.com</a> or fill out the form below.</p>
             <form name="contact" method="POST" data-netlify="true" class="contact-form">
                 <input type="hidden" name="form-name" value="contact" />
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
+                <div class="form-group"> <label for="name">Name</label> <input type="text" id="name" name="name" required> </div>
+                <div class="form-group"> <label for="email">Email</label> <input type="email" id="email" name="email" required> </div>
+                <div class="form-group"> <label for="message">Message</label> <textarea id="message" name="message" rows="5" required></textarea> </div>
                 <button type="submit" class="cta-button">Send Message</button>
             </form>
         </section>
@@ -77,15 +76,16 @@
 
     <footer class="main-footer">
         <div class="social-links">
-            <a href="#" aria-label="LinkedIn" class="social-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.75c0-1.4-1.2-2.5-2.5-2.5S11 12.85 11 14.25V19h-3v-9h2.9v1.3a3.1 3.1 0 012.8-1.6c2 0 3.3 1.4 3.3 4.3z"></path></svg>
-            </a>
-            <a href="#" aria-label="Twitter" class="social-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-            </a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.75c0-1.4-1.2-2.5-2.5-2.5S11 12.85 11 14.25V19h-3v-9h2.9v1.3a3.1 3.1 0 012.8-1.6c2 0 3.3 1.4 3.3 4.3z"></path></svg> </a>
+            <a href="#" aria-label="Twitter" class="social-icon"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg> </a>
         </div>
         <p>© 2025 DuoFine. All Rights Reserved. | <a href="mailto:duofinetr@gmail.com">duofinetr@gmail.com</a></p>
     </footer>
+
+    <!-- ADDED: Back to Top Button -->
+    <a href="#" class="back-to-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/></svg>
+    </a>
 
     <script src="script.js"></script>
 </body>
