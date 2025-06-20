@@ -7,11 +7,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroContent = document.querySelector('.hero-content');
     const sections = document.querySelectorAll('[data-section]');
     const navLinks = document.querySelectorAll('[data-link]');
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieAcceptBtn = document.getElementById('cookie-accept-btn');
 
     // --- Hero Content Animation ---
     setTimeout(() => {
         heroContent.classList.add('animate-in');
     }, 300);
+
+    // --- Cookie Consent ---
+    if (!localStorage.getItem('cookieConsent')) {
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 2000);
+    }
+    cookieAcceptBtn.addEventListener('click', () => {
+        cookieBanner.classList.remove('show');
+        localStorage.setItem('cookieConsent', 'true');
+    });
 
     // --- Hamburger Menu ---
     hamburger.addEventListener("click", () => {
@@ -26,18 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Scroll-based Behaviors ---
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
-        // Sticky Header
         header.classList.toggle('sticky', scrollY > 50);
-        // Back to Top Button
         backToTopBtn.classList.toggle('show', scrollY > 300);
     });
 
-    // --- Section Intersection Observers ---
+    // --- Intersection Observers ---
     const fadeInObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
+            if (entry.isIntersecting) { entry.target.classList.add('show'); }
         });
     }, { threshold: 0.1 });
     document.querySelectorAll('.hidden').forEach((el) => fadeInObserver.observe(el));
