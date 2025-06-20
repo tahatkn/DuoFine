@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // --- Initial State Setup ---
-    DOMElements.formSuccessMessage.style.display = 'none';
+    if(DOMElements.formSuccessMessage) DOMElements.formSuccessMessage.style.display = 'none';
 
     // --- Typing Animation ---
     const textToType = "Building the Future, Together.";
@@ -55,8 +55,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // --- Hamburger Menu ---
-    DOMElements.hamburger?.addEventListener("click", () => DOMElements.navMenu.classList.toggle("active"));
-    DOMElements.navLinks?.forEach(n => n.addEventListener("click", () => DOMElements.navMenu.classList.remove("active")));
+    function closeMenu() {
+        DOMElements.hamburger.classList.remove("active");
+        DOMElements.navMenu.classList.remove("active");
+    }
+
+    DOMElements.hamburger?.addEventListener("click", () => {
+        DOMElements.hamburger.classList.toggle("active");
+        DOMElements.navMenu.classList.toggle("active");
+    });
+
+    DOMElements.navLinks?.forEach(n => n.addEventListener("click", closeMenu));
+
 
     // --- Scroll-based Behaviors ---
     window.addEventListener('scroll', () => {
