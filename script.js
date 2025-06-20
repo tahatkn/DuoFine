@@ -1,15 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
     // --- Initializations ---
-    const allSelectors = {
-        hamburger: ".hamburger", navMenu: ".nav-menu", header: '.main-header',
-        backToTopBtn: '.back-to-top-btn', heroContent: '.hero-content',
-        sections: '[data-section]', navLinks: '[data-link]',
-        cookieBanner: '#cookie-banner', cookieAcceptBtn: '#cookie-accept-btn',
-        tiltCards: '.value-card'
+    const DOMElements = {
+        html: document.documentElement,
+        themeToggle: document.getElementById('theme-toggle'),
+        hamburger: document.querySelector(".hamburger"),
+        navMenu: document.querySelector(".nav-menu"),
+        header: document.querySelector('.main-header'),
+        backToTopBtn: document.querySelector('.back-to-top-btn'),
+        heroContent: document.querySelector('.hero-content'),
+        sections: document.querySelectorAll('[data-section]'),
+        navLinks: document.querySelectorAll('[data-link]'),
+        cookieBanner: document.getElementById('cookie-banner'),
+        cookieAcceptBtn: document.getElementById('cookie-accept-btn'),
+        tiltCards: document.querySelectorAll('.value-card'),
+        contactForm: document.getElementById('contact-form'),
+        formSuccessMessage: document.getElementById('form-success-message')
     };
-    const DOMElements = Object.fromEntries(
-        Object.entries(allSelectors).map(([key, selector]) => [key, key.endsWith('s') ? document.querySelectorAll(selector) : document.querySelector(selector)])
-    );
+
+    // --- Theme (Dark/Light Mode) ---
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    DOMElements.html.setAttribute('data-theme', savedTheme);
+    DOMElements.themeToggle.checked = savedTheme === 'dark';
+    DOMElements.themeToggle.addEventListener('change', () => {
+        const newTheme = DOMElements.themeToggle.checked ? 'dark' : 'light';
+        DOMElements.html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
 
     // --- Hero Content Animation ---
     setTimeout(() => DOMElements.heroContent?.classList.add('animate-in'), 300);
@@ -23,15 +39,24 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('cookieConsent', 'true');
     });
 
-    // --- Hamburger Menu ---
-    DOMElements.hamburger?.addEventListener("click", () => {
-        DOMElements.hamburger.classList.toggle("active");
-        DOMElements.navMenu.classList.toggle("active");
+    // --- AJAX Form Submission ---
+    DOMElements.contactForm?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        fetch(this.getAttribute('action'), {
+            method: 'POST',
+            headers: { 'Accept': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        }).then(() => {
+            this.style.opacity = '0';
+            this.style.pointerEvents = 'none';
+            DOMElements.formSuccessMessage.classList.remove('hidden');
+        }).catch(error => alert('An error occurred. Please try again.'));
     });
-    DOMElements.navLinks?.forEach(n => n.addEventListener("click", () => {
-        DOMElements.hamburger.classList.remove("active");
-        DOMElements.navMenu.classList.remove("active");
-    }));
+
+    // --- Hamburger Menu ---
+    DOMElements.hamburger?.addEventListener("click", () => DOMElements.navMenu.classList.toggle("active"));
+    DOMElements.navLinks?.forEach(n => n.addEventListener("click", () => DOMElements.navMenu.classList.remove("active")));
 
     // --- Scroll-based Behaviors ---
     window.addEventListener('scroll', () => {
@@ -53,9 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const newTitle = section.getAttribute('data-title');
                 document.title = `${newTitle} | DuoFine`;
                 const currentSectionId = section.getAttribute('data-section');
-                DOMElements.navLinks.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('data-link') === currentSectionId);
-                });
+                DOMElements.navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('data-link') === currentSectionId));
             }
         });
     }, { rootMargin: "-50% 0px -50% 0px" });
@@ -65,15 +88,15 @@ document.addEventListener("DOMContentLoaded", () => {
     DOMElements.tiltCards?.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const { width, height } = rect;
-            const rotateX = (y / height - 0.5) * -20;
-            const rotateY = (x / width - 0.5) * 20;
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            const { width, height, left, top } = rect;
+            const x = e.clientX - left;
+            const y = e.clientY - top;
+            const rotateX = (y / height - 0.5) * -15;
+            const rotateY = (x / width - 0.5) * 15;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
         });
         card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
         });
     });
 });
