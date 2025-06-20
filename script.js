@@ -1,55 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- Hamburger Menu ---
+    // --- Initializations ---
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    const header = document.querySelector('.main-header');
+    const backToTopBtn = document.querySelector('.back-to-top-btn');
+    const heroContent = document.querySelector('.hero-content');
+    const sections = document.querySelectorAll('[data-section]');
+    const navLinks = document.querySelectorAll('[data-link]');
+
+    // --- Hero Content Animation ---
+    setTimeout(() => {
+        heroContent.classList.add('animate-in');
+    }, 300);
+
+    // --- Hamburger Menu ---
     hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
     });
-    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+    navLinks.forEach(n => n.addEventListener("click", () => {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
     }));
 
-    // --- Sticky Header & Back to Top Button ---
-    const header = document.querySelector('.main-header');
-    const backToTopBtn = document.querySelector('.back-to-top-btn');
+    // --- Scroll-based Behaviors ---
     window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
         // Sticky Header
-        if (window.scrollY > 50) {
-            header.classList.add('sticky');
-        } else {
-            header.classList.remove('sticky');
-        }
+        header.classList.toggle('sticky', scrollY > 50);
         // Back to Top Button
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
+        backToTopBtn.classList.toggle('show', scrollY > 300);
     });
 
-    // --- Fade-in Scroll Animations ---
+    // --- Section Intersection Observers ---
     const fadeInObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
             }
         });
-    }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+    }, { threshold: 0.1 });
     document.querySelectorAll('.hidden').forEach((el) => fadeInObserver.observe(el));
-    
-    // --- Active Nav Link Highlighting on Scroll ---
-    const sections = document.querySelectorAll('[data-section]');
-    const navLinks = document.querySelectorAll('[data-link]');
+
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                const currentSection = entry.target.getAttribute('data-section');
                 navLinks.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('data-link') === entry.target.getAttribute('data-section'));
+                    link.classList.toggle('active', link.getAttribute('data-link') === currentSection);
                 });
             }
         });
-    }, { rootMargin: "-50% 0px -50% 0px" }); // Activate when section is in the middle of the viewport
+    }, { rootMargin: "-50% 0px -50% 0px" });
     sections.forEach(section => sectionObserver.observe(section));
 });
