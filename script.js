@@ -28,9 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(typeWriter, 80);
         }
     }
-    // Delay animation start slightly for better visual flow
     setTimeout(typeWriter, 500);
-    // Also fade in the rest of the hero content
     setTimeout(() => DOMElements.heroContent?.classList.add('animate-in'), 300);
 
     // --- Cookie Consent ---
