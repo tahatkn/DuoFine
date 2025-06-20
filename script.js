@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
         formSuccessMessage: document.getElementById('form-success-message')
     };
 
+    // --- Initial State Setup ---
+    DOMElements.formSuccessMessage.style.display = 'none';
+
     // --- Hero Content Animation ---
     setTimeout(() => DOMElements.heroContent?.classList.add('animate-in'), 300);
 
@@ -36,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
             headers: { 'Accept': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams(formData).toString()
         }).then(() => {
-            this.style.display = 'none'; // Hide the form itself
-            DOMElements.formSuccessMessage.classList.add('show'); // Show the success message
+            this.style.display = 'none';
+            DOMElements.formSuccessMessage.style.display = 'block';
         }).catch(error => alert('An error occurred. Please try again.'));
     });
 
@@ -56,11 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const fadeInObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.hidden').forEach((el) => {
-        if (el.id !== 'form-success-message') { // Don't apply fade-in to the initially hidden success message
-            fadeInObserver.observe(el);
-        }
-    });
+    document.querySelectorAll('.hidden').forEach((el) => fadeInObserver.observe(el));
 
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
