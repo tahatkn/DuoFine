@@ -22,6 +22,12 @@
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <!-- Hamburger menu icon for mobile -->
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
 
@@ -48,10 +54,28 @@
             <p>We offer a range of services including web development, cloud solutions, and digital strategy consulting. Let us help you achieve your business goals.</p>
         </section>
 
-        <!-- Contact section -->
+        <!-- Contact section with Netlify form -->
         <section id="contact" class="content-section">
             <h2>Contact Us</h2>
-            <p>Ready to start a project? Email us at <a href="mailto:contact@duofine.com">contact@duofine.com</a></p>
+            <p>Have a project in mind? Let's talk. Fill out the form below and we'll get back to you.</p>
+
+            <!-- Netlify Functional Form -->
+            <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                <input type="hidden" name="form-name" value="contact" />
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
         </section>
     </main>
 

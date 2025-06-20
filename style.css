@@ -18,6 +18,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    height: 70px;
     background-color: #fff;
     border-bottom: 1px solid #eee;
 }
@@ -94,4 +95,85 @@ body {
     padding: 2rem;
     background-color: #333;
     color: #fff;
+}
+
+/* Hamburger Menu Icon Styling */
+.hamburger {
+    display: none; /* Hidden by default on desktop */
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+}
+
+/* Media Query for Mobile Responsive Design */
+@media(max-width: 768px) {
+    .hamburger {
+        display: block; /* Show the hamburger on mobile */
+    }
+
+    .nav-menu {
+        position: fixed; /* Take it out of the normal document flow */
+        left: -100%; /* Start off-screen */
+        top: 70px; /* Position below the navbar */
+        flex-direction: column; /* Stack menu items vertically */
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0; /* Slide it into view */
+    }
+
+    .nav-item {
+        margin: 1.5rem 0; /* Add vertical spacing */
+    }
+}
+
+/* Contact Form Styling */
+.contact-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Creates space between form elements */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* Adjust the button style to fit the form */
+.contact-form .cta-button {
+    align-self: flex-start; /* Align button to the left */
+    border: none;
+    cursor: pointer;
 }
