@@ -43,6 +43,11 @@ body {
     text-decoration: none;
     color: #555;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff;
 }
 
 /* Hero Section Styling */
@@ -70,6 +75,12 @@ body {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 /* General Content Section Styling */
@@ -85,16 +96,63 @@ body {
     margin-bottom: 1rem;
 }
 
-/* New style for the project title subheading */
 .project-title {
     font-size: 1.5rem;
     color: #007bff;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 600;
+}
+
+/* ADDED: Style for project description paragraph */
+.project-description {
+    margin-bottom: 2rem;
 }
 
 .bg-light {
     background-color: #f8f9fa;
+}
+
+/* ADDED: Styles for App Store / Google Play Buttons */
+.store-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* Allows buttons to stack on small screens */
+}
+
+.store-button {
+    display: inline-block;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.store-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.store-button strong {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Scroll Animation Styles */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Footer Styling */
@@ -105,98 +163,45 @@ body {
     color: #fff;
 }
 
-/* Style for the link in the footer */
 .main-footer a {
     color: #fff;
     text-decoration: none;
+    transition: opacity 0.3s ease;
 }
 
 .main-footer a:hover {
-    text-decoration: underline;
+    opacity: 0.8;
 }
 
-
-/* Hamburger Menu Icon Styling */
-.hamburger {
-    display: none; /* Hidden by default on desktop */
-    cursor: pointer;
+.social-links {
+    margin-bottom: 1rem;
 }
 
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #333;
+.social-icon {
+    margin: 0 0.75rem;
+}
+
+.social-icon svg {
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.social-icon:hover svg {
+    transform: scale(1.2);
+    fill: #007bff;
 }
 
 /* Media Query for Mobile Responsive Design */
 @media(max-width: 768px) {
-    .hamburger {
-        display: block; /* Show the hamburger on mobile */
-    }
-
-    .nav-menu {
-        position: fixed; /* Take it out of the normal document flow */
-        left: -100%; /* Start off-screen */
-        top: 70px; /* Position below the navbar */
-        flex-direction: column; /* Stack menu items vertically */
-        background-color: #fff;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    }
-
-    .nav-menu.active {
-        left: 0; /* Slide it into view */
-    }
-
-    .nav-item {
-        margin: 1.5rem 0; /* Add vertical spacing */
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
+    .hamburger { display: block; }
+    .nav-menu { position: fixed; left: -100%; top: 70px; flex-direction: column; background-color: #fff; width: 100%; text-align: center; transition: 0.3s; box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05); }
+    .nav-menu.active { left: 0; }
+    .nav-item { margin: 1.5rem 0; }
+    .hero h1 { font-size: 2.5rem; }
 }
 
 /* Contact Form Styling */
-.contact-form {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; /* Creates space between form elements */
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-/* Adjust the button style to fit the form */
-.contact-form .cta-button {
-    align-self: flex-start; /* Align button to the left */
-    border: none;
-    cursor: pointer;
-}
+.contact-form { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; text-align: left; }
+.form-group { display: flex; flex-direction: column; }
+.form-group label { margin-bottom: 0.5rem; font-weight: 500; }
+.form-group input, .form-group textarea { padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px; font-family: inherit; font-size: 1rem; }
+.contact-form .cta-button { align-self: flex-start; border: none; cursor: pointer; }
