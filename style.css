@@ -85,6 +85,14 @@ body {
     margin-bottom: 1rem;
 }
 
+/* New style for the project title subheading */
+.project-title {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
 .bg-light {
     background-color: #f8f9fa;
 }
@@ -96,6 +104,17 @@ body {
     background-color: #333;
     color: #fff;
 }
+
+/* Style for the link in the footer */
+.main-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+}
+
 
 /* Hamburger Menu Icon Styling */
 .hamburger {
@@ -137,6 +156,10 @@ body {
 
     .nav-item {
         margin: 1.5rem 0; /* Add vertical spacing */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
     }
 }
 
