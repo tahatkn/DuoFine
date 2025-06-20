@@ -5,12 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
         navMenu: document.querySelector(".nav-menu"),
         header: document.querySelector('.main-header'),
         backToTopBtn: document.querySelector('.back-to-top-btn'),
-        heroContent: document.querySelector('.hero-content'),
+        typingHeadline: document.getElementById('typing-headline'),
         sections: document.querySelectorAll('[data-section]'),
         navLinks: document.querySelectorAll('[data-link]'),
         cookieBanner: document.getElementById('cookie-banner'),
         cookieAcceptBtn: document.getElementById('cookie-accept-btn'),
-        tiltCards: document.querySelectorAll('.value-card'),
         contactForm: document.getElementById('contact-form'),
         formSuccessMessage: document.getElementById('form-success-message')
     };
@@ -18,8 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Initial State Setup ---
     DOMElements.formSuccessMessage.style.display = 'none';
 
-    // --- Hero Content Animation ---
-    setTimeout(() => DOMElements.heroContent?.classList.add('animate-in'), 300);
+    // --- Typing Animation ---
+    const textToType = "Building the Future, Together.";
+    let i = 0;
+    function typeWriter() {
+        if (i < textToType.length) {
+            DOMElements.typingHeadline.innerHTML += textToType.charAt(i);
+            i++;
+            setTimeout(typeWriter, 80);
+        }
+    }
+    typeWriter();
 
     // --- Cookie Consent ---
     if (!localStorage.getItem('cookieConsent')) {
@@ -73,20 +81,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, { rootMargin: "-50% 0px -50% 0px" });
     DOMElements.sections?.forEach(section => sectionObserver.observe(section));
-
-    // --- 3D Tilt Effect for Cards ---
-    DOMElements.tiltCards?.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const { width, height, left, top } = rect;
-            const x = e.clientX - left;
-            const y = e.clientY - top;
-            const rotateX = (y / height - 0.5) * -15;
-            const rotateY = (x / width - 0.5) * 15;
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-        });
-    });
 });
