@@ -40,21 +40,20 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('cookieConsent', 'true');
     });
 
-    // --- AJAX Form Submission (Temporarily Disabled for Testing) ---
-    /*
+    // --- AJAX Form Submission (Corrected & Re-enabled) ---
     DOMElements.contactForm?.addEventListener('submit', function(e) {
         e.preventDefault();
         const formData = new FormData(this);
-        fetch(this.getAttribute('action'), {
-            method: 'POST',
-            headers: { 'Accept': 'application/x-www-form-urlencoded' },
+        
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()
         }).then(() => {
             this.style.display = 'none';
             DOMElements.formSuccessMessage.style.display = 'block';
         }).catch(error => alert('An error occurred. Please try again.'));
     });
-    */
 
     // --- Hamburger Menu ---
     DOMElements.hamburger?.addEventListener("click", () => DOMElements.navMenu.classList.toggle("active"));
