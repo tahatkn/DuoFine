@@ -12,7 +12,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; } /* Changes default jump behavior */
+html { scroll-behavior: smooth; }
 body { font-family: 'Poppins', -apple-system, sans-serif; line-height: 1.6; background-color: var(--light-color); color: var(--text-color); }
 :focus-visible { outline: 3px solid var(--primary-color); outline-offset: 3px; border-radius: 4px; }
 a { text-decoration: none; color: var(--primary-color); }
@@ -46,7 +46,7 @@ a { text-decoration: none; color: var(--primary-color); }
 /* --- Card & Section Layout --- */
 .content-section, .feature-section { padding: 4rem 2rem; max-width: 1100px; margin: 2rem auto; background-color: var(--white-color); border-radius: 12px; box-shadow: var(--shadow); }
 .content-section h2, .feature-section h2 { font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 600; text-align: center; }
-.bg-light { background-color: var(--light-color); box-shadow: none; } /* Override card style for bg-light */
+.bg-light { background-color: var(--light-color); box-shadow: none; }
 .project-title { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 600; }
 .project-description { margin-bottom: 2.5rem; font-size: 1.1rem; }
 
@@ -59,16 +59,19 @@ a { text-decoration: none; color: var(--primary-color); }
 .feature-content p { font-size: 1.1rem; color: var(--text-light); }
 .layout-reverse { flex-direction: row-reverse; }
 
-/* --- Forms & App Buttons --- */
-.store-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-.store-button { display: inline-block; background-color: var(--dark-color); color: var(--white-color); padding: 10px 20px; border-radius: 8px; font-size: 0.9rem; transition: transform 0.2s ease; }
-.store-button:hover { transform: scale(1.05); }
+/* --- Forms & Coming Soon Section --- */
 .contact-intro { max-width: 650px; margin: 0 auto 1.5rem auto; }
 .contact-form { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 .form-group { display: flex; flex-direction: column; text-align: left; }
 .form-group label { margin-bottom: 0.5rem; font-weight: 500; }
 .form-group input, .form-group textarea { padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 5px; font-family: inherit; font-size: 1rem; }
 #form-success-message { text-align: center; margin-top: 2rem; }
+
+.coming-soon-container { text-align: center; margin-top: 2.5rem; }
+.coming-soon-title { font-size: 1.1rem; color: var(--text-light); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+.platform-icons { display: flex; justify-content: center; align-items: center; gap: 2.5rem; }
+.platform-icons svg { height: 35px; fill: #aab; transition: transform 0.3s ease, fill 0.3s ease; }
+.platform-icons svg:hover { transform: scale(1.1); fill: var(--primary-color); }
 
 /* --- Footer --- */
 .main-footer { text-align: center; padding: 4rem 2rem 2rem; background-color: var(--dark-color); color: #ccc; margin-top: 3rem; }
