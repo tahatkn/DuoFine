@@ -67,7 +67,7 @@ a { text-decoration: none; color: var(--primary-color); }
 .form-group { display: flex; flex-direction: column; text-align: left; }
 .form-group label { margin-bottom: 0.5rem; font-weight: 500; }
 .form-group input, .form-group textarea { padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 5px; font-family: inherit; font-size: 1rem; }
-#form-success-message { text-align: center; }
+#form-success-message { text-align: center; margin-top: 2rem; }
 
 /* --- Footer --- */
 .main-footer { text-align: center; padding: 4rem 2rem 2rem; background-color: var(--dark-color); color: #ccc; margin-top: 3rem; }
