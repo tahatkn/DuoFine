@@ -70,8 +70,8 @@ a { text-decoration: none; color: var(--primary-color); }
 .coming-soon-container { text-align: center; margin-top: 2.5rem; }
 .coming-soon-title { font-size: 1.1rem; color: var(--text-light); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
 .platform-icons { display: flex; justify-content: center; align-items: center; gap: 2.5rem; }
-.platform-icons svg { height: 35px; fill: #aab; transition: transform 0.3s ease, fill 0.3s ease; }
-.platform-icons svg:hover { transform: scale(1.1); fill: var(--primary-color); }
+.platform-icons svg { height: 42px; width: 42px; color: #8899a6; transition: transform 0.3s ease, color 0.3s ease; }
+.platform-icons svg:hover { transform: scale(1.1); color: var(--primary-color); }
 
 /* --- Footer --- */
 .main-footer { text-align: center; padding: 4rem 2rem 2rem; background-color: var(--dark-color); color: #ccc; margin-top: 3rem; }
