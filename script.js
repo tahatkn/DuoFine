@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('cookieConsent', 'true');
     });
 
-    // --- AJAX Form Submission ---
+    // --- AJAX Form Submission (Temporarily Disabled for Testing) ---
+    /*
     DOMElements.contactForm?.addEventListener('submit', function(e) {
         e.preventDefault();
         const formData = new FormData(this);
@@ -53,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
             DOMElements.formSuccessMessage.style.display = 'block';
         }).catch(error => alert('An error occurred. Please try again.'));
     });
+    */
 
     // --- Hamburger Menu ---
     DOMElements.hamburger?.addEventListener("click", () => DOMElements.navMenu.classList.toggle("active"));
