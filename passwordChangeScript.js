@@ -50,7 +50,7 @@ function redirectToApp(){
 
 async function sendPasswordChange(password){
         try{
-            let response = await fetch('https://commongroundapi-production.up.railway.app/user/change_password/', {
+            let response = await fetch('https://api.duofine.com/user/change_password/', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"

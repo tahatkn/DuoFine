@@ -38,7 +38,7 @@ if(!uid || !token){
 }else{
     async function sendActivationData(){
         try{
-            let response = await fetch('https://commongroundapi-production.up.railway.app/user/change_email/', {
+            let response = await fetch('https://api.duofine.com/user/change_email/', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
