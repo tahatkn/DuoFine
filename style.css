@@ -95,6 +95,32 @@ a { text-decoration: none; color: var(--primary-color); }
 .cookie-consent-banner { position: fixed; bottom: -100%; left: 0; width: 100%; background-color: var(--dark-color); color: #eee; padding: 1rem; display: flex; justify-content: center; align-items: center; gap: 1.5rem; z-index: 2000; transition: bottom 0.5s ease-in-out; }
 .cookie-consent-banner.show { bottom: 0; }
 
+/* --- 404 Page --- */
+.body-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--light-color);
+    text-align: center;
+    padding: 2rem;
+}
+.container-404 h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+.container-404 h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+.container-404 p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
 /* --- Mobile --- */
 @media(max-width: 768px) {
     .hamburger { display: block; }
