@@ -73,7 +73,7 @@ async function sendPasswordChange(password){
             }else{
                 document.body.innerHTML = `<div class="container-404">
                                                 <h1>Password change failed. Link may be invalid or expired.</h1>
-                                                <h2>If the issue persists please contact support at cg@support.com</h2>
+                                                <h2>If the issue persists please contact support at duofine.tr@gmail.com</h2>
                                            </div>`
             }
             }catch(e){
