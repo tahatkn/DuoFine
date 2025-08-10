@@ -121,6 +121,51 @@ a { text-decoration: none; color: var(--primary-color); }
     margin-bottom: 2rem;
 }
 
+/* --- Status Page --- */
+.body-status-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--primary-gradient);
+    color: var(--white-color);
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+.status-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+}
+.status-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.5rem;
+}
+.status-container h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.status-container h2, .status-container p {
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+.status-container .cta-button {
+    margin-top: 2rem;
+    background: var(--white-color);
+    color: var(--primary-color);
+}
+.status-container .form-group input {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: var(--dark-color);
+}
+
 /* --- Mobile --- */
 @media(max-width: 768px) {
     .hamburger { display: block; }
