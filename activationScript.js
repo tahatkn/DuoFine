@@ -32,7 +32,7 @@ function redirectToApp(){
 
 
 if(!uid || !token){
-    document.body.innerHTML = "<h1>Invalid activation link.</h1>"
+    document.body.innerHTML = "<div class='container-404'><h1>Invalid activation link.</h1></div>"
 }else{
     async function sendActivationData(){
         try{
@@ -48,18 +48,21 @@ if(!uid || !token){
             })
             if(response.ok){
                 document.body.innerHTML = `
-                  <h1>Account activated!</h1>
-                  <h2>Redirecting to the app...</h2>
-                  <button onclick="window.location.href='commonground://'">Open App</button>
+                  <div class="container-404">
+                    <h1>Account activated!</h1>
+                    <h2>Redirecting to the app...</h2>
+                    <button class="cta-button" onclick="window.location.href='commonground://'">Open App</button>
+                  </div>
                 `
                 redirectToApp()
             }else{
-                document.body.innerHTML = `<h1>Activation failed. Link may be invalid or expired.</h1>
-                                            <h2>If the issue persists please contact support at cg@support.com
-                `
+                document.body.innerHTML = `<div class="container-404">
+                                                <h1>Activation failed. Link may be invalid or expired.</h1>
+                                                <h2>If the issue persists please contact support at cg@support.com</h2>
+                                           </div>`
             }
             }catch(e){
-                document.body.innerHTML = "<h1>An error ocurred. Please try again</h1>"
+                document.body.innerHTML = "<div class='container-404'><h1>An error occurred. Please try again</h1></div>"
             }
         }
     sendActivationData()
