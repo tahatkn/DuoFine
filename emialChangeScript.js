@@ -65,7 +65,9 @@ if(!uid || !token){
                                            </div>`
             }
             }catch(e){
-                document.body.innerHTML = "<h1>An error ocurred. Please try again</h1>"
+                console.log(e)
+                document.body.innerHTML = "<div class='container-404'><h1>An error occurred. Please try again</h1></div>"
+
             }
         }
     sendActivationData()
