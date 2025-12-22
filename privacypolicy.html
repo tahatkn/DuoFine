@@ -12,7 +12,8 @@
 </head>
 <body>
 
-    <header class="main-header sticky">
+    <!-- sticky class'ı kaldırıldı, artık JS ile kontrol edilecek -->
+    <header class="main-header">
         <nav class="navbar">
             <a href="/" class="nav-logo">
                 <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +102,30 @@
     </footer>
     
     <script>
+        // Yıl bilgisi
         document.getElementById('y').textContent = new Date().getFullYear();
+
+        // Header Scroll Animasyonu ve Mobil Menü
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector('.main-header');
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+
+            // Scroll yapıldığında sticky class'ını ekle/çıkar
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if (header) {
+                    header.classList.toggle('sticky', scrollY > 50);
+                }
+            });
+
+            // Mobil Hamburger Menü İşlevselliği
+            if (hamburger && navMenu) {
+                hamburger.addEventListener("click", () => {
+                    navMenu.classList.toggle("active");
+                });
+            }
+        });
     </script>
 </body>
 </html>
