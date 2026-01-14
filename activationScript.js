@@ -32,7 +32,7 @@ if(!uid || !token){
                 document.body.innerHTML = `<div class="status-container">
                                                 <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
                                                 <h1>Activation failed.</h1>
-                                                <h2>Link may be invalid or expired. If the issue persists please contact support at duofine.tr@gmail.com</h2>
+                                                <h2>Link may be invalid or expired. If the issue persists please contact support at info@duofine.com</h2>
                                            </div>`
             }
             }catch(e){
