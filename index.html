@@ -74,8 +74,8 @@
             <h3 class="project-title">Common Ground</h3>
             <p class="project-description">Common Ground is a platform engineered to bring people together under the most optimal, fun, and efficient conditions based on their location. Empowering users with features like instant messaging, live location tracking, and a seamless meetup evaluation system, our application maximizes the potential for meaningful connections.</p>
             <div class="store-buttons">
-                <a href="#" class="store-button">Launching soon on the <strong>App Store</strong></a>
-                <a href="#" class="store-button">Launching soon on <strong>Google Play</strong></a>
+                <a href="https://apps.apple.com/us/app/common-ground/id6748603386" target="_blank" rel="noopener noreferrer" class="store-button">Download on the <strong>App Store</strong></a>
+                <a href="https://play.google.com/store/apps/details?id=com.duofine.CG" target="_blank" rel="noopener noreferrer" class="store-button">Get it on <strong>Google Play</strong></a>
             </div>
         </section>
         
@@ -132,13 +132,35 @@
             </div>
         </div>
         <div class="footer-bottom">
-            © 2025 DuoFine. All Rights Reserved. | <a href="mailto:info@duofine.com">info@duofine.com</a>
+            © <span id="y"></span> DuoFine. All Rights Reserved. | <a href="mailto:info@duofine.com">info@duofine.com</a>
         </div>
     </footer>
+    
+    <script>
+        // Yıl bilgisi
+        document.getElementById('y').textContent = new Date().getFullYear();
 
-    <a href="#" class="back-to-top-btn" aria-label="Back to top"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/></svg> </a>
-    <div class="cookie-consent-banner" id="cookie-banner"><p>We use cookies to enhance your browsing experience.</p><button class="cta-button" id="cookie-accept-btn">Accept</button></div>
+        // Header Scroll Animasyonu ve Mobil Menü
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector('.main-header');
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
 
-    <script src="script.js"></script>
-    </body>
+            // Scroll yapıldığında sticky class'ını ekle/çıkar
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if (header) {
+                    header.classList.toggle('sticky', scrollY > 50);
+                }
+            });
+
+            // Mobil Hamburger Menü İşlevselliği
+            if (hamburger && navMenu) {
+                hamburger.addEventListener("click", () => {
+                    navMenu.classList.toggle("active");
+                });
+            }
+        });
+    </script>
+</body>
 </html>
