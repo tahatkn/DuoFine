@@ -149,4 +149,5 @@ a { text-decoration: none; color: var(--primary-color); }
     .footer-column { text-align: center; }
     .footer-column .nav-logo { justify-content: center; }
     .social-links { justify-content: center; }
+    .store-buttons { justify-content: center !important; }
 }
