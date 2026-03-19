@@ -60,7 +60,7 @@ a { text-decoration: none; color: var(--primary-color); }
 .feature-image, .feature-content { flex: 1; }
 .feature-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
 .feature-content { text-align: left; }
-.feature-content h2 { font-size: 2.2rem; margin-bottom: 1rem; text-align: left; }
+.feature-content h2 { font-size: 2.2rem; margin-bottom: 1rem; text-align: left; color: var(--primary-color); }
 .feature-content p { font-size: 1.1rem; color: var(--text-light); }
 .layout-reverse { flex-direction: row-reverse; }
 
