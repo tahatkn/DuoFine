@@ -64,9 +64,30 @@ a { text-decoration: none; color: var(--primary-color); }
 .feature-content p { font-size: 1.1rem; color: var(--text-light); }
 .layout-reverse { flex-direction: row-reverse; }
 
-.store-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-.store-button { display: inline-block; background-color: var(--dark-color); color: var(--white-color); padding: 10px 20px; border-radius: 8px; font-size: 0.9rem; transition: transform 0.2s ease; }
-.store-button:hover { transform: scale(1.05); }
+/* --- Modern App Store Buttons --- */
+.store-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.store-button { 
+    display: inline-flex; 
+    align-items: center; 
+    background-color: var(--dark-color); 
+    color: var(--white-color); 
+    padding: 10px 18px; 
+    border-radius: 10px; 
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    min-width: 170px;
+    border: 1px solid #333;
+}
+.store-button:hover { 
+    transform: translateY(-3px); 
+    background-color: #000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.store-icon { width: 24px; height: 24px; margin-right: 12px; }
+.store-text { display: flex; flex-direction: column; text-align: left; line-height: 1.2; }
+.store-subtitle { font-size: 0.65rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.8; }
+.store-title { font-size: 1.1rem; font-weight: 600; }
+
 .contact-intro { max-width: 650px; margin: 0 auto 1.5rem auto; text-align: center; }
 .contact-form { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 .form-group { display: flex; flex-direction: column; text-align: left; }
