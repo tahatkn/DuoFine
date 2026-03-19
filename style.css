@@ -83,7 +83,14 @@ a { text-decoration: none; color: var(--primary-color); }
     background-color: #000;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
-.store-icon { width: 26px; height: 26px; margin-right: 12px; object-fit: contain; }
+.store-icon { 
+    width: 26px; 
+    height: 26px; 
+    margin-right: 12px; 
+    object-fit: contain; 
+    /* OKUNABİLİRLİK ÇÖZÜMÜ: Siyah logoyu beyaza çevirir */
+    filter: invert(1) brightness(2); 
+}
 .store-text { display: flex; flex-direction: column; text-align: left; line-height: 1.2; }
 .store-subtitle { font-size: 0.65rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.8; }
 .store-title { font-size: 1.1rem; font-weight: 600; }
@@ -116,13 +123,11 @@ a { text-decoration: none; color: var(--primary-color); }
 .cookie-consent-banner { position: fixed; bottom: -100%; left: 0; width: 100%; background-color: var(--dark-color); color: #eee; padding: 1rem; display: flex; justify-content: center; align-items: center; gap: 1.5rem; z-index: 2000; transition: bottom 0.5s ease-in-out; }
 .cookie-consent-banner.show { bottom: 0; }
 
-/* --- 404 Page --- */
 .body-404 { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: var(--light-color); text-align: center; padding: 2rem; }
 .container-404 h1 { font-size: 6rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem; }
 .container-404 h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--text-color); }
 .container-404 p { color: var(--text-light); margin-bottom: 2rem; }
 
-/* --- Status Page --- */
 .body-status-page { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: var(--primary-gradient); color: var(--white-color); padding: 2rem; font-family: 'Poppins', sans-serif; }
 .status-container { text-align: center; background-color: rgba(255, 255, 255, 0.1); padding: 2.5rem 2rem; border-radius: 12px; max-width: 400px; width: 100%; }
 .status-icon { width: 70px; height: 70px; margin-bottom: 1.5rem; }
