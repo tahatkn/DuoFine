@@ -12,7 +12,6 @@
 </head>
 <body>
 
-    <!-- sticky class'ı kaldırıldı, artık JS ile kontrol edilecek -->
     <header class="main-header">
         <nav class="navbar">
             <a href="/" class="nav-logo">
@@ -39,35 +38,35 @@
         <section id="privacy" class="content-section">
             <h2>Privacy Policy</h2>
 
-            <h3>1. Data We Collect:</h3>
+            <h3>1. Data Collection:</h3>
             <ul>
-                <li><strong>You Provide:</strong> Name, email, etc., for your profile.</li>
-                <li><strong>Automatically:</strong> Location data (essential for finding common grounds), device information, and usage data.</li>
+                <li><strong>Provided Data:</strong> Name, email, etc., for profile creation.</li>
+                <li><strong>Automatic Data:</strong> Location data (essential for core app features), device information, and usage metrics.</li>
             </ul>
             <br>
 
-            <h3>2. How We Use Data:</h3>
-            <p>To provide and improve the Service, offer support, and ensure security. We do not sell your data.</p>
+            <h3>2. Data Usage:</h3>
+            <p>Data is used to provide and improve the Service, offer support, and ensure security. No personal data is sold.</p>
             <br>
 
             <h3>3. Data Sharing:</h3>
-            <p>We may share data with service providers (e.g., cloud hosting) or for legal reasons.</p>
+            <p>Data may be shared with service providers (e.g., cloud hosting) or for legal compliance.</p>
             <br>
 
-            <h3>4. Your Rights:</h3>
-            <p>You have the right to access, correct, or delete your personal data.</p>
+            <h3>4. User Rights:</h3>
+            <p>Users have the right to access, correct, or delete personal data.</p>
             <br>
 
             <h3>5. Security:</h3>
-            <p>We use measures like encryption to protect your data.</p>
+            <p>Industry-standard measures like encryption are used to protect data.</p>
             <br>
 
             <h3>Changes:</h3>
-            <p>We may update these terms. We will notify you of significant changes.</p>
+            <p>These terms may be updated. Significant changes will be notified.</p>
             <br>
 
             <h3>Contact:</h3>
-            <p>For any questions, please contact us at <a href="mailto:info@duofine.com">info@duofine.com</a>.</p>
+            <p>For questions, contact <a href="mailto:info@duofine.com">info@duofine.com</a>.</p>
         </section>
     </main>
 
@@ -83,7 +82,7 @@
             <div class="footer-column">
                 <h3>Navigate</h3>
                 <ul class="footer-links">
-                    <li><a href="/#about">About Us</a></li>
+                    <li><a href="/#about">About</a></li>
                     <li><a href="/#project">Our Project</a></li>
                     <li><a href="/#contact">Contact</a></li>
                 </ul>
@@ -102,24 +101,17 @@
     </footer>
     
     <script>
-        // Yıl bilgisi
         document.getElementById('y').textContent = new Date().getFullYear();
-
-        // Header Scroll Animasyonu ve Mobil Menü
         document.addEventListener("DOMContentLoaded", () => {
             const header = document.querySelector('.main-header');
             const hamburger = document.querySelector(".hamburger");
             const navMenu = document.querySelector(".nav-menu");
-
-            // Scroll yapıldığında sticky class'ını ekle/çıkar
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY;
                 if (header) {
                     header.classList.toggle('sticky', scrollY > 50);
                 }
             });
-
-            // Mobil Hamburger Menü İşlevselliği
             if (hamburger && navMenu) {
                 hamburger.addEventListener("click", () => {
                     navMenu.classList.toggle("active");

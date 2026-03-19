@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- Initializations ---
     const DOMElements = {
         hamburger: document.querySelector(".hamburger"),
         navMenu: document.querySelector(".nav-menu"),
@@ -15,10 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
         formSuccessMessage: document.getElementById('form-success-message')
     };
 
-    // --- Initial State Setup ---
-    DOMElements.formSuccessMessage.style.display = 'none';
+    if(DOMElements.formSuccessMessage) DOMElements.formSuccessMessage.style.display = 'none';
 
-    // --- Typing Animation ---
     const textToType = "Building the Future, Together.";
     let i = 0;
     function typeWriter() {
@@ -31,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(typeWriter, 500);
     setTimeout(() => DOMElements.heroContent?.classList.add('animate-in'), 300);
 
-    // --- Cookie Consent ---
     if (!localStorage.getItem('cookieConsent')) {
         setTimeout(() => DOMElements.cookieBanner?.classList.add('show'), 2000);
     }
@@ -40,11 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('cookieConsent', 'true');
     });
 
-    // --- AJAX Form Submission (Corrected & Re-enabled) ---
     DOMElements.contactForm?.addEventListener('submit', function(e) {
         e.preventDefault();
         const formData = new FormData(this);
-        
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -55,18 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }).catch(error => alert('An error occurred. Please try again.'));
     });
 
-    // --- Hamburger Menu ---
     DOMElements.hamburger?.addEventListener("click", () => DOMElements.navMenu.classList.toggle("active"));
     DOMElements.navLinks?.forEach(n => n.addEventListener("click", () => DOMElements.navMenu.classList.remove("active")));
 
-    // --- Scroll-based Behaviors ---
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
         DOMElements.header?.classList.toggle('sticky', scrollY > 50);
         DOMElements.backToTopBtn?.classList.toggle('show', scrollY > 300);
     });
 
-    // --- Intersection Observers ---
     const fadeInObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
     }, { threshold: 0.1 });
