@@ -58,7 +58,7 @@ a { text-decoration: none; color: var(--primary-color); }
 
 .feature-section { display: flex; align-items: center; gap: 4rem; }
 .feature-image, .feature-content { flex: 1; }
-.feature-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+.feature-image img { width: 100%; height: auto; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 .feature-content { text-align: left; }
 .feature-content h2 { font-size: 2.2rem; margin-bottom: 1rem; text-align: left; color: var(--primary-color); }
 .feature-content p { font-size: 1.1rem; color: var(--text-light); }
@@ -95,11 +95,13 @@ a { text-decoration: none; color: var(--primary-color); }
 .cookie-consent-banner { position: fixed; bottom: -100%; left: 0; width: 100%; background-color: var(--dark-color); color: #eee; padding: 1rem; display: flex; justify-content: center; align-items: center; gap: 1.5rem; z-index: 2000; transition: bottom 0.5s ease-in-out; }
 .cookie-consent-banner.show { bottom: 0; }
 
+/* --- 404 Page --- */
 .body-404 { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: var(--light-color); text-align: center; padding: 2rem; }
 .container-404 h1 { font-size: 6rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem; }
 .container-404 h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--text-color); }
 .container-404 p { color: var(--text-light); margin-bottom: 2rem; }
 
+/* --- Status Page --- */
 .body-status-page { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: var(--primary-gradient); color: var(--white-color); padding: 2rem; font-family: 'Poppins', sans-serif; }
 .status-container { text-align: center; background-color: rgba(255, 255, 255, 0.1); padding: 2.5rem 2rem; border-radius: 12px; max-width: 400px; width: 100%; }
 .status-icon { width: 70px; height: 70px; margin-bottom: 1.5rem; }
@@ -114,7 +116,6 @@ a { text-decoration: none; color: var(--primary-color); }
     .nav-menu.active { left: 0; }
     .nav-item { margin: 1.5rem 0; }
     .hero h1 { font-size: 2.5rem; min-height: 80px; }
-    .cookie-consent-banner { flex-direction: column; text-align: center; }
     .feature-section, .layout-reverse { flex-direction: column; padding: 3rem 2rem; gap: 2rem; }
     .feature-content { text-align: center; }
     .feature-content h2 { text-align: center; }
