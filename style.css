@@ -83,7 +83,7 @@ a { text-decoration: none; color: var(--primary-color); }
     background-color: #000;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
-.store-icon { width: 24px; height: 24px; margin-right: 12px; }
+.store-icon { width: 26px; height: 26px; margin-right: 12px; object-fit: contain; }
 .store-text { display: flex; flex-direction: column; text-align: left; line-height: 1.2; }
 .store-subtitle { font-size: 0.65rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.8; }
 .store-title { font-size: 1.1rem; font-weight: 600; }
