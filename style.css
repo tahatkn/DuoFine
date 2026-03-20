@@ -64,38 +64,10 @@ a { text-decoration: none; color: var(--primary-color); }
 .feature-content p { font-size: 1.1rem; color: var(--text-light); }
 .layout-reverse { flex-direction: row-reverse; }
 
-/* --- Modern App Store Buttons --- */
-.store-buttons { 
-    display: flex; 
-    justify-content: flex-start; /* Masaüstünde sola yaslı */
-    gap: 1rem; 
-    flex-wrap: wrap; 
-    margin-top: 1.5rem; 
-}
-.store-button { 
-    display: inline-flex; 
-    align-items: center; 
-    background-color: var(--dark-color); 
-    color: var(--white-color); 
-    padding: 10px 18px; 
-    border-radius: 10px; 
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    min-width: 170px;
-    border: 1px solid #333;
-}
-.store-button:hover { 
-    transform: translateY(-3px); 
-    background-color: #000;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-.store-icon { 
-    width: 26px; 
-    height: 26px; 
-    margin-right: 12px; 
-    object-fit: contain; 
-    filter: invert(1) brightness(2); 
-}
+.store-buttons { display: flex; justify-content: flex-start; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.store-button { display: inline-flex; align-items: center; background-color: var(--dark-color); color: var(--white-color); padding: 10px 18px; border-radius: 10px; text-decoration: none; transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; min-width: 170px; border: 1px solid #333; }
+.store-button:hover { transform: translateY(-3px); background-color: #000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+.store-icon { width: 26px; height: 26px; margin-right: 12px; object-fit: contain; filter: invert(1) brightness(2); }
 .store-text { display: flex; flex-direction: column; text-align: left; line-height: 1.2; }
 .store-subtitle { font-size: 0.65rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.8; }
 .store-title { font-size: 1.1rem; font-weight: 600; }
@@ -128,13 +100,11 @@ a { text-decoration: none; color: var(--primary-color); }
 .cookie-consent-banner { position: fixed; bottom: -100%; left: 0; width: 100%; background-color: var(--dark-color); color: #eee; padding: 1rem; display: flex; justify-content: center; align-items: center; gap: 1.5rem; z-index: 2000; transition: bottom 0.5s ease-in-out; }
 .cookie-consent-banner.show { bottom: 0; }
 
-/* --- 404 Page --- */
 .body-404 { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: var(--light-color); text-align: center; padding: 2rem; }
 .container-404 h1 { font-size: 6rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem; }
 .container-404 h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--text-color); }
 .container-404 p { color: var(--text-light); margin-bottom: 2rem; }
 
-/* --- Status Page --- */
 .body-status-page { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: var(--primary-gradient); color: var(--white-color); padding: 2rem; font-family: 'Poppins', sans-serif; }
 .status-container { text-align: center; background-color: rgba(255, 255, 255, 0.1); padding: 2.5rem 2rem; border-radius: 12px; max-width: 400px; width: 100%; }
 .status-icon { width: 70px; height: 70px; margin-bottom: 1.5rem; }
@@ -142,6 +112,20 @@ a { text-decoration: none; color: var(--primary-color); }
 .status-container h2, .status-container p { font-size: 1rem; opacity: 0.8; line-height: 1.5; }
 .status-container .cta-button { margin-top: 2rem; background: var(--white-color); color: var(--primary-color); }
 .status-container .form-group input { background-color: rgba(255, 255, 255, 0.9); border: none; color: var(--dark-color); }
+
+/* --- Blog Section Styles --- */
+.blog-section { padding: 4rem 3rem 4rem; max-width: 900px; margin: 4rem auto; background-color: var(--white-color); border-radius: 12px; box-shadow: var(--shadow); }
+.blog-header { text-align: center; margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2rem; }
+.blog-header h1 { font-size: 2.5rem; color: var(--dark-color); margin-bottom: 1rem; line-height: 1.3; font-weight: 700; }
+.blog-meta { font-size: 0.95rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.blog-content p { margin-bottom: 1.5rem; font-size: 1.15rem; line-height: 1.8; color: var(--text-color); }
+.blog-content h2 { font-size: 1.8rem; margin: 3rem 0 1.2rem; color: var(--dark-color); font-weight: 600; }
+.blog-content h3 { font-size: 1.4rem; margin: 2rem 0 1rem; color: var(--dark-color); font-weight: 600; }
+.blog-content ul { margin-bottom: 1.5rem; padding-left: 2rem; }
+.blog-content li { margin-bottom: 0.8rem; font-size: 1.1rem; line-height: 1.7; color: var(--text-color); }
+.blog-content pre { background: #1e1e1e; color: #f8f8f2; padding: 1.5rem; border-radius: 8px; overflow-x: auto; margin: 2rem 0; font-size: 0.95rem; border: 1px solid #333; }
+.blog-content code { font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; }
+.blog-content p code, .blog-content li code { background: #f1f3f5; color: #d63384; padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.95em; font-weight: 500; }
 
 @media(max-width: 768px) {
     .hamburger { display: block; }
@@ -152,9 +136,14 @@ a { text-decoration: none; color: var(--primary-color); }
     .feature-section, .layout-reverse { flex-direction: column; padding: 3rem 2rem; gap: 2rem; }
     .feature-content { text-align: center; }
     .feature-content h2 { text-align: center; }
-    .store-buttons { justify-content: center; } /* MOBİLDE BUTONLARI ORTALAR */
+    .store-buttons { justify-content: center; }
     .footer-container { flex-direction: column; align-items: center; text-align: center; }
     .footer-column { text-align: center; }
     .footer-column .nav-logo { justify-content: center; }
     .social-links { justify-content: center; }
+    
+    /* Mobil Blog Ayarları */
+    .blog-section { padding: 3rem 1.5rem; margin: 2rem 1rem; }
+    .blog-header h1 { font-size: 1.8rem; }
+    .blog-content p, .blog-content li { font-size: 1rem; }
 }

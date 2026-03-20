@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixing a 700ms PostgreSQL Query | DuoFine Engineering</title>
+    <meta name="description" content="Learn how we diagnosed a 700ms PostgreSQL bottleneck using EXPLAIN ANALYZE and reduced latency to 38ms using compound B-tree indexes.">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M30 85 C 80 85, 80 15, 30 15' stroke-width='14' stroke='%234364F7' fill='none' stroke-linecap='round'/%3E%3Cpath d='M70 15 C 20 15, 20 85, 70 85' stroke-width='14' stroke='%234364F7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="/" class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
+                    <path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
+                </svg>
+                <span>DuoFine</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li class="nav-item"><a href="/#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="blog-section">
+            <div class="blog-header">
+                <h1>Fixing a 700ms PostgreSQL Query: From Seq Scan to 38ms</h1>
+                <div class="blog-meta">By Taha Tekin • Engineering • PostgreSQL</div>
+            </div>
+            
+            <div class="blog-content">
+                <p>When you are the sole technical owner of a growing mobile product, every performance bottleneck is your responsibility.</p>
+                <p>In my recent project, Common Ground (a real-time social planning app built with React Native and Django), user engagement heavily relied on the in-app messaging feature. Initially, loading a chat history felt instantaneous. But as the <code>Message</code> table grew, the chat screen started taking noticeably longer to load.</p>
+                <p>When I checked my distributed tracing logs via Sentry, the bottleneck was glaringly obvious: the database query fetching the chat history was taking around 700ms at the p95 percentile.</p>
+                <p>For a real-time app backed by WebSockets, a 700ms delay just to fetch historical messages creates unacceptable friction. Here is how I diagnosed the issue using PostgreSQL’s <code>EXPLAIN ANALYZE</code> and reduced the latency to ~38ms by leveraging query-aligned compound B-tree indexes.</p>
+
+                <h2>The Problem: The Dreaded Sequential Scan & In-Memory Sorting</h2>
+                <p>In a typical chat application, fetching the message history between two users involves filtering by their IDs and sorting by the timestamp to get the latest N messages.</p>
+                <p>Using Django’s ORM, the query looked something like this:</p>
+                
+<pre><code>messages = Message.objects.filter(
+    (Q(sender=user1) & Q(receiver=user2)) | 
+    (Q(sender=user2) & Q(receiver=user1))
+).order_by('-time_stamp')[:100]</code></pre>
+
+                <p>At first glance, this is a standard, clean ORM query. But under the hood, PostgreSQL was working inefficiently. I fired up my database console and ran an <code>EXPLAIN ANALYZE</code> on the generated SQL.</p>
+                <p>The output revealed a Sequential Scan (<code>Seq Scan</code>).</p>
+                <p>Because there were no specific indexes covering this exact OR condition pattern combined with an <code>ORDER BY</code>, PostgreSQL had to scan through the entire <code>Message</code> table, checking every single message to see if it belonged to the conversation between user1 and user2.</p>
+                <p>To make matters worse, after finding the relevant messages, the database had to load them into memory and perform a Top-N Heapsort to order them by <code>time_stamp</code> before applying the <code>LIMIT 100</code>.</p>
+                <p>As the table grew, this operation became prohibitively slow and resource-intensive. At 700ms, it was already degrading the user experience.</p>
+
+                <h2>The Solution: Designing Compound B-Tree Indexes</h2>
+                <p>The naive approach to fixing database speed is usually "just add an index to the columns." If I had added separate, single-column indexes on <code>sender</code>, <code>receiver</code>, and <code>time_stamp</code>, PostgreSQL might have utilized them, but it would still likely need to compute the intersection and then sort the results in memory.</p>
+                <p>Instead, I needed indexes that exactly matched my production query pattern.</p>
+                <p>Since a B-tree index sorts data hierarchically from left to right, column order in a compound index is critical. The rule of thumb for indexing is: Equality checks first, Range/Sort checks last.</p>
+                <p>Because my query looks for messages where <code>(sender=A AND receiver=B) OR (sender=B AND receiver=A)</code>, I designed two separate compound indexes in my Django model's Meta class to cover both sides of the OR clause:</p>
+
+<pre><code>class Message(models.Model):
+    # ... fields (sender, receiver, message_body, time_stamp) ...
+
+    class Meta:
+        indexes =[
+            models.Index(fields=['sender', 'receiver', 'time_stamp']),
+            models.Index(fields=['receiver', 'sender', 'time_stamp']),
+        ]</code></pre>
+
+                <h3>Why did this work so effectively?</h3>
+                <ul>
+                    <li><strong>Fast Lookup via Index Scan:</strong> When the query runs, PostgreSQL traverses the B-tree to quickly locate the exact (sender, receiver) and (receiver, sender) pairs. Instead of a full table scan, it performs highly efficient index scans and merges the results (often via bitmap index operations such as <code>BitmapOr</code>).</li>
+                    <li><strong>Eliminating Explicit Sorts:</strong> Because <code>time_stamp</code> is the third column in the index, the index entries for a specific (sender, receiver) pair are already ordered by time_stamp within the B-tree structure.</li>
+                    <li><strong>Leveraging Index Ordering & LIMIT:</strong> To get the latest 100 messages (<code>ORDER BY -time_stamp</code>), PostgreSQL doesn't need to load the data into memory to sort it. It can leverage this pre-sorted index structure and may perform Index Scan Backward operations, effectively eliminating the explicit sorting cost and allowing PostgreSQL to efficiently stop scanning once it retrieves the first <code>LIMIT 100</code> rows.</li>
+                </ul>
+                <p>By eliminating the in-memory Top-N Heapsort and replacing the Seq Scan with targeted index lookups, the CPU overhead and I/O operations were drastically reduced.</p>
+
+                <h2>The Result: From ~700ms to 38ms</h2>
+                <p>I ran <code>EXPLAIN ANALYZE</code> again after applying the Django migrations.</p>
+                <p>The Sequential Scan was completely gone. In its place were Index Scan Backward operations utilizing the new compound indexes.</p>
+                <p>The query execution time plummeted from ~700ms to ~38ms in our observed workload.</p>
+                <p>This wasn't just a 94.6% reduction in latency; it was a massive reduction in database CPU load. For the end-user, the chat screen went back to feeling instant. For the infrastructure, the cost of scaling the messaging feature dropped significantly.</p>
+
+                <h2>Next Steps & Trade-offs</h2>
+                <p>While this solution solved the immediate bottleneck, performance engineering is an iterative process. If the application scales to millions of users, further optimizations could include:</p>
+                <ul>
+                    <li><strong>Covering Indexes:</strong> Adding <code>INCLUDE (message_body)</code> to the index could potentially allow index-only scans, preventing the database from ever touching the heap (table data). However, since message bodies can be variable and large, the increased index size (and write penalty) wasn't worth the trade-off at this stage.</li>
+                    <li><strong>Data Model > Index Tuning:</strong> At a higher scale, even this dual-index pattern may degrade due to the overhead of OR expansion and bitmap merges. At that point, normalizing the query shape becomes more important than index tuning. Refactoring the schema to include a unique <code>conversation_id</code> (e.g., a hashed combination of user1 and user2) would eliminate the OR clause entirely, allowing a single optimal index <code>(conversation_id, time_stamp DESC)</code> to handle the query flawlessly.</li>
+                </ul>
+
+                <h2>Takeaways</h2>
+                <p>When building scalable systems, especially as a solo engineer, you have to be intentional about optimization:</p>
+                <ul>
+                    <li><strong>Don't guess, measure:</strong> <code>EXPLAIN ANALYZE</code> is your best friend. Distributed tracing (like Sentry) tells you where the bottleneck is, but EXPLAIN tells you why.</li>
+                    <li><strong>ORMs hide complexity:</strong> Django ORM makes writing queries incredibly easy, but it doesn't absolve you from understanding how relational databases actually execute those queries.</li>
+                    <li><strong>Index for your specific query patterns:</strong> A compound index is significantly more effective than single-column indexes if you align the column order with your WHERE and ORDER BY clauses.</li>
+                    <li><strong>Performance engineering isn't just about writing complex code;</strong> it's about deeply understanding the constraints of your system and designing targeted solutions to overcome them.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <a href="/" class="nav-logo">
+                    <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/><path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/></svg>
+                    <span>DuoFine</span>
+                </a>
+                <p>Crafting meaningful connections and experiences through technology.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigate</h3>
+                <ul class="footer-links">
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#projects">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener noreferrer" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"></path></svg></a>
+                    <a href="https://x.com/duofine" target="_blank" rel="noopener noreferrer" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 DuoFine. All Rights Reserved. | <a href="mailto:info@duofine.com">info@duofine.com</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
