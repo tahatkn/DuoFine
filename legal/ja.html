@@ -1,945 +1,348 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Common Ground 法的文書</title>
-<meta name="description" content="Common Groundの利用規約およびプライバシーポリシー。">
-<link rel="canonical" href="https://duofine.com/legal/ja.html">
-<style>
-/* ---------- Fonts: system stacks only (no external fonts, no CSP risk) ---------- */
-:root{
-  --serif: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-/* ---------- Light palette (default root) ---------- */
-:root{
-  --bg: #F0EEE7;
-  --surface: #FFFFFF;
-  --surface-2: #F7F5EF;
-  --ink: #1C1B18;
-  --ink-dim: #56534A;
-  --ink-faint: #8A8678;
-  --rule: #DBD6C8;
-  --rule-strong: #C7C1AF;
-  --accent: #6A3E9E;
-  --accent-ink: #4C2C74;
-  --accent-soft: #EFE7F8;
-  --critical: #2E6D64;
-  --critical-soft: #E2EEEB;
-  --critical-ink: #1E4842;
-  --badge-bg: #B4542A;
-  --badge-ink: #FBEEE6;
-  --link: #6A3E9E;
-  --shadow: 0 1px 2px rgba(28,27,24,0.04), 0 8px 24px rgba(28,27,24,0.06);
-}
-
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg: #17181A;
-    --surface: #1E2022;
-    --surface-2: #232527;
-    --ink: #ECE9E1;
-    --ink-dim: #B0AC9F;
-    --ink-faint: #7C786C;
-    --rule: #35373A;
-    --rule-strong: #43454A;
-    --accent: #C09EEB;
-    --accent-ink: #E2CFF7;
-    --accent-soft: #2B2438;
-    --critical: #7FCBC0;
-    --critical-soft: #1C2C29;
-    --critical-ink: #A9E4DA;
-    --badge-bg: #E08A55;
-    --badge-ink: #2A1608;
-    --link: #C09EEB;
-    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
-  }
-}
-:root[data-theme="dark"]{
-  --bg: #17181A;
-  --surface: #1E2022;
-  --surface-2: #232527;
-  --ink: #ECE9E1;
-  --ink-dim: #B0AC9F;
-  --ink-faint: #7C786C;
-  --rule: #35373A;
-  --rule-strong: #43454A;
-  --accent: #C09EEB;
-  --accent-ink: #E2CFF7;
-  --accent-soft: #2B2438;
-  --critical: #7FCBC0;
-  --critical-soft: #1C2C29;
-  --critical-ink: #A9E4DA;
-  --badge-bg: #E08A55;
-  --badge-ink: #2A1608;
-  --link: #C09EEB;
-  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
-}
-
-*{ box-sizing: border-box; }
-html{ -webkit-text-size-adjust: 100%; }
-body{
-  margin:0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--sans);
-  line-height: 1.5;
-}
-a{ color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-a:focus-visible, button:focus-visible, summary:focus-visible{
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 3px;
-}
-
-/* ---------- Masthead ---------- */
-.masthead{
-  border-bottom: 1px solid var(--rule);
-  background: var(--surface);
-}
-.masthead-inner{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 28px 24px 24px;
-  display:flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.wordmark{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-.wordmark .dot{
-  width:7px; height:7px; border-radius:50%;
-  background: var(--accent);
-  flex: none;
-}
-h1.doc-title{
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: clamp(28px, 4.2vw, 40px);
-  line-height: 1.14;
-  margin: 0;
-  text-wrap: balance;
-  color: var(--ink);
-}
-.meta-row{
-  display:flex;
-  flex-wrap: wrap;
-  align-items:center;
-  gap: 10px 16px;
-  font-size: 13px;
-  color: var(--ink-dim);
-  font-variant-numeric: tabular-nums;
-}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--badge-bg);
-  color: var(--badge-ink);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-/* ---------- Notice callouts ---------- */
-.notice{
-  max-width: 880px;
-  margin: 20px auto 0;
-  padding: 0 24px;
-}
-.notice-box{
-  background: var(--surface-2);
-  border: 1px solid var(--rule);
-  border-left: 3px solid var(--badge-bg);
-  border-radius: 8px;
-  padding: 14px 16px;
-  font-size: 14px;
-  color: var(--ink-dim);
-  line-height: 1.55;
-}
-.notice-box strong{ color: var(--ink); }
-
-/* ---------- TOC ---------- */
-.toc-wrap{
-  max-width: 880px;
-  margin: 20px auto 0;
-  padding: 0 24px;
-}
-.toc{
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: 20px 22px;
-  box-shadow: var(--shadow);
-}
-.toc summary{
-  cursor:pointer;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
-  list-style: none;
-}
-.toc summary::-webkit-details-marker{ display:none; }
-.toc summary::after{
-  content: "▾";
-  float: right;
-  color: var(--ink-faint);
-}
-.toc[open] summary::after{ content: "▴"; }
-.toc-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px 24px;
-  margin-top: 16px;
-}
-.toc-part{
-  grid-column: 1 / -1;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-  margin: 10px 0 2px;
-  border-top: 1px solid var(--rule);
-  padding-top: 10px;
-}
-.toc-grid a{
-  font-size: 13.5px;
-  color: var(--ink-dim);
-  padding: 3px 0;
-  text-decoration: none;
-  border-bottom: 1px dotted transparent;
-}
-.toc-grid a:hover{ color: var(--accent); border-bottom-color: var(--accent); }
-@media (max-width: 640px){ .toc-grid{ grid-template-columns: 1fr; } }
-
-/* ---------- Content ---------- */
-main{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 8px 24px 80px;
-}
-.part-header{
-  margin-top: 56px;
-  padding-top: 28px;
-  border-top: 2px solid var(--rule-strong);
-}
-.part-eyebrow{
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-h2.part-title{
-  font-family: var(--serif);
-  font-size: clamp(24px, 3.4vw, 30px);
-  font-weight: 600;
-  margin: 6px 0 4px;
-  text-wrap: balance;
-}
-.part-sub{
-  font-size: 14.5px;
-  color: var(--ink-dim);
-  max-width: 62ch;
-  margin: 0 0 8px;
-}
-
-article.madde{
-  margin-top: 40px;
-  scroll-margin-top: 20px;
-}
-.madde-head{
-  display:flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-.madde-num{
-  font-family: var(--sans);
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--ink-faint);
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}
-h3.madde-title{
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0;
-  color: var(--ink);
-}
-.madde-body{
-  font-family: var(--serif);
-  font-size: 16.5px;
-  line-height: 1.68;
-  color: var(--ink);
-  max-width: 68ch;
-}
-.madde-body p{ margin: 0 0 14px; }
-.madde-body ol, .madde-body ul{ margin: 0 0 14px; padding-left: 22px; }
-.madde-body li{ margin-bottom: 8px; }
-.madde-body strong{ color: var(--ink); font-weight: 700; }
-.fill{
-  background: var(--accent-soft);
-  color: var(--accent-ink);
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-family: var(--sans);
-  font-size: 0.86em;
-  font-weight: 600;
-}
-
-.critical{
-  background: var(--critical-soft);
-  border: 1px solid var(--critical);
-  border-left-width: 4px;
-  border-radius: 8px;
-  padding: 16px 18px 4px;
-  margin: 0 0 14px;
-}
-.critical-label{
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--critical-ink);
-  display:flex;
-  align-items:center;
-  gap:6px;
-  margin-bottom: 8px;
-}
-.critical-label svg{ width:13px; height:13px; flex:none; }
-
-table.data-table{
-  width: 100%;
-  border-collapse: collapse;
-  font-family: var(--sans);
-  font-size: 13.5px;
-  margin: 4px 0 20px;
-}
-table.data-table caption{
-  text-align: left;
-  font-size: 12px;
-  color: var(--ink-faint);
-  margin-bottom: 6px;
-  font-style: italic;
-}
-table.data-table th, table.data-table td{
-  border: 1px solid var(--rule);
-  padding: 9px 11px;
-  text-align: left;
-  vertical-align: top;
-}
-table.data-table th{
-  background: var(--surface-2);
-  font-weight: 700;
-  color: var(--ink);
-  font-size: 12.5px;
-  letter-spacing: 0.02em;
-}
-table.data-table td{ color: var(--ink-dim); }
-.table-scroll{ overflow-x: auto; }
-
-.divider-quote{
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 15px;
-  color: var(--ink-faint);
-  border-left: 2px solid var(--rule-strong);
-  padding-left: 14px;
-  margin: 4px 0 20px;
-}
-
-footer.doc-footer{
-  border-top: 1px solid var(--rule);
-  background: var(--surface);
-  margin-top: 60px;
-}
-.doc-footer-inner{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 28px 24px 40px;
-  font-size: 13px;
-  color: var(--ink-faint);
-  display:flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.back-to-top{
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--link);
-  text-decoration: none;
-}
-
-@media (prefers-reduced-motion: no-preference){
-  html{ scroll-behavior: smooth; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用規約およびプライバシーポリシー | DuoFine</title>
+    <meta name="description" content="Common Groundの利用規約およびプライバシーポリシー。">
+    <link rel="canonical" href="https://duofine.com/legal/ja.html">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .legal-updated { text-align: center; color: var(--text-light); margin-bottom: 2.5rem; font-size: 0.95rem; }
+        .legal-part-title { font-size: 1.8rem; margin: 3rem 0 0.5rem; color: var(--dark-color); font-weight: 600; }
+        .legal-part-title:first-of-type { margin-top: 0; }
+        .legal-toc { columns: 2; column-gap: 2.5rem; margin: 0 0 3rem; padding-left: 1.2rem; }
+        .legal-toc li { margin-bottom: 0.5rem; break-inside: avoid; }
+        .legal-article { margin-top: 2.5rem; scroll-margin-top: 90px; }
+        .legal-article h3 { font-size: 1.25rem; color: var(--dark-color); margin-bottom: 0.8rem; }
+        .legal-article p, .legal-article li { margin-bottom: 1rem; }
+        .legal-article ul, .legal-article ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+        .legal-table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+        table.legal-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        table.legal-table caption { text-align: left; font-style: italic; color: var(--text-light); margin-bottom: 0.5rem; font-size: 0.9rem; }
+        table.legal-table th, table.legal-table td { border: 1px solid var(--border-color); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; }
+        table.legal-table th { background-color: var(--light-color); font-weight: 600; }
+        .back-to-toc { display: block; text-align: right; margin-top: 3rem; }
+    </style>
 </head>
 <body>
-<div class="masthead">
-  <div class="masthead-inner">
-    <div class="wordmark"><span class="dot"></span>COMMON GROUND — DUOFINE</div>
-    <h1 class="doc-title">利用規約 &amp; プライバシーポリシー</h1>
-    <div class="meta-row">
-      <span class="badge">草案・法的レビュー待ち</span>
-      <span>発効日：2026年8月15日</span>
-      <span>バージョン：TR-1.3</span>
-      <span>言語：日本語（トルコ語原文からの翻訳）（出典：トルコ語版 TR-1.3）</span>
-    </div>
-  </div>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="/" class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
+                    <path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
+                </svg>
+                <span>DuoFine</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/#about" class="nav-link" data-link="about">About</a></li>
+                <li class="nav-item"><a href="/#projects" class="nav-link" data-link="projects">Projects</a></li>
+                <li class="nav-item"><a href="/#contact" class="nav-link" data-link="contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="legal" class="content-section">
+            <h2>利用規約およびプライバシーポリシー</h2>
+            <p class="legal-updated">最終更新日：2026年8月15日</p>
+            <ul class="legal-toc"><li><a href="#kk-0">第0条 — 序文及び同意</a></li><li><a href="#kk-1">第1条 — 定義</a></li><li><a href="#kk-2">第2条 — サービスの範囲</a></li><li><a href="#kk-3">第3条 — アカウントの作成、年齢制限及びアカウントセキュリティ</a></li><li><a href="#kk-4">第4条 — 禁止事項</a></li><li><a href="#kk-5">第5条 — ユーザーコンテンツ及びライセンス</a></li><li><a href="#kk-6">第6条 — 位置情報サービス及び地図コンテンツ</a></li><li><a href="#kk-7">第7条 — Win-Win特典（Deals）——第三者事業者キャンペーン</a></li><li><a href="#kk-8">第8条 — サブスクリプション、トークン及びアプリ内購入</a></li><li><a href="#kk-9">第9条 — フレンド機能、メッセージング及びユーザー間の交流</a></li><li><a href="#kk-10">第10条 — ブックマーク（Bookmarks）</a></li><li><a href="#kk-11">第11条 — 通知及び連絡</a></li><li><a href="#kk-12">第12条 — アカウントの停止、解除及び削除</a></li><li><a href="#kk-13">第13条 — 知的財産及び商標権</a></li><li><a href="#kk-14">第14条 — 保証の否認</a></li><li><a href="#kk-15">第15条 — 責任の制限</a></li><li><a href="#kk-16">第16条 — 補償</a></li><li><a href="#kk-17">第17条 — 不可抗力</a></li><li><a href="#kk-18">第18条 — 準拠法及び紛争の解決</a></li><li><a href="#kk-19">第19条 — 一般規定</a></li><li><a href="#kk-20">第20条 — 変更</a></li><li><a href="#kk-21">第21条 — 連絡先</a></li><li><a href="#gp-1">第1条 — データ管理者の身元</a></li><li><a href="#gp-2">第2条 — 本ポリシーの適用範囲</a></li><li><a href="#gp-3">第3条 — 処理される個人データの区分</a></li><li><a href="#gp-4">第4条 — 個人データの処理目的</a></li><li><a href="#gp-5">第5条 — 個人データ処理の法的根拠</a></li><li><a href="#gp-6">第6条 — 位置情報データに関する特則</a></li><li><a href="#gp-7">第7条 — Google マップ／Placesコンテンツに関する特則</a></li><li><a href="#gp-8">第8条 — Win-Win特典に関して処理されるデータ</a></li><li><a href="#gp-9">第9条 — サブスクリプション及び決済データ</a></li><li><a href="#gp-10">第10条 — 個人データの移転（国内／国外）</a></li><li><a href="#gp-11">第11条 — 保存期間</a></li><li><a href="#gp-12">第12条 — データセキュリティ対策</a></li><li><a href="#gp-13">第13条 — 児童のプライバシー</a></li><li><a href="#gp-14">第14条 — SDK及び分析ツール</a></li><li><a href="#gp-15">第15条 — データ主体の権利（KVKK第11条）</a></li><li><a href="#gp-16">第16条 — データ侵害の通知</a></li><li><a href="#gp-17">第17条 — ポリシーの変更</a></li><li><a href="#gp-18">第18条 — 連絡先及び申立て</a></li></ul>
+            <h3 class="legal-part-title" id="bolum-1">利用規約</h3><div class="legal-article" id="kk-0"><h3>第0条. 序文及び同意</h3>
+<p>本利用規約（以下「本規約」といいます）は、商号「<strong>DuoFine</strong>」（以下「運営者」又は「当社」といいます）が運営するCommon Groundモバイルアプリケーション、及び同アプリが提供するすべての機能（周辺スポットの検索、Win-Win特典、メッセージング、フレンド機能及びブックマークを含みます）を対象として、ユーザー（以下「あなた」又は「ユーザー」といいます）と運営者との間の法的関係を規律するものです。</p>
+<p>本アプリをダウンロードし、アカウントを作成し、又は利用を継続することにより、あなたは本規約及び以下の第II部に定めるプライバシーポリシーを読み、理解し、これに同意したものとみなされます。これらの文書に同意しない場合、本アプリを利用せず、アカウントを作成しないでください。</p>
+<p>本アプリ内でアプリストア（Apple App Store／Google Play）を通じて行われる購入については、本規約に加えて、当該ストア自体の利用条件も適用されます。両者に矛盾が生じた場合、決済及び請求に関する事項については当該ストアの条件が、その他のすべての事項については本規約が優先します。</p>
+</div><div class="legal-article" id="kk-1"><h3>第1条. 定義</h3>
+<ul>
+<li><strong>本アプリ／本サービス：</strong> iOS及びAndroid向けに配信される「Common Ground」という名称のモバイルアプリケーション、及びこれと一体となったサーバーインフラストラクチャをいいます。</li>
+<li><strong>ユーザー：</strong> 本アプリ上でアカウントを作成し、本規約に同意した自然人をいいます。</li>
+<li><strong>コンテンツ：</strong> ユーザーがプロフィール、メッセージ、ブックマーク又は本アプリ内で共有するあらゆるテキスト、画像、位置情報その他これらに類するデータをいいます。</li>
+<li><strong>Win-Win特典／Deals：</strong> 本アプリに掲載される、第三者事業者が提供する割引・キャンペーンの提案、及びこれらを本アプリ上でコード／QRコードを通じて利用可能とする仕組みをいいます。</li>
+<li><strong>サブスクリプション：</strong> Apple App Store又はGoogle Playを通じて購入される、アプリ内の追加機能及びトークン利用権を付与する、定期的に（自動更新される）課金制のプラン（例：Plus、Pro）をいいます。</li>
+<li><strong>トークン：</strong> 本アプリ内の特定の機能（例：検索・探索）の利用量を測定する、金銭と交換できない仮想的な利用権単位をいいます。</li>
+<li><strong>ストア：</strong> Apple Inc.が運営するApp Store、又はGoogle LLCが運営するGoogle Playストアをいいます。</li>
+</ul>
+</div><div class="legal-article" id="kk-2"><h3>第2条. サービスの範囲</h3>
+<p>Common Groundは、ユーザーが位置情報、距離、移動手段、カテゴリー及び人気度などの条件で周辺の事業者を検索し、複数人の間で共通の待ち合わせ場所を算出し、フレンドとリアルタイムでメッセージのやり取りを行い、気に入った場所を保存し、提携事業者が提供する特別キャンペーン（「Win-Win特典」）を利用できるようにする、検索及びソーシャル交流のためのアプリケーションです。</p>
+<p>運営者は、本アプリの全部又は一部、あるいはいずれかの機能を、事前の通知なく変更、停止又は廃止する権利を留保します。本アプリは「現状有姿」及び「提供可能な範囲」で提供されるものであり、中断がなく又は誤りがないことを保証するものではありません。</p>
+</div><div class="legal-article" id="kk-3"><h3>第3条. アカウントの作成、年齢制限及びアカウントセキュリティ</h3>
+<ol>
+<li><strong>年齢制限：</strong> 本アプリは満13歳以上の者のみが利用できます。13歳から18歳までのユーザーは、トルコ民法上、制限行為能力者とされる場合があるため、本アプリを保護者又は後見人の把握及び監督の下でのみ利用しなければなりません。特に有料サブスクリプション及び購入取引については、法定代理人の同意が必要です。運営者は、年齢について虚偽の申告をしたと判明したアカウントを停止する権利を留保します。</li>
+<li><strong>正確な情報の提供：</strong> 登録時に提供する氏名、メールアドレス、生年月日等の情報が正確かつ最新であることを保証するものとします。虚偽の身元、又は他人の身元を用いてアカウントを作成することは禁止されます。</li>
+<li><strong>アカウント／端末の単一利用制限：</strong> 不正利用及び重複登録を防止するため、本アプリは新規登録時に端末レベルの確認を行います。1台の端末は、一定期間内において1つのアカウントとのみ紐付けることができます。この制限を回避しようとする試み（例：端末の初期化、虚偽の身元による再登録）は、第4条に定める禁止事項に該当します。</li>
+<li><strong>アカウントセキュリティ：</strong> パスワード及びアカウントへのアクセスの機密性を保持する責任はあなたにあります。反証のない限り、あなたのアカウントを通じて行われたすべての行為についてあなたが責任を負うものとします。アカウントへの不正アクセスが疑われる場合は、直ちに<a href="mailto:info@duofine.com">info@duofine.com</a>までご連絡ください。</li>
+<li><strong>メール、Google及びAppleによるログイン：</strong> 本アプリは、メールアドレス／パスワードによる登録に加え、Googleアカウント及びAppleアカウントによるログイン手段を提供します。これらの手段を利用する場合、当該提供元自身の利用条件及びプライバシーポリシーも適用されます。</li>
+</ol>
+</div><div class="legal-article" id="kk-4"><h3>第4条. 禁止事項</h3>
+<p>本アプリの利用にあたり、以下の行為を行わないことに同意するものとします。</p>
+<ol>
+<li>適用ある法令若しくは規則、又は第三者の権利に違反するコンテンツを共有し、又は行為を行うこと。</li>
+<li>他のユーザーに対する嫌がらせ、脅迫、執拗な迷惑行為、及びヘイトスピーチ、差別的又はわいせつなコンテンツを共有すること。</li>
+<li>虚偽のプロフィールを作成すること、他の自然人若しくは法人になりすますこと、又は虚偽の年齢・身元情報を提供すること。</li>
+<li>本アプリをスパム、迷惑な商業メッセージ、詐欺、フィッシング又はマルウェアの配布のために利用すること。</li>
+<li>本アプリのソースコードをリバースエンジニアリングしようと試みること、自動化されたツール（ボット、スクレイパー）でデータを収集すること、又はサーバーインフラストラクチャに不相応な負荷をかけること。</li>
+<li>端末制限（第3条3項）又はトークン／サブスクリプションの上限（第8条）を回避する目的で技術的措置を迂回しようとすること。</li>
+<li><strong>Win-Win特典の仕組みを悪用すること：</strong> キャンペーンコードを販売若しくは譲渡すること、スクリーンショットを複製して複数回利用しようと試みること、又は提携事業者との間でコード／QRコード以外の不正な方法で合意し、仕組みを操作すること（第7条参照）。</li>
+<li>位置情報を、他のユーザーを追跡、監視又は物理的に嫌がらせする目的で利用すること。</li>
+<li>18歳未満のユーザーと不適切な連絡を取ること、又はこれらのユーザーを搾取の危険にさらす行為を行うこと。</li>
+</ol>
+<p>本条の違反は、事前の通知なくアカウントの停止又は永久削除につながる場合があります（第12条）。</p>
+</div><div class="legal-article" id="kk-5"><h3>第5条. ユーザーコンテンツ及びライセンス</h3>
+<p>本アプリ上で共有するコンテンツ（プロフィール情報、写真、メッセージ、ブックマークのラベル等）の所有権はあなたに帰属します。もっとも、これらのコンテンツを本アプリを通じて他のユーザーに表示し、保存し、及び本サービスを運営できるようにするため、あなたは当社に対し、世界的、非独占的、かつサブライセンス可能な利用ライセンスを付与するものとします。このライセンスは本サービスの運営目的にのみ限定され、あなたがアカウントを削除した場合、当該コンテンツも削除されます（第12.5条及び第II部第11条の規定を妨げません）。</p>
+<p>あなたは、共有するコンテンツが、自らが法的に共有する権利を有するコンテンツであり、第三者の知的財産権、人格権又はプライバシー権を侵害しないことを表明し、保証するものとします。</p>
+</div><div class="legal-article" id="kk-6"><h3>第6条. 位置情報サービス及び地図コンテンツ</h3>
+<p><strong>重要条項——位置情報データ:</strong></p>
+
+<p>本アプリの中核機能（施設の検索、共通の待ち合わせ場所の算出、近隣の特典の表示）は、機微かつリアルタイムの位置情報データに依拠しています。位置情報の利用許可を与えない場合、本アプリのこれらの機能は動作しません。位置情報データの処理の詳細は、第II部第6条に定めるとおりです。</p>
+
+<p>地図及び施設のデータ（地図画像、事業者名、住所、写真、種類、評価）は、Google マップ プラットフォーム（Google Maps Platform）を通じて提供され、Googleの利用条件が適用されます。あなたは、これらのコンテンツを本アプリの外部で複製し、恒久的に保存し、又は商業目的で再利用することはできません。この制限は運営者にも適用され、本アプリの技術的な設計はこれに従って構築されています。</p>
+<p>ブックマークに表示される事業者名は、Googleから自動的に取得されるデータではなく、あなた自身が入力するラベルです（第10条及び第II部第7条参照）。</p>
+</div><div class="legal-article" id="kk-7"><h3>第7条. Win-Win特典（Deals）——第三者事業者キャンペーン</h3>
+<p><strong>重要条項——運営者は仲介者にすぎません:</strong></p>
+
+<p>Win-Win特典として掲載されるすべてのキャンペーン、割引及び提案は、<strong>提携する第三者事業者</strong>によって提供されます。運営者は、販売される商品又はサービスの当事者、販売者又は提供者ではなく、当該キャンペーンを本アプリ上で表示し、コード／QRコードを通じて利用可能とする技術的な仲介者にすぎません。</p>
+
+<ol>
+<li><strong>提案の性質：</strong> 各Win-Win特典は、当該事業者が定める独自の条件（有効期間、在庫／利用可能数、最低利用金額等）に従います。運営者は、キャンペーンの正確性、最新性、又は当該事業者が実際にこれを実施することを保証するものではありません。事業者は、事前の通知なくキャンペーンを変更、停止又は終了することができます。</li>
+<li><strong>利用（redemption）手続：</strong> 特典を利用しようとする場合、本アプリはあなたに対し固有のコード／QRコードを発行します。このコードは発行された時点から一定の限られた時間（本アプリ内に表示される分数）のみ有効であり、期限が経過すると自動的に無効となります。コードは、当該事業者において、事業者のスタッフに提示することにより、一度限り利用することができます。</li>
+<li><strong>週次利用上限：</strong> 不正利用を防止するため、同一の特典について、移動する7日間の期間内に適用される利用上限が設けられています。この上限は、キャンペーンが多数のユーザーに公平に行き渡るようにするために設けられており、事前の通知なく変更されることがあります。</li>
+<li><strong>金銭的価値を有しないこと：</strong> 特典コードは、現金化、他のユーザーへの譲渡、販売、又は大量利用（バルク利用）をすることができません。この規定に違反する行為が確認された場合、当該アカウントは第4条7項及び第12条に基づき停止されることがあります。</li>
+<li><strong>取引の当事者及び責任：</strong> Win-Win特典の利用の結果として事業者との間に成立する販売・サービス提供関係は、あなたと当該事業者との間に直接成立するものです。販売された商品・サービスの瑕疵、品質、引渡し、返品、及び当該事業者自身の通信販売・消費者関連法令への準拠等に関する事項については、当該事業者があなたの相手方となります。運営者はこの取引の当事者ではないため、第6502号消費者保護法（TKHK）に基づく販売者・提供者としての責任を負いません。</li>
+<li><strong>掲載地域及び表示：</strong> 各特典が本アプリ内のどの都道府県／区市町村フィルターに、又は「すべて」の一覧に表示されるかは運営者の編集上の裁量に委ねられており、同一事業者の異なる支店が別個のカードとして掲載されることがあります。</li>
+<li><strong>取消し及び変更の権利：</strong> 運営者は、事業提携の終了、事業者からの要請、又は不正利用の疑いなどの理由により、事前の通知なくいずれのWin-Win特典も本アプリから削除する権利を留保します。</li>
+</ol>
+</div><div class="legal-article" id="kk-8"><h3>第8条. サブスクリプション、トークン及びアプリ内購入</h3>
+<ol>
+<li><strong>請求はストアを通じて行われます：</strong> すべての有料サブスクリプション（Plus、Pro）及び単発のトークンパッケージは、Apple App Store又はGoogle Playを通じて購入及び請求されます。価格は、当該ストアの為替レート及び税制の取扱いに応じて本アプリ内に表示され、事前の通知なく変更されることがあります。常に有効な価格は購入画面に表示された価格です。</li>
+<li><strong>自動更新：</strong> サブスクリプションは、解約されない限り、期間終了時に自動的に更新及び課金されます。サブスクリプションの解約、管理及び返金の請求に用いるべき窓口は、直接あなたのApple／Googleのアカウント設定です。運営者は、決済を直接返金する権限又はアクセス手段を有しません。</li>
+<li><strong>返金ポリシー：</strong> 購入後の返金は、当該ストア（Apple又はGoogle）自身の返金ポリシーに従います。運営者は、ストアが承認した返金を遡ってシステムに反映させますが、返金の決定自体はストアに帰属します。</li>
+<li><strong>トークン：</strong> トークンは、特定のアプリ内機能（例：検索・探索クエリ）の利用権を表す、現金化できない、有効期限のある仮想的な単位です。トークンは他のユーザーに譲渡することができず、金銭と引き換えに買い戻すこともできません。</li>
+<li><strong>公正利用ポリシー：</strong> サブスクリプションプランには、毎月一定量のトークンが含まれます（最新の数量は、アプリ内のストア画面に掲載されます）。サービスに支障をきたす程度の過度な、自動化された、又は悪用的な利用が確認された場合、運営者は追加の制限を課す権利を留保します。この制限は、通常の個人利用の範囲内にあるユーザーには影響を及ぼしません。</li>
+<li><strong>ファミリー共有及びアカウントの変更：</strong> サブスクリプションは、購入に用いたApple／Googleアカウント、及び当該アカウントに紐付けられたCommon Groundユーザーアカウントに固有のものです。アカウントを変更した場合にサブスクリプション状況が正しく反映されるかどうかは、本アプリ内のログイン情報の正確性に依存します。</li>
+</ol>
+</div><div class="legal-article" id="kk-9"><h3>第9条. フレンド機能、メッセージング及びユーザー間の交流</h3>
+<p>本アプリは、ユーザーが互いをフレンドとして追加し、リアルタイムでメッセージのやり取りを行い、位置情報に基づく共通の待ち合わせ場所の提案を共有できるようにします。これらの機能は、相互のフレンド関係が成立しているユーザー間でのみ有効です。</p>
+<p><strong>個人の安全に関する注意事項：</strong> 本アプリを通じて知り合った相手と実際に会うかどうかは、完全にあなた自身の判断及び責任に委ねられます。運営者はユーザーの身元確認を行わず、実際の対面によって生じうるいかなる損害についても責任を負いません。人前の公共の場所で会うこと、及び個人情報（自宅の住所、金融情報等）を共有する際には慎重を期すことをお勧めします。</p>
+<p>他のユーザーに迷惑をかけ、脅迫し、又は本規約に違反する人物については、本アプリ内のブロック機能及び通報機能を通じて申告することができます。</p>
+</div><div class="legal-article" id="kk-10"><h3>第10条. ブックマーク（Bookmarks）</h3>
+<p>ブックマーク機能は、Googleの個人データに相当するコンテンツ（事業者名、写真等）を恒久的に保存することを認めないGoogleの利用条件に適合するよう設計されています。ある場所を保存する際、その名称は<strong>あなた自身が入力</strong>します。運営者は、この名称をGoogleから自動的に取得したり、あらかじめ入力したりすることはありません。保存の際のキーとしては、位置の一般的な識別子（place_id）、又は手入力による記録のみが使用されます（第II部第7条参照）。</p>
+<p>ブックマークの登録数は、ご利用のサブスクリプションプランに応じた上限が設けられる場合があり、この上限はGoogleに基づく記録及び手入力による記録の両方に共通して適用されます。</p>
+</div><div class="legal-article" id="kk-11"><h3>第11条. 通知及び連絡</h3>
+<p>許可をいただいた場合、新着メッセージ、フレンド申請及びアプリ内の重要なお知らせについてプッシュ通知をお送りすることがあります。この許可は、端末のシステム設定からいつでも取り消すことができます。アカウントのセキュリティ、法的な通知、又は本規約の変更等の重要な事項については、プッシュ通知の許可の有無にかかわらず、登録されたメールアドレス宛てにご連絡する権利を留保します。</p>
+</div><div class="legal-article" id="kk-12"><h3>第12条. アカウントの停止、解除及び削除</h3>
+<ol>
+<li><strong>ユーザーによる解除：</strong> アカウントは、いつでも本アプリ内の設定メニューから削除することができます。有効なサブスクリプションがある場合、アカウントの削除によってサブスクリプションが自動的に解約されるものではありません。サブスクリプションは別途、Apple／Googleのアカウント設定から解約する必要があります。</li>
+<li><strong>運営者による停止／解除：</strong> 本規約、特に第4条に列挙する禁止事項への違反、不正利用の疑い、支払いに関する紛争（チャージバック）、又は法的義務がある場合には、事前の通知なくあなたのアカウントを停止し、又は永久に閉鎖する権利を留保します。</li>
+<li><strong>本権限の地理的適用範囲：</strong> アカウントの停止・解除に関する当社の権限は、本アプリ上で直接行使する技術的かつ契約上の措置であり、その行使に裁判所の判断を要しません。したがって、この権限は、あなたの国籍、居住国、又はあなたに別途保護を与える国の法律のいかんにかかわらず、本規約に違反したすべてのユーザーに対して等しく適用されます。第18条においてトルコ法及びトルコの裁判所が準拠法・管轄裁判所として定められていることは、本条に定めるアカウントレベルの措置を何ら制限し、又はこれに地理的な限界を課すものではありません。</li>
+<li><strong>重大な違反における通報：</strong> 詐欺、脅迫、嫌がらせ、又は虐待の試みなど、犯罪を構成しうる行為があった場合、アカウントを停止することに加え、事案の性質に応じて、トルコ国内の権限ある当局、ユーザーの所在国の権限ある当局、及び／又はApple App Store若しくはGoogle Play自身のトラスト・アンド・セーフティ部門に対し、状況を報告する権利を留保します。</li>
+<li><strong>削除後のデータ：</strong> アカウントが削除された場合、プロフィール情報、メッセージ及びブックマークは合理的な期間内にシステムから削除されます。ただし、法令上の保存義務が課される財務記録（サブスクリプション／決済履歴等）は、関連法令が定める期間、保存されることがあります（第II部第11条参照）。</li>
+</ol>
+</div><div class="legal-article" id="kk-13"><h3>第13条. 知的財産及び商標権</h3>
+<p>「Common Ground」及び「DuoFine」という名称、ロゴ、並びに本アプリのソースコード、デザイン、インターフェースを含むすべての構成要素は、運営者又はそのライセンサーに帰属し、知的財産法制により保護されます。本規約は、あなたに対し、本アプリを個人的かつ非商業的な目的で利用する権利を付与するものであり、本アプリに関するいかなる所有権の譲渡を意味するものでもありません。</p>
+</div><div class="legal-article" id="kk-14"><h3>第14条. 保証の否認</h3>
+<p>本アプリは「現状有姿」及び「提供可能な形」で提供されます。適用法令が許容する最大限度において、運営者は、本アプリが中断なく、誤りなく、安全に機能すること、Win-Win特典の対象となる第三者の提案の正確性、又は他のユーザーの行動について、明示又は黙示を問わずいかなる保証も行いません。</p>
+</div><div class="legal-article" id="kk-15"><h3>第15条. 責任の制限</h3>
+<p><strong>重要条項——責任の限度:</strong></p>
+
+<p>適用法令が許容する最大限度において、運営者は、（a）Win-Win特典に関連して第三者事業者との間で行った取引、（b）他のユーザーとの物理的又は仮想的な交流、（c）間接的、付随的又は結果的な損害について責任を負いません。運営者の総責任額は、いかなる場合であっても、損害が発生した事象の発生前12か月間にあなたが本アプリに対して支払ったサブスクリプション・購入代金の総額を上限とします。</p>
+
+<p>この制限は、第6502号消費者保護法（TKHK）及び関連法令に基づき、消費者としてあなたが有する強行法規上の権利を排除するものではなく、これらの権利は留保されます。</p>
+</div><div class="legal-article" id="kk-16"><h3>第16条. 補償</h3>
+<p>あなたは、本規約への違反、本アプリの違法な利用、又は第三者の権利の侵害から生じるあらゆる請求、損害及び費用（合理的な弁護士費用を含みます）について、運営者を補償することに同意するものとします。</p>
+</div><div class="legal-article" id="kk-17"><h3>第17条. 不可抗力</h3>
+<p>天災、戦争、感染症の流行、インフラ提供者（ホスティング、決済、ストア）によるサービスの中断など、運営者の合理的な支配を超えた事由に起因する遅延又は履行不能について、運営者は責任を負いません。</p>
+</div><div class="legal-article" id="kk-18"><h3>第18条. 準拠法及び紛争の解決</h3>
+<p>本規約はトルコ共和国の法律に準拠します。当事者間で生じうる紛争については、イスタンブール（アナトリア側／ヨーロッパ側）の裁判所及び執行局が管轄権を有します。消費者として行動するユーザーは、第6502号法に基づき、自らの住所地又は運営者の所在地における消費者仲裁委員会又は消費者裁判所に申し立てる権利を有します。</p>
+<p>トルコ国外に居住するユーザーである場合、上記の準拠法及び管轄の選択は、あなたが居住する国が契約上の紛争についてあなたに与え、契約によって排除することのできない（強行的な）消費者又はデータ保護上の権利を排除するものではなく、これらの権利は留保されます。</p>
+<p>本条に定める準拠法及び裁判管轄の選択は、司法手続を通じて主張される請求（例：損害賠償請求）についてのみ適用されます。第12条に定めるアカウントの停止・解除に関する当社の権限はこれとは独立したものであり、居住国のいかんにかかわらず、すべてのユーザーに適用されます。</p>
+</div><div class="legal-article" id="kk-19"><h3>第19条. 一般規定</h3>
+<p>本規約のいずれかの規定が無効又は執行不能と判断された場合であっても、残りの規定の有効性には影響しません。運営者がある権利を行使しなかったとしても、当該権利を放棄したものとはみなされません。運営者は、本サービスを他の事業者に譲渡する場合、ユーザーに対し合理的な期間をもって事前に通知した上で、本規約から生じる権利及び義務を譲渡することができます。</p>
+</div><div class="legal-article" id="kk-20"><h3>第20条. 変更</h3>
+<p>運営者は、本規約を随時更新することがあります。重要な変更は、アプリ内通知又はメールを通じてお知らせします。変更後も本アプリの利用を継続することは、更新後の本規約に同意したことを意味します。</p>
+</div><div class="legal-article" id="kk-21"><h3>第21条. 連絡先</h3>
+<p>本規約に関するお問い合わせは、次の宛先までお願いいたします：<a href="mailto:info@duofine.com">info@duofine.com</a></p>
+</div><h3 class="legal-part-title" id="bolum-2">プライバシーポリシー及びKVKKに基づく通知文</h3><div class="legal-article" id="gp-1"><h3>第1条. データ管理者の身元</h3>
+<p>KVKKに基づき、あなたの個人データは、データ管理者として、商号「<strong>DuoFine</strong>」である事業者（以下「DuoFine」又は「当社」といいます）により、以下に説明する範囲及び目的で処理されます。</p>
+<div class="legal-table-wrap"><table class="legal-table">
+<tr><th>商号</th><td>DuoFine</td></tr>
+<tr><th>メールアドレス</th><td>info@duofine.com</td></tr>
+</table></div>
+<p><em>注：この表では、KVKK第10条の下でデータ管理者の身元を示すために十分とされる最小限の情報（商号及び連絡手段）を基準としています。自然人に関するトルコ共和国国民番号や住所などの機微な個人データについては、本文書上で公開することを求める法令上の規定がないため、記載していません。現時点では別個の納税義務又は法人としての登記が存在しないため、納税者番号及びMERSIS番号の欄も表には含まれていません。これらのいずれかが将来設定された場合には表に追加し、商業登記簿に登録された、既に公開されている事業所の住所も同様に処理されます。必要に応じて、データ管理者登録システム（VERBİS）への登録についても別途検討します。</em></p>
+</div><div class="legal-article" id="gp-2"><h3>第2条. 本ポリシーの適用範囲</h3>
+<p>本ポリシーは、Common Groundモバイルアプリケーションの登録ユーザー、本アプリを訪れる見込みユーザー、及びWin-Win特典に関連して当社と連絡を取る提携事業者の担当者の個人データの処理に関するものです。DuoFineのコーポレートウェブサイトを通じて収集されるデータも、本ポリシーの対象に含まれます。</p>
+</div><div class="legal-article" id="gp-3"><h3>第3条. 処理される個人データの区分</h3>
+<div class="legal-table-wrap"><table class="legal-table">
+<caption>本アプリ内で実際に収集されるデータ区分及びその取得元</caption>
+<tr><th>区分</th><th>例</th><th>取得元</th></tr>
+<tr><td>識別情報</td><td>氏名、生年月日</td><td>あなたから直接（登録フォーム）</td></tr>
+<tr><td>連絡先情報</td><td>メールアドレス</td><td>あなたから直接</td></tr>
+<tr><td>画像データ</td><td>プロフィール写真</td><td>あなたから直接（アップロード時）</td></tr>
+<tr><td>位置情報データ</td><td>リアルタイムのGPS座標</td><td>お使いの端末の位置情報サービス（許可に基づく）</td></tr>
+<tr><td>端末及び技術データ</td><td>端末モデル、オペレーティングシステム、プッシュ通知トークン、アプリバージョン</td><td>自動（端末から）</td></tr>
+<tr><td>利用／処理データ</td><td>フレンド関係、メッセージングのメタデータ、ブックマーク記録、Win-Win特典の利用履歴</td><td>本アプリの利用から自動的に</td></tr>
+<tr><td>取引セキュリティデータ</td><td>アカウントが最初に紐付けられた端末の識別子（複数アカウントの検知目的）</td><td>自動（端末から）</td></tr>
+<tr><td>財務データ（限定的）</td><td>サブスクリプション／トークン購入の状況及び金額（決済カード情報は当社に届きません）</td><td>Apple／Googleを通じ、RevenueCat経由で</td></tr>
+<tr><td>マーケティング／分析データ</td><td>アプリ内での閲覧及び操作に関する統計</td><td>自動（分析SDK）</td></tr>
+</table></div>
+<p><strong>収集しないデータ：</strong> カード番号、CVVなどの決済カード情報は、いかなる段階においても当社には届きません。これらのデータはApple／Googleが直接処理します。本アプリは、あなたのメッセージ内容をサーバー側で恒久的に保存することはありません（第11条参照）。</p>
+</div><div class="legal-article" id="gp-4"><h3>第4条. 個人データの処理目的</h3>
+<ol>
+<li>アカウントの作成、本人確認、及び本サービスへのアクセスの提供。</li>
+<li>施設の検索、共通の待ち合わせ場所の算出、及びWin-Win特典の表示を含む、本アプリの中核機能の提供。</li>
+<li>フレンドとのメッセージング及びソーシャル交流機能の運用。</li>
+<li>サブスクリプション及びトークン購入の処理並びにアカウントへの反映。</li>
+<li>虚偽アカウント、重複登録、Win-Win特典の悪用等、不正利用の検知及び防止。</li>
+<li>プッシュ通知の送信（あなたの許可の範囲内で）。</li>
+<li>サービス品質の測定、エラー・クラッシュの検知、及び製品開発。</li>
+<li>法令上の義務（税務、会計、公的機関からの要請への対応）の履行。</li>
+<li>法的紛争の対応及び当社の権利の保護。</li>
+</ol>
+</div><div class="legal-article" id="gp-5"><h3>第5条. 個人データ処理の法的根拠</h3>
+<p>あなたの個人データは、KVKK第5条に列挙される以下の法的根拠に基づいて処理されます。</p>
+<ul>
+<li><strong>契約の締結・履行（KVKK第5条第2項(c)号）：</strong> アカウントの作成、本サービスの提供、サブスクリプション管理のための識別情報及び連絡先情報について。</li>
+<li><strong>明示的な同意（KVKK第5条第1項）：</strong> KVKKにおける特別な種類の個人データの定義（第6条）には該当しないものの、個人及び所在に密接に関わる位置情報データの収集、並びにフレンドとの位置情報の共有等の処理について——位置情報の利用許可を求める際に別途取得します。</li>
+<li><strong>法令上の義務の履行（KVKK第5条第2項(ç)号）：</strong> 税務及び会計に関する法令に基づく財務記録の保存について。</li>
+<li><strong>正当な利益（KVKK第5条第2項(f)号）：</strong> 詐欺、重複アカウント及び不正利用の防止、サービスの安全性の確保、基礎的な製品分析について——この処理は、あなたの基本的な権利及び自由との均衡を保ちながら、必要な範囲に限定して行われます。</li>
+<li><strong>権利の設定、行使又は保護のために不可欠であること（KVKK第5条第2項(e)号）：</strong> 法的紛争及び請求への対応に必要なデータの処理について。</li>
+</ul>
+</div><div class="legal-article" id="gp-6"><h3>第6条. 位置情報データに関する特則</h3>
+<p><strong>重要条項——位置情報データ:</strong></p>
+
+<p>位置情報の利用許可は、お使いのオペレーティングシステムを通じて別途、明示的に求められます。許可を与えない場合であっても、位置情報に依拠する機能（検索、共通地点の算出、近隣の特典）のみが動作せず、アカウント自体には影響しません。位置情報データは、地図・検索画面の動作のためセッション中のみ（インメモリで）処理されます。Google マップ プラットフォームの利用条件に従い、あなたの座標は恒久的にディスク／データベースへ書き込まれることはなく、最長で暦日30日間、一時的にキャッシュされることがあります。</p>
+
+<p><strong>フレンドとの位置情報の共有：</strong> 特定の機能（例：「位置情報カード」の共有）は、相互にフレンド関係を成立させたユーザーとの間で、かつあなたが共有を選択した場合にのみ有効となります。あなたの位置情報は、既定の状態では他のユーザーに公開されていません。</p>
+</div><div class="legal-article" id="gp-7"><h3>第7条. Google マップ／Placesコンテンツに関する特則</h3>
+<p>Google マップ プラットフォームのサービス規約に従い、事業者名、写真、電話番号、評価などGoogle由来のコンテンツは恒久的に保存することができません。このため、以下のとおり取り扱います。</p>
+<ul>
+<li>ブックマーク機能に表示される事業者名は、Googleから取得されるものではなく、記録を作成する際に<strong>あなた自身が入力する</strong>ラベルであり、その形で保存されます。</li>
+<li>位置識別子（place_id）は無期限に保存することができますが、緯度・経度の情報は最長30日間のみ一時的にキャッシュされます。</li>
+<li>ブックマークタブは、Googleに対していかなる場所・写真・名称の照会も送信しません。あなた自身の記録に対してのみ、ローカルで検索が行われます。</li>
+</ul>
+</div><div class="legal-article" id="gp-8"><h3>第8条. Win-Win特典に関して処理されるデータ</h3>
+<p>Win-Win特典を利用した際には、どの特典を、どの事業者において、いつ利用したかについての記録（利用履歴）が当社によって保持されます。このデータは、週次利用上限の適用、不正利用の検知、及び提携事業者に対する匿名化・集計された実績情報の提供の目的で処理されます。これらのデータは、コードの有効性を事業者のスタッフが確認するというキャンペーンの検証目的に限り、当該提携事業者と限定的に共有されます。事業者に対し、あなたの身元情報（メールアドレス、氏名全体）が提供されることはありません。</p>
+</div><div class="legal-article" id="gp-9"><h3>第9条. サブスクリプション及び決済データ</h3>
+<p>決済処理は、Apple App Store又はGoogle Playによって直接行われます。カード情報が当社に届くことはありません。あなたのサブスクリプション／トークンの状況（有効なプラン、購入日、金額）は、当社の決済連携先である<strong>RevenueCat</strong>を通じて当社に伝達され、あなたのアカウントに正しい権限（プレミアム階層）を付与する目的で処理されます。</p>
+</div><div class="legal-article" id="gp-10"><h3>第10条. 個人データの移転（国内／国外）</h3>
+<p>あなたの個人データは、本サービスの提供に必要な技術インフラの提供者との間で、サービスに必要な範囲に限り共有されます。これらの提供者の一部は、主として米国及びEUを中心とする国外に所在しています。これらの移転は、KVKK第9条及び個人データ保護委員会が定める移転の仕組み（明示的な同意、委員会が承認する標準契約等）に従って行われます。</p>
+<div class="legal-table-wrap"><table class="legal-table">
+<caption>主要な委託先／サービス提供者</caption>
+<tr><th>提供者</th><th>目的</th><th>所在地</th></tr>
+<tr><td>Railway</td><td>サーバーホスティング（バックエンド）</td><td>国外</td></tr>
+<tr><td>Backblaze B2</td><td>プロフィール写真及び画像の保存</td><td>国外</td></tr>
+<tr><td>RevenueCat</td><td>サブスクリプション／購入管理</td><td>国外</td></tr>
+<tr><td>Google（Maps Platform、Sign-In）</td><td>地図、施設データ、Googleログイン</td><td>国外</td></tr>
+<tr><td>Apple（Sign in with Apple、App Store）</td><td>本人認証、決済</td><td>国外</td></tr>
+<tr><td>Sentry</td><td>エラー／クラッシュのモニタリング</td><td>国外</td></tr>
+<tr><td>PostHog</td><td>プロダクト分析</td><td>国外</td></tr>
+</table></div>
+<p>国内においては、当社の法令上の義務の範囲内でのみ、権限ある公的機関・団体との間でデータ共有が行われることがあります（要請があった場合）。</p>
+</div><div class="legal-article" id="gp-11"><h3>第11条. 保存期間</h3>
+<ul>
+<li><strong>プロフィールデータ：</strong> アカウントが有効である限り保存され、アカウント削除のご請求後、合理的な期間内に削除されます。</li>
+<li><strong>位置情報データ：</strong> 恒久的には保存されません。地図・検索機能のためにセッション中のメモリ上に保持されるのみです（第6条）。</li>
+<li><strong>メッセージ：</strong> サーバー側で恒久的なメッセージアーカイブは保持されません。お使いの端末上のローカルキャッシュは、端末自体のバックアップ・セキュリティ設定に従います。</li>
+<li><strong>Win-Win特典の利用履歴：</strong> 週次上限の計算及び不正利用の検知の目的で、合理的な期間保存されます。</li>
+<li><strong>財務／サブスクリプション記録：</strong> トルコ商法及び税務手続法が定める法定保存期間（一般に最長10年間）にわたり保存されることがあります。</li>
+<li><strong>端末ロック記録：</strong> 複数アカウントの不正利用を防止するため、アカウントと最初に紐付けられた端末との対応関係は、セキュリティ目的で保存されます。</li>
+</ul>
+</div><div class="legal-article" id="gp-12"><h3>第12条. データセキュリティ対策</h3>
+<p>あなたの個人データの安全を確保するため、暗号化（伝送時のTLS）、アクセス制御、ログの記録、及び定期的なセキュリティ評価などの技術的及び組織的な対策が講じられています。もっとも、インターネットを介したいかなる伝送方法も100パーセント安全ではないことを、あなたは了承するものとします。</p>
+</div><div class="legal-article" id="gp-13"><h3>第13条. 児童のプライバシー</h3>
+<p>本サービスは13歳未満の者を対象としておらず、当該年齢層から意図的に個人データを収集することはありません。13歳未満であると判明したユーザーのアカウントは、判明次第直ちに閉鎖され、関連データは削除されます。お子様が当社に個人データを提供したと思われる場合は、<a href="mailto:info@duofine.com">info@duofine.com</a>までご連絡ください。</p>
+</div><div class="legal-article" id="gp-14"><h3>第14条. SDK及び分析ツール</h3>
+<p>本アプリはクッキーを使用するウェブサイトではなく、代わりにモバイルSDKを通じて限定的な技術・分析データを収集します。</p>
+<ul>
+<li><strong>PostHog：</strong> アプリ内利用統計（どの画面が閲覧され、どの機能が利用されたか）のため。</li>
+<li><strong>Sentry：</strong> アプリのクラッシュ及びエラーの診断のため（本番環境と開発環境を区別した、技術的なエラーデータに限ります）。</li>
+<li><strong>RevenueCat：</strong> あなたのサブスクリプション状況の確認のため。</li>
+</ul>
+<p>これらのツールは、パーソナライズされた広告の目的で使用されることはなく、あなたのデータがマーケティング目的で第三者に販売又は貸与されることもありません。</p>
+</div><div class="legal-article" id="gp-15"><h3>第15条. データ主体の権利（KVKK第11条）</h3>
+<p>KVKK第11条に基づき、あなたは以下の権利を有します。</p>
+<ol>
+<li>自己の個人データが処理されているか否かを知る権利。</li>
+<li>処理されている場合、これに関する情報の開示を求める権利。</li>
+<li>処理の目的及びその目的に沿って利用されているかどうかを知る権利。</li>
+<li>国内又は国外において移転された第三者を知る権利。</li>
+<li>不完全又は不正確に処理されている場合、その訂正を求める権利。</li>
+<li>KVKK第7条に定める要件に従い、データの削除又は消去を求める権利。</li>
+<li>訂正・削除の措置が、データが移転された第三者に通知されることを求める権利。</li>
+<li>専ら自動化されたシステムによる分析のみによって、自己に不利益な結果が生じることに異議を述べる権利。</li>
+<li>法令に反する処理によって損害を被った場合、その損害の賠償を求める権利。</li>
+</ol>
+<p>これらの権利を行使するには、第18条に定める連絡先を通じて、書面により当社にお申し出ください。ご請求は、KVKKが定める期間内（請求の性質に応じ、最長30日以内）に、無償で対応されます。当該対応に別途費用を要する場合には、個人データ保護委員会が定める料金表に基づく手数料が請求されることがあります。</p>
+<p><strong>欧州経済領域、英国又はスイスに居住するユーザーのための追加情報:</strong></p>
+
+<p>上記の権利はKVKKを基準として記載されたものです。あなたが欧州経済領域（EEA）、英国又はスイスに居住している場合、あなたのデータは、これに加えて一般データ保護規則（GDPR）又は関連する現地法令の下でも保護され、この保護は第I部第18条に定める準拠法・裁判管轄の選択によって影響を受けません。具体的には、上記の権利に加えて、あなたのデータを構造化された、汎用的に利用される形式で自らに移転すること（データポータビリティ）を求めることができ、また、ご請求の結果に満足されない場合には、当社に直接申し立てる代わりに、又はこれに加えて、ご自身の国の権限ある監督機関に対し苦情を申し立てることができます。</p>
+<p>透明性の観点から申し添えます。DuoFineは現在の事業規模において、EEA域内に居住するGDPR代理人を選任していません。これは、当社がEEA市場を直接の対象とする事業を行っておらず、処理の規模が小さいという評価に基づくものです。EEA域内のユーザー数が増加した場合には、この評価は改めて行われ、必要に応じて正式な代理人が選任されます。</p>
+
+</div><div class="legal-article" id="gp-16"><h3>第16条. データ侵害の通知</h3>
+<p>あなたの個人データが不法な方法により取得された場合、KVKK第12条に基づき、状況は速やかに関係者及び個人データ保護委員会に通知されます。</p>
+</div><div class="legal-article" id="gp-17"><h3>第17条. ポリシーの変更</h3>
+<p>本ポリシーは、法令の改正又は本サービスの更新に応じて、随時改訂されることがあります。最新版は常に本ページ及びアプリ内で公開され、重要な変更については別途通知されます。</p>
+</div><div class="legal-article" id="gp-18"><h3>第18条. 連絡先及び申立て</h3>
+<p>プライバシー及びKVKKに関するお申し出は、次の宛先までお願いいたします：<a href="mailto:info@duofine.com">info@duofine.com</a></p>
+<p class="divider-quote">書面によるお申し出の際は、ご本人であることを証する情報・書類とともに、ご請求内容を明確にお示しいただくと、迅速な対応の一助となります。</p>
 </div>
+        </section>
+    </main>
 
-<div class="notice">
-  <div class="notice-box">
-    <strong>本文書の状態：</strong> 本文書は、Common Groundアプリケーションの現行のコードベース及び業務フローを基に作成された包括的な<strong>草案</strong>です。人工知能（AI）により作成されたものであり、資格を有するトルコ人弁護士によるレビューに代わるものではなく、最終的な承認は当該弁護士から得る必要があります。本文書には未記入のまま残された項目はありません。トルコ語原文が完全に承認されるまでは、16言語への翻訳は行われません。
-    <br><br>
-    <strong>TR-1.2改訂メモ（2026年8月15日）：</strong> 商号として「DuoFine」を明確化した。利用規約第12条及び第18条に、アカウントの停止・解除権限がユーザーの国籍・所在地にかかわらず適用される旨の説明、及び国外の強行法規に関する留保を追加した。第18条における管轄地をイスタンブールと定めた。プライバシーポリシー第1条の識別情報表から、トルコ共和国国民番号、住所、及び現時点で存在しない納税者番号／MERSIS番号の行を削除した。第15条にEEA／英国ユーザー向けのGDPRに関する注意事項を追加した。
-    <br><br>
-    <strong>TR-1.3改訂メモ（2026年8月15日——整合性確認）：</strong> KVKK第5条・第6条・第7条・第9条・第10条・第11条・第12条・第13条への言及を、公式出典と一つずつ照合した。番号付け・参照に関する誤りを2件修正した：（1）第12条に新たな号が追加されたことにより「削除後のデータ」が第3項から第5項に移動していたため、第5条内の相互参照を「第12.3条」から「第12.5条」に修正した。（2）プライバシーポリシー第15条のGDPRに関する枠内で、第I部の準拠法選択条項への参照に「第I部」という接頭表記が欠落しており（結果として自らの第II部第18条、すなわち「連絡先」を指す形になっていた）、これを修正した。さらに、プライバシーポリシー第5条において使用されていない、宙に浮いた「KVKK第6条」への言及を削除し、位置情報データが特別な種類の個人データに該当しない旨を明確化する、矛盾を含む一文を簡潔化した。
-  </div>
-</div>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <a href="/" class="nav-logo">
+                    <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/><path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/></svg>
+                    <span>DuoFine</span>
+                </a>
+                <p>Crafting meaningful connections and experiences through technology.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigate</h3>
+                <ul class="footer-links">
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#projects">Projects</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"></path></svg></a>
+                    <a href="https://x.com/duofine" target="_blank" rel="noopener noreferrer" aria-label="X" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © <span id="y">2026</span> DuoFine. All Rights Reserved. | <a href="mailto:info@duofine.com">info@duofine.com</a>
+        </div>
+    </footer>
 
-<div class="toc-wrap">
-  <details class="toc" open>
-    <summary>目次</summary>
-    <div class="toc-grid">
-      <div class="toc-part">第I部 — 利用規約</div>
-      <a href="#kk-0">0. 序文及び同意</a>
-      <a href="#kk-1">1. 定義</a>
-      <a href="#kk-2">2. サービスの範囲</a>
-      <a href="#kk-3">3. アカウントの作成、年齢及びセキュリティ</a>
-      <a href="#kk-4">4. 禁止事項</a>
-      <a href="#kk-5">5. ユーザーコンテンツ</a>
-      <a href="#kk-6">6. 位置情報及び地図コンテンツ</a>
-      <a href="#kk-7">7. Win-Win特典（Deals）</a>
-      <a href="#kk-8">8. サブスクリプション、トークン及び購入</a>
-      <a href="#kk-9">9. フレンド機能及びメッセージング</a>
-      <a href="#kk-10">10. ブックマーク</a>
-      <a href="#kk-11">11. 通知</a>
-      <a href="#kk-12">12. 停止、解除及び削除</a>
-      <a href="#kk-13">13. 知的財産</a>
-      <a href="#kk-14">14. 保証の否認</a>
-      <a href="#kk-15">15. 責任の制限</a>
-      <a href="#kk-16">16. 補償</a>
-      <a href="#kk-17">17. 不可抗力</a>
-      <a href="#kk-18">18. 準拠法及び紛争解決</a>
-      <a href="#kk-19">19. 一般規定</a>
-      <a href="#kk-20">20. 変更</a>
-      <a href="#kk-21">21. 連絡先</a>
-      <div class="toc-part">第II部 — プライバシーポリシー（KVKKに基づく通知文）</div>
-      <a href="#gp-1">1. データ管理者の身元</a>
-      <a href="#gp-2">2. 適用範囲</a>
-      <a href="#gp-3">3. 処理される個人データ</a>
-      <a href="#gp-4">4. 処理目的</a>
-      <a href="#gp-5">5. 法的根拠</a>
-      <a href="#gp-6">6. 位置情報データ——特則</a>
-      <a href="#gp-7">7. Google マップ／Placesコンテンツ</a>
-      <a href="#gp-8">8. Win-Win特典に関するデータ処理</a>
-      <a href="#gp-9">9. サブスクリプション及び決済データ</a>
-      <a href="#gp-10">10. データの移転（国内／国外）</a>
-      <a href="#gp-11">11. 保存期間</a>
-      <a href="#gp-12">12. データセキュリティ</a>
-      <a href="#gp-13">13. 児童のプライバシー</a>
-      <a href="#gp-14">14. SDK及び分析ツール</a>
-      <a href="#gp-15">15. データ主体の権利</a>
-      <a href="#gp-16">16. データ侵害の通知</a>
-      <a href="#gp-17">17. ポリシーの変更</a>
-      <a href="#gp-18">18. 連絡先及び申立て</a>
-    </div>
-  </details>
-</div>
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector('.main-header');
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if (header) header.classList.toggle('sticky', scrollY > 50);
+            });
+            if (hamburger && navMenu) {
+                hamburger.addEventListener("click", () => navMenu.classList.toggle("active"));
+            }
+        });
+    </script>
 
-<main>
-
-  <!-- ======================= 第I部 — 利用規約 ======================= -->
-  <div class="part-header" id="bolum-1">
-    <div class="part-eyebrow">第I部</div>
-    <h2 class="part-title">利用規約</h2>
-    <p class="part-sub">Common Groundモバイルアプリケーション（以下「本アプリ」又は「本サービス」といいます）を利用するすべてのユーザーに適用される契約条項です。</p>
-  </div>
-
-  <article class="madde" id="kk-0">
-    <div class="madde-head"><span class="madde-num">第0条</span><h3 class="madde-title">序文及び同意</h3></div>
-    <div class="madde-body">
-      <p>本利用規約（以下「本規約」といいます）は、商号「<strong>DuoFine</strong>」（以下「運営者」又は「当社」といいます）が運営するCommon Groundモバイルアプリケーション、及び同アプリが提供するすべての機能（周辺スポットの検索、Win-Win特典、メッセージング、フレンド機能及びブックマークを含みます）を対象として、ユーザー（以下「あなた」又は「ユーザー」といいます）と運営者との間の法的関係を規律するものです。</p>
-      <p>本アプリをダウンロードし、アカウントを作成し、又は利用を継続することにより、あなたは本規約及び以下の第II部に定めるプライバシーポリシーを読み、理解し、これに同意したものとみなされます。これらの文書に同意しない場合、本アプリを利用せず、アカウントを作成しないでください。</p>
-      <p>本アプリ内でアプリストア（Apple App Store／Google Play）を通じて行われる購入については、本規約に加えて、当該ストア自体の利用条件も適用されます。両者に矛盾が生じた場合、決済及び請求に関する事項については当該ストアの条件が、その他のすべての事項については本規約が優先します。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-1">
-    <div class="madde-head"><span class="madde-num">第1条</span><h3 class="madde-title">定義</h3></div>
-    <div class="madde-body">
-      <ul>
-        <li><strong>本アプリ／本サービス：</strong> iOS及びAndroid向けに配信される「Common Ground」という名称のモバイルアプリケーション、及びこれと一体となったサーバーインフラストラクチャをいいます。</li>
-        <li><strong>ユーザー：</strong> 本アプリ上でアカウントを作成し、本規約に同意した自然人をいいます。</li>
-        <li><strong>コンテンツ：</strong> ユーザーがプロフィール、メッセージ、ブックマーク又は本アプリ内で共有するあらゆるテキスト、画像、位置情報その他これらに類するデータをいいます。</li>
-        <li><strong>Win-Win特典／Deals：</strong> 本アプリに掲載される、第三者事業者が提供する割引・キャンペーンの提案、及びこれらを本アプリ上でコード／QRコードを通じて利用可能とする仕組みをいいます。</li>
-        <li><strong>サブスクリプション：</strong> Apple App Store又はGoogle Playを通じて購入される、アプリ内の追加機能及びトークン利用権を付与する、定期的に（自動更新される）課金制のプラン（例：Plus、Pro）をいいます。</li>
-        <li><strong>トークン：</strong> 本アプリ内の特定の機能（例：検索・探索）の利用量を測定する、金銭と交換できない仮想的な利用権単位をいいます。</li>
-        <li><strong>ストア：</strong> Apple Inc.が運営するApp Store、又はGoogle LLCが運営するGoogle Playストアをいいます。</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-2">
-    <div class="madde-head"><span class="madde-num">第2条</span><h3 class="madde-title">サービスの範囲</h3></div>
-    <div class="madde-body">
-      <p>Common Groundは、ユーザーが位置情報、距離、移動手段、カテゴリー及び人気度などの条件で周辺の事業者を検索し、複数人の間で共通の待ち合わせ場所を算出し、フレンドとリアルタイムでメッセージのやり取りを行い、気に入った場所を保存し、提携事業者が提供する特別キャンペーン（「Win-Win特典」）を利用できるようにする、検索及びソーシャル交流のためのアプリケーションです。</p>
-      <p>運営者は、本アプリの全部又は一部、あるいはいずれかの機能を、事前の通知なく変更、停止又は廃止する権利を留保します。本アプリは「現状有姿」及び「提供可能な範囲」で提供されるものであり、中断がなく又は誤りがないことを保証するものではありません。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-3">
-    <div class="madde-head"><span class="madde-num">第3条</span><h3 class="madde-title">アカウントの作成、年齢制限及びアカウントセキュリティ</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li><strong>年齢制限：</strong> 本アプリは満13歳以上の者のみが利用できます。13歳から18歳までのユーザーは、トルコ民法上、制限行為能力者とされる場合があるため、本アプリを保護者又は後見人の把握及び監督の下でのみ利用しなければなりません。特に有料サブスクリプション及び購入取引については、法定代理人の同意が必要です。運営者は、年齢について虚偽の申告をしたと判明したアカウントを停止する権利を留保します。</li>
-        <li><strong>正確な情報の提供：</strong> 登録時に提供する氏名、メールアドレス、生年月日等の情報が正確かつ最新であることを保証するものとします。虚偽の身元、又は他人の身元を用いてアカウントを作成することは禁止されます。</li>
-        <li><strong>アカウント／端末の単一利用制限：</strong> 不正利用及び重複登録を防止するため、本アプリは新規登録時に端末レベルの確認を行います。1台の端末は、一定期間内において1つのアカウントとのみ紐付けることができます。この制限を回避しようとする試み（例：端末の初期化、虚偽の身元による再登録）は、第4条に定める禁止事項に該当します。</li>
-        <li><strong>アカウントセキュリティ：</strong> パスワード及びアカウントへのアクセスの機密性を保持する責任はあなたにあります。反証のない限り、あなたのアカウントを通じて行われたすべての行為についてあなたが責任を負うものとします。アカウントへの不正アクセスが疑われる場合は、直ちに<a href="mailto:info@duofine.com">info@duofine.com</a>までご連絡ください。</li>
-        <li><strong>メール、Google及びAppleによるログイン：</strong> 本アプリは、メールアドレス／パスワードによる登録に加え、Googleアカウント及びAppleアカウントによるログイン手段を提供します。これらの手段を利用する場合、当該提供元自身の利用条件及びプライバシーポリシーも適用されます。</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-4">
-    <div class="madde-head"><span class="madde-num">第4条</span><h3 class="madde-title">禁止事項</h3></div>
-    <div class="madde-body">
-      <p>本アプリの利用にあたり、以下の行為を行わないことに同意するものとします。</p>
-      <ol>
-        <li>適用ある法令若しくは規則、又は第三者の権利に違反するコンテンツを共有し、又は行為を行うこと。</li>
-        <li>他のユーザーに対する嫌がらせ、脅迫、執拗な迷惑行為、及びヘイトスピーチ、差別的又はわいせつなコンテンツを共有すること。</li>
-        <li>虚偽のプロフィールを作成すること、他の自然人若しくは法人になりすますこと、又は虚偽の年齢・身元情報を提供すること。</li>
-        <li>本アプリをスパム、迷惑な商業メッセージ、詐欺、フィッシング又はマルウェアの配布のために利用すること。</li>
-        <li>本アプリのソースコードをリバースエンジニアリングしようと試みること、自動化されたツール（ボット、スクレイパー）でデータを収集すること、又はサーバーインフラストラクチャに不相応な負荷をかけること。</li>
-        <li>端末制限（第3条3項）又はトークン／サブスクリプションの上限（第8条）を回避する目的で技術的措置を迂回しようとすること。</li>
-        <li><strong>Win-Win特典の仕組みを悪用すること：</strong> キャンペーンコードを販売若しくは譲渡すること、スクリーンショットを複製して複数回利用しようと試みること、又は提携事業者との間でコード／QRコード以外の不正な方法で合意し、仕組みを操作すること（第7条参照）。</li>
-        <li>位置情報を、他のユーザーを追跡、監視又は物理的に嫌がらせする目的で利用すること。</li>
-        <li>18歳未満のユーザーと不適切な連絡を取ること、又はこれらのユーザーを搾取の危険にさらす行為を行うこと。</li>
-      </ol>
-      <p>本条の違反は、事前の通知なくアカウントの停止又は永久削除につながる場合があります（第12条）。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-5">
-    <div class="madde-head"><span class="madde-num">第5条</span><h3 class="madde-title">ユーザーコンテンツ及びライセンス</h3></div>
-    <div class="madde-body">
-      <p>本アプリ上で共有するコンテンツ（プロフィール情報、写真、メッセージ、ブックマークのラベル等）の所有権はあなたに帰属します。もっとも、これらのコンテンツを本アプリを通じて他のユーザーに表示し、保存し、及び本サービスを運営できるようにするため、あなたは当社に対し、世界的、非独占的、かつサブライセンス可能な利用ライセンスを付与するものとします。このライセンスは本サービスの運営目的にのみ限定され、あなたがアカウントを削除した場合、当該コンテンツも削除されます（第12.5条及び第II部第11条の規定を妨げません）。</p>
-      <p>あなたは、共有するコンテンツが、自らが法的に共有する権利を有するコンテンツであり、第三者の知的財産権、人格権又はプライバシー権を侵害しないことを表明し、保証するものとします。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-6">
-    <div class="madde-head"><span class="madde-num">第6条</span><h3 class="madde-title">位置情報サービス及び地図コンテンツ</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">重要条項——位置情報データ</div>
-        <p>本アプリの中核機能（施設の検索、共通の待ち合わせ場所の算出、近隣の特典の表示）は、機微かつリアルタイムの位置情報データに依拠しています。位置情報の利用許可を与えない場合、本アプリのこれらの機能は動作しません。位置情報データの処理の詳細は、第II部第6条に定めるとおりです。</p>
-      </div>
-      <p>地図及び施設のデータ（地図画像、事業者名、住所、写真、種類、評価）は、Google マップ プラットフォーム（Google Maps Platform）を通じて提供され、Googleの利用条件が適用されます。あなたは、これらのコンテンツを本アプリの外部で複製し、恒久的に保存し、又は商業目的で再利用することはできません。この制限は運営者にも適用され、本アプリの技術的な設計はこれに従って構築されています。</p>
-      <p>ブックマークに表示される事業者名は、Googleから自動的に取得されるデータではなく、あなた自身が入力するラベルです（第10条及び第II部第7条参照）。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-7">
-    <div class="madde-head"><span class="madde-num">第7条</span><h3 class="madde-title">Win-Win特典（Deals）——第三者事業者キャンペーン</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">重要条項——運営者は仲介者にすぎません</div>
-        <p>Win-Win特典として掲載されるすべてのキャンペーン、割引及び提案は、<strong>提携する第三者事業者</strong>によって提供されます。運営者は、販売される商品又はサービスの当事者、販売者又は提供者ではなく、当該キャンペーンを本アプリ上で表示し、コード／QRコードを通じて利用可能とする技術的な仲介者にすぎません。</p>
-      </div>
-      <ol>
-        <li><strong>提案の性質：</strong> 各Win-Win特典は、当該事業者が定める独自の条件（有効期間、在庫／利用可能数、最低利用金額等）に従います。運営者は、キャンペーンの正確性、最新性、又は当該事業者が実際にこれを実施することを保証するものではありません。事業者は、事前の通知なくキャンペーンを変更、停止又は終了することができます。</li>
-        <li><strong>利用（redemption）手続：</strong> 特典を利用しようとする場合、本アプリはあなたに対し固有のコード／QRコードを発行します。このコードは発行された時点から一定の限られた時間（本アプリ内に表示される分数）のみ有効であり、期限が経過すると自動的に無効となります。コードは、当該事業者において、事業者のスタッフに提示することにより、一度限り利用することができます。</li>
-        <li><strong>週次利用上限：</strong> 不正利用を防止するため、同一の特典について、移動する7日間の期間内に適用される利用上限が設けられています。この上限は、キャンペーンが多数のユーザーに公平に行き渡るようにするために設けられており、事前の通知なく変更されることがあります。</li>
-        <li><strong>金銭的価値を有しないこと：</strong> 特典コードは、現金化、他のユーザーへの譲渡、販売、又は大量利用（バルク利用）をすることができません。この規定に違反する行為が確認された場合、当該アカウントは第4条7項及び第12条に基づき停止されることがあります。</li>
-        <li><strong>取引の当事者及び責任：</strong> Win-Win特典の利用の結果として事業者との間に成立する販売・サービス提供関係は、あなたと当該事業者との間に直接成立するものです。販売された商品・サービスの瑕疵、品質、引渡し、返品、及び当該事業者自身の通信販売・消費者関連法令への準拠等に関する事項については、当該事業者があなたの相手方となります。運営者はこの取引の当事者ではないため、第6502号消費者保護法（TKHK）に基づく販売者・提供者としての責任を負いません。</li>
-        <li><strong>掲載地域及び表示：</strong> 各特典が本アプリ内のどの都道府県／区市町村フィルターに、又は「すべて」の一覧に表示されるかは運営者の編集上の裁量に委ねられており、同一事業者の異なる支店が別個のカードとして掲載されることがあります。</li>
-        <li><strong>取消し及び変更の権利：</strong> 運営者は、事業提携の終了、事業者からの要請、又は不正利用の疑いなどの理由により、事前の通知なくいずれのWin-Win特典も本アプリから削除する権利を留保します。</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-8">
-    <div class="madde-head"><span class="madde-num">第8条</span><h3 class="madde-title">サブスクリプション、トークン及びアプリ内購入</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li><strong>請求はストアを通じて行われます：</strong> すべての有料サブスクリプション（Plus、Pro）及び単発のトークンパッケージは、Apple App Store又はGoogle Playを通じて購入及び請求されます。価格は、当該ストアの為替レート及び税制の取扱いに応じて本アプリ内に表示され、事前の通知なく変更されることがあります。常に有効な価格は購入画面に表示された価格です。</li>
-        <li><strong>自動更新：</strong> サブスクリプションは、解約されない限り、期間終了時に自動的に更新及び課金されます。サブスクリプションの解約、管理及び返金の請求に用いるべき窓口は、直接あなたのApple／Googleのアカウント設定です。運営者は、決済を直接返金する権限又はアクセス手段を有しません。</li>
-        <li><strong>返金ポリシー：</strong> 購入後の返金は、当該ストア（Apple又はGoogle）自身の返金ポリシーに従います。運営者は、ストアが承認した返金を遡ってシステムに反映させますが、返金の決定自体はストアに帰属します。</li>
-        <li><strong>トークン：</strong> トークンは、特定のアプリ内機能（例：検索・探索クエリ）の利用権を表す、現金化できない、有効期限のある仮想的な単位です。トークンは他のユーザーに譲渡することができず、金銭と引き換えに買い戻すこともできません。</li>
-        <li><strong>公正利用ポリシー：</strong> サブスクリプションプランには、毎月一定量のトークンが含まれます（最新の数量は、アプリ内のストア画面に掲載されます）。サービスに支障をきたす程度の過度な、自動化された、又は悪用的な利用が確認された場合、運営者は追加の制限を課す権利を留保します。この制限は、通常の個人利用の範囲内にあるユーザーには影響を及ぼしません。</li>
-        <li><strong>ファミリー共有及びアカウントの変更：</strong> サブスクリプションは、購入に用いたApple／Googleアカウント、及び当該アカウントに紐付けられたCommon Groundユーザーアカウントに固有のものです。アカウントを変更した場合にサブスクリプション状況が正しく反映されるかどうかは、本アプリ内のログイン情報の正確性に依存します。</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-9">
-    <div class="madde-head"><span class="madde-num">第9条</span><h3 class="madde-title">フレンド機能、メッセージング及びユーザー間の交流</h3></div>
-    <div class="madde-body">
-      <p>本アプリは、ユーザーが互いをフレンドとして追加し、リアルタイムでメッセージのやり取りを行い、位置情報に基づく共通の待ち合わせ場所の提案を共有できるようにします。これらの機能は、相互のフレンド関係が成立しているユーザー間でのみ有効です。</p>
-      <p><strong>個人の安全に関する注意事項：</strong> 本アプリを通じて知り合った相手と実際に会うかどうかは、完全にあなた自身の判断及び責任に委ねられます。運営者はユーザーの身元確認を行わず、実際の対面によって生じうるいかなる損害についても責任を負いません。人前の公共の場所で会うこと、及び個人情報（自宅の住所、金融情報等）を共有する際には慎重を期すことをお勧めします。</p>
-      <p>他のユーザーに迷惑をかけ、脅迫し、又は本規約に違反する人物については、本アプリ内のブロック機能及び通報機能を通じて申告することができます。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-10">
-    <div class="madde-head"><span class="madde-num">第10条</span><h3 class="madde-title">ブックマーク（Bookmarks）</h3></div>
-    <div class="madde-body">
-      <p>ブックマーク機能は、Googleの個人データに相当するコンテンツ（事業者名、写真等）を恒久的に保存することを認めないGoogleの利用条件に適合するよう設計されています。ある場所を保存する際、その名称は<strong>あなた自身が入力</strong>します。運営者は、この名称をGoogleから自動的に取得したり、あらかじめ入力したりすることはありません。保存の際のキーとしては、位置の一般的な識別子（place_id）、又は手入力による記録のみが使用されます（第II部第7条参照）。</p>
-      <p>ブックマークの登録数は、ご利用のサブスクリプションプランに応じた上限が設けられる場合があり、この上限はGoogleに基づく記録及び手入力による記録の両方に共通して適用されます。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-11">
-    <div class="madde-head"><span class="madde-num">第11条</span><h3 class="madde-title">通知及び連絡</h3></div>
-    <div class="madde-body">
-      <p>許可をいただいた場合、新着メッセージ、フレンド申請及びアプリ内の重要なお知らせについてプッシュ通知をお送りすることがあります。この許可は、端末のシステム設定からいつでも取り消すことができます。アカウントのセキュリティ、法的な通知、又は本規約の変更等の重要な事項については、プッシュ通知の許可の有無にかかわらず、登録されたメールアドレス宛てにご連絡する権利を留保します。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-12">
-    <div class="madde-head"><span class="madde-num">第12条</span><h3 class="madde-title">アカウントの停止、解除及び削除</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li><strong>ユーザーによる解除：</strong> アカウントは、いつでも本アプリ内の設定メニューから削除することができます。有効なサブスクリプションがある場合、アカウントの削除によってサブスクリプションが自動的に解約されるものではありません。サブスクリプションは別途、Apple／Googleのアカウント設定から解約する必要があります。</li>
-        <li><strong>運営者による停止／解除：</strong> 本規約、特に第4条に列挙する禁止事項への違反、不正利用の疑い、支払いに関する紛争（チャージバック）、又は法的義務がある場合には、事前の通知なくあなたのアカウントを停止し、又は永久に閉鎖する権利を留保します。</li>
-        <li><strong>本権限の地理的適用範囲：</strong> アカウントの停止・解除に関する当社の権限は、本アプリ上で直接行使する技術的かつ契約上の措置であり、その行使に裁判所の判断を要しません。したがって、この権限は、あなたの国籍、居住国、又はあなたに別途保護を与える国の法律のいかんにかかわらず、本規約に違反したすべてのユーザーに対して等しく適用されます。第18条においてトルコ法及びトルコの裁判所が準拠法・管轄裁判所として定められていることは、本条に定めるアカウントレベルの措置を何ら制限し、又はこれに地理的な限界を課すものではありません。</li>
-        <li><strong>重大な違反における通報：</strong> 詐欺、脅迫、嫌がらせ、又は虐待の試みなど、犯罪を構成しうる行為があった場合、アカウントを停止することに加え、事案の性質に応じて、トルコ国内の権限ある当局、ユーザーの所在国の権限ある当局、及び／又はApple App Store若しくはGoogle Play自身のトラスト・アンド・セーフティ部門に対し、状況を報告する権利を留保します。</li>
-        <li><strong>削除後のデータ：</strong> アカウントが削除された場合、プロフィール情報、メッセージ及びブックマークは合理的な期間内にシステムから削除されます。ただし、法令上の保存義務が課される財務記録（サブスクリプション／決済履歴等）は、関連法令が定める期間、保存されることがあります（第II部第11条参照）。</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-13">
-    <div class="madde-head"><span class="madde-num">第13条</span><h3 class="madde-title">知的財産及び商標権</h3></div>
-    <div class="madde-body">
-      <p>「Common Ground」及び「DuoFine」という名称、ロゴ、並びに本アプリのソースコード、デザイン、インターフェースを含むすべての構成要素は、運営者又はそのライセンサーに帰属し、知的財産法制により保護されます。本規約は、あなたに対し、本アプリを個人的かつ非商業的な目的で利用する権利を付与するものであり、本アプリに関するいかなる所有権の譲渡を意味するものでもありません。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-14">
-    <div class="madde-head"><span class="madde-num">第14条</span><h3 class="madde-title">保証の否認</h3></div>
-    <div class="madde-body">
-      <p>本アプリは「現状有姿」及び「提供可能な形」で提供されます。適用法令が許容する最大限度において、運営者は、本アプリが中断なく、誤りなく、安全に機能すること、Win-Win特典の対象となる第三者の提案の正確性、又は他のユーザーの行動について、明示又は黙示を問わずいかなる保証も行いません。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-15">
-    <div class="madde-head"><span class="madde-num">第15条</span><h3 class="madde-title">責任の制限</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">重要条項——責任の限度</div>
-        <p>適用法令が許容する最大限度において、運営者は、（a）Win-Win特典に関連して第三者事業者との間で行った取引、（b）他のユーザーとの物理的又は仮想的な交流、（c）間接的、付随的又は結果的な損害について責任を負いません。運営者の総責任額は、いかなる場合であっても、損害が発生した事象の発生前12か月間にあなたが本アプリに対して支払ったサブスクリプション・購入代金の総額を上限とします。</p>
-      </div>
-      <p>この制限は、第6502号消費者保護法（TKHK）及び関連法令に基づき、消費者としてあなたが有する強行法規上の権利を排除するものではなく、これらの権利は留保されます。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-16">
-    <div class="madde-head"><span class="madde-num">第16条</span><h3 class="madde-title">補償</h3></div>
-    <div class="madde-body">
-      <p>あなたは、本規約への違反、本アプリの違法な利用、又は第三者の権利の侵害から生じるあらゆる請求、損害及び費用（合理的な弁護士費用を含みます）について、運営者を補償することに同意するものとします。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-17">
-    <div class="madde-head"><span class="madde-num">第17条</span><h3 class="madde-title">不可抗力</h3></div>
-    <div class="madde-body">
-      <p>天災、戦争、感染症の流行、インフラ提供者（ホスティング、決済、ストア）によるサービスの中断など、運営者の合理的な支配を超えた事由に起因する遅延又は履行不能について、運営者は責任を負いません。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-18">
-    <div class="madde-head"><span class="madde-num">第18条</span><h3 class="madde-title">準拠法及び紛争の解決</h3></div>
-    <div class="madde-body">
-      <p>本規約はトルコ共和国の法律に準拠します。当事者間で生じうる紛争については、イスタンブール（アナトリア側／ヨーロッパ側）の裁判所及び執行局が管轄権を有します。消費者として行動するユーザーは、第6502号法に基づき、自らの住所地又は運営者の所在地における消費者仲裁委員会又は消費者裁判所に申し立てる権利を有します。</p>
-      <p>トルコ国外に居住するユーザーである場合、上記の準拠法及び管轄の選択は、あなたが居住する国が契約上の紛争についてあなたに与え、契約によって排除することのできない（強行的な）消費者又はデータ保護上の権利を排除するものではなく、これらの権利は留保されます。</p>
-      <p>本条に定める準拠法及び裁判管轄の選択は、司法手続を通じて主張される請求（例：損害賠償請求）についてのみ適用されます。第12条に定めるアカウントの停止・解除に関する当社の権限はこれとは独立したものであり、居住国のいかんにかかわらず、すべてのユーザーに適用されます。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-19">
-    <div class="madde-head"><span class="madde-num">第19条</span><h3 class="madde-title">一般規定</h3></div>
-    <div class="madde-body">
-      <p>本規約のいずれかの規定が無効又は執行不能と判断された場合であっても、残りの規定の有効性には影響しません。運営者がある権利を行使しなかったとしても、当該権利を放棄したものとはみなされません。運営者は、本サービスを他の事業者に譲渡する場合、ユーザーに対し合理的な期間をもって事前に通知した上で、本規約から生じる権利及び義務を譲渡することができます。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-20">
-    <div class="madde-head"><span class="madde-num">第20条</span><h3 class="madde-title">変更</h3></div>
-    <div class="madde-body">
-      <p>運営者は、本規約を随時更新することがあります。重要な変更は、アプリ内通知又はメールを通じてお知らせします。変更後も本アプリの利用を継続することは、更新後の本規約に同意したことを意味します。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-21">
-    <div class="madde-head"><span class="madde-num">第21条</span><h3 class="madde-title">連絡先</h3></div>
-    <div class="madde-body">
-      <p>本規約に関するお問い合わせは、次の宛先までお願いいたします：<a href="mailto:info@duofine.com">info@duofine.com</a></p>
-    </div>
-  </article>
-
-  <!-- ======================= 第II部 — プライバシーポリシー ======================= -->
-  <div class="part-header" id="bolum-2">
-    <div class="part-eyebrow">第II部</div>
-    <h2 class="part-title">プライバシーポリシー及びKVKKに基づく通知文</h2>
-    <p class="part-sub">第6698号個人データ保護法（以下「KVKK」といいます）第10条に基づき作成された通知文です。</p>
-  </div>
-
-  <article class="madde" id="gp-1">
-    <div class="madde-head"><span class="madde-num">第1条</span><h3 class="madde-title">データ管理者の身元</h3></div>
-    <div class="madde-body">
-      <p>KVKKに基づき、あなたの個人データは、データ管理者として、商号「<strong>DuoFine</strong>」である事業者（以下「DuoFine」又は「当社」といいます）により、以下に説明する範囲及び目的で処理されます。</p>
-      <div class="table-scroll">
-        <table class="data-table">
-          <tr><th>商号</th><td>DuoFine</td></tr>
-          <tr><th>メールアドレス</th><td>info@duofine.com</td></tr>
-        </table>
-      </div>
-      <p><em>注：この表では、KVKK第10条の下でデータ管理者の身元を示すために十分とされる最小限の情報（商号及び連絡手段）を基準としています。自然人に関するトルコ共和国国民番号や住所などの機微な個人データについては、本文書上で公開することを求める法令上の規定がないため、記載していません。現時点では別個の納税義務又は法人としての登記が存在しないため、納税者番号及びMERSIS番号の欄も表には含まれていません。これらのいずれかが将来設定された場合には表に追加し、商業登記簿に登録された、既に公開されている事業所の住所も同様に処理されます。必要に応じて、データ管理者登録システム（VERBİS）への登録についても別途検討します。</em></p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-2">
-    <div class="madde-head"><span class="madde-num">第2条</span><h3 class="madde-title">本ポリシーの適用範囲</h3></div>
-    <div class="madde-body">
-      <p>本ポリシーは、Common Groundモバイルアプリケーションの登録ユーザー、本アプリを訪れる見込みユーザー、及びWin-Win特典に関連して当社と連絡を取る提携事業者の担当者の個人データの処理に関するものです。DuoFineのコーポレートウェブサイトを通じて収集されるデータも、本ポリシーの対象に含まれます。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-3">
-    <div class="madde-head"><span class="madde-num">第3条</span><h3 class="madde-title">処理される個人データの区分</h3></div>
-    <div class="madde-body">
-      <div class="table-scroll">
-        <table class="data-table">
-          <caption>本アプリ内で実際に収集されるデータ区分及びその取得元</caption>
-          <tr><th>区分</th><th>例</th><th>取得元</th></tr>
-          <tr><td>識別情報</td><td>氏名、生年月日</td><td>あなたから直接（登録フォーム）</td></tr>
-          <tr><td>連絡先情報</td><td>メールアドレス</td><td>あなたから直接</td></tr>
-          <tr><td>画像データ</td><td>プロフィール写真</td><td>あなたから直接（アップロード時）</td></tr>
-          <tr><td>位置情報データ</td><td>リアルタイムのGPS座標</td><td>お使いの端末の位置情報サービス（許可に基づく）</td></tr>
-          <tr><td>端末及び技術データ</td><td>端末モデル、オペレーティングシステム、プッシュ通知トークン、アプリバージョン</td><td>自動（端末から）</td></tr>
-          <tr><td>利用／処理データ</td><td>フレンド関係、メッセージングのメタデータ、ブックマーク記録、Win-Win特典の利用履歴</td><td>本アプリの利用から自動的に</td></tr>
-          <tr><td>取引セキュリティデータ</td><td>アカウントが最初に紐付けられた端末の識別子（複数アカウントの検知目的）</td><td>自動（端末から）</td></tr>
-          <tr><td>財務データ（限定的）</td><td>サブスクリプション／トークン購入の状況及び金額（決済カード情報は当社に届きません）</td><td>Apple／Googleを通じ、RevenueCat経由で</td></tr>
-          <tr><td>マーケティング／分析データ</td><td>アプリ内での閲覧及び操作に関する統計</td><td>自動（分析SDK）</td></tr>
-        </table>
-      </div>
-      <p><strong>収集しないデータ：</strong> カード番号、CVVなどの決済カード情報は、いかなる段階においても当社には届きません。これらのデータはApple／Googleが直接処理します。本アプリは、あなたのメッセージ内容をサーバー側で恒久的に保存することはありません（第11条参照）。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-4">
-    <div class="madde-head"><span class="madde-num">第4条</span><h3 class="madde-title">個人データの処理目的</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li>アカウントの作成、本人確認、及び本サービスへのアクセスの提供。</li>
-        <li>施設の検索、共通の待ち合わせ場所の算出、及びWin-Win特典の表示を含む、本アプリの中核機能の提供。</li>
-        <li>フレンドとのメッセージング及びソーシャル交流機能の運用。</li>
-        <li>サブスクリプション及びトークン購入の処理並びにアカウントへの反映。</li>
-        <li>虚偽アカウント、重複登録、Win-Win特典の悪用等、不正利用の検知及び防止。</li>
-        <li>プッシュ通知の送信（あなたの許可の範囲内で）。</li>
-        <li>サービス品質の測定、エラー・クラッシュの検知、及び製品開発。</li>
-        <li>法令上の義務（税務、会計、公的機関からの要請への対応）の履行。</li>
-        <li>法的紛争の対応及び当社の権利の保護。</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-5">
-    <div class="madde-head"><span class="madde-num">第5条</span><h3 class="madde-title">個人データ処理の法的根拠</h3></div>
-    <div class="madde-body">
-      <p>あなたの個人データは、KVKK第5条に列挙される以下の法的根拠に基づいて処理されます。</p>
-      <ul>
-        <li><strong>契約の締結・履行（KVKK第5条第2項(c)号）：</strong> アカウントの作成、本サービスの提供、サブスクリプション管理のための識別情報及び連絡先情報について。</li>
-        <li><strong>明示的な同意（KVKK第5条第1項）：</strong> KVKKにおける特別な種類の個人データの定義（第6条）には該当しないものの、個人及び所在に密接に関わる位置情報データの収集、並びにフレンドとの位置情報の共有等の処理について——位置情報の利用許可を求める際に別途取得します。</li>
-        <li><strong>法令上の義務の履行（KVKK第5条第2項(ç)号）：</strong> 税務及び会計に関する法令に基づく財務記録の保存について。</li>
-        <li><strong>正当な利益（KVKK第5条第2項(f)号）：</strong> 詐欺、重複アカウント及び不正利用の防止、サービスの安全性の確保、基礎的な製品分析について——この処理は、あなたの基本的な権利及び自由との均衡を保ちながら、必要な範囲に限定して行われます。</li>
-        <li><strong>権利の設定、行使又は保護のために不可欠であること（KVKK第5条第2項(e)号）：</strong> 法的紛争及び請求への対応に必要なデータの処理について。</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-6">
-    <div class="madde-head"><span class="madde-num">第6条</span><h3 class="madde-title">位置情報データに関する特則</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">重要条項——位置情報データ</div>
-        <p>位置情報の利用許可は、お使いのオペレーティングシステムを通じて別途、明示的に求められます。許可を与えない場合であっても、位置情報に依拠する機能（検索、共通地点の算出、近隣の特典）のみが動作せず、アカウント自体には影響しません。位置情報データは、地図・検索画面の動作のためセッション中のみ（インメモリで）処理されます。Google マップ プラットフォームの利用条件に従い、あなたの座標は恒久的にディスク／データベースへ書き込まれることはなく、最長で暦日30日間、一時的にキャッシュされることがあります。</p>
-      </div>
-      <p><strong>フレンドとの位置情報の共有：</strong> 特定の機能（例：「位置情報カード」の共有）は、相互にフレンド関係を成立させたユーザーとの間で、かつあなたが共有を選択した場合にのみ有効となります。あなたの位置情報は、既定の状態では他のユーザーに公開されていません。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-7">
-    <div class="madde-head"><span class="madde-num">第7条</span><h3 class="madde-title">Google マップ／Placesコンテンツに関する特則</h3></div>
-    <div class="madde-body">
-      <p>Google マップ プラットフォームのサービス規約に従い、事業者名、写真、電話番号、評価などGoogle由来のコンテンツは恒久的に保存することができません。このため、以下のとおり取り扱います。</p>
-      <ul>
-        <li>ブックマーク機能に表示される事業者名は、Googleから取得されるものではなく、記録を作成する際に<strong>あなた自身が入力する</strong>ラベルであり、その形で保存されます。</li>
-        <li>位置識別子（place_id）は無期限に保存することができますが、緯度・経度の情報は最長30日間のみ一時的にキャッシュされます。</li>
-        <li>ブックマークタブは、Googleに対していかなる場所・写真・名称の照会も送信しません。あなた自身の記録に対してのみ、ローカルで検索が行われます。</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-8">
-    <div class="madde-head"><span class="madde-num">第8条</span><h3 class="madde-title">Win-Win特典に関して処理されるデータ</h3></div>
-    <div class="madde-body">
-      <p>Win-Win特典を利用した際には、どの特典を、どの事業者において、いつ利用したかについての記録（利用履歴）が当社によって保持されます。このデータは、週次利用上限の適用、不正利用の検知、及び提携事業者に対する匿名化・集計された実績情報の提供の目的で処理されます。これらのデータは、コードの有効性を事業者のスタッフが確認するというキャンペーンの検証目的に限り、当該提携事業者と限定的に共有されます。事業者に対し、あなたの身元情報（メールアドレス、氏名全体）が提供されることはありません。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-9">
-    <div class="madde-head"><span class="madde-num">第9条</span><h3 class="madde-title">サブスクリプション及び決済データ</h3></div>
-    <div class="madde-body">
-      <p>決済処理は、Apple App Store又はGoogle Playによって直接行われます。カード情報が当社に届くことはありません。あなたのサブスクリプション／トークンの状況（有効なプラン、購入日、金額）は、当社の決済連携先である<strong>RevenueCat</strong>を通じて当社に伝達され、あなたのアカウントに正しい権限（プレミアム階層）を付与する目的で処理されます。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-10">
-    <div class="madde-head"><span class="madde-num">第10条</span><h3 class="madde-title">個人データの移転（国内／国外）</h3></div>
-    <div class="madde-body">
-      <p>あなたの個人データは、本サービスの提供に必要な技術インフラの提供者との間で、サービスに必要な範囲に限り共有されます。これらの提供者の一部は、主として米国及びEUを中心とする国外に所在しています。これらの移転は、KVKK第9条及び個人データ保護委員会が定める移転の仕組み（明示的な同意、委員会が承認する標準契約等）に従って行われます。</p>
-      <div class="table-scroll">
-        <table class="data-table">
-          <caption>主要な委託先／サービス提供者</caption>
-          <tr><th>提供者</th><th>目的</th><th>所在地</th></tr>
-          <tr><td>Railway</td><td>サーバーホスティング（バックエンド）</td><td>国外</td></tr>
-          <tr><td>Backblaze B2</td><td>プロフィール写真及び画像の保存</td><td>国外</td></tr>
-          <tr><td>RevenueCat</td><td>サブスクリプション／購入管理</td><td>国外</td></tr>
-          <tr><td>Google（Maps Platform、Sign-In）</td><td>地図、施設データ、Googleログイン</td><td>国外</td></tr>
-          <tr><td>Apple（Sign in with Apple、App Store）</td><td>本人認証、決済</td><td>国外</td></tr>
-          <tr><td>Sentry</td><td>エラー／クラッシュのモニタリング</td><td>国外</td></tr>
-          <tr><td>PostHog</td><td>プロダクト分析</td><td>国外</td></tr>
-        </table>
-      </div>
-      <p>国内においては、当社の法令上の義務の範囲内でのみ、権限ある公的機関・団体との間でデータ共有が行われることがあります（要請があった場合）。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-11">
-    <div class="madde-head"><span class="madde-num">第11条</span><h3 class="madde-title">保存期間</h3></div>
-    <div class="madde-body">
-      <ul>
-        <li><strong>プロフィールデータ：</strong> アカウントが有効である限り保存され、アカウント削除のご請求後、合理的な期間内に削除されます。</li>
-        <li><strong>位置情報データ：</strong> 恒久的には保存されません。地図・検索機能のためにセッション中のメモリ上に保持されるのみです（第6条）。</li>
-        <li><strong>メッセージ：</strong> サーバー側で恒久的なメッセージアーカイブは保持されません。お使いの端末上のローカルキャッシュは、端末自体のバックアップ・セキュリティ設定に従います。</li>
-        <li><strong>Win-Win特典の利用履歴：</strong> 週次上限の計算及び不正利用の検知の目的で、合理的な期間保存されます。</li>
-        <li><strong>財務／サブスクリプション記録：</strong> トルコ商法及び税務手続法が定める法定保存期間（一般に最長10年間）にわたり保存されることがあります。</li>
-        <li><strong>端末ロック記録：</strong> 複数アカウントの不正利用を防止するため、アカウントと最初に紐付けられた端末との対応関係は、セキュリティ目的で保存されます。</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-12">
-    <div class="madde-head"><span class="madde-num">第12条</span><h3 class="madde-title">データセキュリティ対策</h3></div>
-    <div class="madde-body">
-      <p>あなたの個人データの安全を確保するため、暗号化（伝送時のTLS）、アクセス制御、ログの記録、及び定期的なセキュリティ評価などの技術的及び組織的な対策が講じられています。もっとも、インターネットを介したいかなる伝送方法も100パーセント安全ではないことを、あなたは了承するものとします。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-13">
-    <div class="madde-head"><span class="madde-num">第13条</span><h3 class="madde-title">児童のプライバシー</h3></div>
-    <div class="madde-body">
-      <p>本サービスは13歳未満の者を対象としておらず、当該年齢層から意図的に個人データを収集することはありません。13歳未満であると判明したユーザーのアカウントは、判明次第直ちに閉鎖され、関連データは削除されます。お子様が当社に個人データを提供したと思われる場合は、<a href="mailto:info@duofine.com">info@duofine.com</a>までご連絡ください。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-14">
-    <div class="madde-head"><span class="madde-num">第14条</span><h3 class="madde-title">SDK及び分析ツール</h3></div>
-    <div class="madde-body">
-      <p>本アプリはクッキーを使用するウェブサイトではなく、代わりにモバイルSDKを通じて限定的な技術・分析データを収集します。</p>
-      <ul>
-        <li><strong>PostHog：</strong> アプリ内利用統計（どの画面が閲覧され、どの機能が利用されたか）のため。</li>
-        <li><strong>Sentry：</strong> アプリのクラッシュ及びエラーの診断のため（本番環境と開発環境を区別した、技術的なエラーデータに限ります）。</li>
-        <li><strong>RevenueCat：</strong> あなたのサブスクリプション状況の確認のため。</li>
-      </ul>
-      <p>これらのツールは、パーソナライズされた広告の目的で使用されることはなく、あなたのデータがマーケティング目的で第三者に販売又は貸与されることもありません。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-15">
-    <div class="madde-head"><span class="madde-num">第15条</span><h3 class="madde-title">データ主体の権利（KVKK第11条）</h3></div>
-    <div class="madde-body">
-      <p>KVKK第11条に基づき、あなたは以下の権利を有します。</p>
-      <ol>
-        <li>自己の個人データが処理されているか否かを知る権利。</li>
-        <li>処理されている場合、これに関する情報の開示を求める権利。</li>
-        <li>処理の目的及びその目的に沿って利用されているかどうかを知る権利。</li>
-        <li>国内又は国外において移転された第三者を知る権利。</li>
-        <li>不完全又は不正確に処理されている場合、その訂正を求める権利。</li>
-        <li>KVKK第7条に定める要件に従い、データの削除又は消去を求める権利。</li>
-        <li>訂正・削除の措置が、データが移転された第三者に通知されることを求める権利。</li>
-        <li>専ら自動化されたシステムによる分析のみによって、自己に不利益な結果が生じることに異議を述べる権利。</li>
-        <li>法令に反する処理によって損害を被った場合、その損害の賠償を求める権利。</li>
-      </ol>
-      <p>これらの権利を行使するには、第18条に定める連絡先を通じて、書面により当社にお申し出ください。ご請求は、KVKKが定める期間内（請求の性質に応じ、最長30日以内）に、無償で対応されます。当該対応に別途費用を要する場合には、個人データ保護委員会が定める料金表に基づく手数料が請求されることがあります。</p>
-      <div class="critical">
-        <div class="critical-label">欧州経済領域、英国又はスイスに居住するユーザーのための追加情報</div>
-        <p>上記の権利はKVKKを基準として記載されたものです。あなたが欧州経済領域（EEA）、英国又はスイスに居住している場合、あなたのデータは、これに加えて一般データ保護規則（GDPR）又は関連する現地法令の下でも保護され、この保護は第I部第18条に定める準拠法・裁判管轄の選択によって影響を受けません。具体的には、上記の権利に加えて、あなたのデータを構造化された、汎用的に利用される形式で自らに移転すること（データポータビリティ）を求めることができ、また、ご請求の結果に満足されない場合には、当社に直接申し立てる代わりに、又はこれに加えて、ご自身の国の権限ある監督機関に対し苦情を申し立てることができます。</p>
-        <p>透明性の観点から申し添えます。DuoFineは現在の事業規模において、EEA域内に居住するGDPR代理人を選任していません。これは、当社がEEA市場を直接の対象とする事業を行っておらず、処理の規模が小さいという評価に基づくものです。EEA域内のユーザー数が増加した場合には、この評価は改めて行われ、必要に応じて正式な代理人が選任されます。</p>
-      </div>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-16">
-    <div class="madde-head"><span class="madde-num">第16条</span><h3 class="madde-title">データ侵害の通知</h3></div>
-    <div class="madde-body">
-      <p>あなたの個人データが不法な方法により取得された場合、KVKK第12条に基づき、状況は速やかに関係者及び個人データ保護委員会に通知されます。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-17">
-    <div class="madde-head"><span class="madde-num">第17条</span><h3 class="madde-title">ポリシーの変更</h3></div>
-    <div class="madde-body">
-      <p>本ポリシーは、法令の改正又は本サービスの更新に応じて、随時改訂されることがあります。最新版は常に本ページ及びアプリ内で公開され、重要な変更については別途通知されます。</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-18">
-    <div class="madde-head"><span class="madde-num">第18条</span><h3 class="madde-title">連絡先及び申立て</h3></div>
-    <div class="madde-body">
-      <p>プライバシー及びKVKKに関するお申し出は、次の宛先までお願いいたします：<a href="mailto:info@duofine.com">info@duofine.com</a></p>
-      <p class="divider-quote">書面によるお申し出の際は、ご本人であることを証する情報・書類とともに、ご請求内容を明確にお示しいただくと、迅速な対応の一助となります。</p>
-    </div>
-  </article>
-
-  <p style="text-align:right; margin-top:40px;"><a class="back-to-top" href="#bolum-1">↑ ページ上部へ戻る</a></p>
-
-</main>
-
-<footer class="doc-footer">
-  <div class="doc-footer-inner">
-    <div>© 2026 DuoFine — Common Ground. 全著作権所有。</div>
-    <div>本書類はトルコ語原文の草案に過ぎません。承認後、16言語に翻訳され、アプリ内（<code>app/locales/*.json</code>）と統合される予定です。</div>
-  </div>
-</footer>
 </body>
 </html>

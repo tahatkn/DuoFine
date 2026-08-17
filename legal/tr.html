@@ -1,945 +1,348 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Common Ground Hukuki Metinleri</title>
-<meta name="description" content="Common Ground Kullanım Koşulları ve Gizlilik Politikası (KVKK Aydınlatma Metni).">
-<link rel="canonical" href="https://duofine.com/legal/tr.html">
-<style>
-/* ---------- Fonts: system stacks only (no external fonts, no CSP risk) ---------- */
-:root{
-  --serif: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-/* ---------- Light palette (default root) ---------- */
-:root{
-  --bg: #F0EEE7;
-  --surface: #FFFFFF;
-  --surface-2: #F7F5EF;
-  --ink: #1C1B18;
-  --ink-dim: #56534A;
-  --ink-faint: #8A8678;
-  --rule: #DBD6C8;
-  --rule-strong: #C7C1AF;
-  --accent: #6A3E9E;
-  --accent-ink: #4C2C74;
-  --accent-soft: #EFE7F8;
-  --critical: #2E6D64;
-  --critical-soft: #E2EEEB;
-  --critical-ink: #1E4842;
-  --badge-bg: #B4542A;
-  --badge-ink: #FBEEE6;
-  --link: #6A3E9E;
-  --shadow: 0 1px 2px rgba(28,27,24,0.04), 0 8px 24px rgba(28,27,24,0.06);
-}
-
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg: #17181A;
-    --surface: #1E2022;
-    --surface-2: #232527;
-    --ink: #ECE9E1;
-    --ink-dim: #B0AC9F;
-    --ink-faint: #7C786C;
-    --rule: #35373A;
-    --rule-strong: #43454A;
-    --accent: #C09EEB;
-    --accent-ink: #E2CFF7;
-    --accent-soft: #2B2438;
-    --critical: #7FCBC0;
-    --critical-soft: #1C2C29;
-    --critical-ink: #A9E4DA;
-    --badge-bg: #E08A55;
-    --badge-ink: #2A1608;
-    --link: #C09EEB;
-    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
-  }
-}
-:root[data-theme="dark"]{
-  --bg: #17181A;
-  --surface: #1E2022;
-  --surface-2: #232527;
-  --ink: #ECE9E1;
-  --ink-dim: #B0AC9F;
-  --ink-faint: #7C786C;
-  --rule: #35373A;
-  --rule-strong: #43454A;
-  --accent: #C09EEB;
-  --accent-ink: #E2CFF7;
-  --accent-soft: #2B2438;
-  --critical: #7FCBC0;
-  --critical-soft: #1C2C29;
-  --critical-ink: #A9E4DA;
-  --badge-bg: #E08A55;
-  --badge-ink: #2A1608;
-  --link: #C09EEB;
-  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
-}
-
-*{ box-sizing: border-box; }
-html{ -webkit-text-size-adjust: 100%; }
-body{
-  margin:0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--sans);
-  line-height: 1.5;
-}
-a{ color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-a:focus-visible, button:focus-visible, summary:focus-visible{
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 3px;
-}
-
-/* ---------- Masthead ---------- */
-.masthead{
-  border-bottom: 1px solid var(--rule);
-  background: var(--surface);
-}
-.masthead-inner{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 28px 24px 24px;
-  display:flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.wordmark{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-.wordmark .dot{
-  width:7px; height:7px; border-radius:50%;
-  background: var(--accent);
-  flex: none;
-}
-h1.doc-title{
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: clamp(28px, 4.2vw, 40px);
-  line-height: 1.14;
-  margin: 0;
-  text-wrap: balance;
-  color: var(--ink);
-}
-.meta-row{
-  display:flex;
-  flex-wrap: wrap;
-  align-items:center;
-  gap: 10px 16px;
-  font-size: 13px;
-  color: var(--ink-dim);
-  font-variant-numeric: tabular-nums;
-}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--badge-bg);
-  color: var(--badge-ink);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-/* ---------- Notice callouts ---------- */
-.notice{
-  max-width: 880px;
-  margin: 20px auto 0;
-  padding: 0 24px;
-}
-.notice-box{
-  background: var(--surface-2);
-  border: 1px solid var(--rule);
-  border-left: 3px solid var(--badge-bg);
-  border-radius: 8px;
-  padding: 14px 16px;
-  font-size: 14px;
-  color: var(--ink-dim);
-  line-height: 1.55;
-}
-.notice-box strong{ color: var(--ink); }
-
-/* ---------- TOC ---------- */
-.toc-wrap{
-  max-width: 880px;
-  margin: 20px auto 0;
-  padding: 0 24px;
-}
-.toc{
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: 20px 22px;
-  box-shadow: var(--shadow);
-}
-.toc summary{
-  cursor:pointer;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
-  list-style: none;
-}
-.toc summary::-webkit-details-marker{ display:none; }
-.toc summary::after{
-  content: "▾";
-  float: right;
-  color: var(--ink-faint);
-}
-.toc[open] summary::after{ content: "▴"; }
-.toc-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px 24px;
-  margin-top: 16px;
-}
-.toc-part{
-  grid-column: 1 / -1;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-  margin: 10px 0 2px;
-  border-top: 1px solid var(--rule);
-  padding-top: 10px;
-}
-.toc-grid a{
-  font-size: 13.5px;
-  color: var(--ink-dim);
-  padding: 3px 0;
-  text-decoration: none;
-  border-bottom: 1px dotted transparent;
-}
-.toc-grid a:hover{ color: var(--accent); border-bottom-color: var(--accent); }
-@media (max-width: 640px){ .toc-grid{ grid-template-columns: 1fr; } }
-
-/* ---------- Content ---------- */
-main{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 8px 24px 80px;
-}
-.part-header{
-  margin-top: 56px;
-  padding-top: 28px;
-  border-top: 2px solid var(--rule-strong);
-}
-.part-eyebrow{
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-h2.part-title{
-  font-family: var(--serif);
-  font-size: clamp(24px, 3.4vw, 30px);
-  font-weight: 600;
-  margin: 6px 0 4px;
-  text-wrap: balance;
-}
-.part-sub{
-  font-size: 14.5px;
-  color: var(--ink-dim);
-  max-width: 62ch;
-  margin: 0 0 8px;
-}
-
-article.madde{
-  margin-top: 40px;
-  scroll-margin-top: 20px;
-}
-.madde-head{
-  display:flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-.madde-num{
-  font-family: var(--sans);
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--ink-faint);
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}
-h3.madde-title{
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0;
-  color: var(--ink);
-}
-.madde-body{
-  font-family: var(--serif);
-  font-size: 16.5px;
-  line-height: 1.68;
-  color: var(--ink);
-  max-width: 68ch;
-}
-.madde-body p{ margin: 0 0 14px; }
-.madde-body ol, .madde-body ul{ margin: 0 0 14px; padding-left: 22px; }
-.madde-body li{ margin-bottom: 8px; }
-.madde-body strong{ color: var(--ink); font-weight: 700; }
-.fill{
-  background: var(--accent-soft);
-  color: var(--accent-ink);
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-family: var(--sans);
-  font-size: 0.86em;
-  font-weight: 600;
-}
-
-.critical{
-  background: var(--critical-soft);
-  border: 1px solid var(--critical);
-  border-left-width: 4px;
-  border-radius: 8px;
-  padding: 16px 18px 4px;
-  margin: 0 0 14px;
-}
-.critical-label{
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--critical-ink);
-  display:flex;
-  align-items:center;
-  gap:6px;
-  margin-bottom: 8px;
-}
-.critical-label svg{ width:13px; height:13px; flex:none; }
-
-table.data-table{
-  width: 100%;
-  border-collapse: collapse;
-  font-family: var(--sans);
-  font-size: 13.5px;
-  margin: 4px 0 20px;
-}
-table.data-table caption{
-  text-align: left;
-  font-size: 12px;
-  color: var(--ink-faint);
-  margin-bottom: 6px;
-  font-style: italic;
-}
-table.data-table th, table.data-table td{
-  border: 1px solid var(--rule);
-  padding: 9px 11px;
-  text-align: left;
-  vertical-align: top;
-}
-table.data-table th{
-  background: var(--surface-2);
-  font-weight: 700;
-  color: var(--ink);
-  font-size: 12.5px;
-  letter-spacing: 0.02em;
-}
-table.data-table td{ color: var(--ink-dim); }
-.table-scroll{ overflow-x: auto; }
-
-.divider-quote{
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 15px;
-  color: var(--ink-faint);
-  border-left: 2px solid var(--rule-strong);
-  padding-left: 14px;
-  margin: 4px 0 20px;
-}
-
-footer.doc-footer{
-  border-top: 1px solid var(--rule);
-  background: var(--surface);
-  margin-top: 60px;
-}
-.doc-footer-inner{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 28px 24px 40px;
-  font-size: 13px;
-  color: var(--ink-faint);
-  display:flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.back-to-top{
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--link);
-  text-decoration: none;
-}
-
-@media (prefers-reduced-motion: no-preference){
-  html{ scroll-behavior: smooth; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanım Koşulları ve Gizlilik Politikası | DuoFine</title>
+    <meta name="description" content="Common Ground Kullanım Koşulları ve Gizlilik Politikası (KVKK Aydınlatma Metni).">
+    <link rel="canonical" href="https://duofine.com/legal/tr.html">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .legal-updated { text-align: center; color: var(--text-light); margin-bottom: 2.5rem; font-size: 0.95rem; }
+        .legal-part-title { font-size: 1.8rem; margin: 3rem 0 0.5rem; color: var(--dark-color); font-weight: 600; }
+        .legal-part-title:first-of-type { margin-top: 0; }
+        .legal-toc { columns: 2; column-gap: 2.5rem; margin: 0 0 3rem; padding-left: 1.2rem; }
+        .legal-toc li { margin-bottom: 0.5rem; break-inside: avoid; }
+        .legal-article { margin-top: 2.5rem; scroll-margin-top: 90px; }
+        .legal-article h3 { font-size: 1.25rem; color: var(--dark-color); margin-bottom: 0.8rem; }
+        .legal-article p, .legal-article li { margin-bottom: 1rem; }
+        .legal-article ul, .legal-article ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+        .legal-table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+        table.legal-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        table.legal-table caption { text-align: left; font-style: italic; color: var(--text-light); margin-bottom: 0.5rem; font-size: 0.9rem; }
+        table.legal-table th, table.legal-table td { border: 1px solid var(--border-color); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; }
+        table.legal-table th { background-color: var(--light-color); font-weight: 600; }
+        .back-to-toc { display: block; text-align: right; margin-top: 3rem; }
+    </style>
 </head>
 <body>
-<div class="masthead">
-  <div class="masthead-inner">
-    <div class="wordmark"><span class="dot"></span>COMMON GROUND — DUOFINE</div>
-    <h1 class="doc-title">Kullanım Koşulları &amp; Gizlilik Politikası</h1>
-    <div class="meta-row">
-      <span class="badge">Taslak · Hukuki İnceleme Bekliyor</span>
-      <span>Yürürlük tarihi: 15 Ağustos 2026</span>
-      <span>Sürüm: TR-1.3</span>
-      <span>Dil: Türkçe (kaynak metin)</span>
-    </div>
-  </div>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="/" class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
+                    <path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
+                </svg>
+                <span>DuoFine</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/#about" class="nav-link" data-link="about">About</a></li>
+                <li class="nav-item"><a href="/#projects" class="nav-link" data-link="projects">Projects</a></li>
+                <li class="nav-item"><a href="/#contact" class="nav-link" data-link="contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="legal" class="content-section">
+            <h2>Kullanım Koşulları ve Gizlilik Politikası</h2>
+            <p class="legal-updated">Son güncelleme: 15 Ağustos 2026</p>
+            <ul class="legal-toc"><li><a href="#kk-0">MADDE 0 — Giriş ve Kabul</a></li><li><a href="#kk-1">MADDE 1 — Tanımlar</a></li><li><a href="#kk-2">MADDE 2 — Hizmetin Kapsamı</a></li><li><a href="#kk-3">MADDE 3 — Hesap Oluşturma, Yaş Sınırı ve Hesap Güvenliği</a></li><li><a href="#kk-4">MADDE 4 — Yasaklı Kullanımlar</a></li><li><a href="#kk-5">MADDE 5 — Kullanıcı İçeriği ve Lisans</a></li><li><a href="#kk-6">MADDE 6 — Konum Servisleri ve Harita İçeriği</a></li><li><a href="#kk-7">MADDE 7 — W-W Fırsatlar (Deals) — Üçüncü Taraf İşletme Kampanyaları</a></li><li><a href="#kk-8">MADDE 8 — Abonelikler, Token'lar ve Uygulama İçi Satın Alımlar</a></li><li><a href="#kk-9">MADDE 9 — Arkadaşlık, Mesajlaşma ve Kullanıcılar Arası Etkileşim</a></li><li><a href="#kk-10">MADDE 10 — Yer İmleri (Bookmarks)</a></li><li><a href="#kk-11">MADDE 11 — Bildirimler ve İletişim</a></li><li><a href="#kk-12">MADDE 12 — Hesap Askıya Alma, Fesih ve Silme</a></li><li><a href="#kk-13">MADDE 13 — Fikri Mülkiyet ve Marka Hakları</a></li><li><a href="#kk-14">MADDE 14 — Garantilerin Reddi</a></li><li><a href="#kk-15">MADDE 15 — Sorumluluğun Sınırlandırılması</a></li><li><a href="#kk-16">MADDE 16 — Tazminat</a></li><li><a href="#kk-17">MADDE 17 — Mücbir Sebep</a></li><li><a href="#kk-18">MADDE 18 — Uygulanacak Hukuk ve Uyuşmazlıkların Çözümü</a></li><li><a href="#kk-19">MADDE 19 — Genel Hükümler</a></li><li><a href="#kk-20">MADDE 20 — Değişiklikler</a></li><li><a href="#kk-21">MADDE 21 — İletişim</a></li><li><a href="#gp-1">MADDE 1 — Veri Sorumlusunun Kimliği</a></li><li><a href="#gp-2">MADDE 2 — Bu Politikanın Kapsamı</a></li><li><a href="#gp-3">MADDE 3 — İşlenen Kişisel Veri Kategorileri</a></li><li><a href="#gp-4">MADDE 4 — Kişisel Verilerin İşlenme Amaçları</a></li><li><a href="#gp-5">MADDE 5 — Kişisel Verilerin İşlenmesinin Hukuki Sebepleri</a></li><li><a href="#gp-6">MADDE 6 — Konum Verisine İlişkin Özel Hüküm</a></li><li><a href="#gp-7">MADDE 7 — Google Haritalar/Places İçeriğine İlişkin Özel Hüküm</a></li><li><a href="#gp-8">MADDE 8 — W-W Fırsatlar Kapsamında İşlenen Veriler</a></li><li><a href="#gp-9">MADDE 9 — Abonelik ve Ödeme Verileri</a></li><li><a href="#gp-10">MADDE 10 — Kişisel Verilerin Aktarımı (Yurt İçi/Yurt Dışı)</a></li><li><a href="#gp-11">MADDE 11 — Saklama Süreleri</a></li><li><a href="#gp-12">MADDE 12 — Veri Güvenliği Tedbirleri</a></li><li><a href="#gp-13">MADDE 13 — Çocukların Gizliliği</a></li><li><a href="#gp-14">MADDE 14 — SDK'lar ve Analitik Araçlar</a></li><li><a href="#gp-15">MADDE 15 — İlgili Kişinin Hakları (KVKK m.11)</a></li><li><a href="#gp-16">MADDE 16 — Veri İhlali Bildirimi</a></li><li><a href="#gp-17">MADDE 17 — Politika Değişiklikleri</a></li><li><a href="#gp-18">MADDE 18 — İletişim ve Başvuru</a></li></ul>
+            <h3 class="legal-part-title" id="bolum-1">Kullanım Koşulları</h3><div class="legal-article" id="kk-0"><h3>MADDE 0. Giriş ve Kabul</h3>
+<p>İşbu Kullanım Koşulları ("Koşullar"), ticari unvanı <strong>DuoFine</strong> olan işletme ("İşletmeci", "biz") tarafından işletilen Common Ground mobil uygulaması ile bu uygulamanın sunduğu tüm özellikleri (mekân keşfi, W-W Fırsatlar, mesajlaşma, arkadaşlık ve yer imi dahil) kapsayan, kullanıcı ("siz", "Kullanıcı") ile İşletmeci arasındaki hukuki ilişkiyi düzenler.</p>
+<p>Uygulamayı indirerek, bir hesap oluşturarak veya kullanmaya devam ederek bu Koşulları ve aşağıda Bölüm II'de yer alan Gizlilik Politikası'nı okuduğunuzu, anladığınızı ve kabul ettiğinizi beyan edersiniz. Bu belgeleri kabul etmiyorsanız Uygulamayı kullanmamalı, hesabınızı oluşturmamalısınız.</p>
+<p>Uygulama içinde uygulama mağazası (Apple App Store / Google Play) üzerinden yapılan satın alımlar için, işbu Koşullara ek olarak ilgili mağazanın kendi kullanım koşulları da geçerlidir; çelişki halinde ödeme ve faturalandırmaya ilişkin hususlarda mağazanın koşulları, diğer tüm hususlarda işbu Koşullar esas alınır.</p>
+</div><div class="legal-article" id="kk-1"><h3>MADDE 1. Tanımlar</h3>
+<ul>
+<li><strong>Uygulama / Hizmet:</strong> "Common Ground" adlı, iOS ve Android üzerinde dağıtılan mobil uygulama ve onunla bütünleşik sunucu altyapısı.</li>
+<li><strong>Kullanıcı:</strong> Uygulamada hesap oluşturan, işbu Koşulları kabul eden gerçek kişi.</li>
+<li><strong>İçerik:</strong> Kullanıcının profilinde, mesajlarında, yer imlerinde veya Uygulama içinde paylaştığı her türlü metin, görsel, konum ve benzeri veri.</li>
+<li><strong>W-W Fırsatlar / Deals:</strong> Uygulamada listelenen, üçüncü taraf işletmeler tarafından sunulan indirim/kampanya teklifleri ve bunların Uygulama üzerinden kod/QR ile kullanıma sunulması sistemi.</li>
+<li><strong>Abonelik:</strong> Apple App Store veya Google Play üzerinden satın alınan, Uygulama içi ek özellik ve token hakkı sağlayan tekrarlanan (otomatik yenilenen) ücretli plan (örn. Plus, Pro).</li>
+<li><strong>Token:</strong> Uygulama içindeki belirli özelliklerin (örn. arama/keşif) kullanımını ölçen, parayla değiştirilemeyen sanal kullanım hakkı birimi.</li>
+<li><strong>Mağaza:</strong> Apple Inc.'in işlettiği App Store veya Google LLC'nin işlettiği Google Play mağazası.</li>
+</ul>
+</div><div class="legal-article" id="kk-2"><h3>MADDE 2. Hizmetin Kapsamı</h3>
+<p>Common Ground; kullanıcıların konum, mesafe, ulaşım şekli, kategori ve popülerlik gibi filtrelerle çevrelerindeki işletmeleri keşfetmesini, birden fazla kişi arasında ortak bir buluşma noktası hesaplamasını, arkadaşlarıyla gerçek zamanlı mesajlaşmasını, beğendiği yerleri kaydetmesini ve anlaşmalı işletmelerin sunduğu özel kampanyalardan ("W-W Fırsatlar") yararlanmasını sağlayan bir keşif ve sosyal etkileşim uygulamasıdır.</p>
+<p>İşletmeci, Uygulamanın tamamını veya bir kısmını, herhangi bir özelliği önceden haber vermeksizin değiştirme, askıya alma veya kaldırma hakkını saklı tutar. Uygulama "olduğu gibi" ve "mevcut olduğu ölçüde" sunulur; kesintisiz veya hatasız çalışacağına dair bir taahhüt verilmez.</p>
+</div><div class="legal-article" id="kk-3"><h3>MADDE 3. Hesap Oluşturma, Yaş Sınırı ve Hesap Güvenliği</h3>
+<ol>
+<li><strong>Yaş sınırı:</strong> Uygulamayı yalnızca 13 yaşını doldurmuş kişiler kullanabilir. 13-18 yaş arasındaki kullanıcılar, Türk Medeni Kanunu uyarınca sınırlı ehliyetsiz sayılabileceğinden, Uygulamayı ancak veli veya vasilerinin bilgisi ve gözetiminde kullanmalıdır; özellikle ücretli abonelik ve satın alım işlemleri için yasal temsilcinin onayı aranır. İşletmeci, yaşını yanlış beyan ettiği tespit edilen hesapları askıya alma hakkını saklı tutar.</li>
+<li><strong>Doğru bilgi verme:</strong> Kayıt sırasında sağladığınız ad, e-posta ve doğum tarihi gibi bilgilerin doğru ve güncel olduğunu taahhüt edersiniz. Sahte kimlik veya başka bir kişinin kimliğiyle hesap oluşturmak yasaktır.</li>
+<li><strong>Tek hesap / cihaz kısıtlaması:</strong> Kötüye kullanımı ve mükerrer kayıtları önlemek amacıyla, Uygulama yeni kayıt sırasında cihaz düzeyinde bir doğrulama uygular. Bir cihaz, belirli bir süre boyunca yalnızca bir hesapla ilişkilendirilebilir; bu kısıtlamayı aşmaya yönelik girişimler (örn. cihaz sıfırlama, sahte kimlik ile tekrar kayıt) Madde 4 kapsamında yasaklı kullanım sayılır.</li>
+<li><strong>Hesap güvenliği:</strong> Şifrenizin ve hesabınıza erişimin gizliliğinden siz sorumlusunuz. Hesabınız üzerinden gerçekleştirilen tüm işlemlerden, aksi ispat edilmedikçe siz sorumlu tutulursunuz. Hesabınıza yetkisiz erişim şüphesi durumunda derhal <a href="mailto:info@duofine.com">info@duofine.com</a> adresinden bize bildirimde bulunmalısınız.</li>
+<li><strong>E-posta, Google ve Apple ile giriş:</strong> Uygulama, e-posta/şifre ile kayda ek olarak Google ve Apple hesabı üzerinden giriş seçenekleri sunar. Bu yöntemleri kullandığınızda, ilgili sağlayıcının kendi kullanım koşulları ve gizlilik politikası da geçerli olur.</li>
+</ol>
+</div><div class="legal-article" id="kk-4"><h3>MADDE 4. Yasaklı Kullanımlar</h3>
+<p>Uygulamayı kullanırken aşağıdaki davranışlardan kaçınmayı kabul edersiniz:</p>
+<ol>
+<li>Yürürlükteki herhangi bir kanuna, yönetmeliğe veya üçüncü kişi hakkına aykırı içerik paylaşmak veya faaliyette bulunmak;</li>
+<li>Başka bir kullanıcıyı taciz etmek, tehdit etmek, ısrarla rahatsız etmek, nefret söylemi, ayrımcı veya müstehcen içerik paylaşmak;</li>
+<li>Sahte profil oluşturmak, başka bir gerçek veya tüzel kişiyi taklit etmek, yanıltıcı yaş/kimlik bilgisi vermek;</li>
+<li>Uygulamayı spam, istenmeyen ticari mesaj, dolandırıcılık, oltalama (phishing) veya kötü amaçlı yazılım dağıtımı için kullanmak;</li>
+<li>Uygulamanın kaynak kodunu tersine mühendislikle çözmeye çalışmak, otomatikleştirilmiş araçlarla (bot, scraper) veri toplamak veya sunucu altyapısına orantısız yük bindirmek;</li>
+<li>Cihaz kısıtlamasını (Madde 3.3) veya token/abonelik sınırlarını (Madde 8) aşmak amacıyla teknik önlemleri atlatmaya çalışmak;</li>
+<li><strong>W-W Fırsatlar sistemini kötüye kullanmak:</strong> bir kampanya kodunu satmak, devretmek, ekran görüntüsü çoğaltarak birden fazla kez kullanmaya çalışmak, anlaşmalı işletme ile kod/QR dışında usulsüz bir şekilde anlaşarak sistemi manipüle etmek (bkz. Madde 7);</li>
+<li>Konum verisini başka bir kullanıcıyı takip etmek, izlemek veya fiziksel olarak taciz etmek amacıyla kullanmak;</li>
+<li>18 yaşından küçük kullanıcılarla uygunsuz iletişim kurmak veya onları istismara açık hale getirecek davranışlarda bulunmak.</li>
+</ol>
+<p>Bu maddenin ihlali, önceden bildirim yapılmaksızın hesabın askıya alınmasına veya kalıcı olarak silinmesine yol açabilir (Madde 12).</p>
+</div><div class="legal-article" id="kk-5"><h3>MADDE 5. Kullanıcı İçeriği ve Lisans</h3>
+<p>Uygulama içinde paylaştığınız içeriklerin (profil bilgisi, fotoğraf, mesaj, yer imi etiketi vb.) mülkiyeti size aittir. Bununla birlikte, bu içerikleri Uygulama üzerinden diğer kullanıcılara gösterebilmemiz, saklayabilmemiz ve Hizmeti işletebilmemiz için bize dünya çapında, münhasır olmayan, alt lisanslanabilir bir kullanım lisansı vermiş olursunuz; bu lisans yalnızca Hizmetin işletilmesi amacıyla sınırlıdır ve hesabınızı sildiğinizde ilgili içerik de silinir (Madde 12.5 ve Bölüm II Madde 11 saklidir).</p>
+<p>Paylaştığınız içeriğin yasal olarak paylaşma hakkına sahip olduğunuz içerik olduğunu ve üçüncü kişilerin fikri mülkiyet, kişilik veya gizlilik haklarını ihlal etmediğini beyan ve taahhüt edersiniz.</p>
+</div><div class="legal-article" id="kk-6"><h3>MADDE 6. Konum Servisleri ve Harita İçeriği</h3>
+<p><strong>Kritik Hüküm — Konum Verisi:</strong></p>
+
+<p>Uygulamanın temel işlevi (mekân keşfi, ortak buluşma noktası hesaplama, yakındaki fırsatları gösterme) hassas ve gerçek zamanlı konum verisine dayanır. Konum izni vermezseniz Uygulamanın bu özellikleri çalışmaz. Konum verisinin işlenme esasları Bölüm II Madde 6'da ayrıntılı olarak açıklanmıştır.</p>
+
+<p>Harita ve mekân verileri (harita görüntüsü, işletme adı, adres, fotoğraf, tür, puan) Google Haritalar Platformu (Google Maps Platform) üzerinden sağlanır ve Google'ın kendi kullanım koşullarına tabidir. Bu içerikleri Uygulama dışında kopyalayamaz, kalıcı olarak saklayamaz veya ticari amaçla yeniden kullanamazsınız; bu kısıtlama İşletmeci için de geçerlidir ve Uygulamanın teknik tasarımı buna göre yapılandırılmıştır.</p>
+<p>Yer imlerinizde görünen işletme adı, Google'dan otomatik alınan bir veri değil, sizin kendi yazdığınız bir etikettir (bkz. Madde 10 ve Bölüm II Madde 7).</p>
+</div><div class="legal-article" id="kk-7"><h3>MADDE 7. W-W Fırsatlar (Deals) — Üçüncü Taraf İşletme Kampanyaları</h3>
+<p><strong>Kritik Hüküm — İşletmeci Sadece Aracıdır:</strong></p>
+
+<p>W-W Fırsatlar kapsamında listelenen tüm kampanyalar, indirimler ve teklifler <strong>anlaşmalı üçüncü taraf işletmeler</strong> tarafından sunulur. İşletmeci; satılan ürün veya hizmetin tarafı, satıcısı veya sağlayıcısı değildir, yalnızca kampanyanın Uygulama üzerinden görüntülenmesini ve kod/QR ile kullanıma sunulmasını sağlayan teknik bir aracıdır.</p>
+
+<ol>
+<li><strong>Teklifin niteliği:</strong> Her W-W Fırsat, ilgili işletme tarafından belirlenen kendi koşullarına (geçerlilik süresi, stok/kontenjan, minimum harcama vb.) tabidir. İşletmeci, bir kampanyanın doğruluğunu, güncelliğini veya işletme tarafından fiilen uygulanacağını garanti etmez; işletmeler önceden haber vermeksizin kampanyayı değiştirebilir, askıya alabilir veya sonlandırabilir.</li>
+<li><strong>Kullanım (redemption) süreci:</strong> Bir fırsatı kullanmak istediğinizde Uygulama size benzersiz bir kod/QR üretir. Bu kod, üretildiği andan itibaren sınırlı bir süre (Uygulama içinde belirtilen dakika) için geçerlidir ve süresi dolduğunda otomatik olarak geçersiz hale gelir. Kod, yalnızca ilgili işletmede, işletme personeline gösterilerek tek seferlik kullanılabilir.</li>
+<li><strong>Haftalık kullanım sınırı:</strong> Kötüye kullanımı önlemek amacıyla, aynı fırsat için hareketli (rolling) yedi günlük bir süre içinde uygulanan bir kullanım sınırı vardır. Bu sınır, kampanyanın adil biçimde çok sayıda kullanıcıya ulaşabilmesi için uygulanır ve önceden haber verilmeksizin değiştirilebilir.</li>
+<li><strong>Nakit değeri yoktur:</strong> Fırsat kodları nakde çevrilemez, başka bir kullanıcıya devredilemez, satılamaz veya toplu olarak (bulk) kullanılamaz. Bu kurala aykırı davranış tespit edilirse ilgili hesap, Madde 4.7 ve Madde 12 uyarınca askıya alınabilir.</li>
+<li><strong>İşlemin tarafları ve sorumluluk:</strong> Bir W-W Fırsatının kullanılması sonucunda işletme ile aranızda kurulan satış/hizmet ilişkisi, doğrudan siz ve ilgili işletme arasındadır. Satılan ürün/hizmetin ayıplı olması, kalitesi, teslimatı, iadesi, ilgili işletmenin kendi mesafeli satış/tüketici mevzuatına uyumu gibi hususlarda muhatabınız ilgili işletmedir; İşletmeci bu işlemin tarafı olmadığından, 6502 sayılı Tüketicinin Korunması Hakkında Kanun kapsamındaki satıcı/sağlayıcı sorumluluğunu üstlenmez.</li>
+<li><strong>Konum ve görünürlük:</strong> Fırsatların Uygulama içinde hangi il/ilçe filtresinde veya "Tümü" listesinde görüneceği İşletmecinin editoryal takdirindedir ve aynı işletmenin farklı şubeleri ayrı kartlar olarak listelenebilir.</li>
+<li><strong>İptal ve değişiklik hakkı:</strong> İşletmeci, herhangi bir W-W Fırsatını, iş ortaklığının sona ermesi, işletmenin talebi veya kötüye kullanım şüphesi gibi nedenlerle önceden bildirimde bulunmaksızın Uygulamadan kaldırma hakkını saklı tutar.</li>
+</ol>
+</div><div class="legal-article" id="kk-8"><h3>MADDE 8. Abonelikler, Token'lar ve Uygulama İçi Satın Alımlar</h3>
+<ol>
+<li><strong>Faturalandırma mağaza üzerinden yapılır:</strong> Tüm ücretli abonelikler (Plus, Pro) ve tek seferlik token paketleri, Apple App Store veya Google Play üzerinden satın alınır ve faturalandırılır. Fiyatlar Uygulama içinde ilgili mağazanın döviz kuru ve vergi uygulamasına göre gösterilir ve önceden haber verilmeksizin değişebilir; güncel fiyat her zaman satın alma ekranında görüntülenen fiyattır.</li>
+<li><strong>Otomatik yenileme:</strong> Abonelikler, iptal edilmediği sürece dönem sonunda otomatik olarak yenilenir ve ücretlendirilir. Aboneliğinizi iptal etmek, aboneliğinizi yönetmek ve iade talep etmek için kullanmanız gereken kanal, doğrudan Apple/Google hesap ayarlarınızdır; İşletmecinin ödemeyi doğrudan iade etme yetkisi veya erişimi yoktur.</li>
+<li><strong>İade politikası:</strong> Satın alma sonrası iadeler, ilgili mağazanın (Apple veya Google) kendi iade politikasına tabidir. İşletmeci, mağazanın onayladığı iadeleri geriye dönük olarak sisteme yansıtır; ancak iade kararının kendisi mağazaya aittir.</li>
+<li><strong>Token'lar:</strong> Token, belirli Uygulama içi özelliklerin (örn. arama/keşif sorguları) kullanım hakkını temsil eden, nakde çevrilemeyen, süresi dolabilen sanal bir birimdir. Token'lar başka bir kullanıcıya devredilemez ve gerçek para karşılığı geri satın alınamaz.</li>
+<li><strong>Adil Kullanım Politikası:</strong> Abonelik planları aylık belirli bir token miktarı içerir (güncel miktarlar Uygulama içi mağaza ekranında listelenir). Hizmeti aksatacak ölçüde aşırı, otomatikleştirilmiş veya kötüye kullanım niteliğindeki kullanım tespit edilirse, İşletmeci ek kısıtlama uygulama hakkını saklı tutar; bu kısıtlama normal, kişisel kullanım seviyesindeki kullanıcıları etkilemez.</li>
+<li><strong>Aile paylaşımı ve hesap değişikliği:</strong> Abonelikler, satın alan Apple/Google hesabına ve o hesabın bağlı olduğu Common Ground kullanıcı hesabına özgüdür; hesap değişikliği durumunda abonelik durumunun doğru yansıması, Uygulama içindeki oturum açma bilgilerinizin doğruluğuna bağlıdır.</li>
+</ol>
+</div><div class="legal-article" id="kk-9"><h3>MADDE 9. Arkadaşlık, Mesajlaşma ve Kullanıcılar Arası Etkileşim</h3>
+<p>Uygulama, kullanıcıların birbirini arkadaş olarak ekleyip gerçek zamanlı mesajlaşmasına ve konum tabanlı ortak buluşma noktası önerileri paylaşmasına imkân tanır. Bu özellikler yalnızca karşılıklı arkadaşlık ilişkisi kurulmuş kullanıcılar arasında etkindir.</p>
+<p><strong>Kişisel güvenlik uyarısı:</strong> Uygulama üzerinden tanıştığınız kişilerle fiziksel olarak buluşmayı tercih etmeniz tamamen kendi takdirinizdedir ve kendi sorumluluğunuzdadır. İşletmeci, kullanıcıların kimlik doğrulamasını yapmaz ve fiziksel buluşmalardan doğabilecek herhangi bir zarardan sorumlu tutulamaz. Halka açık yerlerde buluşmanızı, kişisel bilgilerinizi (ev adresi, finansal bilgiler vb.) paylaşırken temkinli davranmanızı öneririz.</p>
+<p>Diğer kullanıcıları rahatsız eden, tehdit eden veya bu Koşulları ihlal eden kişileri, Uygulama içindeki engelleme ve şikâyet mekanizmaları aracılığıyla bildirebilirsiniz.</p>
+</div><div class="legal-article" id="kk-10"><h3>MADDE 10. Yer İmleri (Bookmarks)</h3>
+<p>Yer imi özelliği, Google'ın kişisel veri niteliğindeki içeriğinin (işletme adı, fotoğraf vb.) kalıcı olarak saklanmasına izin vermeyen kullanım koşullarına uygun şekilde tasarlanmıştır. Bir yeri kaydettiğinizde, o yerin adını <strong>siz kendiniz yazarsınız</strong>; İşletmeci bu ismi Google'dan otomatik olarak almaz veya önceden doldurmaz. Kaydınızın anahtarı olarak yalnızca konumun genel kimliği (place_id) veya elle girilen bir kayıt kullanılır (bkz. Bölüm II Madde 7).</p>
+<p>Yer imi sayısı, abonelik planınıza bağlı bir limite tabi olabilir; bu limit hem Google tabanlı hem elle eklenen kayıtlar için birlikte geçerlidir.</p>
+</div><div class="legal-article" id="kk-11"><h3>MADDE 11. Bildirimler ve İletişim</h3>
+<p>İzin vermeniz halinde, yeni mesaj, arkadaşlık isteği ve Uygulama içi önemli duyurular için push bildirimi gönderebiliriz. Bu izni cihazınızın sistem ayarlarından dilediğiniz zaman geri alabilirsiniz. Hesap güvenliği, yasal bildirimler veya bu Koşullardaki değişiklikler gibi önemli konularda, bildirim izniniz olmasa dahi kayıtlı e-posta adresinize iletişim kurma hakkımız saklıdır.</p>
+</div><div class="legal-article" id="kk-12"><h3>MADDE 12. Hesap Askıya Alma, Fesih ve Silme</h3>
+<ol>
+<li><strong>Kullanıcı tarafından fesih:</strong> Hesabınızı dilediğiniz zaman Uygulama içindeki ayarlar menüsünden silebilirsiniz. Aktif bir aboneliğiniz varsa, hesap silme işlemi aboneliği otomatik olarak iptal etmez; aboneliği ayrıca Apple/Google hesap ayarlarınızdan iptal etmeniz gerekir.</li>
+<li><strong>İşletmeci tarafından askıya alma/fesih:</strong> Bu Koşulların, özellikle Madde 4'te sayılan yasaklı kullanımların ihlali, dolandırıcılık şüphesi, ödeme uyuşmazlığı (chargeback) veya yasal yükümlülük halinde, hesabınızı önceden bildirimde bulunmaksızın askıya alma veya kalıcı olarak kapatma hakkımız saklıdır.</li>
+<li><strong>Bu yetkinin coğrafi kapsamı:</strong> Hesap askıya alma/fesih yetkimiz, doğrudan Uygulama üzerinde uyguladığımız teknik ve sözleşmesel bir önlemdir; uygulanması için herhangi bir mahkeme kararına ihtiyaç duymayız. Bu nedenle bu yetki, uyruğunuz, ikamet ettiğiniz ülke veya size ayrıca hangi ülke hukukunun koruma sağladığından bağımsız olarak, bu Koşulları ihlal eden her kullanıcıya karşı aynı şekilde uygulanır. Madde 18'de Türk hukukunun ve Türk mahkemelerinin yetkili kılınmış olması, bu maddedeki hesap düzeyindeki önlemleri hiçbir şekilde sınırlamaz veya bunlara bir coğrafi sınır getirmez.</li>
+<li><strong>Ciddi ihlallerde bildirim:</strong> Dolandırıcılık, tehdit, taciz veya istismar girişimi gibi suç teşkil edebilecek davranışlarda, hesabı askıya almaya ek olarak durumu — olayın niteliğine göre — Türkiye'deki yetkili makamlara, kullanıcının bulunduğu ülkenin yetkili makamlarına ve/veya Apple App Store ya da Google Play'in kendi güven ve güvenlik (trust &amp; safety) birimlerine bildirme hakkımız saklıdır.</li>
+<li><strong>Silme sonrası veri:</strong> Hesap silindiğinde profil bilgileriniz, mesajlarınız ve yer imleriniz makul bir süre içinde sistemden kaldırılır; yasal saklama yükümlülüğü bulunan finansal kayıtlar (örn. abonelik/ödeme geçmişi) ilgili mevzuatın öngördüğü süre kadar saklanabilir (bkz. Bölüm II Madde 11).</li>
+</ol>
+</div><div class="legal-article" id="kk-13"><h3>MADDE 13. Fikri Mülkiyet ve Marka Hakları</h3>
+<p>"Common Ground" ve "DuoFine" adları, logoları ve Uygulamanın kaynak kodu, tasarımı, arayüzü dahil tüm unsurları İşletmeciye veya lisans verenlerine aittir ve fikri mülkiyet mevzuatı ile korunur. İşbu Koşullar, size Uygulamayı kişisel, ticari olmayan amaçlarla kullanma hakkı tanır; bu, Uygulama üzerinde herhangi bir mülkiyet hakkı devri anlamına gelmez.</p>
+</div><div class="legal-article" id="kk-14"><h3>MADDE 14. Garantilerin Reddi</h3>
+<p>Uygulama "olduğu gibi" ve "mevcut olduğu şekliyle" sunulmaktadır. Yürürlükteki mevzuatın izin verdiği azami ölçüde, İşletmeci; Uygulamanın kesintisiz, hatasız, güvenli olacağına, W-W Fırsatlar kapsamındaki üçüncü taraf tekliflerin doğruluğuna veya diğer kullanıcıların davranışlarına ilişkin açık ya da zımni hiçbir garanti vermez.</p>
+</div><div class="legal-article" id="kk-15"><h3>MADDE 15. Sorumluluğun Sınırlandırılması</h3>
+<p><strong>Kritik Hüküm — Sorumluluk Sınırı:</strong></p>
+
+<p>Yürürlükteki mevzuatın izin verdiği azami ölçüde, İşletmeci; (a) W-W Fırsatlar kapsamında üçüncü taraf işletmelerle kurduğunuz işlemlerden, (b) diğer kullanıcılarla olan fiziksel veya sanal etkileşimlerinizden, (c) dolaylı, arızi veya sonuç niteliğindeki zararlardan sorumlu tutulamaz. İşletmecinin toplam sorumluluğu, her halükârda, zararın doğduğu olaydan önceki 12 ay içinde tarafınızca Uygulamaya ödenen toplam abonelik/satın alma bedeli ile sınırlıdır.</p>
+
+<p>Bu sınırlama, 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve ilgili mevzuat uyarınca tüketici sıfatıyla sahip olduğunuz emredici haklarınızı ortadan kaldırmaz; bu haklar saklıdır.</p>
+</div><div class="legal-article" id="kk-16"><h3>MADDE 16. Tazminat</h3>
+<p>Bu Koşulları ihlal etmenizden, Uygulamayı hukuka aykırı kullanmanızdan veya üçüncü kişi haklarını ihlal etmenizden doğan her türlü talep, zarar ve masrafa (makul avukatlık ücretleri dahil) karşı İşletmeciyi tazmin etmeyi kabul edersiniz.</p>
+</div><div class="legal-article" id="kk-17"><h3>MADDE 17. Mücbir Sebep</h3>
+<p>Doğal afet, savaş, salgın hastalık, altyapı sağlayıcılarının (barındırma, ödeme, mağaza) hizmet kesintileri gibi makul kontrol alanımız dışındaki olaylardan kaynaklanan gecikme veya ifa edememe hallerinde İşletmeci sorumlu tutulamaz.</p>
+</div><div class="legal-article" id="kk-18"><h3>MADDE 18. Uygulanacak Hukuk ve Uyuşmazlıkların Çözümü</h3>
+<p>İşbu Koşullar Türkiye Cumhuriyeti kanunlarına tabidir. Taraflar arasında doğabilecek uyuşmazlıklarda İstanbul (Anadolu/Avrupa) Mahkemeleri ve İcra Daireleri yetkilidir; tüketici sıfatıyla hareket eden kullanıcılar, 6502 sayılı Kanun kapsamında kendi yerleşim yerindeki veya İşletmecinin yerleşim yerindeki Tüketici Hakem Heyeti veya Tüketici Mahkemesine başvurma hakkına sahiptir.</p>
+<p>Türkiye dışında yerleşik bir kullanıcıysanız, yukarıdaki hukuk ve yetki seçimi, yerleşik olduğunuz ülkenin sözleşmeden doğan uyuşmazlıklarda size tanıdığı ve sözleşmeyle bertaraf edilemeyen (emredici) tüketici veya veri koruma haklarını ortadan kaldırmaz; bu haklar saklıdır.</p>
+<p>Bu maddede öngörülen hukuk ve mahkeme seçimi, yalnızca yargı yoluyla ileri sürülecek talepler (örn. tazminat davası) için geçerlidir. Madde 12'de düzenlenen hesap askıya alma/fesih yetkimiz bundan bağımsızdır ve tüm kullanıcılara, bulundukları ülkeye bakılmaksızın uygulanır.</p>
+</div><div class="legal-article" id="kk-19"><h3>MADDE 19. Genel Hükümler</h3>
+<p>Bu Koşulların herhangi bir hükmünün geçersiz veya uygulanamaz sayılması, kalan hükümlerin geçerliliğini etkilemez. İşletmecinin herhangi bir hakkını kullanmamış olması, o haktan feragat ettiği anlamına gelmez. İşletmeci, bu Koşullardan doğan hak ve yükümlülüklerini, Hizmetin bir başka işletmeciye devri halinde, kullanıcılarına makul süre önceden bildirimde bulunarak devredebilir.</p>
+</div><div class="legal-article" id="kk-20"><h3>MADDE 20. Değişiklikler</h3>
+<p>İşletmeci, bu Koşulları zaman zaman güncelleyebilir. Önemli değişiklikler, Uygulama içi bildirim veya e-posta yoluyla duyurulur. Değişiklik sonrası Uygulamayı kullanmaya devam etmeniz, güncellenmiş Koşulları kabul ettiğiniz anlamına gelir.</p>
+</div><div class="legal-article" id="kk-21"><h3>MADDE 21. İletişim</h3>
+<p>Bu Koşullarla ilgili sorularınız için: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
+</div><h3 class="legal-part-title" id="bolum-2">Gizlilik Politikası ve KVKK Aydınlatma Metni</h3><div class="legal-article" id="gp-1"><h3>MADDE 1. Veri Sorumlusunun Kimliği</h3>
+<p>KVKK uyarınca, kişisel verileriniz; veri sorumlusu sıfatıyla ticari unvanı <strong>DuoFine</strong> olan işletme (bundan böyle "DuoFine" veya "biz") tarafından, aşağıda açıklanan kapsam ve amaçlarla işlenmektedir.</p>
+<div class="legal-table-wrap"><table class="legal-table">
+<tr><th>Ticari Unvan</th><td>DuoFine</td></tr>
+<tr><th>E-posta</th><td>info@duofine.com</td></tr>
+</table></div>
+<p><em>Not: Bu tabloda, veri sorumlusunun kimliği için KVKK madde 10 kapsamında yeterli olan asgari bilgiler (unvan ve iletişim kanalı) esas alınmıştır. Bir gerçek kişiye ait T.C. kimlik numarası veya ikametgâh adresi gibi hassas kişisel veriler, kanunen bu belgede kamuya açık şekilde yayınlanmasını gerektiren bir hüküm bulunmadığından buraya eklenmemiştir. Şu an için ayrı bir vergi mükellefiyeti veya tüzel kişilik tescili bulunmadığından Vergi No ve MERSİS No alanları da tabloda yer almamaktadır; bunlardan biri ileride tesis edilirse tabloya eklenir ve ticaret siciline kayıtlı, zaten kamuya açık olan işyeri adresi de aynı şekilde işlenir; gerekiyorsa Veri Sorumluları Sicili (VERBİS) kaydı da ayrıca değerlendirilir.</em></p>
+</div><div class="legal-article" id="gp-2"><h3>MADDE 2. Bu Politikanın Kapsamı</h3>
+<p>Bu Politika, Common Ground mobil uygulamasının kayıtlı kullanıcılarının, uygulamayı ziyaret eden potansiyel kullanıcıların ve W-W Fırsatlar kapsamında bizimle iletişime geçen iş ortağı işletme yetkililerinin kişisel verilerinin işlenmesine ilişkindir. DuoFine'ın kurumsal web sitesi üzerinden toplanan veriler de bu Politika kapsamındadır.</p>
+</div><div class="legal-article" id="gp-3"><h3>MADDE 3. İşlenen Kişisel Veri Kategorileri</h3>
+<div class="legal-table-wrap"><table class="legal-table">
+<caption>Uygulama içinde fiilen toplanan veri kategorileri ve kaynakları</caption>
+<tr><th>Kategori</th><th>Örnekler</th><th>Kaynak</th></tr>
+<tr><td>Kimlik</td><td>Ad, soyad, doğum tarihi</td><td>Doğrudan sizden (kayıt formu)</td></tr>
+<tr><td>İletişim</td><td>E-posta adresi</td><td>Doğrudan sizden</td></tr>
+<tr><td>Görsel veri</td><td>Profil fotoğrafı</td><td>Doğrudan sizden (yüklediğinizde)</td></tr>
+<tr><td>Konum verisi</td><td>Anlık GPS koordinatları</td><td>Cihazınızın konum servisleri (izninize bağlı)</td></tr>
+<tr><td>Cihaz ve teknik veri</td><td>Cihaz modeli, işletim sistemi, push bildirim token'ı, uygulama sürümü</td><td>Otomatik (cihazdan)</td></tr>
+<tr><td>Kullanım/işlem verisi</td><td>Arkadaşlık ilişkileri, mesajlaşma meta verisi, yer imi kayıtları, W-W Fırsat kullanım geçmişi</td><td>Uygulama kullanımınızdan otomatik</td></tr>
+<tr><td>İşlem güvenliği verisi</td><td>Hesabın ilk bağlandığı cihaz kimliği (çoklu hesap tespiti amaçlı)</td><td>Otomatik (cihazdan)</td></tr>
+<tr><td>Finansal veri (sınırlı)</td><td>Abonelik/token satın alma durumu ve tutarı (ödeme kartı bilgisi bize ulaşmaz)</td><td>Apple/Google üzerinden RevenueCat aracılığıyla</td></tr>
+<tr><td>Pazarlama/analitik veri</td><td>Uygulama içi gezinme ve etkileşim istatistikleri</td><td>Otomatik (analitik SDK)</td></tr>
+</table></div>
+<p><strong>Toplanmayan veriler:</strong> Ödeme kartı numarası, CVV gibi kart verileri hiçbir aşamada bize ulaşmaz; bu veriler doğrudan Apple/Google tarafından işlenir. Uygulama, mesaj içeriklerinizi kalıcı olarak sunucu tarafında saklamaz (bkz. Madde 11).</p>
+</div><div class="legal-article" id="gp-4"><h3>MADDE 4. Kişisel Verilerin İşlenme Amaçları</h3>
+<ol>
+<li>Hesabınızın oluşturulması, kimlik doğrulaması ve Hizmete erişiminizin sağlanması;</li>
+<li>Mekân keşfi, ortak buluşma noktası hesaplama ve W-W Fırsatların size gösterilmesi dahil temel Uygulama işlevlerinin sunulması;</li>
+<li>Arkadaşlarınızla mesajlaşma ve sosyal etkileşim özelliklerinin çalıştırılması;</li>
+<li>Abonelik ve token satın alımlarının işlenmesi, hesabınıza yansıtılması;</li>
+<li>Sahte hesap, mükerrer kayıt, W-W Fırsat suistimali gibi kötüye kullanımların tespiti ve önlenmesi;</li>
+<li>Push bildirimi gönderilmesi (izniniz dahilinde);</li>
+<li>Hizmet kalitesinin ölçülmesi, hata/çökme (crash) tespiti ve ürün geliştirme;</li>
+<li>Yasal yükümlülüklerin (vergi, muhasebe, resmi makam talepleri) yerine getirilmesi;</li>
+<li>Hukuki uyuşmazlıkların yönetimi ve haklarımızın korunması.</li>
+</ol>
+</div><div class="legal-article" id="gp-5"><h3>MADDE 5. Kişisel Verilerin İşlenmesinin Hukuki Sebepleri</h3>
+<p>Kişisel verileriniz, KVKK madde 5'te sayılan aşağıdaki hukuki sebeplere dayanılarak işlenmektedir:</p>
+<ul>
+<li><strong>Sözleşmenin kurulması/ifası (m.5/2-c):</strong> Hesap oluşturma, Hizmetin sunulması, abonelik yönetimi için kimlik ve iletişim verileriniz;</li>
+<li><strong>Açık rıza (m.5/1):</strong> KVKK'nın özel nitelikli kişisel veri tanımına (madde 6) girmese de yoğunlukla kişisel/konuma dair olan konum verisinin toplanması ve arkadaşlarınızla konum paylaşımı gibi işlemler için — konum izni istemi sırasında ayrıca alınır;</li>
+<li><strong>Hukuki yükümlülüğün yerine getirilmesi (m.5/2-ç):</strong> Vergi ve muhasebe mevzuatı kapsamında finansal kayıtların saklanması;</li>
+<li><strong>Meşru menfaat (m.5/2-f):</strong> Dolandırıcılık, mükerrer hesap ve kötüye kullanımın önlenmesi, hizmet güvenliğinin sağlanması, temel düzeyde ürün analitiği — bu işleme, temel hak ve özgürlüklerinizle dengelendiğinde ölçülü şekilde yürütülür;</li>
+<li><strong>Bir hakkın tesisi, kullanılması veya korunması için zorunlu olması (m.5/2-e):</strong> Hukuki uyuşmazlık ve talep süreçlerinde gerekli verilerin işlenmesi.</li>
+</ul>
+</div><div class="legal-article" id="gp-6"><h3>MADDE 6. Konum Verisine İlişkin Özel Hüküm</h3>
+<p><strong>Kritik Hüküm — Konum Verisi:</strong></p>
+
+<p>Konum izni, işletim sisteminiz üzerinden ayrıca ve açıkça istenir; vermemeniz halinde yalnızca konuma dayalı özellikler (keşif, ortak nokta hesaplama, yakındaki fırsatlar) çalışmaz, hesabınız etkilenmez. Konum verisi, harita ve keşif ekranlarının çalışması için oturum süresince (in-memory) işlenir; Google Haritalar Platformu kullanım koşulları gereği, koordinatlarınız kalıcı diske/veritabanına yazılmaz ve en fazla 30 takvim günü süreyle geçici olarak önbelleğe alınabilir.</p>
+
+<p><strong>Arkadaşlarla konum paylaşımı:</strong> Belirli özellikler (örn. "konum kartı" paylaşımı) yalnızca karşılıklı arkadaşlık ilişkisi kurduğunuz kullanıcılarla, siz paylaşmayı tercih ettiğinizde etkindir; konumunuz varsayılan olarak diğer kullanıcılara açık değildir.</p>
+</div><div class="legal-article" id="gp-7"><h3>MADDE 7. Google Haritalar/Places İçeriğine İlişkin Özel Hüküm</h3>
+<p>Google Haritalar Platformu Hizmet Şartları uyarınca, işletme adı, fotoğrafı, telefonu, puanı gibi Google kaynaklı içerikler kalıcı olarak saklanamaz. Bu nedenle:</p>
+<ul>
+<li>Yer imi (bookmark) özelliğinde görüntülenen işletme adı, Google'dan alınmaz; kaydı oluştururken <strong>siz kendi yazdığınız</strong> bir etikettir ve bu haliyle saklanır.</li>
+<li>Konum kimliği (place_id) sınırsız süreyle saklanabilir; enlem/boylam bilgisi ise yalnızca 30 gün süreyle geçici önbelleğe alınabilir.</li>
+<li>Yer imi sekmesi, Google'a herhangi bir yer/fotoğraf/isim sorgusu göndermez; yalnızca sizin kendi kayıtlarınız üzerinde yerel arama yapılır.</li>
+</ul>
+</div><div class="legal-article" id="gp-8"><h3>MADDE 8. W-W Fırsatlar Kapsamında İşlenen Veriler</h3>
+<p>Bir W-W Fırsatını kullandığınızda, hangi fırsatı, hangi işletmede, hangi tarih ve saatte kullandığınıza dair kayıt (kullanım geçmişi) tarafımızca tutulur. Bu veri; haftalık kullanım sınırının uygulanması, kötüye kullanımın tespiti ve iş ortağı işletmelere anonim/toplulaştırılmış performans bilgisi sağlanması amacıyla işlenir. Bu veriler, anlaşmalı işletmeyle yalnızca kampanyanın doğrulanması amacıyla (kodun geçerliliğinin işletme personeli tarafından teyit edilmesi) sınırlı ölçüde paylaşılır; işletmeye kimlik bilgileriniz (e-posta, tam ad) aktarılmaz.</p>
+</div><div class="legal-article" id="gp-9"><h3>MADDE 9. Abonelik ve Ödeme Verileri</h3>
+<p>Ödeme işlemleri doğrudan Apple App Store veya Google Play tarafından yürütülür; kart bilgileriniz bize ulaşmaz. Abonelik/token durumunuz (aktif plan, satın alma tarihi, tutar), ödeme sağlayıcı entegrasyonumuz olan <strong>RevenueCat</strong> aracılığıyla bize iletilir ve hesabınıza doğru yetkilerin (premium seviye) tanınması amacıyla işlenir.</p>
+</div><div class="legal-article" id="gp-10"><h3>MADDE 10. Kişisel Verilerin Aktarımı (Yurt İçi/Yurt Dışı)</h3>
+<p>Kişisel verileriniz, Hizmetin sunulabilmesi için gerekli teknik altyapı sağlayıcılarımızla, yalnızca hizmetin gerektirdiği ölçüde paylaşılır. Bu sağlayıcıların bir kısmı yurt dışında (başta ABD ve AB olmak üzere) yerleşiktir; bu aktarımlar, KVKK madde 9 ve Kişisel Verileri Koruma Kurulu'nun belirlediği aktarım mekanizmalarına (açık rıza, Kurul tarafından onaylanan standart sözleşme vb.) uygun şekilde gerçekleştirilir.</p>
+<div class="legal-table-wrap"><table class="legal-table">
+<caption>Başlıca alt işleyiciler / hizmet sağlayıcılar</caption>
+<tr><th>Sağlayıcı</th><th>Amaç</th><th>Konum</th></tr>
+<tr><td>Railway</td><td>Sunucu barındırma (backend)</td><td>Yurt dışı</td></tr>
+<tr><td>Backblaze B2</td><td>Profil fotoğrafı ve görsel depolama</td><td>Yurt dışı</td></tr>
+<tr><td>RevenueCat</td><td>Abonelik/satın alma yönetimi</td><td>Yurt dışı</td></tr>
+<tr><td>Google (Maps Platform, Sign-In)</td><td>Harita, mekân verisi, Google ile giriş</td><td>Yurt dışı</td></tr>
+<tr><td>Apple (Sign in with Apple, App Store)</td><td>Kimlik doğrulama, ödeme</td><td>Yurt dışı</td></tr>
+<tr><td>Sentry</td><td>Hata/çökme izleme</td><td>Yurt dışı</td></tr>
+<tr><td>PostHog</td><td>Ürün analitiği</td><td>Yurt dışı</td></tr>
+</table></div>
+<p>Yurt içinde, yalnızca yasal yükümlülüklerimiz kapsamında yetkili kamu kurum ve kuruluşlarıyla (talep halinde) veri paylaşımı yapılabilir.</p>
+</div><div class="legal-article" id="gp-11"><h3>MADDE 11. Saklama Süreleri</h3>
+<ul>
+<li><strong>Profil verileri:</strong> Hesabınız aktif olduğu sürece, hesap silme talebinizin ardından makul bir süre içinde silinir.</li>
+<li><strong>Konum verisi:</strong> Kalıcı olarak saklanmaz; harita/keşif işlevleri için oturum içi bellekte tutulur (Madde 6).</li>
+<li><strong>Mesajlar:</strong> Sunucu tarafında kalıcı bir mesaj arşivi tutulmaz; cihazınızdaki yerel önbellek, cihazınızın kendi yedekleme/güvenlik ayarlarına tabidir.</li>
+<li><strong>W-W Fırsat kullanım geçmişi:</strong> Haftalık limit hesaplaması ve kötüye kullanım tespiti amacıyla makul bir süre saklanır.</li>
+<li><strong>Finansal/abonelik kayıtları:</strong> Türk Ticaret Kanunu ve Vergi Usul Kanunu uyarınca öngörülen yasal saklama süresince (genel olarak 10 yıla kadar) saklanabilir.</li>
+<li><strong>Cihaz kilidi kaydı:</strong> Çoklu hesap suistimalini önlemek amacıyla, hesap ile ilk bağlanan cihaz arasındaki eşleşme, güvenlik amacıyla saklanır.</li>
+</ul>
+</div><div class="legal-article" id="gp-12"><h3>MADDE 12. Veri Güvenliği Tedbirleri</h3>
+<p>Kişisel verilerinizin güvenliğini sağlamak amacıyla şifreleme (aktarım sırasında TLS), erişim kontrolü, günlükleme (logging) ve düzenli güvenlik değerlendirmeleri gibi teknik ve idari tedbirler uygulanmaktadır. Buna rağmen internet üzerinden hiçbir aktarım yönteminin %100 güvenli olmadığını kabul edersiniz.</p>
+</div><div class="legal-article" id="gp-13"><h3>MADDE 13. Çocukların Gizliliği</h3>
+<p>Hizmet, 13 yaşın altındaki kişilere yönelik değildir ve bu yaş grubundan bilerek kişisel veri toplanmaz. 13 yaşın altında olduğunu öğrendiğimiz bir kullanıcının hesabı, tespit edildiğinde derhal kapatılır ve ilgili verileri silinir. Bir çocuğunuzun bize kişisel veri sağladığını düşünüyorsanız lütfen <a href="mailto:info@duofine.com">info@duofine.com</a> adresinden bizimle iletişime geçin.</p>
+</div><div class="legal-article" id="gp-14"><h3>MADDE 14. SDK'lar ve Analitik Araçlar</h3>
+<p>Uygulama, çerez kullanan bir web sitesi değildir; bunun yerine mobil SDK'lar aracılığıyla sınırlı teknik/analitik veri toplar:</p>
+<ul>
+<li><strong>PostHog:</strong> Uygulama içi kullanım istatistikleri (hangi ekranların ziyaret edildiği, hangi özelliklerin kullanıldığı) için;</li>
+<li><strong>Sentry:</strong> Uygulama çökmelerinin ve hatalarının teşhisi için (yalnızca teknik hata verisi, üretim/geliştirme build ayrımıyla);</li>
+<li><strong>RevenueCat:</strong> Abonelik durumunuzun doğrulanması için.</li>
+</ul>
+<p>Bu araçlar, kişiselleştirilmiş reklam amacıyla kullanılmaz; verileriniz üçüncü taraflara pazarlama amacıyla satılmaz veya kiralanmaz.</p>
+</div><div class="legal-article" id="gp-15"><h3>MADDE 15. İlgili Kişinin Hakları (KVKK m.11)</h3>
+<p>KVKK madde 11 uyarınca aşağıdaki haklara sahipsiniz:</p>
+<ol>
+<li>Kişisel verilerinizin işlenip işlenmediğini öğrenme;</li>
+<li>İşlenmişse buna ilişkin bilgi talep etme;</li>
+<li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme;</li>
+<li>Yurt içinde/yurt dışında aktarıldığı üçüncü kişileri bilme;</li>
+<li>Eksik veya yanlış işlenmişse düzeltilmesini isteme;</li>
+<li>KVKK madde 7'de öngörülen şartlar çerçevesinde silinmesini veya yok edilmesini isteme;</li>
+<li>Düzeltme/silme işlemlerinin aktarıldığı üçüncü kişilere bildirilmesini isteme;</li>
+<li>İşlenen verilerin münhasıran otomatik sistemlerle analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme;</li>
+<li>Kanuna aykırı işleme nedeniyle zarara uğramanız halinde zararın giderilmesini talep etme.</li>
+</ol>
+<p>Bu haklarınızı kullanmak için Madde 18'deki iletişim kanalından bize yazılı olarak başvurabilirsiniz. Başvurunuz, KVKK'da öngörülen süre (talebin niteliğine göre en geç 30 gün) içinde ücretsiz olarak sonuçlandırılır; işlemin ayrıca bir maliyet gerektirmesi halinde Kişisel Verileri Koruma Kurulunca belirlenen tarifedeki ücret talep edilebilir.</p>
+<p><strong>Avrupa Ekonomik Alanı, Birleşik Krallık veya İsviçre'de Yerleşik Kullanıcılar İçin Ek Bilgi:</strong></p>
+
+<p>Yukarıdaki haklar KVKK esas alınarak yazılmıştır; Avrupa Ekonomik Alanı (AEA), Birleşik Krallık veya İsviçre'de yerleşikseniz, verileriniz ayrıca Genel Veri Koruma Tüzüğü (GDPR) veya ilgili yerel mevzuat kapsamında da korunur ve bu, Bölüm I Madde 18'deki hukuk/mahkeme seçiminden etkilenmez. Somut olarak: yukarıdaki haklara ek olarak verilerinizin yapılandırılmış, yaygın kullanılan bir formatta tarafınıza aktarılmasını (veri taşınabilirliği) talep edebilir ve başvurunuzdan tatmin olmazsanız doğrudan bize başvurmak yerine veya buna ek olarak kendi ülkenizin yetkili veri koruma otoritesine şikâyette bulunabilirsiniz.</p>
+<p>Şeffaflık amacıyla belirtiriz: DuoFine şu anki ölçeğinde AEA içinde yerleşik bir GDPR temsilcisi atamamıştır; bu, doğrudan AEA pazarına yönelik bir faaliyet yürütmediğimiz ve işleme hacminin küçük olduğu değerlendirmesine dayanır. AEA kullanıcı sayımız büyüdükçe bu değerlendirme yeniden yapılacak ve gerekiyorsa resmi bir temsilci atanacaktır.</p>
+
+</div><div class="legal-article" id="gp-16"><h3>MADDE 16. Veri İhlali Bildirimi</h3>
+<p>Kişisel verilerinizin kanuni olmayan yollarla ele geçirilmesi halinde, KVKK madde 12 uyarınca durum en kısa sürede ilgili kişilere ve Kişisel Verileri Koruma Kuruluna bildirilir.</p>
+</div><div class="legal-article" id="gp-17"><h3>MADDE 17. Politika Değişiklikleri</h3>
+<p>Bu Politika, mevzuat değişiklikleri veya Hizmetteki güncellemeler doğrultusunda zaman zaman revize edilebilir. Güncel sürüm her zaman bu sayfada ve Uygulama içinde yayımlanır; önemli değişiklikler ayrıca bildirilir.</p>
+</div><div class="legal-article" id="gp-18"><h3>MADDE 18. İletişim ve Başvuru</h3>
+<p>Gizlilik ve KVKK başvurularınız için: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
+<p class="divider-quote">Yazılı başvurularda, kimliğinizi tevsik edici bilgi/belge ile talebinizi açıkça belirtmeniz, başvurunuzun hızlı sonuçlandırılmasına yardımcı olur.</p>
 </div>
+        </section>
+    </main>
 
-<div class="notice">
-  <div class="notice-box">
-    <strong>Bu belgenin durumu:</strong> Bu metin, Common Ground uygulamasının mevcut kod tabanı ve iş akışları esas alınarak hazırlanmış kapsamlı bir <strong>taslaktır</strong>. Bir yapay zeka tarafından derlenmiştir, ruhsatlı bir Türk avukatının incelemesinin yerine geçmez ve son onay ondan alınmalıdır. Belgede doldurulmayı bekleyen bir alan kalmamıştır. Türkçe metin tamamen onaylanmadan 16 dile çeviri yapılmayacaktır.
-    <br><br>
-    <strong>TR-1.2 revizyon notu (15 Ağustos 2026):</strong> Ticari unvan olarak "DuoFine" netleştirildi; Kullanım Koşulları Madde 12 ve 18'e, hesap askıya alma/fesih yetkisinin kullanıcının uyruğu/konumundan bağımsız uygulandığına dair açıklama ve yurt dışı emredici hukuk çekincesi eklendi; Madde 18'deki yetkili il İstanbul olarak belirlendi; Gizlilik Politikası Madde 1'deki kimlik tablosundan T.C. kimlik no, ikametgâh adresi, ve henüz mevcut olmayan Vergi No/MERSİS No satırları kaldırıldı; Madde 15'e AEA/Birleşik Krallık kullanıcıları için GDPR farkındalık bölümü eklendi.
-    <br><br>
-    <strong>TR-1.3 revizyon notu (15 Ağustos 2026 — bütünlük kontrolü):</strong> KVKK madde 5/6/7/9/10/11/12/13 atıfları resmi kaynakla tek tek doğrulandı. İki numaralandırma/atıf hatası düzeltildi: (1) Madde 12'ye yeni bentler eklenince "Silme sonrası veri" 3. sıradan 5. sıraya kaymıştı, Madde 5'teki çapraz referans "Madde 12.3"ten "Madde 12.5"e düzeltildi; (2) Gizlilik Politikası Madde 15'teki GDPR kutusunda Bölüm I'deki hukuk seçimi maddesine "Bölüm I" öneki eksik verilmişti (kendi Bölüm II Madde 18'ine, yani İletişim'e işaret ediyordu), düzeltildi. Ayrıca Gizlilik Politikası Madde 5'te kullanılmayan/asılı bir "KVKK madde 6" atfı kaldırıldı ve konum verisinin özel nitelikli veri olmadığını netleştiren çelişkili bir cümle sadeleştirildi.
-  </div>
-</div>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <a href="/" class="nav-logo">
+                    <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/><path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/></svg>
+                    <span>DuoFine</span>
+                </a>
+                <p>Crafting meaningful connections and experiences through technology.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigate</h3>
+                <ul class="footer-links">
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#projects">Projects</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"></path></svg></a>
+                    <a href="https://x.com/duofine" target="_blank" rel="noopener noreferrer" aria-label="X" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © <span id="y">2026</span> DuoFine. All Rights Reserved. | <a href="mailto:info@duofine.com">info@duofine.com</a>
+        </div>
+    </footer>
 
-<div class="toc-wrap">
-  <details class="toc" open>
-    <summary>İçindekiler</summary>
-    <div class="toc-grid">
-      <div class="toc-part">Bölüm I — Kullanım Koşulları</div>
-      <a href="#kk-0">0. Giriş ve Kabul</a>
-      <a href="#kk-1">1. Tanımlar</a>
-      <a href="#kk-2">2. Hizmetin Kapsamı</a>
-      <a href="#kk-3">3. Hesap Oluşturma, Yaş ve Güvenlik</a>
-      <a href="#kk-4">4. Yasaklı Kullanımlar</a>
-      <a href="#kk-5">5. Kullanıcı İçeriği</a>
-      <a href="#kk-6">6. Konum ve Harita İçeriği</a>
-      <a href="#kk-7">7. W-W Fırsatlar (Deals)</a>
-      <a href="#kk-8">8. Abonelikler, Token ve Satın Alımlar</a>
-      <a href="#kk-9">9. Arkadaşlık ve Mesajlaşma</a>
-      <a href="#kk-10">10. Yer İmleri</a>
-      <a href="#kk-11">11. Bildirimler</a>
-      <a href="#kk-12">12. Askıya Alma, Fesih, Silme</a>
-      <a href="#kk-13">13. Fikri Mülkiyet</a>
-      <a href="#kk-14">14. Garantilerin Reddi</a>
-      <a href="#kk-15">15. Sorumluluğun Sınırlandırılması</a>
-      <a href="#kk-16">16. Tazminat</a>
-      <a href="#kk-17">17. Mücbir Sebep</a>
-      <a href="#kk-18">18. Uygulanacak Hukuk ve Uyuşmazlık</a>
-      <a href="#kk-19">19. Genel Hükümler</a>
-      <a href="#kk-20">20. Değişiklikler</a>
-      <a href="#kk-21">21. İletişim</a>
-      <div class="toc-part">Bölüm II — Gizlilik Politikası (KVKK Aydınlatma Metni)</div>
-      <a href="#gp-1">1. Veri Sorumlusunun Kimliği</a>
-      <a href="#gp-2">2. Kapsam</a>
-      <a href="#gp-3">3. İşlenen Kişisel Veriler</a>
-      <a href="#gp-4">4. İşleme Amaçları</a>
-      <a href="#gp-5">5. Hukuki Sebepler</a>
-      <a href="#gp-6">6. Konum Verisi — Özel Hüküm</a>
-      <a href="#gp-7">7. Google Haritalar/Places İçeriği</a>
-      <a href="#gp-8">8. Deals Kapsamında Veri İşleme</a>
-      <a href="#gp-9">9. Abonelik ve Ödeme Verileri</a>
-      <a href="#gp-10">10. Veri Aktarımı (Yurt İçi/Yurt Dışı)</a>
-      <a href="#gp-11">11. Saklama Süreleri</a>
-      <a href="#gp-12">12. Veri Güvenliği</a>
-      <a href="#gp-13">13. Çocukların Gizliliği</a>
-      <a href="#gp-14">14. SDK'lar ve Analitik</a>
-      <a href="#gp-15">15. İlgili Kişinin Hakları</a>
-      <a href="#gp-16">16. Veri İhlali Bildirimi</a>
-      <a href="#gp-17">17. Politika Değişiklikleri</a>
-      <a href="#gp-18">18. İletişim ve Başvuru</a>
-    </div>
-  </details>
-</div>
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector('.main-header');
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if (header) header.classList.toggle('sticky', scrollY > 50);
+            });
+            if (hamburger && navMenu) {
+                hamburger.addEventListener("click", () => navMenu.classList.toggle("active"));
+            }
+        });
+    </script>
 
-<main>
-
-  <!-- ======================= BÖLÜM I — KULLANIM KOŞULLARI ======================= -->
-  <div class="part-header" id="bolum-1">
-    <div class="part-eyebrow">Bölüm I</div>
-    <h2 class="part-title">Kullanım Koşulları</h2>
-    <p class="part-sub">Common Ground mobil uygulamasını ("Uygulama" veya "Hizmet") kullanan her kullanıcı için geçerli sözleşme hükümleridir.</p>
-  </div>
-
-  <article class="madde" id="kk-0">
-    <div class="madde-head"><span class="madde-num">MADDE 0</span><h3 class="madde-title">Giriş ve Kabul</h3></div>
-    <div class="madde-body">
-      <p>İşbu Kullanım Koşulları ("Koşullar"), ticari unvanı <strong>DuoFine</strong> olan işletme ("İşletmeci", "biz") tarafından işletilen Common Ground mobil uygulaması ile bu uygulamanın sunduğu tüm özellikleri (mekân keşfi, W-W Fırsatlar, mesajlaşma, arkadaşlık ve yer imi dahil) kapsayan, kullanıcı ("siz", "Kullanıcı") ile İşletmeci arasındaki hukuki ilişkiyi düzenler.</p>
-      <p>Uygulamayı indirerek, bir hesap oluşturarak veya kullanmaya devam ederek bu Koşulları ve aşağıda Bölüm II'de yer alan Gizlilik Politikası'nı okuduğunuzu, anladığınızı ve kabul ettiğinizi beyan edersiniz. Bu belgeleri kabul etmiyorsanız Uygulamayı kullanmamalı, hesabınızı oluşturmamalısınız.</p>
-      <p>Uygulama içinde uygulama mağazası (Apple App Store / Google Play) üzerinden yapılan satın alımlar için, işbu Koşullara ek olarak ilgili mağazanın kendi kullanım koşulları da geçerlidir; çelişki halinde ödeme ve faturalandırmaya ilişkin hususlarda mağazanın koşulları, diğer tüm hususlarda işbu Koşullar esas alınır.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-1">
-    <div class="madde-head"><span class="madde-num">MADDE 1</span><h3 class="madde-title">Tanımlar</h3></div>
-    <div class="madde-body">
-      <ul>
-        <li><strong>Uygulama / Hizmet:</strong> "Common Ground" adlı, iOS ve Android üzerinde dağıtılan mobil uygulama ve onunla bütünleşik sunucu altyapısı.</li>
-        <li><strong>Kullanıcı:</strong> Uygulamada hesap oluşturan, işbu Koşulları kabul eden gerçek kişi.</li>
-        <li><strong>İçerik:</strong> Kullanıcının profilinde, mesajlarında, yer imlerinde veya Uygulama içinde paylaştığı her türlü metin, görsel, konum ve benzeri veri.</li>
-        <li><strong>W-W Fırsatlar / Deals:</strong> Uygulamada listelenen, üçüncü taraf işletmeler tarafından sunulan indirim/kampanya teklifleri ve bunların Uygulama üzerinden kod/QR ile kullanıma sunulması sistemi.</li>
-        <li><strong>Abonelik:</strong> Apple App Store veya Google Play üzerinden satın alınan, Uygulama içi ek özellik ve token hakkı sağlayan tekrarlanan (otomatik yenilenen) ücretli plan (örn. Plus, Pro).</li>
-        <li><strong>Token:</strong> Uygulama içindeki belirli özelliklerin (örn. arama/keşif) kullanımını ölçen, parayla değiştirilemeyen sanal kullanım hakkı birimi.</li>
-        <li><strong>Mağaza:</strong> Apple Inc.'in işlettiği App Store veya Google LLC'nin işlettiği Google Play mağazası.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-2">
-    <div class="madde-head"><span class="madde-num">MADDE 2</span><h3 class="madde-title">Hizmetin Kapsamı</h3></div>
-    <div class="madde-body">
-      <p>Common Ground; kullanıcıların konum, mesafe, ulaşım şekli, kategori ve popülerlik gibi filtrelerle çevrelerindeki işletmeleri keşfetmesini, birden fazla kişi arasında ortak bir buluşma noktası hesaplamasını, arkadaşlarıyla gerçek zamanlı mesajlaşmasını, beğendiği yerleri kaydetmesini ve anlaşmalı işletmelerin sunduğu özel kampanyalardan ("W-W Fırsatlar") yararlanmasını sağlayan bir keşif ve sosyal etkileşim uygulamasıdır.</p>
-      <p>İşletmeci, Uygulamanın tamamını veya bir kısmını, herhangi bir özelliği önceden haber vermeksizin değiştirme, askıya alma veya kaldırma hakkını saklı tutar. Uygulama "olduğu gibi" ve "mevcut olduğu ölçüde" sunulur; kesintisiz veya hatasız çalışacağına dair bir taahhüt verilmez.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-3">
-    <div class="madde-head"><span class="madde-num">MADDE 3</span><h3 class="madde-title">Hesap Oluşturma, Yaş Sınırı ve Hesap Güvenliği</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li><strong>Yaş sınırı:</strong> Uygulamayı yalnızca 13 yaşını doldurmuş kişiler kullanabilir. 13-18 yaş arasındaki kullanıcılar, Türk Medeni Kanunu uyarınca sınırlı ehliyetsiz sayılabileceğinden, Uygulamayı ancak veli veya vasilerinin bilgisi ve gözetiminde kullanmalıdır; özellikle ücretli abonelik ve satın alım işlemleri için yasal temsilcinin onayı aranır. İşletmeci, yaşını yanlış beyan ettiği tespit edilen hesapları askıya alma hakkını saklı tutar.</li>
-        <li><strong>Doğru bilgi verme:</strong> Kayıt sırasında sağladığınız ad, e-posta ve doğum tarihi gibi bilgilerin doğru ve güncel olduğunu taahhüt edersiniz. Sahte kimlik veya başka bir kişinin kimliğiyle hesap oluşturmak yasaktır.</li>
-        <li><strong>Tek hesap / cihaz kısıtlaması:</strong> Kötüye kullanımı ve mükerrer kayıtları önlemek amacıyla, Uygulama yeni kayıt sırasında cihaz düzeyinde bir doğrulama uygular. Bir cihaz, belirli bir süre boyunca yalnızca bir hesapla ilişkilendirilebilir; bu kısıtlamayı aşmaya yönelik girişimler (örn. cihaz sıfırlama, sahte kimlik ile tekrar kayıt) Madde 4 kapsamında yasaklı kullanım sayılır.</li>
-        <li><strong>Hesap güvenliği:</strong> Şifrenizin ve hesabınıza erişimin gizliliğinden siz sorumlusunuz. Hesabınız üzerinden gerçekleştirilen tüm işlemlerden, aksi ispat edilmedikçe siz sorumlu tutulursunuz. Hesabınıza yetkisiz erişim şüphesi durumunda derhal <a href="mailto:info@duofine.com">info@duofine.com</a> adresinden bize bildirimde bulunmalısınız.</li>
-        <li><strong>E-posta, Google ve Apple ile giriş:</strong> Uygulama, e-posta/şifre ile kayda ek olarak Google ve Apple hesabı üzerinden giriş seçenekleri sunar. Bu yöntemleri kullandığınızda, ilgili sağlayıcının kendi kullanım koşulları ve gizlilik politikası da geçerli olur.</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-4">
-    <div class="madde-head"><span class="madde-num">MADDE 4</span><h3 class="madde-title">Yasaklı Kullanımlar</h3></div>
-    <div class="madde-body">
-      <p>Uygulamayı kullanırken aşağıdaki davranışlardan kaçınmayı kabul edersiniz:</p>
-      <ol>
-        <li>Yürürlükteki herhangi bir kanuna, yönetmeliğe veya üçüncü kişi hakkına aykırı içerik paylaşmak veya faaliyette bulunmak;</li>
-        <li>Başka bir kullanıcıyı taciz etmek, tehdit etmek, ısrarla rahatsız etmek, nefret söylemi, ayrımcı veya müstehcen içerik paylaşmak;</li>
-        <li>Sahte profil oluşturmak, başka bir gerçek veya tüzel kişiyi taklit etmek, yanıltıcı yaş/kimlik bilgisi vermek;</li>
-        <li>Uygulamayı spam, istenmeyen ticari mesaj, dolandırıcılık, oltalama (phishing) veya kötü amaçlı yazılım dağıtımı için kullanmak;</li>
-        <li>Uygulamanın kaynak kodunu tersine mühendislikle çözmeye çalışmak, otomatikleştirilmiş araçlarla (bot, scraper) veri toplamak veya sunucu altyapısına orantısız yük bindirmek;</li>
-        <li>Cihaz kısıtlamasını (Madde 3.3) veya token/abonelik sınırlarını (Madde 8) aşmak amacıyla teknik önlemleri atlatmaya çalışmak;</li>
-        <li><strong>W-W Fırsatlar sistemini kötüye kullanmak:</strong> bir kampanya kodunu satmak, devretmek, ekran görüntüsü çoğaltarak birden fazla kez kullanmaya çalışmak, anlaşmalı işletme ile kod/QR dışında usulsüz bir şekilde anlaşarak sistemi manipüle etmek (bkz. Madde 7);</li>
-        <li>Konum verisini başka bir kullanıcıyı takip etmek, izlemek veya fiziksel olarak taciz etmek amacıyla kullanmak;</li>
-        <li>18 yaşından küçük kullanıcılarla uygunsuz iletişim kurmak veya onları istismara açık hale getirecek davranışlarda bulunmak.</li>
-      </ol>
-      <p>Bu maddenin ihlali, önceden bildirim yapılmaksızın hesabın askıya alınmasına veya kalıcı olarak silinmesine yol açabilir (Madde 12).</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-5">
-    <div class="madde-head"><span class="madde-num">MADDE 5</span><h3 class="madde-title">Kullanıcı İçeriği ve Lisans</h3></div>
-    <div class="madde-body">
-      <p>Uygulama içinde paylaştığınız içeriklerin (profil bilgisi, fotoğraf, mesaj, yer imi etiketi vb.) mülkiyeti size aittir. Bununla birlikte, bu içerikleri Uygulama üzerinden diğer kullanıcılara gösterebilmemiz, saklayabilmemiz ve Hizmeti işletebilmemiz için bize dünya çapında, münhasır olmayan, alt lisanslanabilir bir kullanım lisansı vermiş olursunuz; bu lisans yalnızca Hizmetin işletilmesi amacıyla sınırlıdır ve hesabınızı sildiğinizde ilgili içerik de silinir (Madde 12.5 ve Bölüm II Madde 11 saklidir).</p>
-      <p>Paylaştığınız içeriğin yasal olarak paylaşma hakkına sahip olduğunuz içerik olduğunu ve üçüncü kişilerin fikri mülkiyet, kişilik veya gizlilik haklarını ihlal etmediğini beyan ve taahhüt edersiniz.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-6">
-    <div class="madde-head"><span class="madde-num">MADDE 6</span><h3 class="madde-title">Konum Servisleri ve Harita İçeriği</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">Kritik Hüküm — Konum Verisi</div>
-        <p>Uygulamanın temel işlevi (mekân keşfi, ortak buluşma noktası hesaplama, yakındaki fırsatları gösterme) hassas ve gerçek zamanlı konum verisine dayanır. Konum izni vermezseniz Uygulamanın bu özellikleri çalışmaz. Konum verisinin işlenme esasları Bölüm II Madde 6'da ayrıntılı olarak açıklanmıştır.</p>
-      </div>
-      <p>Harita ve mekân verileri (harita görüntüsü, işletme adı, adres, fotoğraf, tür, puan) Google Haritalar Platformu (Google Maps Platform) üzerinden sağlanır ve Google'ın kendi kullanım koşullarına tabidir. Bu içerikleri Uygulama dışında kopyalayamaz, kalıcı olarak saklayamaz veya ticari amaçla yeniden kullanamazsınız; bu kısıtlama İşletmeci için de geçerlidir ve Uygulamanın teknik tasarımı buna göre yapılandırılmıştır.</p>
-      <p>Yer imlerinizde görünen işletme adı, Google'dan otomatik alınan bir veri değil, sizin kendi yazdığınız bir etikettir (bkz. Madde 10 ve Bölüm II Madde 7).</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-7">
-    <div class="madde-head"><span class="madde-num">MADDE 7</span><h3 class="madde-title">W-W Fırsatlar (Deals) — Üçüncü Taraf İşletme Kampanyaları</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">Kritik Hüküm — İşletmeci Sadece Aracıdır</div>
-        <p>W-W Fırsatlar kapsamında listelenen tüm kampanyalar, indirimler ve teklifler <strong>anlaşmalı üçüncü taraf işletmeler</strong> tarafından sunulur. İşletmeci; satılan ürün veya hizmetin tarafı, satıcısı veya sağlayıcısı değildir, yalnızca kampanyanın Uygulama üzerinden görüntülenmesini ve kod/QR ile kullanıma sunulmasını sağlayan teknik bir aracıdır.</p>
-      </div>
-      <ol>
-        <li><strong>Teklifin niteliği:</strong> Her W-W Fırsat, ilgili işletme tarafından belirlenen kendi koşullarına (geçerlilik süresi, stok/kontenjan, minimum harcama vb.) tabidir. İşletmeci, bir kampanyanın doğruluğunu, güncelliğini veya işletme tarafından fiilen uygulanacağını garanti etmez; işletmeler önceden haber vermeksizin kampanyayı değiştirebilir, askıya alabilir veya sonlandırabilir.</li>
-        <li><strong>Kullanım (redemption) süreci:</strong> Bir fırsatı kullanmak istediğinizde Uygulama size benzersiz bir kod/QR üretir. Bu kod, üretildiği andan itibaren sınırlı bir süre (Uygulama içinde belirtilen dakika) için geçerlidir ve süresi dolduğunda otomatik olarak geçersiz hale gelir. Kod, yalnızca ilgili işletmede, işletme personeline gösterilerek tek seferlik kullanılabilir.</li>
-        <li><strong>Haftalık kullanım sınırı:</strong> Kötüye kullanımı önlemek amacıyla, aynı fırsat için hareketli (rolling) yedi günlük bir süre içinde uygulanan bir kullanım sınırı vardır. Bu sınır, kampanyanın adil biçimde çok sayıda kullanıcıya ulaşabilmesi için uygulanır ve önceden haber verilmeksizin değiştirilebilir.</li>
-        <li><strong>Nakit değeri yoktur:</strong> Fırsat kodları nakde çevrilemez, başka bir kullanıcıya devredilemez, satılamaz veya toplu olarak (bulk) kullanılamaz. Bu kurala aykırı davranış tespit edilirse ilgili hesap, Madde 4.7 ve Madde 12 uyarınca askıya alınabilir.</li>
-        <li><strong>İşlemin tarafları ve sorumluluk:</strong> Bir W-W Fırsatının kullanılması sonucunda işletme ile aranızda kurulan satış/hizmet ilişkisi, doğrudan siz ve ilgili işletme arasındadır. Satılan ürün/hizmetin ayıplı olması, kalitesi, teslimatı, iadesi, ilgili işletmenin kendi mesafeli satış/tüketici mevzuatına uyumu gibi hususlarda muhatabınız ilgili işletmedir; İşletmeci bu işlemin tarafı olmadığından, 6502 sayılı Tüketicinin Korunması Hakkında Kanun kapsamındaki satıcı/sağlayıcı sorumluluğunu üstlenmez.</li>
-        <li><strong>Konum ve görünürlük:</strong> Fırsatların Uygulama içinde hangi il/ilçe filtresinde veya "Tümü" listesinde görüneceği İşletmecinin editoryal takdirindedir ve aynı işletmenin farklı şubeleri ayrı kartlar olarak listelenebilir.</li>
-        <li><strong>İptal ve değişiklik hakkı:</strong> İşletmeci, herhangi bir W-W Fırsatını, iş ortaklığının sona ermesi, işletmenin talebi veya kötüye kullanım şüphesi gibi nedenlerle önceden bildirimde bulunmaksızın Uygulamadan kaldırma hakkını saklı tutar.</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-8">
-    <div class="madde-head"><span class="madde-num">MADDE 8</span><h3 class="madde-title">Abonelikler, Token'lar ve Uygulama İçi Satın Alımlar</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li><strong>Faturalandırma mağaza üzerinden yapılır:</strong> Tüm ücretli abonelikler (Plus, Pro) ve tek seferlik token paketleri, Apple App Store veya Google Play üzerinden satın alınır ve faturalandırılır. Fiyatlar Uygulama içinde ilgili mağazanın döviz kuru ve vergi uygulamasına göre gösterilir ve önceden haber verilmeksizin değişebilir; güncel fiyat her zaman satın alma ekranında görüntülenen fiyattır.</li>
-        <li><strong>Otomatik yenileme:</strong> Abonelikler, iptal edilmediği sürece dönem sonunda otomatik olarak yenilenir ve ücretlendirilir. Aboneliğinizi iptal etmek, aboneliğinizi yönetmek ve iade talep etmek için kullanmanız gereken kanal, doğrudan Apple/Google hesap ayarlarınızdır; İşletmecinin ödemeyi doğrudan iade etme yetkisi veya erişimi yoktur.</li>
-        <li><strong>İade politikası:</strong> Satın alma sonrası iadeler, ilgili mağazanın (Apple veya Google) kendi iade politikasına tabidir. İşletmeci, mağazanın onayladığı iadeleri geriye dönük olarak sisteme yansıtır; ancak iade kararının kendisi mağazaya aittir.</li>
-        <li><strong>Token'lar:</strong> Token, belirli Uygulama içi özelliklerin (örn. arama/keşif sorguları) kullanım hakkını temsil eden, nakde çevrilemeyen, süresi dolabilen sanal bir birimdir. Token'lar başka bir kullanıcıya devredilemez ve gerçek para karşılığı geri satın alınamaz.</li>
-        <li><strong>Adil Kullanım Politikası:</strong> Abonelik planları aylık belirli bir token miktarı içerir (güncel miktarlar Uygulama içi mağaza ekranında listelenir). Hizmeti aksatacak ölçüde aşırı, otomatikleştirilmiş veya kötüye kullanım niteliğindeki kullanım tespit edilirse, İşletmeci ek kısıtlama uygulama hakkını saklı tutar; bu kısıtlama normal, kişisel kullanım seviyesindeki kullanıcıları etkilemez.</li>
-        <li><strong>Aile paylaşımı ve hesap değişikliği:</strong> Abonelikler, satın alan Apple/Google hesabına ve o hesabın bağlı olduğu Common Ground kullanıcı hesabına özgüdür; hesap değişikliği durumunda abonelik durumunun doğru yansıması, Uygulama içindeki oturum açma bilgilerinizin doğruluğuna bağlıdır.</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-9">
-    <div class="madde-head"><span class="madde-num">MADDE 9</span><h3 class="madde-title">Arkadaşlık, Mesajlaşma ve Kullanıcılar Arası Etkileşim</h3></div>
-    <div class="madde-body">
-      <p>Uygulama, kullanıcıların birbirini arkadaş olarak ekleyip gerçek zamanlı mesajlaşmasına ve konum tabanlı ortak buluşma noktası önerileri paylaşmasına imkân tanır. Bu özellikler yalnızca karşılıklı arkadaşlık ilişkisi kurulmuş kullanıcılar arasında etkindir.</p>
-      <p><strong>Kişisel güvenlik uyarısı:</strong> Uygulama üzerinden tanıştığınız kişilerle fiziksel olarak buluşmayı tercih etmeniz tamamen kendi takdirinizdedir ve kendi sorumluluğunuzdadır. İşletmeci, kullanıcıların kimlik doğrulamasını yapmaz ve fiziksel buluşmalardan doğabilecek herhangi bir zarardan sorumlu tutulamaz. Halka açık yerlerde buluşmanızı, kişisel bilgilerinizi (ev adresi, finansal bilgiler vb.) paylaşırken temkinli davranmanızı öneririz.</p>
-      <p>Diğer kullanıcıları rahatsız eden, tehdit eden veya bu Koşulları ihlal eden kişileri, Uygulama içindeki engelleme ve şikâyet mekanizmaları aracılığıyla bildirebilirsiniz.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-10">
-    <div class="madde-head"><span class="madde-num">MADDE 10</span><h3 class="madde-title">Yer İmleri (Bookmarks)</h3></div>
-    <div class="madde-body">
-      <p>Yer imi özelliği, Google'ın kişisel veri niteliğindeki içeriğinin (işletme adı, fotoğraf vb.) kalıcı olarak saklanmasına izin vermeyen kullanım koşullarına uygun şekilde tasarlanmıştır. Bir yeri kaydettiğinizde, o yerin adını <strong>siz kendiniz yazarsınız</strong>; İşletmeci bu ismi Google'dan otomatik olarak almaz veya önceden doldurmaz. Kaydınızın anahtarı olarak yalnızca konumun genel kimliği (place_id) veya elle girilen bir kayıt kullanılır (bkz. Bölüm II Madde 7).</p>
-      <p>Yer imi sayısı, abonelik planınıza bağlı bir limite tabi olabilir; bu limit hem Google tabanlı hem elle eklenen kayıtlar için birlikte geçerlidir.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-11">
-    <div class="madde-head"><span class="madde-num">MADDE 11</span><h3 class="madde-title">Bildirimler ve İletişim</h3></div>
-    <div class="madde-body">
-      <p>İzin vermeniz halinde, yeni mesaj, arkadaşlık isteği ve Uygulama içi önemli duyurular için push bildirimi gönderebiliriz. Bu izni cihazınızın sistem ayarlarından dilediğiniz zaman geri alabilirsiniz. Hesap güvenliği, yasal bildirimler veya bu Koşullardaki değişiklikler gibi önemli konularda, bildirim izniniz olmasa dahi kayıtlı e-posta adresinize iletişim kurma hakkımız saklıdır.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-12">
-    <div class="madde-head"><span class="madde-num">MADDE 12</span><h3 class="madde-title">Hesap Askıya Alma, Fesih ve Silme</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li><strong>Kullanıcı tarafından fesih:</strong> Hesabınızı dilediğiniz zaman Uygulama içindeki ayarlar menüsünden silebilirsiniz. Aktif bir aboneliğiniz varsa, hesap silme işlemi aboneliği otomatik olarak iptal etmez; aboneliği ayrıca Apple/Google hesap ayarlarınızdan iptal etmeniz gerekir.</li>
-        <li><strong>İşletmeci tarafından askıya alma/fesih:</strong> Bu Koşulların, özellikle Madde 4'te sayılan yasaklı kullanımların ihlali, dolandırıcılık şüphesi, ödeme uyuşmazlığı (chargeback) veya yasal yükümlülük halinde, hesabınızı önceden bildirimde bulunmaksızın askıya alma veya kalıcı olarak kapatma hakkımız saklıdır.</li>
-        <li><strong>Bu yetkinin coğrafi kapsamı:</strong> Hesap askıya alma/fesih yetkimiz, doğrudan Uygulama üzerinde uyguladığımız teknik ve sözleşmesel bir önlemdir; uygulanması için herhangi bir mahkeme kararına ihtiyaç duymayız. Bu nedenle bu yetki, uyruğunuz, ikamet ettiğiniz ülke veya size ayrıca hangi ülke hukukunun koruma sağladığından bağımsız olarak, bu Koşulları ihlal eden her kullanıcıya karşı aynı şekilde uygulanır. Madde 18'de Türk hukukunun ve Türk mahkemelerinin yetkili kılınmış olması, bu maddedeki hesap düzeyindeki önlemleri hiçbir şekilde sınırlamaz veya bunlara bir coğrafi sınır getirmez.</li>
-        <li><strong>Ciddi ihlallerde bildirim:</strong> Dolandırıcılık, tehdit, taciz veya istismar girişimi gibi suç teşkil edebilecek davranışlarda, hesabı askıya almaya ek olarak durumu — olayın niteliğine göre — Türkiye'deki yetkili makamlara, kullanıcının bulunduğu ülkenin yetkili makamlarına ve/veya Apple App Store ya da Google Play'in kendi güven ve güvenlik (trust &amp; safety) birimlerine bildirme hakkımız saklıdır.</li>
-        <li><strong>Silme sonrası veri:</strong> Hesap silindiğinde profil bilgileriniz, mesajlarınız ve yer imleriniz makul bir süre içinde sistemden kaldırılır; yasal saklama yükümlülüğü bulunan finansal kayıtlar (örn. abonelik/ödeme geçmişi) ilgili mevzuatın öngördüğü süre kadar saklanabilir (bkz. Bölüm II Madde 11).</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-13">
-    <div class="madde-head"><span class="madde-num">MADDE 13</span><h3 class="madde-title">Fikri Mülkiyet ve Marka Hakları</h3></div>
-    <div class="madde-body">
-      <p>"Common Ground" ve "DuoFine" adları, logoları ve Uygulamanın kaynak kodu, tasarımı, arayüzü dahil tüm unsurları İşletmeciye veya lisans verenlerine aittir ve fikri mülkiyet mevzuatı ile korunur. İşbu Koşullar, size Uygulamayı kişisel, ticari olmayan amaçlarla kullanma hakkı tanır; bu, Uygulama üzerinde herhangi bir mülkiyet hakkı devri anlamına gelmez.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-14">
-    <div class="madde-head"><span class="madde-num">MADDE 14</span><h3 class="madde-title">Garantilerin Reddi</h3></div>
-    <div class="madde-body">
-      <p>Uygulama "olduğu gibi" ve "mevcut olduğu şekliyle" sunulmaktadır. Yürürlükteki mevzuatın izin verdiği azami ölçüde, İşletmeci; Uygulamanın kesintisiz, hatasız, güvenli olacağına, W-W Fırsatlar kapsamındaki üçüncü taraf tekliflerin doğruluğuna veya diğer kullanıcıların davranışlarına ilişkin açık ya da zımni hiçbir garanti vermez.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-15">
-    <div class="madde-head"><span class="madde-num">MADDE 15</span><h3 class="madde-title">Sorumluluğun Sınırlandırılması</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">Kritik Hüküm — Sorumluluk Sınırı</div>
-        <p>Yürürlükteki mevzuatın izin verdiği azami ölçüde, İşletmeci; (a) W-W Fırsatlar kapsamında üçüncü taraf işletmelerle kurduğunuz işlemlerden, (b) diğer kullanıcılarla olan fiziksel veya sanal etkileşimlerinizden, (c) dolaylı, arızi veya sonuç niteliğindeki zararlardan sorumlu tutulamaz. İşletmecinin toplam sorumluluğu, her halükârda, zararın doğduğu olaydan önceki 12 ay içinde tarafınızca Uygulamaya ödenen toplam abonelik/satın alma bedeli ile sınırlıdır.</p>
-      </div>
-      <p>Bu sınırlama, 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve ilgili mevzuat uyarınca tüketici sıfatıyla sahip olduğunuz emredici haklarınızı ortadan kaldırmaz; bu haklar saklıdır.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-16">
-    <div class="madde-head"><span class="madde-num">MADDE 16</span><h3 class="madde-title">Tazminat</h3></div>
-    <div class="madde-body">
-      <p>Bu Koşulları ihlal etmenizden, Uygulamayı hukuka aykırı kullanmanızdan veya üçüncü kişi haklarını ihlal etmenizden doğan her türlü talep, zarar ve masrafa (makul avukatlık ücretleri dahil) karşı İşletmeciyi tazmin etmeyi kabul edersiniz.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-17">
-    <div class="madde-head"><span class="madde-num">MADDE 17</span><h3 class="madde-title">Mücbir Sebep</h3></div>
-    <div class="madde-body">
-      <p>Doğal afet, savaş, salgın hastalık, altyapı sağlayıcılarının (barındırma, ödeme, mağaza) hizmet kesintileri gibi makul kontrol alanımız dışındaki olaylardan kaynaklanan gecikme veya ifa edememe hallerinde İşletmeci sorumlu tutulamaz.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-18">
-    <div class="madde-head"><span class="madde-num">MADDE 18</span><h3 class="madde-title">Uygulanacak Hukuk ve Uyuşmazlıkların Çözümü</h3></div>
-    <div class="madde-body">
-      <p>İşbu Koşullar Türkiye Cumhuriyeti kanunlarına tabidir. Taraflar arasında doğabilecek uyuşmazlıklarda İstanbul (Anadolu/Avrupa) Mahkemeleri ve İcra Daireleri yetkilidir; tüketici sıfatıyla hareket eden kullanıcılar, 6502 sayılı Kanun kapsamında kendi yerleşim yerindeki veya İşletmecinin yerleşim yerindeki Tüketici Hakem Heyeti veya Tüketici Mahkemesine başvurma hakkına sahiptir.</p>
-      <p>Türkiye dışında yerleşik bir kullanıcıysanız, yukarıdaki hukuk ve yetki seçimi, yerleşik olduğunuz ülkenin sözleşmeden doğan uyuşmazlıklarda size tanıdığı ve sözleşmeyle bertaraf edilemeyen (emredici) tüketici veya veri koruma haklarını ortadan kaldırmaz; bu haklar saklıdır.</p>
-      <p>Bu maddede öngörülen hukuk ve mahkeme seçimi, yalnızca yargı yoluyla ileri sürülecek talepler (örn. tazminat davası) için geçerlidir. Madde 12'de düzenlenen hesap askıya alma/fesih yetkimiz bundan bağımsızdır ve tüm kullanıcılara, bulundukları ülkeye bakılmaksızın uygulanır.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-19">
-    <div class="madde-head"><span class="madde-num">MADDE 19</span><h3 class="madde-title">Genel Hükümler</h3></div>
-    <div class="madde-body">
-      <p>Bu Koşulların herhangi bir hükmünün geçersiz veya uygulanamaz sayılması, kalan hükümlerin geçerliliğini etkilemez. İşletmecinin herhangi bir hakkını kullanmamış olması, o haktan feragat ettiği anlamına gelmez. İşletmeci, bu Koşullardan doğan hak ve yükümlülüklerini, Hizmetin bir başka işletmeciye devri halinde, kullanıcılarına makul süre önceden bildirimde bulunarak devredebilir.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-20">
-    <div class="madde-head"><span class="madde-num">MADDE 20</span><h3 class="madde-title">Değişiklikler</h3></div>
-    <div class="madde-body">
-      <p>İşletmeci, bu Koşulları zaman zaman güncelleyebilir. Önemli değişiklikler, Uygulama içi bildirim veya e-posta yoluyla duyurulur. Değişiklik sonrası Uygulamayı kullanmaya devam etmeniz, güncellenmiş Koşulları kabul ettiğiniz anlamına gelir.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-21">
-    <div class="madde-head"><span class="madde-num">MADDE 21</span><h3 class="madde-title">İletişim</h3></div>
-    <div class="madde-body">
-      <p>Bu Koşullarla ilgili sorularınız için: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
-    </div>
-  </article>
-
-  <!-- ======================= BÖLÜM II — GİZLİLİK POLİTİKASI ======================= -->
-  <div class="part-header" id="bolum-2">
-    <div class="part-eyebrow">Bölüm II</div>
-    <h2 class="part-title">Gizlilik Politikası ve KVKK Aydınlatma Metni</h2>
-    <p class="part-sub">6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") madde 10 uyarınca hazırlanmış aydınlatma metnidir.</p>
-  </div>
-
-  <article class="madde" id="gp-1">
-    <div class="madde-head"><span class="madde-num">MADDE 1</span><h3 class="madde-title">Veri Sorumlusunun Kimliği</h3></div>
-    <div class="madde-body">
-      <p>KVKK uyarınca, kişisel verileriniz; veri sorumlusu sıfatıyla ticari unvanı <strong>DuoFine</strong> olan işletme (bundan böyle "DuoFine" veya "biz") tarafından, aşağıda açıklanan kapsam ve amaçlarla işlenmektedir.</p>
-      <div class="table-scroll">
-        <table class="data-table">
-          <tr><th>Ticari Unvan</th><td>DuoFine</td></tr>
-          <tr><th>E-posta</th><td>info@duofine.com</td></tr>
-        </table>
-      </div>
-      <p><em>Not: Bu tabloda, veri sorumlusunun kimliği için KVKK madde 10 kapsamında yeterli olan asgari bilgiler (unvan ve iletişim kanalı) esas alınmıştır. Bir gerçek kişiye ait T.C. kimlik numarası veya ikametgâh adresi gibi hassas kişisel veriler, kanunen bu belgede kamuya açık şekilde yayınlanmasını gerektiren bir hüküm bulunmadığından buraya eklenmemiştir. Şu an için ayrı bir vergi mükellefiyeti veya tüzel kişilik tescili bulunmadığından Vergi No ve MERSİS No alanları da tabloda yer almamaktadır; bunlardan biri ileride tesis edilirse tabloya eklenir ve ticaret siciline kayıtlı, zaten kamuya açık olan işyeri adresi de aynı şekilde işlenir; gerekiyorsa Veri Sorumluları Sicili (VERBİS) kaydı da ayrıca değerlendirilir.</em></p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-2">
-    <div class="madde-head"><span class="madde-num">MADDE 2</span><h3 class="madde-title">Bu Politikanın Kapsamı</h3></div>
-    <div class="madde-body">
-      <p>Bu Politika, Common Ground mobil uygulamasının kayıtlı kullanıcılarının, uygulamayı ziyaret eden potansiyel kullanıcıların ve W-W Fırsatlar kapsamında bizimle iletişime geçen iş ortağı işletme yetkililerinin kişisel verilerinin işlenmesine ilişkindir. DuoFine'ın kurumsal web sitesi üzerinden toplanan veriler de bu Politika kapsamındadır.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-3">
-    <div class="madde-head"><span class="madde-num">MADDE 3</span><h3 class="madde-title">İşlenen Kişisel Veri Kategorileri</h3></div>
-    <div class="madde-body">
-      <div class="table-scroll">
-        <table class="data-table">
-          <caption>Uygulama içinde fiilen toplanan veri kategorileri ve kaynakları</caption>
-          <tr><th>Kategori</th><th>Örnekler</th><th>Kaynak</th></tr>
-          <tr><td>Kimlik</td><td>Ad, soyad, doğum tarihi</td><td>Doğrudan sizden (kayıt formu)</td></tr>
-          <tr><td>İletişim</td><td>E-posta adresi</td><td>Doğrudan sizden</td></tr>
-          <tr><td>Görsel veri</td><td>Profil fotoğrafı</td><td>Doğrudan sizden (yüklediğinizde)</td></tr>
-          <tr><td>Konum verisi</td><td>Anlık GPS koordinatları</td><td>Cihazınızın konum servisleri (izninize bağlı)</td></tr>
-          <tr><td>Cihaz ve teknik veri</td><td>Cihaz modeli, işletim sistemi, push bildirim token'ı, uygulama sürümü</td><td>Otomatik (cihazdan)</td></tr>
-          <tr><td>Kullanım/işlem verisi</td><td>Arkadaşlık ilişkileri, mesajlaşma meta verisi, yer imi kayıtları, W-W Fırsat kullanım geçmişi</td><td>Uygulama kullanımınızdan otomatik</td></tr>
-          <tr><td>İşlem güvenliği verisi</td><td>Hesabın ilk bağlandığı cihaz kimliği (çoklu hesap tespiti amaçlı)</td><td>Otomatik (cihazdan)</td></tr>
-          <tr><td>Finansal veri (sınırlı)</td><td>Abonelik/token satın alma durumu ve tutarı (ödeme kartı bilgisi bize ulaşmaz)</td><td>Apple/Google üzerinden RevenueCat aracılığıyla</td></tr>
-          <tr><td>Pazarlama/analitik veri</td><td>Uygulama içi gezinme ve etkileşim istatistikleri</td><td>Otomatik (analitik SDK)</td></tr>
-        </table>
-      </div>
-      <p><strong>Toplanmayan veriler:</strong> Ödeme kartı numarası, CVV gibi kart verileri hiçbir aşamada bize ulaşmaz; bu veriler doğrudan Apple/Google tarafından işlenir. Uygulama, mesaj içeriklerinizi kalıcı olarak sunucu tarafında saklamaz (bkz. Madde 11).</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-4">
-    <div class="madde-head"><span class="madde-num">MADDE 4</span><h3 class="madde-title">Kişisel Verilerin İşlenme Amaçları</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li>Hesabınızın oluşturulması, kimlik doğrulaması ve Hizmete erişiminizin sağlanması;</li>
-        <li>Mekân keşfi, ortak buluşma noktası hesaplama ve W-W Fırsatların size gösterilmesi dahil temel Uygulama işlevlerinin sunulması;</li>
-        <li>Arkadaşlarınızla mesajlaşma ve sosyal etkileşim özelliklerinin çalıştırılması;</li>
-        <li>Abonelik ve token satın alımlarının işlenmesi, hesabınıza yansıtılması;</li>
-        <li>Sahte hesap, mükerrer kayıt, W-W Fırsat suistimali gibi kötüye kullanımların tespiti ve önlenmesi;</li>
-        <li>Push bildirimi gönderilmesi (izniniz dahilinde);</li>
-        <li>Hizmet kalitesinin ölçülmesi, hata/çökme (crash) tespiti ve ürün geliştirme;</li>
-        <li>Yasal yükümlülüklerin (vergi, muhasebe, resmi makam talepleri) yerine getirilmesi;</li>
-        <li>Hukuki uyuşmazlıkların yönetimi ve haklarımızın korunması.</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-5">
-    <div class="madde-head"><span class="madde-num">MADDE 5</span><h3 class="madde-title">Kişisel Verilerin İşlenmesinin Hukuki Sebepleri</h3></div>
-    <div class="madde-body">
-      <p>Kişisel verileriniz, KVKK madde 5'te sayılan aşağıdaki hukuki sebeplere dayanılarak işlenmektedir:</p>
-      <ul>
-        <li><strong>Sözleşmenin kurulması/ifası (m.5/2-c):</strong> Hesap oluşturma, Hizmetin sunulması, abonelik yönetimi için kimlik ve iletişim verileriniz;</li>
-        <li><strong>Açık rıza (m.5/1):</strong> KVKK'nın özel nitelikli kişisel veri tanımına (madde 6) girmese de yoğunlukla kişisel/konuma dair olan konum verisinin toplanması ve arkadaşlarınızla konum paylaşımı gibi işlemler için — konum izni istemi sırasında ayrıca alınır;</li>
-        <li><strong>Hukuki yükümlülüğün yerine getirilmesi (m.5/2-ç):</strong> Vergi ve muhasebe mevzuatı kapsamında finansal kayıtların saklanması;</li>
-        <li><strong>Meşru menfaat (m.5/2-f):</strong> Dolandırıcılık, mükerrer hesap ve kötüye kullanımın önlenmesi, hizmet güvenliğinin sağlanması, temel düzeyde ürün analitiği — bu işleme, temel hak ve özgürlüklerinizle dengelendiğinde ölçülü şekilde yürütülür;</li>
-        <li><strong>Bir hakkın tesisi, kullanılması veya korunması için zorunlu olması (m.5/2-e):</strong> Hukuki uyuşmazlık ve talep süreçlerinde gerekli verilerin işlenmesi.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-6">
-    <div class="madde-head"><span class="madde-num">MADDE 6</span><h3 class="madde-title">Konum Verisine İlişkin Özel Hüküm</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">Kritik Hüküm — Konum Verisi</div>
-        <p>Konum izni, işletim sisteminiz üzerinden ayrıca ve açıkça istenir; vermemeniz halinde yalnızca konuma dayalı özellikler (keşif, ortak nokta hesaplama, yakındaki fırsatlar) çalışmaz, hesabınız etkilenmez. Konum verisi, harita ve keşif ekranlarının çalışması için oturum süresince (in-memory) işlenir; Google Haritalar Platformu kullanım koşulları gereği, koordinatlarınız kalıcı diske/veritabanına yazılmaz ve en fazla 30 takvim günü süreyle geçici olarak önbelleğe alınabilir.</p>
-      </div>
-      <p><strong>Arkadaşlarla konum paylaşımı:</strong> Belirli özellikler (örn. "konum kartı" paylaşımı) yalnızca karşılıklı arkadaşlık ilişkisi kurduğunuz kullanıcılarla, siz paylaşmayı tercih ettiğinizde etkindir; konumunuz varsayılan olarak diğer kullanıcılara açık değildir.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-7">
-    <div class="madde-head"><span class="madde-num">MADDE 7</span><h3 class="madde-title">Google Haritalar/Places İçeriğine İlişkin Özel Hüküm</h3></div>
-    <div class="madde-body">
-      <p>Google Haritalar Platformu Hizmet Şartları uyarınca, işletme adı, fotoğrafı, telefonu, puanı gibi Google kaynaklı içerikler kalıcı olarak saklanamaz. Bu nedenle:</p>
-      <ul>
-        <li>Yer imi (bookmark) özelliğinde görüntülenen işletme adı, Google'dan alınmaz; kaydı oluştururken <strong>siz kendi yazdığınız</strong> bir etikettir ve bu haliyle saklanır.</li>
-        <li>Konum kimliği (place_id) sınırsız süreyle saklanabilir; enlem/boylam bilgisi ise yalnızca 30 gün süreyle geçici önbelleğe alınabilir.</li>
-        <li>Yer imi sekmesi, Google'a herhangi bir yer/fotoğraf/isim sorgusu göndermez; yalnızca sizin kendi kayıtlarınız üzerinde yerel arama yapılır.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-8">
-    <div class="madde-head"><span class="madde-num">MADDE 8</span><h3 class="madde-title">W-W Fırsatlar Kapsamında İşlenen Veriler</h3></div>
-    <div class="madde-body">
-      <p>Bir W-W Fırsatını kullandığınızda, hangi fırsatı, hangi işletmede, hangi tarih ve saatte kullandığınıza dair kayıt (kullanım geçmişi) tarafımızca tutulur. Bu veri; haftalık kullanım sınırının uygulanması, kötüye kullanımın tespiti ve iş ortağı işletmelere anonim/toplulaştırılmış performans bilgisi sağlanması amacıyla işlenir. Bu veriler, anlaşmalı işletmeyle yalnızca kampanyanın doğrulanması amacıyla (kodun geçerliliğinin işletme personeli tarafından teyit edilmesi) sınırlı ölçüde paylaşılır; işletmeye kimlik bilgileriniz (e-posta, tam ad) aktarılmaz.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-9">
-    <div class="madde-head"><span class="madde-num">MADDE 9</span><h3 class="madde-title">Abonelik ve Ödeme Verileri</h3></div>
-    <div class="madde-body">
-      <p>Ödeme işlemleri doğrudan Apple App Store veya Google Play tarafından yürütülür; kart bilgileriniz bize ulaşmaz. Abonelik/token durumunuz (aktif plan, satın alma tarihi, tutar), ödeme sağlayıcı entegrasyonumuz olan <strong>RevenueCat</strong> aracılığıyla bize iletilir ve hesabınıza doğru yetkilerin (premium seviye) tanınması amacıyla işlenir.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-10">
-    <div class="madde-head"><span class="madde-num">MADDE 10</span><h3 class="madde-title">Kişisel Verilerin Aktarımı (Yurt İçi/Yurt Dışı)</h3></div>
-    <div class="madde-body">
-      <p>Kişisel verileriniz, Hizmetin sunulabilmesi için gerekli teknik altyapı sağlayıcılarımızla, yalnızca hizmetin gerektirdiği ölçüde paylaşılır. Bu sağlayıcıların bir kısmı yurt dışında (başta ABD ve AB olmak üzere) yerleşiktir; bu aktarımlar, KVKK madde 9 ve Kişisel Verileri Koruma Kurulu'nun belirlediği aktarım mekanizmalarına (açık rıza, Kurul tarafından onaylanan standart sözleşme vb.) uygun şekilde gerçekleştirilir.</p>
-      <div class="table-scroll">
-        <table class="data-table">
-          <caption>Başlıca alt işleyiciler / hizmet sağlayıcılar</caption>
-          <tr><th>Sağlayıcı</th><th>Amaç</th><th>Konum</th></tr>
-          <tr><td>Railway</td><td>Sunucu barındırma (backend)</td><td>Yurt dışı</td></tr>
-          <tr><td>Backblaze B2</td><td>Profil fotoğrafı ve görsel depolama</td><td>Yurt dışı</td></tr>
-          <tr><td>RevenueCat</td><td>Abonelik/satın alma yönetimi</td><td>Yurt dışı</td></tr>
-          <tr><td>Google (Maps Platform, Sign-In)</td><td>Harita, mekân verisi, Google ile giriş</td><td>Yurt dışı</td></tr>
-          <tr><td>Apple (Sign in with Apple, App Store)</td><td>Kimlik doğrulama, ödeme</td><td>Yurt dışı</td></tr>
-          <tr><td>Sentry</td><td>Hata/çökme izleme</td><td>Yurt dışı</td></tr>
-          <tr><td>PostHog</td><td>Ürün analitiği</td><td>Yurt dışı</td></tr>
-        </table>
-      </div>
-      <p>Yurt içinde, yalnızca yasal yükümlülüklerimiz kapsamında yetkili kamu kurum ve kuruluşlarıyla (talep halinde) veri paylaşımı yapılabilir.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-11">
-    <div class="madde-head"><span class="madde-num">MADDE 11</span><h3 class="madde-title">Saklama Süreleri</h3></div>
-    <div class="madde-body">
-      <ul>
-        <li><strong>Profil verileri:</strong> Hesabınız aktif olduğu sürece, hesap silme talebinizin ardından makul bir süre içinde silinir.</li>
-        <li><strong>Konum verisi:</strong> Kalıcı olarak saklanmaz; harita/keşif işlevleri için oturum içi bellekte tutulur (Madde 6).</li>
-        <li><strong>Mesajlar:</strong> Sunucu tarafında kalıcı bir mesaj arşivi tutulmaz; cihazınızdaki yerel önbellek, cihazınızın kendi yedekleme/güvenlik ayarlarına tabidir.</li>
-        <li><strong>W-W Fırsat kullanım geçmişi:</strong> Haftalık limit hesaplaması ve kötüye kullanım tespiti amacıyla makul bir süre saklanır.</li>
-        <li><strong>Finansal/abonelik kayıtları:</strong> Türk Ticaret Kanunu ve Vergi Usul Kanunu uyarınca öngörülen yasal saklama süresince (genel olarak 10 yıla kadar) saklanabilir.</li>
-        <li><strong>Cihaz kilidi kaydı:</strong> Çoklu hesap suistimalini önlemek amacıyla, hesap ile ilk bağlanan cihaz arasındaki eşleşme, güvenlik amacıyla saklanır.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-12">
-    <div class="madde-head"><span class="madde-num">MADDE 12</span><h3 class="madde-title">Veri Güvenliği Tedbirleri</h3></div>
-    <div class="madde-body">
-      <p>Kişisel verilerinizin güvenliğini sağlamak amacıyla şifreleme (aktarım sırasında TLS), erişim kontrolü, günlükleme (logging) ve düzenli güvenlik değerlendirmeleri gibi teknik ve idari tedbirler uygulanmaktadır. Buna rağmen internet üzerinden hiçbir aktarım yönteminin %100 güvenli olmadığını kabul edersiniz.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-13">
-    <div class="madde-head"><span class="madde-num">MADDE 13</span><h3 class="madde-title">Çocukların Gizliliği</h3></div>
-    <div class="madde-body">
-      <p>Hizmet, 13 yaşın altındaki kişilere yönelik değildir ve bu yaş grubundan bilerek kişisel veri toplanmaz. 13 yaşın altında olduğunu öğrendiğimiz bir kullanıcının hesabı, tespit edildiğinde derhal kapatılır ve ilgili verileri silinir. Bir çocuğunuzun bize kişisel veri sağladığını düşünüyorsanız lütfen <a href="mailto:info@duofine.com">info@duofine.com</a> adresinden bizimle iletişime geçin.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-14">
-    <div class="madde-head"><span class="madde-num">MADDE 14</span><h3 class="madde-title">SDK'lar ve Analitik Araçlar</h3></div>
-    <div class="madde-body">
-      <p>Uygulama, çerez kullanan bir web sitesi değildir; bunun yerine mobil SDK'lar aracılığıyla sınırlı teknik/analitik veri toplar:</p>
-      <ul>
-        <li><strong>PostHog:</strong> Uygulama içi kullanım istatistikleri (hangi ekranların ziyaret edildiği, hangi özelliklerin kullanıldığı) için;</li>
-        <li><strong>Sentry:</strong> Uygulama çökmelerinin ve hatalarının teşhisi için (yalnızca teknik hata verisi, üretim/geliştirme build ayrımıyla);</li>
-        <li><strong>RevenueCat:</strong> Abonelik durumunuzun doğrulanması için.</li>
-      </ul>
-      <p>Bu araçlar, kişiselleştirilmiş reklam amacıyla kullanılmaz; verileriniz üçüncü taraflara pazarlama amacıyla satılmaz veya kiralanmaz.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-15">
-    <div class="madde-head"><span class="madde-num">MADDE 15</span><h3 class="madde-title">İlgili Kişinin Hakları (KVKK m.11)</h3></div>
-    <div class="madde-body">
-      <p>KVKK madde 11 uyarınca aşağıdaki haklara sahipsiniz:</p>
-      <ol>
-        <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme;</li>
-        <li>İşlenmişse buna ilişkin bilgi talep etme;</li>
-        <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme;</li>
-        <li>Yurt içinde/yurt dışında aktarıldığı üçüncü kişileri bilme;</li>
-        <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme;</li>
-        <li>KVKK madde 7'de öngörülen şartlar çerçevesinde silinmesini veya yok edilmesini isteme;</li>
-        <li>Düzeltme/silme işlemlerinin aktarıldığı üçüncü kişilere bildirilmesini isteme;</li>
-        <li>İşlenen verilerin münhasıran otomatik sistemlerle analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme;</li>
-        <li>Kanuna aykırı işleme nedeniyle zarara uğramanız halinde zararın giderilmesini talep etme.</li>
-      </ol>
-      <p>Bu haklarınızı kullanmak için Madde 18'deki iletişim kanalından bize yazılı olarak başvurabilirsiniz. Başvurunuz, KVKK'da öngörülen süre (talebin niteliğine göre en geç 30 gün) içinde ücretsiz olarak sonuçlandırılır; işlemin ayrıca bir maliyet gerektirmesi halinde Kişisel Verileri Koruma Kurulunca belirlenen tarifedeki ücret talep edilebilir.</p>
-      <div class="critical">
-        <div class="critical-label">Avrupa Ekonomik Alanı, Birleşik Krallık veya İsviçre'de Yerleşik Kullanıcılar İçin Ek Bilgi</div>
-        <p>Yukarıdaki haklar KVKK esas alınarak yazılmıştır; Avrupa Ekonomik Alanı (AEA), Birleşik Krallık veya İsviçre'de yerleşikseniz, verileriniz ayrıca Genel Veri Koruma Tüzüğü (GDPR) veya ilgili yerel mevzuat kapsamında da korunur ve bu, Bölüm I Madde 18'deki hukuk/mahkeme seçiminden etkilenmez. Somut olarak: yukarıdaki haklara ek olarak verilerinizin yapılandırılmış, yaygın kullanılan bir formatta tarafınıza aktarılmasını (veri taşınabilirliği) talep edebilir ve başvurunuzdan tatmin olmazsanız doğrudan bize başvurmak yerine veya buna ek olarak kendi ülkenizin yetkili veri koruma otoritesine şikâyette bulunabilirsiniz.</p>
-        <p>Şeffaflık amacıyla belirtiriz: DuoFine şu anki ölçeğinde AEA içinde yerleşik bir GDPR temsilcisi atamamıştır; bu, doğrudan AEA pazarına yönelik bir faaliyet yürütmediğimiz ve işleme hacminin küçük olduğu değerlendirmesine dayanır. AEA kullanıcı sayımız büyüdükçe bu değerlendirme yeniden yapılacak ve gerekiyorsa resmi bir temsilci atanacaktır.</p>
-      </div>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-16">
-    <div class="madde-head"><span class="madde-num">MADDE 16</span><h3 class="madde-title">Veri İhlali Bildirimi</h3></div>
-    <div class="madde-body">
-      <p>Kişisel verilerinizin kanuni olmayan yollarla ele geçirilmesi halinde, KVKK madde 12 uyarınca durum en kısa sürede ilgili kişilere ve Kişisel Verileri Koruma Kuruluna bildirilir.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-17">
-    <div class="madde-head"><span class="madde-num">MADDE 17</span><h3 class="madde-title">Politika Değişiklikleri</h3></div>
-    <div class="madde-body">
-      <p>Bu Politika, mevzuat değişiklikleri veya Hizmetteki güncellemeler doğrultusunda zaman zaman revize edilebilir. Güncel sürüm her zaman bu sayfada ve Uygulama içinde yayımlanır; önemli değişiklikler ayrıca bildirilir.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-18">
-    <div class="madde-head"><span class="madde-num">MADDE 18</span><h3 class="madde-title">İletişim ve Başvuru</h3></div>
-    <div class="madde-body">
-      <p>Gizlilik ve KVKK başvurularınız için: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
-      <p class="divider-quote">Yazılı başvurularda, kimliğinizi tevsik edici bilgi/belge ile talebinizi açıkça belirtmeniz, başvurunuzun hızlı sonuçlandırılmasına yardımcı olur.</p>
-    </div>
-  </article>
-
-  <p style="text-align:right; margin-top:40px;"><a class="back-to-top" href="#bolum-1">↑ Başa dön</a></p>
-
-</main>
-
-<footer class="doc-footer">
-  <div class="doc-footer-inner">
-    <div>© 2026 DuoFine — Common Ground. Tüm hakları saklıdır.</div>
-    <div>Bu belge yalnızca Türkçe kaynak taslaktır; onay sonrası 16 dile çevrilecek ve uygulama içi (<code>app/locales/*.json</code>) ile eşleştirilecektir.</div>
-  </div>
-</footer>
 </body>
 </html>

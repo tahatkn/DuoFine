@@ -1,945 +1,348 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Termos e Política de Privacidade da Common Ground</title>
-<meta name="description" content="Termos de Utilização e Política de Privacidade do Common Ground.">
-<link rel="canonical" href="https://duofine.com/legal/pt.html">
-<style>
-/* ---------- Fonts: system stacks only (no external fonts, no CSP risk) ---------- */
-:root{
-  --serif: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-/* ---------- Light palette (default root) ---------- */
-:root{
-  --bg: #F0EEE7;
-  --surface: #FFFFFF;
-  --surface-2: #F7F5EF;
-  --ink: #1C1B18;
-  --ink-dim: #56534A;
-  --ink-faint: #8A8678;
-  --rule: #DBD6C8;
-  --rule-strong: #C7C1AF;
-  --accent: #6A3E9E;
-  --accent-ink: #4C2C74;
-  --accent-soft: #EFE7F8;
-  --critical: #2E6D64;
-  --critical-soft: #E2EEEB;
-  --critical-ink: #1E4842;
-  --badge-bg: #B4542A;
-  --badge-ink: #FBEEE6;
-  --link: #6A3E9E;
-  --shadow: 0 1px 2px rgba(28,27,24,0.04), 0 8px 24px rgba(28,27,24,0.06);
-}
-
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg: #17181A;
-    --surface: #1E2022;
-    --surface-2: #232527;
-    --ink: #ECE9E1;
-    --ink-dim: #B0AC9F;
-    --ink-faint: #7C786C;
-    --rule: #35373A;
-    --rule-strong: #43454A;
-    --accent: #C09EEB;
-    --accent-ink: #E2CFF7;
-    --accent-soft: #2B2438;
-    --critical: #7FCBC0;
-    --critical-soft: #1C2C29;
-    --critical-ink: #A9E4DA;
-    --badge-bg: #E08A55;
-    --badge-ink: #2A1608;
-    --link: #C09EEB;
-    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
-  }
-}
-:root[data-theme="dark"]{
-  --bg: #17181A;
-  --surface: #1E2022;
-  --surface-2: #232527;
-  --ink: #ECE9E1;
-  --ink-dim: #B0AC9F;
-  --ink-faint: #7C786C;
-  --rule: #35373A;
-  --rule-strong: #43454A;
-  --accent: #C09EEB;
-  --accent-ink: #E2CFF7;
-  --accent-soft: #2B2438;
-  --critical: #7FCBC0;
-  --critical-soft: #1C2C29;
-  --critical-ink: #A9E4DA;
-  --badge-bg: #E08A55;
-  --badge-ink: #2A1608;
-  --link: #C09EEB;
-  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
-}
-
-*{ box-sizing: border-box; }
-html{ -webkit-text-size-adjust: 100%; }
-body{
-  margin:0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--sans);
-  line-height: 1.5;
-}
-a{ color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-a:focus-visible, button:focus-visible, summary:focus-visible{
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 3px;
-}
-
-/* ---------- Masthead ---------- */
-.masthead{
-  border-bottom: 1px solid var(--rule);
-  background: var(--surface);
-}
-.masthead-inner{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 28px 24px 24px;
-  display:flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.wordmark{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-.wordmark .dot{
-  width:7px; height:7px; border-radius:50%;
-  background: var(--accent);
-  flex: none;
-}
-h1.doc-title{
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: clamp(28px, 4.2vw, 40px);
-  line-height: 1.14;
-  margin: 0;
-  text-wrap: balance;
-  color: var(--ink);
-}
-.meta-row{
-  display:flex;
-  flex-wrap: wrap;
-  align-items:center;
-  gap: 10px 16px;
-  font-size: 13px;
-  color: var(--ink-dim);
-  font-variant-numeric: tabular-nums;
-}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--badge-bg);
-  color: var(--badge-ink);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-/* ---------- Notice callouts ---------- */
-.notice{
-  max-width: 880px;
-  margin: 20px auto 0;
-  padding: 0 24px;
-}
-.notice-box{
-  background: var(--surface-2);
-  border: 1px solid var(--rule);
-  border-left: 3px solid var(--badge-bg);
-  border-radius: 8px;
-  padding: 14px 16px;
-  font-size: 14px;
-  color: var(--ink-dim);
-  line-height: 1.55;
-}
-.notice-box strong{ color: var(--ink); }
-
-/* ---------- TOC ---------- */
-.toc-wrap{
-  max-width: 880px;
-  margin: 20px auto 0;
-  padding: 0 24px;
-}
-.toc{
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: 20px 22px;
-  box-shadow: var(--shadow);
-}
-.toc summary{
-  cursor:pointer;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
-  list-style: none;
-}
-.toc summary::-webkit-details-marker{ display:none; }
-.toc summary::after{
-  content: "▾";
-  float: right;
-  color: var(--ink-faint);
-}
-.toc[open] summary::after{ content: "▴"; }
-.toc-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px 24px;
-  margin-top: 16px;
-}
-.toc-part{
-  grid-column: 1 / -1;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-  margin: 10px 0 2px;
-  border-top: 1px solid var(--rule);
-  padding-top: 10px;
-}
-.toc-grid a{
-  font-size: 13.5px;
-  color: var(--ink-dim);
-  padding: 3px 0;
-  text-decoration: none;
-  border-bottom: 1px dotted transparent;
-}
-.toc-grid a:hover{ color: var(--accent); border-bottom-color: var(--accent); }
-@media (max-width: 640px){ .toc-grid{ grid-template-columns: 1fr; } }
-
-/* ---------- Content ---------- */
-main{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 8px 24px 80px;
-}
-.part-header{
-  margin-top: 56px;
-  padding-top: 28px;
-  border-top: 2px solid var(--rule-strong);
-}
-.part-eyebrow{
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-h2.part-title{
-  font-family: var(--serif);
-  font-size: clamp(24px, 3.4vw, 30px);
-  font-weight: 600;
-  margin: 6px 0 4px;
-  text-wrap: balance;
-}
-.part-sub{
-  font-size: 14.5px;
-  color: var(--ink-dim);
-  max-width: 62ch;
-  margin: 0 0 8px;
-}
-
-article.madde{
-  margin-top: 40px;
-  scroll-margin-top: 20px;
-}
-.madde-head{
-  display:flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-.madde-num{
-  font-family: var(--sans);
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--ink-faint);
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}
-h3.madde-title{
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0;
-  color: var(--ink);
-}
-.madde-body{
-  font-family: var(--serif);
-  font-size: 16.5px;
-  line-height: 1.68;
-  color: var(--ink);
-  max-width: 68ch;
-}
-.madde-body p{ margin: 0 0 14px; }
-.madde-body ol, .madde-body ul{ margin: 0 0 14px; padding-left: 22px; }
-.madde-body li{ margin-bottom: 8px; }
-.madde-body strong{ color: var(--ink); font-weight: 700; }
-.fill{
-  background: var(--accent-soft);
-  color: var(--accent-ink);
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-family: var(--sans);
-  font-size: 0.86em;
-  font-weight: 600;
-}
-
-.critical{
-  background: var(--critical-soft);
-  border: 1px solid var(--critical);
-  border-left-width: 4px;
-  border-radius: 8px;
-  padding: 16px 18px 4px;
-  margin: 0 0 14px;
-}
-.critical-label{
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--critical-ink);
-  display:flex;
-  align-items:center;
-  gap:6px;
-  margin-bottom: 8px;
-}
-.critical-label svg{ width:13px; height:13px; flex:none; }
-
-table.data-table{
-  width: 100%;
-  border-collapse: collapse;
-  font-family: var(--sans);
-  font-size: 13.5px;
-  margin: 4px 0 20px;
-}
-table.data-table caption{
-  text-align: left;
-  font-size: 12px;
-  color: var(--ink-faint);
-  margin-bottom: 6px;
-  font-style: italic;
-}
-table.data-table th, table.data-table td{
-  border: 1px solid var(--rule);
-  padding: 9px 11px;
-  text-align: left;
-  vertical-align: top;
-}
-table.data-table th{
-  background: var(--surface-2);
-  font-weight: 700;
-  color: var(--ink);
-  font-size: 12.5px;
-  letter-spacing: 0.02em;
-}
-table.data-table td{ color: var(--ink-dim); }
-.table-scroll{ overflow-x: auto; }
-
-.divider-quote{
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 15px;
-  color: var(--ink-faint);
-  border-left: 2px solid var(--rule-strong);
-  padding-left: 14px;
-  margin: 4px 0 20px;
-}
-
-footer.doc-footer{
-  border-top: 1px solid var(--rule);
-  background: var(--surface);
-  margin-top: 60px;
-}
-.doc-footer-inner{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 28px 24px 40px;
-  font-size: 13px;
-  color: var(--ink-faint);
-  display:flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.back-to-top{
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--link);
-  text-decoration: none;
-}
-
-@media (prefers-reduced-motion: no-preference){
-  html{ scroll-behavior: smooth; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Utilização e Política de Privacidade | DuoFine</title>
+    <meta name="description" content="Termos de Utilização e Política de Privacidade do Common Ground.">
+    <link rel="canonical" href="https://duofine.com/legal/pt.html">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .legal-updated { text-align: center; color: var(--text-light); margin-bottom: 2.5rem; font-size: 0.95rem; }
+        .legal-part-title { font-size: 1.8rem; margin: 3rem 0 0.5rem; color: var(--dark-color); font-weight: 600; }
+        .legal-part-title:first-of-type { margin-top: 0; }
+        .legal-toc { columns: 2; column-gap: 2.5rem; margin: 0 0 3rem; padding-left: 1.2rem; }
+        .legal-toc li { margin-bottom: 0.5rem; break-inside: avoid; }
+        .legal-article { margin-top: 2.5rem; scroll-margin-top: 90px; }
+        .legal-article h3 { font-size: 1.25rem; color: var(--dark-color); margin-bottom: 0.8rem; }
+        .legal-article p, .legal-article li { margin-bottom: 1rem; }
+        .legal-article ul, .legal-article ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+        .legal-table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+        table.legal-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        table.legal-table caption { text-align: left; font-style: italic; color: var(--text-light); margin-bottom: 0.5rem; font-size: 0.9rem; }
+        table.legal-table th, table.legal-table td { border: 1px solid var(--border-color); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; }
+        table.legal-table th { background-color: var(--light-color); font-weight: 600; }
+        .back-to-toc { display: block; text-align: right; margin-top: 3rem; }
+    </style>
 </head>
 <body>
-<div class="masthead">
-  <div class="masthead-inner">
-    <div class="wordmark"><span class="dot"></span>COMMON GROUND — DUOFINE</div>
-    <h1 class="doc-title">Termos de Utilização &amp; Política de Privacidade</h1>
-    <div class="meta-row">
-      <span class="badge">Rascunho · Aguarda Revisão Jurídica</span>
-      <span>Data de vigência: 15 de agosto de 2026</span>
-      <span>Versão: TR-1.3</span>
-      <span>Idioma: Português (traduzido do original em turco) (fonte: versão turca TR-1.3)</span>
-    </div>
-  </div>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="/" class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
+                    <path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
+                </svg>
+                <span>DuoFine</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/#about" class="nav-link" data-link="about">About</a></li>
+                <li class="nav-item"><a href="/#projects" class="nav-link" data-link="projects">Projects</a></li>
+                <li class="nav-item"><a href="/#contact" class="nav-link" data-link="contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="legal" class="content-section">
+            <h2>Termos de Utilização e Política de Privacidade</h2>
+            <p class="legal-updated">Última atualização: 15 de agosto de 2026</p>
+            <ul class="legal-toc"><li><a href="#kk-0">ARTIGO 0 — Introdução e Aceitação</a></li><li><a href="#kk-1">ARTIGO 1 — Definições</a></li><li><a href="#kk-2">ARTIGO 2 — Âmbito do Serviço</a></li><li><a href="#kk-3">ARTIGO 3 — Criação de Conta, Limite de Idade e Segurança da Conta</a></li><li><a href="#kk-4">ARTIGO 4 — Utilizações Proibidas</a></li><li><a href="#kk-5">ARTIGO 5 — Conteúdo do Utilizador e Licença</a></li><li><a href="#kk-6">ARTIGO 6 — Serviços de Localização e Conteúdo de Mapas</a></li><li><a href="#kk-7">ARTIGO 7 — Ofertas W-W (Deals) — Promoções de Estabelecimentos Terceiros</a></li><li><a href="#kk-8">ARTIGO 8 — Subscrições, Tokens e Compras Dentro da Aplicação</a></li><li><a href="#kk-9">ARTIGO 9 — Amizade, Mensagens e Interação Entre Utilizadores</a></li><li><a href="#kk-10">ARTIGO 10 — Marcadores (Bookmarks)</a></li><li><a href="#kk-11">ARTIGO 11 — Notificações e Comunicações</a></li><li><a href="#kk-12">ARTIGO 12 — Suspensão, Rescisão e Eliminação da Conta</a></li><li><a href="#kk-13">ARTIGO 13 — Propriedade Intelectual e Direitos de Marca</a></li><li><a href="#kk-14">ARTIGO 14 — Exclusão de Garantias</a></li><li><a href="#kk-15">ARTIGO 15 — Limitação de Responsabilidade</a></li><li><a href="#kk-16">ARTIGO 16 — Indemnização</a></li><li><a href="#kk-17">ARTIGO 17 — Força Maior</a></li><li><a href="#kk-18">ARTIGO 18 — Lei Aplicável e Resolução de Litígios</a></li><li><a href="#kk-19">ARTIGO 19 — Disposições Gerais</a></li><li><a href="#kk-20">ARTIGO 20 — Alterações</a></li><li><a href="#kk-21">ARTIGO 21 — Contactos</a></li><li><a href="#gp-1">ARTIGO 1 — Identidade do Responsável pelo Tratamento</a></li><li><a href="#gp-2">ARTIGO 2 — Âmbito desta Política</a></li><li><a href="#gp-3">ARTIGO 3 — Categorias de Dados Pessoais Tratados</a></li><li><a href="#gp-4">ARTIGO 4 — Finalidades do Tratamento dos Dados Pessoais</a></li><li><a href="#gp-5">ARTIGO 5 — Fundamentos Jurídicos do Tratamento de Dados Pessoais</a></li><li><a href="#gp-6">ARTIGO 6 — Disposição Especial Relativa aos Dados de Localização</a></li><li><a href="#gp-7">ARTIGO 7 — Disposição Especial Relativa ao Conteúdo do Google Maps/Places</a></li><li><a href="#gp-8">ARTIGO 8 — Dados Tratados no Âmbito das Ofertas W-W</a></li><li><a href="#gp-9">ARTIGO 9 — Dados de Subscrição e Pagamento</a></li><li><a href="#gp-10">ARTIGO 10 — Transferência de Dados Pessoais (Nacional/Internacional)</a></li><li><a href="#gp-11">ARTIGO 11 — Prazos de Conservação</a></li><li><a href="#gp-12">ARTIGO 12 — Medidas de Segurança dos Dados</a></li><li><a href="#gp-13">ARTIGO 13 — Privacidade das Crianças</a></li><li><a href="#gp-14">ARTIGO 14 — SDKs e Ferramentas de Analítica</a></li><li><a href="#gp-15">ARTIGO 15 — Direitos do Titular dos Dados (Art. 11.º da KVKK)</a></li><li><a href="#gp-16">ARTIGO 16 — Notificação de Violação de Dados</a></li><li><a href="#gp-17">ARTIGO 17 — Alterações à Política</a></li><li><a href="#gp-18">ARTIGO 18 — Contactos e Pedidos</a></li></ul>
+            <h3 class="legal-part-title" id="bolum-1">Termos de Utilização</h3><div class="legal-article" id="kk-0"><h3>ARTIGO 0. Introdução e Aceitação</h3>
+<p>Os presentes Termos de Utilização ("Termos") regulam a relação jurídica entre o utilizador ("você", "Utilizador") e o operador da aplicação móvel Common Ground, cuja denominação comercial é <strong>DuoFine</strong> ("Operador", "nós"), abrangendo a aplicação e todas as funcionalidades por ela disponibilizadas (incluindo descoberta de locais, Ofertas W-W, mensagens, amizades e marcadores).</p>
+<p>Ao descarregar a Aplicação, criar uma conta ou continuar a utilizá-la, declara que leu, compreendeu e aceita estes Termos, bem como a Política de Privacidade constante da Parte II abaixo. Se não aceitar estes documentos, não deve utilizar a Aplicação nem criar uma conta.</p>
+<p>Para as compras efetuadas dentro da aplicação através da loja de aplicações (Apple App Store / Google Play), aplicam-se, além dos presentes Termos, os próprios termos de utilização da respetiva loja; em caso de conflito, prevalecem os termos da loja em matéria de pagamento e faturação, e os presentes Termos em todas as demais matérias.</p>
+</div><div class="legal-article" id="kk-1"><h3>ARTIGO 1. Definições</h3>
+<ul>
+<li><strong>Aplicação / Serviço:</strong> a aplicação móvel denominada "Common Ground", distribuída para iOS e Android, e a respetiva infraestrutura de servidor integrada.</li>
+<li><strong>Utilizador:</strong> pessoa singular que cria uma conta na Aplicação e aceita os presentes Termos.</li>
+<li><strong>Conteúdo:</strong> todo o texto, imagem, localização e dados semelhantes que o Utilizador partilhe no seu perfil, nas suas mensagens, nos seus marcadores ou dentro da Aplicação.</li>
+<li><strong>Ofertas W-W / Deals:</strong> as ofertas de desconto/promoção disponibilizadas por empresas terceiras e listadas na Aplicação, bem como o sistema que permite a sua utilização através de código/QR na Aplicação.</li>
+<li><strong>Subscrição:</strong> plano pago recorrente (com renovação automática), adquirido através da Apple App Store ou do Google Play, que confere funcionalidades adicionais dentro da Aplicação e direito a tokens (ex.: Plus, Pro).</li>
+<li><strong>Token:</strong> unidade virtual de direito de utilização, não convertível em dinheiro, que mede a utilização de determinadas funcionalidades dentro da Aplicação (ex.: pesquisa/descoberta).</li>
+<li><strong>Loja:</strong> a App Store operada pela Apple Inc. ou a loja Google Play operada pela Google LLC.</li>
+</ul>
+</div><div class="legal-article" id="kk-2"><h3>ARTIGO 2. Âmbito do Serviço</h3>
+<p>A Common Ground é uma aplicação de descoberta e interação social que permite aos utilizadores explorar os estabelecimentos ao seu redor com base em filtros como localização, distância, meio de transporte, categoria e popularidade, calcular um ponto de encontro comum entre várias pessoas, trocar mensagens em tempo real com amigos, guardar locais de que gostam e aproveitar promoções especiais oferecidas por estabelecimentos parceiros ("Ofertas W-W").</p>
+<p>O Operador reserva-se o direito de alterar, suspender ou remover a totalidade ou parte da Aplicação, ou qualquer funcionalidade, sem aviso prévio. A Aplicação é fornecida "tal como está" e "na medida em que estiver disponível"; não é dada qualquer garantia de funcionamento ininterrupto ou isento de erros.</p>
+</div><div class="legal-article" id="kk-3"><h3>ARTIGO 3. Criação de Conta, Limite de Idade e Segurança da Conta</h3>
+<ol>
+<li><strong>Limite de idade:</strong> a Aplicação só pode ser utilizada por pessoas com 13 anos ou mais. Os utilizadores entre os 13 e os 18 anos, podendo ser considerados com capacidade limitada nos termos do Código Civil Turco (Türk Medeni Kanunu), só devem utilizar a Aplicação com o conhecimento e supervisão dos pais ou tutores; em particular, é exigido o consentimento do representante legal para operações de subscrição paga e de compra. O Operador reserva-se o direito de suspender contas relativamente às quais se apure a prestação de declaração de idade incorreta.</li>
+<li><strong>Prestação de informação verdadeira:</strong> o Utilizador compromete-se a que as informações fornecidas no registo, como nome, e-mail e data de nascimento, sejam verdadeiras e atuais. É proibida a criação de conta com identidade falsa ou com a identidade de outra pessoa.</li>
+<li><strong>Restrição de conta única / dispositivo único:</strong> para prevenir a utilização abusiva e os registos duplicados, a Aplicação aplica uma verificação ao nível do dispositivo aquando de novo registo. Um dispositivo só pode estar associado a uma conta durante um determinado período; as tentativas de contornar esta restrição (ex.: reposição de dispositivo, novo registo com identidade falsa) constituem utilização proibida nos termos do Artigo 4.</li>
+<li><strong>Segurança da conta:</strong> o Utilizador é responsável pela confidencialidade da sua palavra-passe e do acesso à sua conta. O Utilizador é responsável por todas as operações realizadas através da sua conta, salvo prova em contrário. Em caso de suspeita de acesso não autorizado à sua conta, deve notificar-nos de imediato através de <a href="mailto:info@duofine.com">info@duofine.com</a>.</li>
+<li><strong>Início de sessão por e-mail, Google e Apple:</strong> além do registo por e-mail/palavra-passe, a Aplicação disponibiliza opções de início de sessão através de conta Google e Apple. Ao utilizar estes métodos, aplicam-se igualmente os termos de utilização e a política de privacidade do respetivo fornecedor.</li>
+</ol>
+</div><div class="legal-article" id="kk-4"><h3>ARTIGO 4. Utilizações Proibidas</h3>
+<p>Ao utilizar a Aplicação, o Utilizador compromete-se a abster-se dos seguintes comportamentos:</p>
+<ol>
+<li>Partilhar conteúdo ou desenvolver atividade contrária a qualquer lei, regulamento ou direito de terceiros aplicável;</li>
+<li>Assediar, ameaçar ou importunar insistentemente outro utilizador, ou partilhar discurso de ódio, discriminatório ou obsceno;</li>
+<li>Criar perfis falsos, fazer-se passar por outra pessoa singular ou coletiva, ou fornecer informações de idade/identidade enganosas;</li>
+<li>Utilizar a Aplicação para spam, mensagens comerciais não solicitadas, fraude, phishing ou distribuição de software malicioso;</li>
+<li>Tentar realizar engenharia inversa do código-fonte da Aplicação, recolher dados através de ferramentas automatizadas (bots, scrapers) ou sobrecarregar desproporcionadamente a infraestrutura de servidor;</li>
+<li>Tentar contornar medidas técnicas com o objetivo de exceder a restrição de dispositivo (Artigo 3.3) ou os limites de tokens/subscrição (Artigo 8);</li>
+<li><strong>Abusar do sistema de Ofertas W-W:</strong> vender ou transferir um código de campanha, tentar utilizá-lo mais do que uma vez através da reprodução de capturas de ecrã, ou manipular o sistema através de acordos indevidos com o estabelecimento parceiro fora do processo de código/QR (ver Artigo 7);</li>
+<li>Utilizar dados de localização para seguir, vigiar ou assediar fisicamente outro utilizador;</li>
+<li>Estabelecer comunicação inadequada com utilizadores menores de 18 anos ou adotar comportamentos que os exponham a abuso.</li>
+</ol>
+<p>A violação do presente artigo pode dar origem à suspensão ou à eliminação definitiva da conta, sem aviso prévio (Artigo 12).</p>
+</div><div class="legal-article" id="kk-5"><h3>ARTIGO 5. Conteúdo do Utilizador e Licença</h3>
+<p>A propriedade dos conteúdos que o Utilizador partilha na Aplicação (informação de perfil, fotografias, mensagens, etiquetas de marcadores, etc.) pertence-lhe. No entanto, o Utilizador concede-nos uma licença de utilização mundial, não exclusiva e sublicenciável, para que possamos exibir e armazenar esses conteúdos perante outros utilizadores através da Aplicação e operar o Serviço; esta licença limita-se exclusivamente à finalidade de operação do Serviço e o respetivo conteúdo é eliminado quando a conta for eliminada (ressalvados o Artigo 12.5 e o Artigo 11 da Parte II).</p>
+<p>O Utilizador declara e garante que possui o direito legal de partilhar o conteúdo que publica e que este não viola direitos de propriedade intelectual, de personalidade ou de privacidade de terceiros.</p>
+</div><div class="legal-article" id="kk-6"><h3>ARTIGO 6. Serviços de Localização e Conteúdo de Mapas</h3>
+<p><strong>Disposição Crítica — Dados de Localização:</strong></p>
+
+<p>A funcionalidade essencial da Aplicação (descoberta de locais, cálculo de ponto de encontro comum, apresentação de ofertas próximas) depende de dados de localização sensíveis e em tempo real. Se não conceder a permissão de localização, estas funcionalidades da Aplicação não funcionarão. Os fundamentos do tratamento dos dados de localização são explicados em detalhe no Artigo 6 da Parte II.</p>
+
+<p>Os dados de mapas e de locais (imagem de mapa, nome do estabelecimento, morada, fotografia, tipo, classificação) são fornecidos através da Google Maps Platform e estão sujeitos aos próprios termos de utilização da Google. O Utilizador não pode copiar, armazenar permanentemente ou reutilizar comercialmente estes conteúdos fora da Aplicação; esta restrição aplica-se igualmente ao Operador e a arquitetura técnica da Aplicação foi concebida em conformidade.</p>
+<p>O nome do estabelecimento apresentado nos seus marcadores não é um dado obtido automaticamente da Google, mas sim uma etiqueta escrita pelo próprio Utilizador (ver Artigo 10 e Artigo 7 da Parte II).</p>
+</div><div class="legal-article" id="kk-7"><h3>ARTIGO 7. Ofertas W-W (Deals) — Promoções de Estabelecimentos Terceiros</h3>
+<p><strong>Disposição Crítica — O Operador é Apenas Intermediário:</strong></p>
+
+<p>Todas as promoções, descontos e ofertas listados no âmbito das Ofertas W-W são disponibilizados por <strong>estabelecimentos terceiros parceiros</strong>. O Operador não é parte, vendedor ou fornecedor do produto ou serviço vendido; é apenas um intermediário técnico que permite a exibição da promoção na Aplicação e a sua utilização através de código/QR.</p>
+
+<ol>
+<li><strong>Natureza da oferta:</strong> cada Oferta W-W está sujeita às condições próprias definidas pelo respetivo estabelecimento (prazo de validade, stock/cupo, gasto mínimo, etc.). O Operador não garante a exatidão, a atualidade de uma promoção nem que esta será efetivamente aplicada pelo estabelecimento; os estabelecimentos podem alterar, suspender ou terminar a promoção sem aviso prévio.</li>
+<li><strong>Processo de utilização (redemption):</strong> ao pretender utilizar uma oferta, a Aplicação gera um código/QR exclusivo para o Utilizador. Este código é válido por um período limitado (em minutos, indicado na Aplicação) a partir do momento da sua geração e torna-se automaticamente inválido decorrido esse prazo. O código só pode ser utilizado uma única vez, mediante apresentação ao pessoal do respetivo estabelecimento.</li>
+<li><strong>Limite semanal de utilização:</strong> para prevenir a utilização abusiva, existe um limite de utilização aplicado à mesma oferta dentro de um período móvel (rolling) de sete dias. Este limite é aplicado para assegurar que a promoção possa alcançar de forma justa um grande número de utilizadores e pode ser alterado sem aviso prévio.</li>
+<li><strong>Sem valor monetário:</strong> os códigos de oferta não são convertíveis em dinheiro, não são transferíveis a outro utilizador, não podem ser vendidos nem utilizados em massa (bulk). Caso se verifique um comportamento contrário a esta regra, a conta em causa pode ser suspensa nos termos dos Artigos 4.7 e 12.</li>
+<li><strong>Partes da transação e responsabilidade:</strong> a relação de venda/prestação de serviço estabelecida entre o Utilizador e o estabelecimento em resultado da utilização de uma Oferta W-W é diretamente entre o Utilizador e o respetivo estabelecimento. Para questões relativas a defeitos, qualidade, entrega, devolução do produto/serviço vendido, ou ao cumprimento pelo estabelecimento da sua própria legislação de venda à distância/proteção do consumidor, o interlocutor do Utilizador é o respetivo estabelecimento; não sendo parte nesta transação, o Operador não assume a responsabilidade de vendedor/fornecedor prevista na Lei n.º 6502 de Proteção do Consumidor (TKHK).</li>
+<li><strong>Localização e visibilidade:</strong> a decisão sobre em que filtro de província/distrito ou na lista "Todas" as ofertas serão apresentadas na Aplicação é da competência editorial do Operador, podendo diferentes filiais do mesmo estabelecimento ser listadas como cartões separados.</li>
+<li><strong>Direito de cancelamento e alteração:</strong> o Operador reserva-se o direito de retirar qualquer Oferta W-W da Aplicação sem aviso prévio, por motivos como o termo da parceria comercial, pedido do estabelecimento ou suspeita de utilização abusiva.</li>
+</ol>
+</div><div class="legal-article" id="kk-8"><h3>ARTIGO 8. Subscrições, Tokens e Compras Dentro da Aplicação</h3>
+<ol>
+<li><strong>A faturação é processada através da loja:</strong> todas as subscrições pagas (Plus, Pro) e os pacotes de tokens de compra única são adquiridos e faturados através da Apple App Store ou do Google Play. Os preços são apresentados na Aplicação de acordo com a taxa de câmbio e o regime fiscal da respetiva loja, podendo ser alterados sem aviso prévio; o preço atual é sempre o que é apresentado no ecrã de compra.</li>
+<li><strong>Renovação automática:</strong> salvo cancelamento, as subscrições renovam-se automaticamente no final do período e são cobradas. O canal a utilizar para cancelar, gerir a subscrição e solicitar reembolso são diretamente as definições da sua conta Apple/Google; o Operador não tem autoridade nem acesso para reembolsar diretamente o pagamento.</li>
+<li><strong>Política de reembolso:</strong> os reembolsos posteriores à compra estão sujeitos à própria política de reembolso da respetiva loja (Apple ou Google). O Operador reflete retroativamente no sistema os reembolsos aprovados pela loja; contudo, a decisão de reembolso é da própria loja.</li>
+<li><strong>Tokens:</strong> o token é uma unidade virtual, não convertível em dinheiro e sujeita a caducidade, que representa o direito de utilização de determinadas funcionalidades dentro da Aplicação (ex.: consultas de pesquisa/descoberta). Os tokens não são transferíveis a outro utilizador nem podem ser recomprados em troca de dinheiro real.</li>
+<li><strong>Política de Utilização Justa:</strong> os planos de subscrição incluem uma determinada quantidade mensal de tokens (as quantidades atuais são listadas no ecrã da loja dentro da Aplicação). Caso se detete uma utilização excessiva, automatizada ou de natureza abusiva que prejudique o Serviço, o Operador reserva-se o direito de aplicar restrições adicionais; esta restrição não afeta os utilizadores com um nível de utilização normal e pessoal.</li>
+<li><strong>Partilha familiar e alteração de conta:</strong> as subscrições são específicas à conta Apple/Google que efetuou a compra e à conta de utilizador Common Ground a que essa conta está associada; em caso de alteração de conta, a correta reflexão do estado da subscrição depende da exatidão das suas credenciais de início de sessão na Aplicação.</li>
+</ol>
+</div><div class="legal-article" id="kk-9"><h3>ARTIGO 9. Amizade, Mensagens e Interação Entre Utilizadores</h3>
+<p>A Aplicação permite que os utilizadores se adicionem mutuamente como amigos, troquem mensagens em tempo real e partilhem sugestões de ponto de encontro comum com base na localização. Estas funcionalidades apenas estão ativas entre utilizadores que tenham estabelecido uma relação de amizade recíproca.</p>
+<p><strong>Aviso de segurança pessoal:</strong> a decisão de se encontrar fisicamente com pessoas conhecidas através da Aplicação é inteiramente da sua responsabilidade e ao seu próprio critério. O Operador não realiza a verificação de identidade dos utilizadores e não pode ser responsabilizado por quaisquer danos resultantes de encontros físicos. Recomendamos que se encontre em locais públicos e que seja prudente ao partilhar informações pessoais (morada, dados financeiros, etc.).</p>
+<p>O Utilizador pode denunciar pessoas que o incomodem, ameacem ou violem estes Termos através dos mecanismos de bloqueio e denúncia disponíveis na Aplicação.</p>
+</div><div class="legal-article" id="kk-10"><h3>ARTIGO 10. Marcadores (Bookmarks)</h3>
+<p>A funcionalidade de marcadores foi concebida em conformidade com os termos de utilização da Google, que não permitem o armazenamento permanente do seu conteúdo de natureza pessoal (nome do estabelecimento, fotografia, etc.). Ao guardar um local, é <strong>você quem escreve</strong> o respetivo nome; o Operador não obtém nem pré-preenche automaticamente este nome a partir da Google. Como chave do seu registo é utilizado apenas o identificador geral da localização (place_id) ou um registo inserido manualmente (ver Artigo 7 da Parte II).</p>
+<p>O número de marcadores pode estar sujeito a um limite dependente do seu plano de subscrição; este limite aplica-se conjuntamente tanto aos registos baseados na Google como aos registos adicionados manualmente.</p>
+</div><div class="legal-article" id="kk-11"><h3>ARTIGO 11. Notificações e Comunicações</h3>
+<p>Caso conceda permissão, podemos enviar notificações push relativas a novas mensagens, pedidos de amizade e comunicados importantes dentro da Aplicação. Pode revogar esta permissão a qualquer momento nas definições do sistema do seu dispositivo. Reservamo-nos o direito de contactá-lo através do seu endereço de e-mail registado, mesmo sem permissão de notificação, em assuntos importantes como segurança da conta, comunicações legais ou alterações a estes Termos.</p>
+</div><div class="legal-article" id="kk-12"><h3>ARTIGO 12. Suspensão, Rescisão e Eliminação da Conta</h3>
+<ol>
+<li><strong>Rescisão pelo Utilizador:</strong> pode eliminar a sua conta a qualquer momento através do menu de definições da Aplicação. Se tiver uma subscrição ativa, a eliminação da conta não cancela automaticamente a subscrição; deve cancelá-la separadamente nas definições da sua conta Apple/Google.</li>
+<li><strong>Suspensão/rescisão pelo Operador:</strong> reservamo-nos o direito de suspender ou encerrar permanentemente a sua conta sem aviso prévio, em caso de violação destes Termos, nomeadamente das utilizações proibidas enumeradas no Artigo 4, suspeita de fraude, litígio de pagamento (chargeback) ou obrigação legal.</li>
+<li><strong>Âmbito geográfico deste poder:</strong> o nosso poder de suspensão/rescisão de conta é uma medida técnica e contratual que aplicamos diretamente na Aplicação; a sua aplicação não requer qualquer decisão judicial. Por conseguinte, este poder aplica-se de igual forma a todos os utilizadores que violem estes Termos, independentemente da sua nacionalidade, do país de residência ou da proteção que lhes seja conferida por outro ordenamento jurídico. A fixação do direito turco e dos tribunais turcos como competentes no Artigo 18 não limita nem impõe qualquer fronteira geográfica às medidas ao nível da conta previstas neste artigo.</li>
+<li><strong>Notificação em caso de infrações graves:</strong> em comportamentos que possam constituir crime, como fraude, ameaça, assédio ou tentativa de abuso, reservamo-nos o direito, além de suspender a conta, de comunicar a situação — consoante a natureza do incidente — às autoridades competentes na Turquia, às autoridades competentes do país onde o utilizador se encontra e/ou às próprias unidades de confiança e segurança (trust &amp; safety) da Apple App Store ou do Google Play.</li>
+<li><strong>Dados após a eliminação:</strong> após a eliminação da conta, as informações do seu perfil, as suas mensagens e os seus marcadores são removidos do sistema num prazo razoável; os registos financeiros sujeitos a obrigação legal de conservação (ex.: histórico de subscrições/pagamentos) podem ser conservados pelo período previsto na legislação aplicável (ver Artigo 11 da Parte II).</li>
+</ol>
+</div><div class="legal-article" id="kk-13"><h3>ARTIGO 13. Propriedade Intelectual e Direitos de Marca</h3>
+<p>Os nomes "Common Ground" e "DuoFine", os respetivos logótipos e todos os elementos da Aplicação, incluindo o código-fonte, o design e a interface, pertencem ao Operador ou aos seus licenciadores e são protegidos pela legislação de propriedade intelectual. Estes Termos conferem ao Utilizador o direito de utilizar a Aplicação para fins pessoais e não comerciais, o que não implica qualquer transferência de direitos de propriedade sobre a Aplicação.</p>
+</div><div class="legal-article" id="kk-14"><h3>ARTIGO 14. Exclusão de Garantias</h3>
+<p>A Aplicação é fornecida "tal como está" e "conforme disponível". Na máxima medida permitida pela legislação aplicável, o Operador não presta qualquer garantia, expressa ou implícita, quanto ao funcionamento ininterrupto, isento de erros ou seguro da Aplicação, quanto à exatidão das ofertas de terceiros no âmbito das Ofertas W-W, ou quanto ao comportamento de outros utilizadores.</p>
+</div><div class="legal-article" id="kk-15"><h3>ARTIGO 15. Limitação de Responsabilidade</h3>
+<p><strong>Disposição Crítica — Limite de Responsabilidade:</strong></p>
+
+<p>Na máxima medida permitida pela legislação aplicável, o Operador não pode ser responsabilizado por: (a) transações estabelecidas com estabelecimentos terceiros no âmbito das Ofertas W-W; (b) interações físicas ou virtuais com outros utilizadores; (c) danos indiretos, incidentais ou consequenciais. A responsabilidade total do Operador está, em qualquer caso, limitada ao montante total de subscrição/compra pago por si à Aplicação nos 12 meses anteriores ao evento que deu origem ao dano.</p>
+
+<p>Esta limitação não elimina os direitos imperativos de que beneficia na qualidade de consumidor nos termos da Lei n.º 6502 de Proteção do Consumidor (TKHK) e da legislação aplicável; esses direitos permanecem salvaguardados.</p>
+</div><div class="legal-article" id="kk-16"><h3>ARTIGO 16. Indemnização</h3>
+<p>O Utilizador compromete-se a indemnizar o Operador por qualquer reclamação, dano ou despesa (incluindo honorários de advogado razoáveis) decorrente da violação destes Termos, da utilização ilícita da Aplicação ou da violação de direitos de terceiros pelo Utilizador.</p>
+</div><div class="legal-article" id="kk-17"><h3>ARTIGO 17. Força Maior</h3>
+<p>O Operador não pode ser responsabilizado por atrasos ou incumprimentos resultantes de eventos razoavelmente fora do nosso controlo, tais como catástrofes naturais, guerra, epidemias, ou interrupções de serviço dos fornecedores de infraestrutura (alojamento, pagamentos, lojas).</p>
+</div><div class="legal-article" id="kk-18"><h3>ARTIGO 18. Lei Aplicável e Resolução de Litígios</h3>
+<p>Os presentes Termos regem-se pela legislação da República da Turquia. São competentes os Tribunais e Serviços de Execução de Istambul (Anatólia/Europa) para dirimir os litígios que possam surgir entre as partes; os utilizadores que atuem na qualidade de consumidores têm o direito de recorrer ao Painel de Arbitragem do Consumidor ou ao Tribunal do Consumidor da sua área de residência ou da área de residência do Operador, nos termos da Lei n.º 6502.</p>
+<p>Se residir fora da Turquia, a presente escolha de lei e de foro não elimina os direitos imperativos de proteção do consumidor ou de proteção de dados que a legislação do país onde reside lhe confira em matéria de litígios contratuais e que não possam ser afastados por via contratual; esses direitos permanecem salvaguardados.</p>
+<p>A escolha de lei e de tribunal prevista neste artigo aplica-se apenas às pretensões a fazer valer por via judicial (ex.: ação de indemnização). O nosso poder de suspensão/rescisão de conta previsto no Artigo 12 é independente desta disposição e aplica-se a todos os utilizadores, independentemente do país em que se encontrem.</p>
+</div><div class="legal-article" id="kk-19"><h3>ARTIGO 19. Disposições Gerais</h3>
+<p>A eventual nulidade ou inaplicabilidade de qualquer disposição destes Termos não afeta a validade das restantes disposições. O facto de o Operador não exercer um determinado direito não significa que a ele renuncie. O Operador pode ceder os direitos e obrigações decorrentes destes Termos, em caso de transferência do Serviço para outro operador, mediante aviso prévio razoável aos seus utilizadores.</p>
+</div><div class="legal-article" id="kk-20"><h3>ARTIGO 20. Alterações</h3>
+<p>O Operador pode atualizar estes Termos periodicamente. As alterações significativas serão comunicadas através de notificação dentro da Aplicação ou por e-mail. A utilização continuada da Aplicação após a alteração significa que aceita os Termos atualizados.</p>
+</div><div class="legal-article" id="kk-21"><h3>ARTIGO 21. Contactos</h3>
+<p>Para questões relacionadas com estes Termos: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
+</div><h3 class="legal-part-title" id="bolum-2">Política de Privacidade e Aviso de Informação nos termos da KVKK</h3><div class="legal-article" id="gp-1"><h3>ARTIGO 1. Identidade do Responsável pelo Tratamento</h3>
+<p>Nos termos da KVKK, os seus dados pessoais são tratados, na qualidade de responsável pelo tratamento, pela empresa cuja denominação comercial é <strong>DuoFine</strong> (doravante "DuoFine" ou "nós"), no âmbito e para as finalidades a seguir descritas.</p>
+<div class="legal-table-wrap"><table class="legal-table">
+<tr><th>Denominação Comercial</th><td>DuoFine</td></tr>
+<tr><th>E-mail</th><td>info@duofine.com</td></tr>
+</table></div>
+<p><em>Nota: nesta tabela foram utilizadas as informações mínimas suficientes para efeitos do artigo 10.º da KVKK relativamente à identidade do responsável pelo tratamento (denominação e canal de contacto). Dados pessoais sensíveis de uma pessoa singular, como o número de identidade da República da Turquia (T.C.) ou a morada de residência, não foram aqui incluídos, uma vez que não existe disposição legal que exija a sua publicação neste documento. Por não existir atualmente um enquadramento fiscal separado ou registo de pessoa coletiva, os campos Número de Contribuinte e Número MERSIS também não constam da tabela; caso um destes venha a ser constituído no futuro, será acrescentado à tabela, sendo igualmente tratada, do mesmo modo, a morada do estabelecimento registada no registo comercial, já de natureza pública; se necessário, será também avaliado separadamente o registo no Registo de Responsáveis pelo Tratamento (VERBİS).</em></p>
+</div><div class="legal-article" id="gp-2"><h3>ARTIGO 2. Âmbito desta Política</h3>
+<p>Esta Política respeita ao tratamento dos dados pessoais dos utilizadores registados da aplicação móvel Common Ground, dos potenciais utilizadores que visitam a aplicação e dos representantes das empresas parceiras que nos contactam no âmbito das Ofertas W-W. Os dados recolhidos através do sítio web institucional da DuoFine estão igualmente abrangidos por esta Política.</p>
+</div><div class="legal-article" id="gp-3"><h3>ARTIGO 3. Categorias de Dados Pessoais Tratados</h3>
+<div class="legal-table-wrap"><table class="legal-table">
+<caption>Categorias de dados efetivamente recolhidos na Aplicação e respetivas fontes</caption>
+<tr><th>Categoria</th><th>Exemplos</th><th>Fonte</th></tr>
+<tr><td>Identidade</td><td>Nome, apelido, data de nascimento</td><td>Diretamente do utilizador (formulário de registo)</td></tr>
+<tr><td>Contacto</td><td>Endereço de e-mail</td><td>Diretamente do utilizador</td></tr>
+<tr><td>Dados visuais</td><td>Fotografia de perfil</td><td>Diretamente do utilizador (quando carregada)</td></tr>
+<tr><td>Dados de localização</td><td>Coordenadas GPS em tempo real</td><td>Serviços de localização do dispositivo do utilizador (sujeito a permissão)</td></tr>
+<tr><td>Dados do dispositivo e técnicos</td><td>Modelo do dispositivo, sistema operativo, token de notificação push, versão da aplicação</td><td>Automático (a partir do dispositivo)</td></tr>
+<tr><td>Dados de utilização/transação</td><td>Relações de amizade, metadados de mensagens, registos de marcadores, histórico de utilização de Ofertas W-W</td><td>Automático, a partir da utilização da Aplicação</td></tr>
+<tr><td>Dados de segurança de transação</td><td>Identificador do primeiro dispositivo associado à conta (para efeitos de deteção de contas múltiplas)</td><td>Automático (a partir do dispositivo)</td></tr>
+<tr><td>Dados financeiros (limitados)</td><td>Estado e montante da compra de subscrição/tokens (os dados do cartão de pagamento não nos são transmitidos)</td><td>Através da Apple/Google, via RevenueCat</td></tr>
+<tr><td>Dados de marketing/analítica</td><td>Estatísticas de navegação e interação dentro da Aplicação</td><td>Automático (SDK de analítica)</td></tr>
+</table></div>
+<p><strong>Dados não recolhidos:</strong> dados de cartão, como o número do cartão de pagamento ou o CVV, não nos são transmitidos em nenhuma fase; estes dados são tratados diretamente pela Apple/Google. A Aplicação não armazena de forma permanente o conteúdo das suas mensagens do lado do servidor (ver Artigo 11).</p>
+</div><div class="legal-article" id="gp-4"><h3>ARTIGO 4. Finalidades do Tratamento dos Dados Pessoais</h3>
+<ol>
+<li>Criação da sua conta, autenticação e garantia do seu acesso ao Serviço;</li>
+<li>Prestação das funcionalidades essenciais da Aplicação, incluindo a descoberta de locais, o cálculo do ponto de encontro comum e a apresentação de Ofertas W-W;</li>
+<li>Funcionamento das funcionalidades de mensagens e interação social com os seus amigos;</li>
+<li>Processamento das compras de subscrições e tokens e a sua reflexão na sua conta;</li>
+<li>Deteção e prevenção de utilizações abusivas, tais como contas falsas, registos duplicados ou abuso de Ofertas W-W;</li>
+<li>Envio de notificações push (mediante a sua permissão);</li>
+<li>Medição da qualidade do serviço, deteção de erros/falhas (crash) e desenvolvimento do produto;</li>
+<li>Cumprimento de obrigações legais (fiscais, contabilísticas, pedidos de autoridades públicas);</li>
+<li>Gestão de litígios jurídicos e proteção dos nossos direitos.</li>
+</ol>
+</div><div class="legal-article" id="gp-5"><h3>ARTIGO 5. Fundamentos Jurídicos do Tratamento de Dados Pessoais</h3>
+<p>Os seus dados pessoais são tratados com base nos seguintes fundamentos jurídicos previstos no artigo 5.º da KVKK:</p>
+<ul>
+<li><strong>Celebração/execução de contrato (Art. 5/2-c):</strong> os seus dados de identidade e contacto, para a criação de conta, prestação do Serviço e gestão da subscrição;</li>
+<li><strong>Consentimento explícito (Art. 5/1):</strong> embora não se enquadre na definição de dados pessoais de categoria especial da KVKK (artigo 6.º), para operações como a recolha de dados de localização — de natureza fortemente pessoal/de localização — e a partilha de localização com os seus amigos, obtido separadamente no momento do pedido de permissão de localização;</li>
+<li><strong>Cumprimento de obrigação legal (Art. 5/2-ç):</strong> conservação de registos financeiros no âmbito da legislação fiscal e contabilística;</li>
+<li><strong>Interesse legítimo (Art. 5/2-f):</strong> prevenção de fraude, de contas duplicadas e de utilização abusiva, garantia da segurança do serviço, analítica de produto ao nível básico — este tratamento é conduzido de forma proporcional, ponderado com os seus direitos e liberdades fundamentais;</li>
+<li><strong>Necessidade para a constituição, exercício ou defesa de um direito (Art. 5/2-e):</strong> tratamento dos dados necessários no âmbito de processos de litígio jurídico e de reclamações.</li>
+</ul>
+</div><div class="legal-article" id="gp-6"><h3>ARTIGO 6. Disposição Especial Relativa aos Dados de Localização</h3>
+<p><strong>Disposição Crítica — Dados de Localização:</strong></p>
+
+<p>A permissão de localização é solicitada separada e expressamente através do seu sistema operativo; se não a conceder, apenas as funcionalidades baseadas em localização (descoberta, cálculo de ponto comum, ofertas próximas) deixam de funcionar, não sendo a sua conta afetada. Os dados de localização são tratados em memória (in-memory), durante a sessão, para o funcionamento dos ecrãs de mapa/descoberta; nos termos dos termos de utilização da Google Maps Platform, as suas coordenadas não são gravadas de forma permanente em disco/base de dados e podem ser temporariamente colocadas em cache por um período máximo de 30 dias de calendário.</p>
+
+<p><strong>Partilha de localização com amigos:</strong> determinadas funcionalidades (ex.: partilha de "cartão de localização") só estão ativas com utilizadores com quem tenha estabelecido uma relação de amizade recíproca e apenas quando decida partilhar; por defeito, a sua localização não é visível a outros utilizadores.</p>
+</div><div class="legal-article" id="gp-7"><h3>ARTIGO 7. Disposição Especial Relativa ao Conteúdo do Google Maps/Places</h3>
+<p>Nos termos de serviço da Google Maps Platform, conteúdos de origem Google como o nome, fotografia, telefone ou classificação do estabelecimento não podem ser armazenados de forma permanente. Por este motivo:</p>
+<ul>
+<li>O nome do estabelecimento apresentado na funcionalidade de marcadores (bookmark) não é obtido da Google; é uma etiqueta escrita <strong>por si próprio</strong> no momento da criação do registo, sendo armazenada tal como a escreveu.</li>
+<li>O identificador de localização (place_id) pode ser conservado por tempo indeterminado; já as coordenadas de latitude/longitude só podem ser colocadas em cache temporariamente por um período de 30 dias.</li>
+<li>O separador de marcadores não envia à Google qualquer consulta de local/fotografia/nome; a pesquisa é efetuada apenas de forma local, sobre os seus próprios registos.</li>
+</ul>
+</div><div class="legal-article" id="gp-8"><h3>ARTIGO 8. Dados Tratados no Âmbito das Ofertas W-W</h3>
+<p>Quando utiliza uma Oferta W-W, é por nós conservado um registo (histórico de utilização) de qual oferta utilizou, em que estabelecimento e em que data e hora. Este dado é tratado para efeitos de aplicação do limite semanal de utilização, deteção de utilização abusiva e fornecimento de informação de desempenho anónima/agregada aos estabelecimentos parceiros. Estes dados são partilhados com o estabelecimento parceiro apenas na medida limitada necessária à verificação da promoção (confirmação da validade do código pelo pessoal do estabelecimento); as suas informações de identidade (e-mail, nome completo) não são transmitidas ao estabelecimento.</p>
+</div><div class="legal-article" id="gp-9"><h3>ARTIGO 9. Dados de Subscrição e Pagamento</h3>
+<p>As operações de pagamento são conduzidas diretamente pela Apple App Store ou pelo Google Play; os seus dados de cartão não nos são transmitidos. O estado da sua subscrição/tokens (plano ativo, data de compra, montante) é-nos comunicado através da <strong>RevenueCat</strong>, o nosso integrador de fornecedor de pagamentos, sendo tratado para efeitos de atribuição correta dos direitos (nível premium) à sua conta.</p>
+</div><div class="legal-article" id="gp-10"><h3>ARTIGO 10. Transferência de Dados Pessoais (Nacional/Internacional)</h3>
+<p>Os seus dados pessoais são partilhados com os nossos fornecedores de infraestrutura técnica necessários à prestação do Serviço, apenas na medida exigida pelo serviço. Parte destes fornecedores está sediada no estrangeiro (nomeadamente nos EUA e na UE); estas transferências são realizadas em conformidade com os mecanismos de transferência determinados pelo artigo 9.º da KVKK e pelo Conselho de Proteção de Dados Pessoais (consentimento explícito, contrato-tipo aprovado pelo Conselho, entre outros).</p>
+<div class="legal-table-wrap"><table class="legal-table">
+<caption>Principais subcontratantes / prestadores de serviços</caption>
+<tr><th>Fornecedor</th><th>Finalidade</th><th>Localização</th></tr>
+<tr><td>Railway</td><td>Alojamento de servidor (backend)</td><td>Estrangeiro</td></tr>
+<tr><td>Backblaze B2</td><td>Armazenamento de fotografias de perfil e imagens</td><td>Estrangeiro</td></tr>
+<tr><td>RevenueCat</td><td>Gestão de subscrições/compras</td><td>Estrangeiro</td></tr>
+<tr><td>Google (Maps Platform, Sign-In)</td><td>Mapas, dados de locais, início de sessão com a Google</td><td>Estrangeiro</td></tr>
+<tr><td>Apple (Sign in with Apple, App Store)</td><td>Autenticação, pagamento</td><td>Estrangeiro</td></tr>
+<tr><td>Sentry</td><td>Monitorização de erros/falhas</td><td>Estrangeiro</td></tr>
+<tr><td>PostHog</td><td>Analítica de produto</td><td>Estrangeiro</td></tr>
+</table></div>
+<p>A nível nacional, a partilha de dados só pode ocorrer, mediante pedido, com organismos e entidades públicas competentes, no âmbito das nossas obrigações legais.</p>
+</div><div class="legal-article" id="gp-11"><h3>ARTIGO 11. Prazos de Conservação</h3>
+<ul>
+<li><strong>Dados de perfil:</strong> conservados enquanto a sua conta estiver ativa, sendo eliminados num prazo razoável após o seu pedido de eliminação de conta.</li>
+<li><strong>Dados de localização:</strong> não são conservados de forma permanente; são mantidos em memória durante a sessão para o funcionamento das funcionalidades de mapa/descoberta (Artigo 6).</li>
+<li><strong>Mensagens:</strong> não é mantido um arquivo permanente de mensagens do lado do servidor; a cache local no seu dispositivo está sujeita às próprias definições de cópia de segurança/segurança do seu dispositivo.</li>
+<li><strong>Histórico de utilização de Ofertas W-W:</strong> conservado por um período razoável, para efeitos de cálculo do limite semanal e deteção de utilização abusiva.</li>
+<li><strong>Registos financeiros/de subscrição:</strong> podem ser conservados pelo prazo legal previsto no Código Comercial Turco e na Lei de Procedimento Fiscal (geralmente até 10 anos).</li>
+<li><strong>Registo de bloqueio de dispositivo:</strong> a correspondência entre a conta e o primeiro dispositivo a ela associado é conservada por motivos de segurança, com o objetivo de prevenir a utilização abusiva de contas múltiplas.</li>
+</ul>
+</div><div class="legal-article" id="gp-12"><h3>ARTIGO 12. Medidas de Segurança dos Dados</h3>
+<p>São aplicadas medidas técnicas e administrativas — como encriptação (TLS durante a transmissão), controlo de acessos, registo (logging) e avaliações de segurança regulares — para assegurar a segurança dos seus dados pessoais. Não obstante, o Utilizador reconhece que nenhum método de transmissão pela Internet é 100% seguro.</p>
+</div><div class="legal-article" id="gp-13"><h3>ARTIGO 13. Privacidade das Crianças</h3>
+<p>O Serviço não se destina a pessoas com idade inferior a 13 anos e não são conscientemente recolhidos dados pessoais deste grupo etário. Sempre que se detete que um utilizador tem idade inferior a 13 anos, a respetiva conta é imediatamente encerrada e os dados correspondentes são eliminados. Se considerar que o seu filho nos forneceu dados pessoais, contacte-nos através de <a href="mailto:info@duofine.com">info@duofine.com</a>.</p>
+</div><div class="legal-article" id="gp-14"><h3>ARTIGO 14. SDKs e Ferramentas de Analítica</h3>
+<p>A Aplicação não é um sítio web que utilize cookies; em vez disso, recolhe dados técnicos/analíticos limitados através de SDKs móveis:</p>
+<ul>
+<li><strong>PostHog:</strong> para estatísticas de utilização dentro da Aplicação (que ecrãs são visitados, que funcionalidades são utilizadas);</li>
+<li><strong>Sentry:</strong> para o diagnóstico de falhas e erros da Aplicação (apenas dados técnicos de erro, com distinção entre builds de produção e de desenvolvimento);</li>
+<li><strong>RevenueCat:</strong> para a verificação do estado da sua subscrição.</li>
+</ul>
+<p>Estas ferramentas não são utilizadas para publicidade personalizada; os seus dados não são vendidos nem alugados a terceiros para fins de marketing.</p>
+</div><div class="legal-article" id="gp-15"><h3>ARTIGO 15. Direitos do Titular dos Dados (Art. 11.º da KVKK)</h3>
+<p>Nos termos do artigo 11.º da KVKK, dispõe dos seguintes direitos:</p>
+<ol>
+<li>Saber se os seus dados pessoais estão a ser tratados;</li>
+<li>Solicitar informação a esse respeito, caso tenham sido tratados;</li>
+<li>Conhecer a finalidade do tratamento e se os dados são utilizados em conformidade com essa finalidade;</li>
+<li>Conhecer os terceiros a quem os dados foram transferidos, no país ou no estrangeiro;</li>
+<li>Solicitar a retificação, caso tenham sido tratados de forma incompleta ou incorreta;</li>
+<li>Solicitar a eliminação ou a destruição dos dados, nos termos e condições previstos no artigo 7.º da KVKK;</li>
+<li>Solicitar que a retificação/eliminação seja comunicada aos terceiros a quem os dados tenham sido transferidos;</li>
+<li>Opor-se à ocorrência de um resultado desfavorável para si, resultante exclusivamente da análise dos dados tratados através de sistemas automatizados;</li>
+<li>Solicitar a reparação do dano, caso tenha sofrido um prejuízo em resultado de um tratamento contrário à lei.</li>
+</ol>
+<p>Para exercer estes direitos, pode dirigir-nos um pedido por escrito através do canal de contacto indicado no Artigo 18. O seu pedido será resolvido gratuitamente dentro do prazo previsto na KVKK (no máximo 30 dias, consoante a natureza do pedido); caso a operação exija um custo adicional, poderá ser cobrada a tarifa determinada pelo Conselho de Proteção de Dados Pessoais.</p>
+<p><strong>Informação Adicional para Utilizadores Residentes no Espaço Económico Europeu, Reino Unido ou Suíça:</strong></p>
+
+<p>Os direitos acima descritos foram redigidos com base na KVKK; se residir no Espaço Económico Europeu (EEE), no Reino Unido ou na Suíça, os seus dados são adicionalmente protegidos ao abrigo do Regulamento Geral sobre a Proteção de Dados (RGPD) ou da legislação local aplicável, o que não é afetado pela escolha de lei/tribunal prevista no Artigo 18 da Parte I. Em concreto: além dos direitos acima referidos, pode solicitar que os seus dados lhe sejam transmitidos num formato estruturado e de uso corrente (portabilidade dos dados) e, caso não fique satisfeito com a resposta ao seu pedido, pode apresentar reclamação junto da autoridade de controlo de proteção de dados competente do seu país, em vez de ou além de nos contactar diretamente.</p>
+<p>Para efeitos de transparência, informamos que a DuoFine, na sua escala atual, não designou um representante RGPD estabelecido no EEE; esta decisão assenta na avaliação de que não desenvolvemos uma atividade diretamente orientada para o mercado do EEE e de que o volume de tratamento é reduzido. À medida que o número de utilizadores no EEE aumentar, esta avaliação será revista e, se necessário, será designado um representante formal.</p>
+
+</div><div class="legal-article" id="gp-16"><h3>ARTIGO 16. Notificação de Violação de Dados</h3>
+<p>Em caso de obtenção ilícita dos seus dados pessoais por terceiros, a situação será comunicada, no mais curto prazo possível, aos titulares dos dados em causa e ao Conselho de Proteção de Dados Pessoais, nos termos do artigo 12.º da KVKK.</p>
+</div><div class="legal-article" id="gp-17"><h3>ARTIGO 17. Alterações à Política</h3>
+<p>Esta Política pode ser revista periodicamente, em função de alterações legislativas ou de atualizações do Serviço. A versão atual é sempre publicada nesta página e dentro da Aplicação; as alterações significativas serão adicionalmente comunicadas.</p>
+</div><div class="legal-article" id="gp-18"><h3>ARTIGO 18. Contactos e Pedidos</h3>
+<p>Para pedidos relacionados com privacidade e com a KVKK: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
+<p class="divider-quote">Nos pedidos apresentados por escrito, a inclusão de informação/documentos comprovativos da sua identidade e a indicação clara do seu pedido ajudam a acelerar a resolução do mesmo.</p>
 </div>
+        </section>
+    </main>
 
-<div class="notice">
-  <div class="notice-box">
-    <strong>Estado deste documento:</strong> Este texto é um <strong>rascunho</strong> abrangente, elaborado com base na base de código e nos fluxos de trabalho atuais da aplicação Common Ground. Foi compilado por uma inteligência artificial, não substitui a revisão de um advogado turco licenciado e a aprovação final deve ser obtida junto deste. Não há campos por preencher no documento. A tradução para 16 idiomas só será realizada depois de o texto turco estar totalmente aprovado.
-    <br><br>
-    <strong>Nota de revisão TR-1.2 (15 de agosto de 2026):</strong> Foi esclarecida a denominação comercial "DuoFine"; foram adicionados aos Artigos 12 e 18 dos Termos de Utilização um esclarecimento de que a autoridade de suspensão/rescisão de conta se aplica independentemente da nacionalidade/localização do utilizador, bem como uma ressalva relativa a normas imperativas de direito estrangeiro; o foro competente foi fixado em Istambul no Artigo 18; foram removidas da tabela de identidade do Artigo 1 da Política de Privacidade as linhas relativas ao número de identidade da República da Turquia (T.C.), à morada de residência e ao Número de Contribuinte/Número MERSIS, ainda inexistentes; foi adicionada ao Artigo 15 uma secção de sensibilização RGPD para utilizadores do EEE/Reino Unido.
-    <br><br>
-    <strong>Nota de revisão TR-1.3 (15 de agosto de 2026 — verificação de integridade):</strong> As referências aos artigos 5.º, 6.º, 7.º, 9.º, 10.º, 11.º, 12.º e 13.º da KVKK foram verificadas uma a uma junto da fonte oficial. Foram corrigidos dois erros de numeração/referência cruzada: (1) ao serem adicionadas novas alíneas ao Artigo 12, "Dados após a eliminação" passou da 3.ª para a 5.ª posição, pelo que a referência cruzada no Artigo 5 foi corrigida de "Artigo 12.3" para "Artigo 12.5"; (2) na caixa RGPD do Artigo 15 da Política de Privacidade faltava o prefixo "Parte I" na referência à cláusula de escolha de lei da Parte I (que apontava incorretamente para o próprio Artigo 18 da Parte II, ou seja, para Contactos), o que foi corrigido. Além disso, no Artigo 5 da Política de Privacidade foi removida uma referência não utilizada/pendente ao "artigo 6.º da KVKK" e foi simplificada uma frase contraditória que pretendia esclarecer que os dados de localização não constituem dados de categoria especial.
-  </div>
-</div>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <a href="/" class="nav-logo">
+                    <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/><path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/></svg>
+                    <span>DuoFine</span>
+                </a>
+                <p>Crafting meaningful connections and experiences through technology.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigate</h3>
+                <ul class="footer-links">
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#projects">Projects</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"></path></svg></a>
+                    <a href="https://x.com/duofine" target="_blank" rel="noopener noreferrer" aria-label="X" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © <span id="y">2026</span> DuoFine. All Rights Reserved. | <a href="mailto:info@duofine.com">info@duofine.com</a>
+        </div>
+    </footer>
 
-<div class="toc-wrap">
-  <details class="toc" open>
-    <summary>Índice</summary>
-    <div class="toc-grid">
-      <div class="toc-part">Parte I — Termos de Utilização</div>
-      <a href="#kk-0">0. Introdução e Aceitação</a>
-      <a href="#kk-1">1. Definições</a>
-      <a href="#kk-2">2. Âmbito do Serviço</a>
-      <a href="#kk-3">3. Criação de Conta, Idade e Segurança</a>
-      <a href="#kk-4">4. Utilizações Proibidas</a>
-      <a href="#kk-5">5. Conteúdo do Utilizador</a>
-      <a href="#kk-6">6. Localização e Conteúdo de Mapas</a>
-      <a href="#kk-7">7. Ofertas W-W (Deals)</a>
-      <a href="#kk-8">8. Subscrições, Tokens e Compras</a>
-      <a href="#kk-9">9. Amizade e Mensagens</a>
-      <a href="#kk-10">10. Marcadores (Bookmarks)</a>
-      <a href="#kk-11">11. Notificações</a>
-      <a href="#kk-12">12. Suspensão, Rescisão, Eliminação</a>
-      <a href="#kk-13">13. Propriedade Intelectual</a>
-      <a href="#kk-14">14. Exclusão de Garantias</a>
-      <a href="#kk-15">15. Limitação de Responsabilidade</a>
-      <a href="#kk-16">16. Indemnização</a>
-      <a href="#kk-17">17. Força Maior</a>
-      <a href="#kk-18">18. Lei Aplicável e Resolução de Litígios</a>
-      <a href="#kk-19">19. Disposições Gerais</a>
-      <a href="#kk-20">20. Alterações</a>
-      <a href="#kk-21">21. Contactos</a>
-      <div class="toc-part">Parte II — Política de Privacidade (Aviso de Informação nos termos da KVKK)</div>
-      <a href="#gp-1">1. Identidade do Responsável pelo Tratamento</a>
-      <a href="#gp-2">2. Âmbito</a>
-      <a href="#gp-3">3. Dados Pessoais Tratados</a>
-      <a href="#gp-4">4. Finalidades do Tratamento</a>
-      <a href="#gp-5">5. Fundamentos Jurídicos</a>
-      <a href="#gp-6">6. Dados de Localização — Disposição Especial</a>
-      <a href="#gp-7">7. Conteúdo do Google Maps/Places</a>
-      <a href="#gp-8">8. Tratamento de Dados no Âmbito das Ofertas W-W</a>
-      <a href="#gp-9">9. Dados de Subscrição e Pagamento</a>
-      <a href="#gp-10">10. Transferência de Dados (Nacional/Internacional)</a>
-      <a href="#gp-11">11. Prazos de Conservação</a>
-      <a href="#gp-12">12. Segurança dos Dados</a>
-      <a href="#gp-13">13. Privacidade das Crianças</a>
-      <a href="#gp-14">14. SDKs e Analítica</a>
-      <a href="#gp-15">15. Direitos do Titular dos Dados</a>
-      <a href="#gp-16">16. Notificação de Violação de Dados</a>
-      <a href="#gp-17">17. Alterações à Política</a>
-      <a href="#gp-18">18. Contactos e Pedidos</a>
-    </div>
-  </details>
-</div>
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector('.main-header');
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if (header) header.classList.toggle('sticky', scrollY > 50);
+            });
+            if (hamburger && navMenu) {
+                hamburger.addEventListener("click", () => navMenu.classList.toggle("active"));
+            }
+        });
+    </script>
 
-<main>
-
-  <!-- ======================= PARTE I — TERMOS DE UTILIZAÇÃO ======================= -->
-  <div class="part-header" id="bolum-1">
-    <div class="part-eyebrow">Parte I</div>
-    <h2 class="part-title">Termos de Utilização</h2>
-    <p class="part-sub">Disposições contratuais aplicáveis a todos os utilizadores da aplicação móvel Common Ground ("Aplicação" ou "Serviço").</p>
-  </div>
-
-  <article class="madde" id="kk-0">
-    <div class="madde-head"><span class="madde-num">ARTIGO 0</span><h3 class="madde-title">Introdução e Aceitação</h3></div>
-    <div class="madde-body">
-      <p>Os presentes Termos de Utilização ("Termos") regulam a relação jurídica entre o utilizador ("você", "Utilizador") e o operador da aplicação móvel Common Ground, cuja denominação comercial é <strong>DuoFine</strong> ("Operador", "nós"), abrangendo a aplicação e todas as funcionalidades por ela disponibilizadas (incluindo descoberta de locais, Ofertas W-W, mensagens, amizades e marcadores).</p>
-      <p>Ao descarregar a Aplicação, criar uma conta ou continuar a utilizá-la, declara que leu, compreendeu e aceita estes Termos, bem como a Política de Privacidade constante da Parte II abaixo. Se não aceitar estes documentos, não deve utilizar a Aplicação nem criar uma conta.</p>
-      <p>Para as compras efetuadas dentro da aplicação através da loja de aplicações (Apple App Store / Google Play), aplicam-se, além dos presentes Termos, os próprios termos de utilização da respetiva loja; em caso de conflito, prevalecem os termos da loja em matéria de pagamento e faturação, e os presentes Termos em todas as demais matérias.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-1">
-    <div class="madde-head"><span class="madde-num">ARTIGO 1</span><h3 class="madde-title">Definições</h3></div>
-    <div class="madde-body">
-      <ul>
-        <li><strong>Aplicação / Serviço:</strong> a aplicação móvel denominada "Common Ground", distribuída para iOS e Android, e a respetiva infraestrutura de servidor integrada.</li>
-        <li><strong>Utilizador:</strong> pessoa singular que cria uma conta na Aplicação e aceita os presentes Termos.</li>
-        <li><strong>Conteúdo:</strong> todo o texto, imagem, localização e dados semelhantes que o Utilizador partilhe no seu perfil, nas suas mensagens, nos seus marcadores ou dentro da Aplicação.</li>
-        <li><strong>Ofertas W-W / Deals:</strong> as ofertas de desconto/promoção disponibilizadas por empresas terceiras e listadas na Aplicação, bem como o sistema que permite a sua utilização através de código/QR na Aplicação.</li>
-        <li><strong>Subscrição:</strong> plano pago recorrente (com renovação automática), adquirido através da Apple App Store ou do Google Play, que confere funcionalidades adicionais dentro da Aplicação e direito a tokens (ex.: Plus, Pro).</li>
-        <li><strong>Token:</strong> unidade virtual de direito de utilização, não convertível em dinheiro, que mede a utilização de determinadas funcionalidades dentro da Aplicação (ex.: pesquisa/descoberta).</li>
-        <li><strong>Loja:</strong> a App Store operada pela Apple Inc. ou a loja Google Play operada pela Google LLC.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-2">
-    <div class="madde-head"><span class="madde-num">ARTIGO 2</span><h3 class="madde-title">Âmbito do Serviço</h3></div>
-    <div class="madde-body">
-      <p>A Common Ground é uma aplicação de descoberta e interação social que permite aos utilizadores explorar os estabelecimentos ao seu redor com base em filtros como localização, distância, meio de transporte, categoria e popularidade, calcular um ponto de encontro comum entre várias pessoas, trocar mensagens em tempo real com amigos, guardar locais de que gostam e aproveitar promoções especiais oferecidas por estabelecimentos parceiros ("Ofertas W-W").</p>
-      <p>O Operador reserva-se o direito de alterar, suspender ou remover a totalidade ou parte da Aplicação, ou qualquer funcionalidade, sem aviso prévio. A Aplicação é fornecida "tal como está" e "na medida em que estiver disponível"; não é dada qualquer garantia de funcionamento ininterrupto ou isento de erros.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-3">
-    <div class="madde-head"><span class="madde-num">ARTIGO 3</span><h3 class="madde-title">Criação de Conta, Limite de Idade e Segurança da Conta</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li><strong>Limite de idade:</strong> a Aplicação só pode ser utilizada por pessoas com 13 anos ou mais. Os utilizadores entre os 13 e os 18 anos, podendo ser considerados com capacidade limitada nos termos do Código Civil Turco (Türk Medeni Kanunu), só devem utilizar a Aplicação com o conhecimento e supervisão dos pais ou tutores; em particular, é exigido o consentimento do representante legal para operações de subscrição paga e de compra. O Operador reserva-se o direito de suspender contas relativamente às quais se apure a prestação de declaração de idade incorreta.</li>
-        <li><strong>Prestação de informação verdadeira:</strong> o Utilizador compromete-se a que as informações fornecidas no registo, como nome, e-mail e data de nascimento, sejam verdadeiras e atuais. É proibida a criação de conta com identidade falsa ou com a identidade de outra pessoa.</li>
-        <li><strong>Restrição de conta única / dispositivo único:</strong> para prevenir a utilização abusiva e os registos duplicados, a Aplicação aplica uma verificação ao nível do dispositivo aquando de novo registo. Um dispositivo só pode estar associado a uma conta durante um determinado período; as tentativas de contornar esta restrição (ex.: reposição de dispositivo, novo registo com identidade falsa) constituem utilização proibida nos termos do Artigo 4.</li>
-        <li><strong>Segurança da conta:</strong> o Utilizador é responsável pela confidencialidade da sua palavra-passe e do acesso à sua conta. O Utilizador é responsável por todas as operações realizadas através da sua conta, salvo prova em contrário. Em caso de suspeita de acesso não autorizado à sua conta, deve notificar-nos de imediato através de <a href="mailto:info@duofine.com">info@duofine.com</a>.</li>
-        <li><strong>Início de sessão por e-mail, Google e Apple:</strong> além do registo por e-mail/palavra-passe, a Aplicação disponibiliza opções de início de sessão através de conta Google e Apple. Ao utilizar estes métodos, aplicam-se igualmente os termos de utilização e a política de privacidade do respetivo fornecedor.</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-4">
-    <div class="madde-head"><span class="madde-num">ARTIGO 4</span><h3 class="madde-title">Utilizações Proibidas</h3></div>
-    <div class="madde-body">
-      <p>Ao utilizar a Aplicação, o Utilizador compromete-se a abster-se dos seguintes comportamentos:</p>
-      <ol>
-        <li>Partilhar conteúdo ou desenvolver atividade contrária a qualquer lei, regulamento ou direito de terceiros aplicável;</li>
-        <li>Assediar, ameaçar ou importunar insistentemente outro utilizador, ou partilhar discurso de ódio, discriminatório ou obsceno;</li>
-        <li>Criar perfis falsos, fazer-se passar por outra pessoa singular ou coletiva, ou fornecer informações de idade/identidade enganosas;</li>
-        <li>Utilizar a Aplicação para spam, mensagens comerciais não solicitadas, fraude, phishing ou distribuição de software malicioso;</li>
-        <li>Tentar realizar engenharia inversa do código-fonte da Aplicação, recolher dados através de ferramentas automatizadas (bots, scrapers) ou sobrecarregar desproporcionadamente a infraestrutura de servidor;</li>
-        <li>Tentar contornar medidas técnicas com o objetivo de exceder a restrição de dispositivo (Artigo 3.3) ou os limites de tokens/subscrição (Artigo 8);</li>
-        <li><strong>Abusar do sistema de Ofertas W-W:</strong> vender ou transferir um código de campanha, tentar utilizá-lo mais do que uma vez através da reprodução de capturas de ecrã, ou manipular o sistema através de acordos indevidos com o estabelecimento parceiro fora do processo de código/QR (ver Artigo 7);</li>
-        <li>Utilizar dados de localização para seguir, vigiar ou assediar fisicamente outro utilizador;</li>
-        <li>Estabelecer comunicação inadequada com utilizadores menores de 18 anos ou adotar comportamentos que os exponham a abuso.</li>
-      </ol>
-      <p>A violação do presente artigo pode dar origem à suspensão ou à eliminação definitiva da conta, sem aviso prévio (Artigo 12).</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-5">
-    <div class="madde-head"><span class="madde-num">ARTIGO 5</span><h3 class="madde-title">Conteúdo do Utilizador e Licença</h3></div>
-    <div class="madde-body">
-      <p>A propriedade dos conteúdos que o Utilizador partilha na Aplicação (informação de perfil, fotografias, mensagens, etiquetas de marcadores, etc.) pertence-lhe. No entanto, o Utilizador concede-nos uma licença de utilização mundial, não exclusiva e sublicenciável, para que possamos exibir e armazenar esses conteúdos perante outros utilizadores através da Aplicação e operar o Serviço; esta licença limita-se exclusivamente à finalidade de operação do Serviço e o respetivo conteúdo é eliminado quando a conta for eliminada (ressalvados o Artigo 12.5 e o Artigo 11 da Parte II).</p>
-      <p>O Utilizador declara e garante que possui o direito legal de partilhar o conteúdo que publica e que este não viola direitos de propriedade intelectual, de personalidade ou de privacidade de terceiros.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-6">
-    <div class="madde-head"><span class="madde-num">ARTIGO 6</span><h3 class="madde-title">Serviços de Localização e Conteúdo de Mapas</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">Disposição Crítica — Dados de Localização</div>
-        <p>A funcionalidade essencial da Aplicação (descoberta de locais, cálculo de ponto de encontro comum, apresentação de ofertas próximas) depende de dados de localização sensíveis e em tempo real. Se não conceder a permissão de localização, estas funcionalidades da Aplicação não funcionarão. Os fundamentos do tratamento dos dados de localização são explicados em detalhe no Artigo 6 da Parte II.</p>
-      </div>
-      <p>Os dados de mapas e de locais (imagem de mapa, nome do estabelecimento, morada, fotografia, tipo, classificação) são fornecidos através da Google Maps Platform e estão sujeitos aos próprios termos de utilização da Google. O Utilizador não pode copiar, armazenar permanentemente ou reutilizar comercialmente estes conteúdos fora da Aplicação; esta restrição aplica-se igualmente ao Operador e a arquitetura técnica da Aplicação foi concebida em conformidade.</p>
-      <p>O nome do estabelecimento apresentado nos seus marcadores não é um dado obtido automaticamente da Google, mas sim uma etiqueta escrita pelo próprio Utilizador (ver Artigo 10 e Artigo 7 da Parte II).</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-7">
-    <div class="madde-head"><span class="madde-num">ARTIGO 7</span><h3 class="madde-title">Ofertas W-W (Deals) — Promoções de Estabelecimentos Terceiros</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">Disposição Crítica — O Operador é Apenas Intermediário</div>
-        <p>Todas as promoções, descontos e ofertas listados no âmbito das Ofertas W-W são disponibilizados por <strong>estabelecimentos terceiros parceiros</strong>. O Operador não é parte, vendedor ou fornecedor do produto ou serviço vendido; é apenas um intermediário técnico que permite a exibição da promoção na Aplicação e a sua utilização através de código/QR.</p>
-      </div>
-      <ol>
-        <li><strong>Natureza da oferta:</strong> cada Oferta W-W está sujeita às condições próprias definidas pelo respetivo estabelecimento (prazo de validade, stock/cupo, gasto mínimo, etc.). O Operador não garante a exatidão, a atualidade de uma promoção nem que esta será efetivamente aplicada pelo estabelecimento; os estabelecimentos podem alterar, suspender ou terminar a promoção sem aviso prévio.</li>
-        <li><strong>Processo de utilização (redemption):</strong> ao pretender utilizar uma oferta, a Aplicação gera um código/QR exclusivo para o Utilizador. Este código é válido por um período limitado (em minutos, indicado na Aplicação) a partir do momento da sua geração e torna-se automaticamente inválido decorrido esse prazo. O código só pode ser utilizado uma única vez, mediante apresentação ao pessoal do respetivo estabelecimento.</li>
-        <li><strong>Limite semanal de utilização:</strong> para prevenir a utilização abusiva, existe um limite de utilização aplicado à mesma oferta dentro de um período móvel (rolling) de sete dias. Este limite é aplicado para assegurar que a promoção possa alcançar de forma justa um grande número de utilizadores e pode ser alterado sem aviso prévio.</li>
-        <li><strong>Sem valor monetário:</strong> os códigos de oferta não são convertíveis em dinheiro, não são transferíveis a outro utilizador, não podem ser vendidos nem utilizados em massa (bulk). Caso se verifique um comportamento contrário a esta regra, a conta em causa pode ser suspensa nos termos dos Artigos 4.7 e 12.</li>
-        <li><strong>Partes da transação e responsabilidade:</strong> a relação de venda/prestação de serviço estabelecida entre o Utilizador e o estabelecimento em resultado da utilização de uma Oferta W-W é diretamente entre o Utilizador e o respetivo estabelecimento. Para questões relativas a defeitos, qualidade, entrega, devolução do produto/serviço vendido, ou ao cumprimento pelo estabelecimento da sua própria legislação de venda à distância/proteção do consumidor, o interlocutor do Utilizador é o respetivo estabelecimento; não sendo parte nesta transação, o Operador não assume a responsabilidade de vendedor/fornecedor prevista na Lei n.º 6502 de Proteção do Consumidor (TKHK).</li>
-        <li><strong>Localização e visibilidade:</strong> a decisão sobre em que filtro de província/distrito ou na lista "Todas" as ofertas serão apresentadas na Aplicação é da competência editorial do Operador, podendo diferentes filiais do mesmo estabelecimento ser listadas como cartões separados.</li>
-        <li><strong>Direito de cancelamento e alteração:</strong> o Operador reserva-se o direito de retirar qualquer Oferta W-W da Aplicação sem aviso prévio, por motivos como o termo da parceria comercial, pedido do estabelecimento ou suspeita de utilização abusiva.</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-8">
-    <div class="madde-head"><span class="madde-num">ARTIGO 8</span><h3 class="madde-title">Subscrições, Tokens e Compras Dentro da Aplicação</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li><strong>A faturação é processada através da loja:</strong> todas as subscrições pagas (Plus, Pro) e os pacotes de tokens de compra única são adquiridos e faturados através da Apple App Store ou do Google Play. Os preços são apresentados na Aplicação de acordo com a taxa de câmbio e o regime fiscal da respetiva loja, podendo ser alterados sem aviso prévio; o preço atual é sempre o que é apresentado no ecrã de compra.</li>
-        <li><strong>Renovação automática:</strong> salvo cancelamento, as subscrições renovam-se automaticamente no final do período e são cobradas. O canal a utilizar para cancelar, gerir a subscrição e solicitar reembolso são diretamente as definições da sua conta Apple/Google; o Operador não tem autoridade nem acesso para reembolsar diretamente o pagamento.</li>
-        <li><strong>Política de reembolso:</strong> os reembolsos posteriores à compra estão sujeitos à própria política de reembolso da respetiva loja (Apple ou Google). O Operador reflete retroativamente no sistema os reembolsos aprovados pela loja; contudo, a decisão de reembolso é da própria loja.</li>
-        <li><strong>Tokens:</strong> o token é uma unidade virtual, não convertível em dinheiro e sujeita a caducidade, que representa o direito de utilização de determinadas funcionalidades dentro da Aplicação (ex.: consultas de pesquisa/descoberta). Os tokens não são transferíveis a outro utilizador nem podem ser recomprados em troca de dinheiro real.</li>
-        <li><strong>Política de Utilização Justa:</strong> os planos de subscrição incluem uma determinada quantidade mensal de tokens (as quantidades atuais são listadas no ecrã da loja dentro da Aplicação). Caso se detete uma utilização excessiva, automatizada ou de natureza abusiva que prejudique o Serviço, o Operador reserva-se o direito de aplicar restrições adicionais; esta restrição não afeta os utilizadores com um nível de utilização normal e pessoal.</li>
-        <li><strong>Partilha familiar e alteração de conta:</strong> as subscrições são específicas à conta Apple/Google que efetuou a compra e à conta de utilizador Common Ground a que essa conta está associada; em caso de alteração de conta, a correta reflexão do estado da subscrição depende da exatidão das suas credenciais de início de sessão na Aplicação.</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-9">
-    <div class="madde-head"><span class="madde-num">ARTIGO 9</span><h3 class="madde-title">Amizade, Mensagens e Interação Entre Utilizadores</h3></div>
-    <div class="madde-body">
-      <p>A Aplicação permite que os utilizadores se adicionem mutuamente como amigos, troquem mensagens em tempo real e partilhem sugestões de ponto de encontro comum com base na localização. Estas funcionalidades apenas estão ativas entre utilizadores que tenham estabelecido uma relação de amizade recíproca.</p>
-      <p><strong>Aviso de segurança pessoal:</strong> a decisão de se encontrar fisicamente com pessoas conhecidas através da Aplicação é inteiramente da sua responsabilidade e ao seu próprio critério. O Operador não realiza a verificação de identidade dos utilizadores e não pode ser responsabilizado por quaisquer danos resultantes de encontros físicos. Recomendamos que se encontre em locais públicos e que seja prudente ao partilhar informações pessoais (morada, dados financeiros, etc.).</p>
-      <p>O Utilizador pode denunciar pessoas que o incomodem, ameacem ou violem estes Termos através dos mecanismos de bloqueio e denúncia disponíveis na Aplicação.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-10">
-    <div class="madde-head"><span class="madde-num">ARTIGO 10</span><h3 class="madde-title">Marcadores (Bookmarks)</h3></div>
-    <div class="madde-body">
-      <p>A funcionalidade de marcadores foi concebida em conformidade com os termos de utilização da Google, que não permitem o armazenamento permanente do seu conteúdo de natureza pessoal (nome do estabelecimento, fotografia, etc.). Ao guardar um local, é <strong>você quem escreve</strong> o respetivo nome; o Operador não obtém nem pré-preenche automaticamente este nome a partir da Google. Como chave do seu registo é utilizado apenas o identificador geral da localização (place_id) ou um registo inserido manualmente (ver Artigo 7 da Parte II).</p>
-      <p>O número de marcadores pode estar sujeito a um limite dependente do seu plano de subscrição; este limite aplica-se conjuntamente tanto aos registos baseados na Google como aos registos adicionados manualmente.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-11">
-    <div class="madde-head"><span class="madde-num">ARTIGO 11</span><h3 class="madde-title">Notificações e Comunicações</h3></div>
-    <div class="madde-body">
-      <p>Caso conceda permissão, podemos enviar notificações push relativas a novas mensagens, pedidos de amizade e comunicados importantes dentro da Aplicação. Pode revogar esta permissão a qualquer momento nas definições do sistema do seu dispositivo. Reservamo-nos o direito de contactá-lo através do seu endereço de e-mail registado, mesmo sem permissão de notificação, em assuntos importantes como segurança da conta, comunicações legais ou alterações a estes Termos.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-12">
-    <div class="madde-head"><span class="madde-num">ARTIGO 12</span><h3 class="madde-title">Suspensão, Rescisão e Eliminação da Conta</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li><strong>Rescisão pelo Utilizador:</strong> pode eliminar a sua conta a qualquer momento através do menu de definições da Aplicação. Se tiver uma subscrição ativa, a eliminação da conta não cancela automaticamente a subscrição; deve cancelá-la separadamente nas definições da sua conta Apple/Google.</li>
-        <li><strong>Suspensão/rescisão pelo Operador:</strong> reservamo-nos o direito de suspender ou encerrar permanentemente a sua conta sem aviso prévio, em caso de violação destes Termos, nomeadamente das utilizações proibidas enumeradas no Artigo 4, suspeita de fraude, litígio de pagamento (chargeback) ou obrigação legal.</li>
-        <li><strong>Âmbito geográfico deste poder:</strong> o nosso poder de suspensão/rescisão de conta é uma medida técnica e contratual que aplicamos diretamente na Aplicação; a sua aplicação não requer qualquer decisão judicial. Por conseguinte, este poder aplica-se de igual forma a todos os utilizadores que violem estes Termos, independentemente da sua nacionalidade, do país de residência ou da proteção que lhes seja conferida por outro ordenamento jurídico. A fixação do direito turco e dos tribunais turcos como competentes no Artigo 18 não limita nem impõe qualquer fronteira geográfica às medidas ao nível da conta previstas neste artigo.</li>
-        <li><strong>Notificação em caso de infrações graves:</strong> em comportamentos que possam constituir crime, como fraude, ameaça, assédio ou tentativa de abuso, reservamo-nos o direito, além de suspender a conta, de comunicar a situação — consoante a natureza do incidente — às autoridades competentes na Turquia, às autoridades competentes do país onde o utilizador se encontra e/ou às próprias unidades de confiança e segurança (trust & safety) da Apple App Store ou do Google Play.</li>
-        <li><strong>Dados após a eliminação:</strong> após a eliminação da conta, as informações do seu perfil, as suas mensagens e os seus marcadores são removidos do sistema num prazo razoável; os registos financeiros sujeitos a obrigação legal de conservação (ex.: histórico de subscrições/pagamentos) podem ser conservados pelo período previsto na legislação aplicável (ver Artigo 11 da Parte II).</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-13">
-    <div class="madde-head"><span class="madde-num">ARTIGO 13</span><h3 class="madde-title">Propriedade Intelectual e Direitos de Marca</h3></div>
-    <div class="madde-body">
-      <p>Os nomes "Common Ground" e "DuoFine", os respetivos logótipos e todos os elementos da Aplicação, incluindo o código-fonte, o design e a interface, pertencem ao Operador ou aos seus licenciadores e são protegidos pela legislação de propriedade intelectual. Estes Termos conferem ao Utilizador o direito de utilizar a Aplicação para fins pessoais e não comerciais, o que não implica qualquer transferência de direitos de propriedade sobre a Aplicação.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-14">
-    <div class="madde-head"><span class="madde-num">ARTIGO 14</span><h3 class="madde-title">Exclusão de Garantias</h3></div>
-    <div class="madde-body">
-      <p>A Aplicação é fornecida "tal como está" e "conforme disponível". Na máxima medida permitida pela legislação aplicável, o Operador não presta qualquer garantia, expressa ou implícita, quanto ao funcionamento ininterrupto, isento de erros ou seguro da Aplicação, quanto à exatidão das ofertas de terceiros no âmbito das Ofertas W-W, ou quanto ao comportamento de outros utilizadores.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-15">
-    <div class="madde-head"><span class="madde-num">ARTIGO 15</span><h3 class="madde-title">Limitação de Responsabilidade</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">Disposição Crítica — Limite de Responsabilidade</div>
-        <p>Na máxima medida permitida pela legislação aplicável, o Operador não pode ser responsabilizado por: (a) transações estabelecidas com estabelecimentos terceiros no âmbito das Ofertas W-W; (b) interações físicas ou virtuais com outros utilizadores; (c) danos indiretos, incidentais ou consequenciais. A responsabilidade total do Operador está, em qualquer caso, limitada ao montante total de subscrição/compra pago por si à Aplicação nos 12 meses anteriores ao evento que deu origem ao dano.</p>
-      </div>
-      <p>Esta limitação não elimina os direitos imperativos de que beneficia na qualidade de consumidor nos termos da Lei n.º 6502 de Proteção do Consumidor (TKHK) e da legislação aplicável; esses direitos permanecem salvaguardados.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-16">
-    <div class="madde-head"><span class="madde-num">ARTIGO 16</span><h3 class="madde-title">Indemnização</h3></div>
-    <div class="madde-body">
-      <p>O Utilizador compromete-se a indemnizar o Operador por qualquer reclamação, dano ou despesa (incluindo honorários de advogado razoáveis) decorrente da violação destes Termos, da utilização ilícita da Aplicação ou da violação de direitos de terceiros pelo Utilizador.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-17">
-    <div class="madde-head"><span class="madde-num">ARTIGO 17</span><h3 class="madde-title">Força Maior</h3></div>
-    <div class="madde-body">
-      <p>O Operador não pode ser responsabilizado por atrasos ou incumprimentos resultantes de eventos razoavelmente fora do nosso controlo, tais como catástrofes naturais, guerra, epidemias, ou interrupções de serviço dos fornecedores de infraestrutura (alojamento, pagamentos, lojas).</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-18">
-    <div class="madde-head"><span class="madde-num">ARTIGO 18</span><h3 class="madde-title">Lei Aplicável e Resolução de Litígios</h3></div>
-    <div class="madde-body">
-      <p>Os presentes Termos regem-se pela legislação da República da Turquia. São competentes os Tribunais e Serviços de Execução de Istambul (Anatólia/Europa) para dirimir os litígios que possam surgir entre as partes; os utilizadores que atuem na qualidade de consumidores têm o direito de recorrer ao Painel de Arbitragem do Consumidor ou ao Tribunal do Consumidor da sua área de residência ou da área de residência do Operador, nos termos da Lei n.º 6502.</p>
-      <p>Se residir fora da Turquia, a presente escolha de lei e de foro não elimina os direitos imperativos de proteção do consumidor ou de proteção de dados que a legislação do país onde reside lhe confira em matéria de litígios contratuais e que não possam ser afastados por via contratual; esses direitos permanecem salvaguardados.</p>
-      <p>A escolha de lei e de tribunal prevista neste artigo aplica-se apenas às pretensões a fazer valer por via judicial (ex.: ação de indemnização). O nosso poder de suspensão/rescisão de conta previsto no Artigo 12 é independente desta disposição e aplica-se a todos os utilizadores, independentemente do país em que se encontrem.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-19">
-    <div class="madde-head"><span class="madde-num">ARTIGO 19</span><h3 class="madde-title">Disposições Gerais</h3></div>
-    <div class="madde-body">
-      <p>A eventual nulidade ou inaplicabilidade de qualquer disposição destes Termos não afeta a validade das restantes disposições. O facto de o Operador não exercer um determinado direito não significa que a ele renuncie. O Operador pode ceder os direitos e obrigações decorrentes destes Termos, em caso de transferência do Serviço para outro operador, mediante aviso prévio razoável aos seus utilizadores.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-20">
-    <div class="madde-head"><span class="madde-num">ARTIGO 20</span><h3 class="madde-title">Alterações</h3></div>
-    <div class="madde-body">
-      <p>O Operador pode atualizar estes Termos periodicamente. As alterações significativas serão comunicadas através de notificação dentro da Aplicação ou por e-mail. A utilização continuada da Aplicação após a alteração significa que aceita os Termos atualizados.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-21">
-    <div class="madde-head"><span class="madde-num">ARTIGO 21</span><h3 class="madde-title">Contactos</h3></div>
-    <div class="madde-body">
-      <p>Para questões relacionadas com estes Termos: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
-    </div>
-  </article>
-
-  <!-- ======================= PARTE II — POLÍTICA DE PRIVACIDADE ======================= -->
-  <div class="part-header" id="bolum-2">
-    <div class="part-eyebrow">Parte II</div>
-    <h2 class="part-title">Política de Privacidade e Aviso de Informação nos termos da KVKK</h2>
-    <p class="part-sub">Aviso de informação elaborado nos termos do artigo 10.º da Lei n.º 6698 de Proteção de Dados Pessoais ("KVKK").</p>
-  </div>
-
-  <article class="madde" id="gp-1">
-    <div class="madde-head"><span class="madde-num">ARTIGO 1</span><h3 class="madde-title">Identidade do Responsável pelo Tratamento</h3></div>
-    <div class="madde-body">
-      <p>Nos termos da KVKK, os seus dados pessoais são tratados, na qualidade de responsável pelo tratamento, pela empresa cuja denominação comercial é <strong>DuoFine</strong> (doravante "DuoFine" ou "nós"), no âmbito e para as finalidades a seguir descritas.</p>
-      <div class="table-scroll">
-        <table class="data-table">
-          <tr><th>Denominação Comercial</th><td>DuoFine</td></tr>
-          <tr><th>E-mail</th><td>info@duofine.com</td></tr>
-        </table>
-      </div>
-      <p><em>Nota: nesta tabela foram utilizadas as informações mínimas suficientes para efeitos do artigo 10.º da KVKK relativamente à identidade do responsável pelo tratamento (denominação e canal de contacto). Dados pessoais sensíveis de uma pessoa singular, como o número de identidade da República da Turquia (T.C.) ou a morada de residência, não foram aqui incluídos, uma vez que não existe disposição legal que exija a sua publicação neste documento. Por não existir atualmente um enquadramento fiscal separado ou registo de pessoa coletiva, os campos Número de Contribuinte e Número MERSIS também não constam da tabela; caso um destes venha a ser constituído no futuro, será acrescentado à tabela, sendo igualmente tratada, do mesmo modo, a morada do estabelecimento registada no registo comercial, já de natureza pública; se necessário, será também avaliado separadamente o registo no Registo de Responsáveis pelo Tratamento (VERBİS).</em></p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-2">
-    <div class="madde-head"><span class="madde-num">ARTIGO 2</span><h3 class="madde-title">Âmbito desta Política</h3></div>
-    <div class="madde-body">
-      <p>Esta Política respeita ao tratamento dos dados pessoais dos utilizadores registados da aplicação móvel Common Ground, dos potenciais utilizadores que visitam a aplicação e dos representantes das empresas parceiras que nos contactam no âmbito das Ofertas W-W. Os dados recolhidos através do sítio web institucional da DuoFine estão igualmente abrangidos por esta Política.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-3">
-    <div class="madde-head"><span class="madde-num">ARTIGO 3</span><h3 class="madde-title">Categorias de Dados Pessoais Tratados</h3></div>
-    <div class="madde-body">
-      <div class="table-scroll">
-        <table class="data-table">
-          <caption>Categorias de dados efetivamente recolhidos na Aplicação e respetivas fontes</caption>
-          <tr><th>Categoria</th><th>Exemplos</th><th>Fonte</th></tr>
-          <tr><td>Identidade</td><td>Nome, apelido, data de nascimento</td><td>Diretamente do utilizador (formulário de registo)</td></tr>
-          <tr><td>Contacto</td><td>Endereço de e-mail</td><td>Diretamente do utilizador</td></tr>
-          <tr><td>Dados visuais</td><td>Fotografia de perfil</td><td>Diretamente do utilizador (quando carregada)</td></tr>
-          <tr><td>Dados de localização</td><td>Coordenadas GPS em tempo real</td><td>Serviços de localização do dispositivo do utilizador (sujeito a permissão)</td></tr>
-          <tr><td>Dados do dispositivo e técnicos</td><td>Modelo do dispositivo, sistema operativo, token de notificação push, versão da aplicação</td><td>Automático (a partir do dispositivo)</td></tr>
-          <tr><td>Dados de utilização/transação</td><td>Relações de amizade, metadados de mensagens, registos de marcadores, histórico de utilização de Ofertas W-W</td><td>Automático, a partir da utilização da Aplicação</td></tr>
-          <tr><td>Dados de segurança de transação</td><td>Identificador do primeiro dispositivo associado à conta (para efeitos de deteção de contas múltiplas)</td><td>Automático (a partir do dispositivo)</td></tr>
-          <tr><td>Dados financeiros (limitados)</td><td>Estado e montante da compra de subscrição/tokens (os dados do cartão de pagamento não nos são transmitidos)</td><td>Através da Apple/Google, via RevenueCat</td></tr>
-          <tr><td>Dados de marketing/analítica</td><td>Estatísticas de navegação e interação dentro da Aplicação</td><td>Automático (SDK de analítica)</td></tr>
-        </table>
-      </div>
-      <p><strong>Dados não recolhidos:</strong> dados de cartão, como o número do cartão de pagamento ou o CVV, não nos são transmitidos em nenhuma fase; estes dados são tratados diretamente pela Apple/Google. A Aplicação não armazena de forma permanente o conteúdo das suas mensagens do lado do servidor (ver Artigo 11).</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-4">
-    <div class="madde-head"><span class="madde-num">ARTIGO 4</span><h3 class="madde-title">Finalidades do Tratamento dos Dados Pessoais</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li>Criação da sua conta, autenticação e garantia do seu acesso ao Serviço;</li>
-        <li>Prestação das funcionalidades essenciais da Aplicação, incluindo a descoberta de locais, o cálculo do ponto de encontro comum e a apresentação de Ofertas W-W;</li>
-        <li>Funcionamento das funcionalidades de mensagens e interação social com os seus amigos;</li>
-        <li>Processamento das compras de subscrições e tokens e a sua reflexão na sua conta;</li>
-        <li>Deteção e prevenção de utilizações abusivas, tais como contas falsas, registos duplicados ou abuso de Ofertas W-W;</li>
-        <li>Envio de notificações push (mediante a sua permissão);</li>
-        <li>Medição da qualidade do serviço, deteção de erros/falhas (crash) e desenvolvimento do produto;</li>
-        <li>Cumprimento de obrigações legais (fiscais, contabilísticas, pedidos de autoridades públicas);</li>
-        <li>Gestão de litígios jurídicos e proteção dos nossos direitos.</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-5">
-    <div class="madde-head"><span class="madde-num">ARTIGO 5</span><h3 class="madde-title">Fundamentos Jurídicos do Tratamento de Dados Pessoais</h3></div>
-    <div class="madde-body">
-      <p>Os seus dados pessoais são tratados com base nos seguintes fundamentos jurídicos previstos no artigo 5.º da KVKK:</p>
-      <ul>
-        <li><strong>Celebração/execução de contrato (Art. 5/2-c):</strong> os seus dados de identidade e contacto, para a criação de conta, prestação do Serviço e gestão da subscrição;</li>
-        <li><strong>Consentimento explícito (Art. 5/1):</strong> embora não se enquadre na definição de dados pessoais de categoria especial da KVKK (artigo 6.º), para operações como a recolha de dados de localização — de natureza fortemente pessoal/de localização — e a partilha de localização com os seus amigos, obtido separadamente no momento do pedido de permissão de localização;</li>
-        <li><strong>Cumprimento de obrigação legal (Art. 5/2-ç):</strong> conservação de registos financeiros no âmbito da legislação fiscal e contabilística;</li>
-        <li><strong>Interesse legítimo (Art. 5/2-f):</strong> prevenção de fraude, de contas duplicadas e de utilização abusiva, garantia da segurança do serviço, analítica de produto ao nível básico — este tratamento é conduzido de forma proporcional, ponderado com os seus direitos e liberdades fundamentais;</li>
-        <li><strong>Necessidade para a constituição, exercício ou defesa de um direito (Art. 5/2-e):</strong> tratamento dos dados necessários no âmbito de processos de litígio jurídico e de reclamações.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-6">
-    <div class="madde-head"><span class="madde-num">ARTIGO 6</span><h3 class="madde-title">Disposição Especial Relativa aos Dados de Localização</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">Disposição Crítica — Dados de Localização</div>
-        <p>A permissão de localização é solicitada separada e expressamente através do seu sistema operativo; se não a conceder, apenas as funcionalidades baseadas em localização (descoberta, cálculo de ponto comum, ofertas próximas) deixam de funcionar, não sendo a sua conta afetada. Os dados de localização são tratados em memória (in-memory), durante a sessão, para o funcionamento dos ecrãs de mapa/descoberta; nos termos dos termos de utilização da Google Maps Platform, as suas coordenadas não são gravadas de forma permanente em disco/base de dados e podem ser temporariamente colocadas em cache por um período máximo de 30 dias de calendário.</p>
-      </div>
-      <p><strong>Partilha de localização com amigos:</strong> determinadas funcionalidades (ex.: partilha de "cartão de localização") só estão ativas com utilizadores com quem tenha estabelecido uma relação de amizade recíproca e apenas quando decida partilhar; por defeito, a sua localização não é visível a outros utilizadores.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-7">
-    <div class="madde-head"><span class="madde-num">ARTIGO 7</span><h3 class="madde-title">Disposição Especial Relativa ao Conteúdo do Google Maps/Places</h3></div>
-    <div class="madde-body">
-      <p>Nos termos de serviço da Google Maps Platform, conteúdos de origem Google como o nome, fotografia, telefone ou classificação do estabelecimento não podem ser armazenados de forma permanente. Por este motivo:</p>
-      <ul>
-        <li>O nome do estabelecimento apresentado na funcionalidade de marcadores (bookmark) não é obtido da Google; é uma etiqueta escrita <strong>por si próprio</strong> no momento da criação do registo, sendo armazenada tal como a escreveu.</li>
-        <li>O identificador de localização (place_id) pode ser conservado por tempo indeterminado; já as coordenadas de latitude/longitude só podem ser colocadas em cache temporariamente por um período de 30 dias.</li>
-        <li>O separador de marcadores não envia à Google qualquer consulta de local/fotografia/nome; a pesquisa é efetuada apenas de forma local, sobre os seus próprios registos.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-8">
-    <div class="madde-head"><span class="madde-num">ARTIGO 8</span><h3 class="madde-title">Dados Tratados no Âmbito das Ofertas W-W</h3></div>
-    <div class="madde-body">
-      <p>Quando utiliza uma Oferta W-W, é por nós conservado um registo (histórico de utilização) de qual oferta utilizou, em que estabelecimento e em que data e hora. Este dado é tratado para efeitos de aplicação do limite semanal de utilização, deteção de utilização abusiva e fornecimento de informação de desempenho anónima/agregada aos estabelecimentos parceiros. Estes dados são partilhados com o estabelecimento parceiro apenas na medida limitada necessária à verificação da promoção (confirmação da validade do código pelo pessoal do estabelecimento); as suas informações de identidade (e-mail, nome completo) não são transmitidas ao estabelecimento.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-9">
-    <div class="madde-head"><span class="madde-num">ARTIGO 9</span><h3 class="madde-title">Dados de Subscrição e Pagamento</h3></div>
-    <div class="madde-body">
-      <p>As operações de pagamento são conduzidas diretamente pela Apple App Store ou pelo Google Play; os seus dados de cartão não nos são transmitidos. O estado da sua subscrição/tokens (plano ativo, data de compra, montante) é-nos comunicado através da <strong>RevenueCat</strong>, o nosso integrador de fornecedor de pagamentos, sendo tratado para efeitos de atribuição correta dos direitos (nível premium) à sua conta.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-10">
-    <div class="madde-head"><span class="madde-num">ARTIGO 10</span><h3 class="madde-title">Transferência de Dados Pessoais (Nacional/Internacional)</h3></div>
-    <div class="madde-body">
-      <p>Os seus dados pessoais são partilhados com os nossos fornecedores de infraestrutura técnica necessários à prestação do Serviço, apenas na medida exigida pelo serviço. Parte destes fornecedores está sediada no estrangeiro (nomeadamente nos EUA e na UE); estas transferências são realizadas em conformidade com os mecanismos de transferência determinados pelo artigo 9.º da KVKK e pelo Conselho de Proteção de Dados Pessoais (consentimento explícito, contrato-tipo aprovado pelo Conselho, entre outros).</p>
-      <div class="table-scroll">
-        <table class="data-table">
-          <caption>Principais subcontratantes / prestadores de serviços</caption>
-          <tr><th>Fornecedor</th><th>Finalidade</th><th>Localização</th></tr>
-          <tr><td>Railway</td><td>Alojamento de servidor (backend)</td><td>Estrangeiro</td></tr>
-          <tr><td>Backblaze B2</td><td>Armazenamento de fotografias de perfil e imagens</td><td>Estrangeiro</td></tr>
-          <tr><td>RevenueCat</td><td>Gestão de subscrições/compras</td><td>Estrangeiro</td></tr>
-          <tr><td>Google (Maps Platform, Sign-In)</td><td>Mapas, dados de locais, início de sessão com a Google</td><td>Estrangeiro</td></tr>
-          <tr><td>Apple (Sign in with Apple, App Store)</td><td>Autenticação, pagamento</td><td>Estrangeiro</td></tr>
-          <tr><td>Sentry</td><td>Monitorização de erros/falhas</td><td>Estrangeiro</td></tr>
-          <tr><td>PostHog</td><td>Analítica de produto</td><td>Estrangeiro</td></tr>
-        </table>
-      </div>
-      <p>A nível nacional, a partilha de dados só pode ocorrer, mediante pedido, com organismos e entidades públicas competentes, no âmbito das nossas obrigações legais.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-11">
-    <div class="madde-head"><span class="madde-num">ARTIGO 11</span><h3 class="madde-title">Prazos de Conservação</h3></div>
-    <div class="madde-body">
-      <ul>
-        <li><strong>Dados de perfil:</strong> conservados enquanto a sua conta estiver ativa, sendo eliminados num prazo razoável após o seu pedido de eliminação de conta.</li>
-        <li><strong>Dados de localização:</strong> não são conservados de forma permanente; são mantidos em memória durante a sessão para o funcionamento das funcionalidades de mapa/descoberta (Artigo 6).</li>
-        <li><strong>Mensagens:</strong> não é mantido um arquivo permanente de mensagens do lado do servidor; a cache local no seu dispositivo está sujeita às próprias definições de cópia de segurança/segurança do seu dispositivo.</li>
-        <li><strong>Histórico de utilização de Ofertas W-W:</strong> conservado por um período razoável, para efeitos de cálculo do limite semanal e deteção de utilização abusiva.</li>
-        <li><strong>Registos financeiros/de subscrição:</strong> podem ser conservados pelo prazo legal previsto no Código Comercial Turco e na Lei de Procedimento Fiscal (geralmente até 10 anos).</li>
-        <li><strong>Registo de bloqueio de dispositivo:</strong> a correspondência entre a conta e o primeiro dispositivo a ela associado é conservada por motivos de segurança, com o objetivo de prevenir a utilização abusiva de contas múltiplas.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-12">
-    <div class="madde-head"><span class="madde-num">ARTIGO 12</span><h3 class="madde-title">Medidas de Segurança dos Dados</h3></div>
-    <div class="madde-body">
-      <p>São aplicadas medidas técnicas e administrativas — como encriptação (TLS durante a transmissão), controlo de acessos, registo (logging) e avaliações de segurança regulares — para assegurar a segurança dos seus dados pessoais. Não obstante, o Utilizador reconhece que nenhum método de transmissão pela Internet é 100% seguro.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-13">
-    <div class="madde-head"><span class="madde-num">ARTIGO 13</span><h3 class="madde-title">Privacidade das Crianças</h3></div>
-    <div class="madde-body">
-      <p>O Serviço não se destina a pessoas com idade inferior a 13 anos e não são conscientemente recolhidos dados pessoais deste grupo etário. Sempre que se detete que um utilizador tem idade inferior a 13 anos, a respetiva conta é imediatamente encerrada e os dados correspondentes são eliminados. Se considerar que o seu filho nos forneceu dados pessoais, contacte-nos através de <a href="mailto:info@duofine.com">info@duofine.com</a>.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-14">
-    <div class="madde-head"><span class="madde-num">ARTIGO 14</span><h3 class="madde-title">SDKs e Ferramentas de Analítica</h3></div>
-    <div class="madde-body">
-      <p>A Aplicação não é um sítio web que utilize cookies; em vez disso, recolhe dados técnicos/analíticos limitados através de SDKs móveis:</p>
-      <ul>
-        <li><strong>PostHog:</strong> para estatísticas de utilização dentro da Aplicação (que ecrãs são visitados, que funcionalidades são utilizadas);</li>
-        <li><strong>Sentry:</strong> para o diagnóstico de falhas e erros da Aplicação (apenas dados técnicos de erro, com distinção entre builds de produção e de desenvolvimento);</li>
-        <li><strong>RevenueCat:</strong> para a verificação do estado da sua subscrição.</li>
-      </ul>
-      <p>Estas ferramentas não são utilizadas para publicidade personalizada; os seus dados não são vendidos nem alugados a terceiros para fins de marketing.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-15">
-    <div class="madde-head"><span class="madde-num">ARTIGO 15</span><h3 class="madde-title">Direitos do Titular dos Dados (Art. 11.º da KVKK)</h3></div>
-    <div class="madde-body">
-      <p>Nos termos do artigo 11.º da KVKK, dispõe dos seguintes direitos:</p>
-      <ol>
-        <li>Saber se os seus dados pessoais estão a ser tratados;</li>
-        <li>Solicitar informação a esse respeito, caso tenham sido tratados;</li>
-        <li>Conhecer a finalidade do tratamento e se os dados são utilizados em conformidade com essa finalidade;</li>
-        <li>Conhecer os terceiros a quem os dados foram transferidos, no país ou no estrangeiro;</li>
-        <li>Solicitar a retificação, caso tenham sido tratados de forma incompleta ou incorreta;</li>
-        <li>Solicitar a eliminação ou a destruição dos dados, nos termos e condições previstos no artigo 7.º da KVKK;</li>
-        <li>Solicitar que a retificação/eliminação seja comunicada aos terceiros a quem os dados tenham sido transferidos;</li>
-        <li>Opor-se à ocorrência de um resultado desfavorável para si, resultante exclusivamente da análise dos dados tratados através de sistemas automatizados;</li>
-        <li>Solicitar a reparação do dano, caso tenha sofrido um prejuízo em resultado de um tratamento contrário à lei.</li>
-      </ol>
-      <p>Para exercer estes direitos, pode dirigir-nos um pedido por escrito através do canal de contacto indicado no Artigo 18. O seu pedido será resolvido gratuitamente dentro do prazo previsto na KVKK (no máximo 30 dias, consoante a natureza do pedido); caso a operação exija um custo adicional, poderá ser cobrada a tarifa determinada pelo Conselho de Proteção de Dados Pessoais.</p>
-      <div class="critical">
-        <div class="critical-label">Informação Adicional para Utilizadores Residentes no Espaço Económico Europeu, Reino Unido ou Suíça</div>
-        <p>Os direitos acima descritos foram redigidos com base na KVKK; se residir no Espaço Económico Europeu (EEE), no Reino Unido ou na Suíça, os seus dados são adicionalmente protegidos ao abrigo do Regulamento Geral sobre a Proteção de Dados (RGPD) ou da legislação local aplicável, o que não é afetado pela escolha de lei/tribunal prevista no Artigo 18 da Parte I. Em concreto: além dos direitos acima referidos, pode solicitar que os seus dados lhe sejam transmitidos num formato estruturado e de uso corrente (portabilidade dos dados) e, caso não fique satisfeito com a resposta ao seu pedido, pode apresentar reclamação junto da autoridade de controlo de proteção de dados competente do seu país, em vez de ou além de nos contactar diretamente.</p>
-        <p>Para efeitos de transparência, informamos que a DuoFine, na sua escala atual, não designou um representante RGPD estabelecido no EEE; esta decisão assenta na avaliação de que não desenvolvemos uma atividade diretamente orientada para o mercado do EEE e de que o volume de tratamento é reduzido. À medida que o número de utilizadores no EEE aumentar, esta avaliação será revista e, se necessário, será designado um representante formal.</p>
-      </div>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-16">
-    <div class="madde-head"><span class="madde-num">ARTIGO 16</span><h3 class="madde-title">Notificação de Violação de Dados</h3></div>
-    <div class="madde-body">
-      <p>Em caso de obtenção ilícita dos seus dados pessoais por terceiros, a situação será comunicada, no mais curto prazo possível, aos titulares dos dados em causa e ao Conselho de Proteção de Dados Pessoais, nos termos do artigo 12.º da KVKK.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-17">
-    <div class="madde-head"><span class="madde-num">ARTIGO 17</span><h3 class="madde-title">Alterações à Política</h3></div>
-    <div class="madde-body">
-      <p>Esta Política pode ser revista periodicamente, em função de alterações legislativas ou de atualizações do Serviço. A versão atual é sempre publicada nesta página e dentro da Aplicação; as alterações significativas serão adicionalmente comunicadas.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-18">
-    <div class="madde-head"><span class="madde-num">ARTIGO 18</span><h3 class="madde-title">Contactos e Pedidos</h3></div>
-    <div class="madde-body">
-      <p>Para pedidos relacionados com privacidade e com a KVKK: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
-      <p class="divider-quote">Nos pedidos apresentados por escrito, a inclusão de informação/documentos comprovativos da sua identidade e a indicação clara do seu pedido ajudam a acelerar a resolução do mesmo.</p>
-    </div>
-  </article>
-
-  <p style="text-align:right; margin-top:40px;"><a class="back-to-top" href="#bolum-1">↑ Voltar ao topo</a></p>
-
-</main>
-
-<footer class="doc-footer">
-  <div class="doc-footer-inner">
-    <div>© 2026 DuoFine — Common Ground. Todos os direitos reservados.</div>
-    <div>Este documento é apenas o rascunho de origem em turco; após aprovação, será traduzido para 16 idiomas e sincronizado com os ficheiros da aplicação (<code>app/locales/*.json</code>).</div>
-  </div>
-</footer>
 </body>
 </html>

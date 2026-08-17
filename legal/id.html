@@ -1,945 +1,348 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dokumen Hukum Common Ground</title>
-<meta name="description" content="Syarat Layanan dan Kebijakan Privasi Common Ground.">
-<link rel="canonical" href="https://duofine.com/legal/id.html">
-<style>
-/* ---------- Fonts: system stacks only (no external fonts, no CSP risk) ---------- */
-:root{
-  --serif: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-/* ---------- Light palette (default root) ---------- */
-:root{
-  --bg: #F0EEE7;
-  --surface: #FFFFFF;
-  --surface-2: #F7F5EF;
-  --ink: #1C1B18;
-  --ink-dim: #56534A;
-  --ink-faint: #8A8678;
-  --rule: #DBD6C8;
-  --rule-strong: #C7C1AF;
-  --accent: #6A3E9E;
-  --accent-ink: #4C2C74;
-  --accent-soft: #EFE7F8;
-  --critical: #2E6D64;
-  --critical-soft: #E2EEEB;
-  --critical-ink: #1E4842;
-  --badge-bg: #B4542A;
-  --badge-ink: #FBEEE6;
-  --link: #6A3E9E;
-  --shadow: 0 1px 2px rgba(28,27,24,0.04), 0 8px 24px rgba(28,27,24,0.06);
-}
-
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg: #17181A;
-    --surface: #1E2022;
-    --surface-2: #232527;
-    --ink: #ECE9E1;
-    --ink-dim: #B0AC9F;
-    --ink-faint: #7C786C;
-    --rule: #35373A;
-    --rule-strong: #43454A;
-    --accent: #C09EEB;
-    --accent-ink: #E2CFF7;
-    --accent-soft: #2B2438;
-    --critical: #7FCBC0;
-    --critical-soft: #1C2C29;
-    --critical-ink: #A9E4DA;
-    --badge-bg: #E08A55;
-    --badge-ink: #2A1608;
-    --link: #C09EEB;
-    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
-  }
-}
-:root[data-theme="dark"]{
-  --bg: #17181A;
-  --surface: #1E2022;
-  --surface-2: #232527;
-  --ink: #ECE9E1;
-  --ink-dim: #B0AC9F;
-  --ink-faint: #7C786C;
-  --rule: #35373A;
-  --rule-strong: #43454A;
-  --accent: #C09EEB;
-  --accent-ink: #E2CFF7;
-  --accent-soft: #2B2438;
-  --critical: #7FCBC0;
-  --critical-soft: #1C2C29;
-  --critical-ink: #A9E4DA;
-  --badge-bg: #E08A55;
-  --badge-ink: #2A1608;
-  --link: #C09EEB;
-  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
-}
-
-*{ box-sizing: border-box; }
-html{ -webkit-text-size-adjust: 100%; }
-body{
-  margin:0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--sans);
-  line-height: 1.5;
-}
-a{ color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-a:focus-visible, button:focus-visible, summary:focus-visible{
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 3px;
-}
-
-/* ---------- Masthead ---------- */
-.masthead{
-  border-bottom: 1px solid var(--rule);
-  background: var(--surface);
-}
-.masthead-inner{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 28px 24px 24px;
-  display:flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.wordmark{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-.wordmark .dot{
-  width:7px; height:7px; border-radius:50%;
-  background: var(--accent);
-  flex: none;
-}
-h1.doc-title{
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: clamp(28px, 4.2vw, 40px);
-  line-height: 1.14;
-  margin: 0;
-  text-wrap: balance;
-  color: var(--ink);
-}
-.meta-row{
-  display:flex;
-  flex-wrap: wrap;
-  align-items:center;
-  gap: 10px 16px;
-  font-size: 13px;
-  color: var(--ink-dim);
-  font-variant-numeric: tabular-nums;
-}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--badge-bg);
-  color: var(--badge-ink);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-/* ---------- Notice callouts ---------- */
-.notice{
-  max-width: 880px;
-  margin: 20px auto 0;
-  padding: 0 24px;
-}
-.notice-box{
-  background: var(--surface-2);
-  border: 1px solid var(--rule);
-  border-left: 3px solid var(--badge-bg);
-  border-radius: 8px;
-  padding: 14px 16px;
-  font-size: 14px;
-  color: var(--ink-dim);
-  line-height: 1.55;
-}
-.notice-box strong{ color: var(--ink); }
-
-/* ---------- TOC ---------- */
-.toc-wrap{
-  max-width: 880px;
-  margin: 20px auto 0;
-  padding: 0 24px;
-}
-.toc{
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: 20px 22px;
-  box-shadow: var(--shadow);
-}
-.toc summary{
-  cursor:pointer;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
-  list-style: none;
-}
-.toc summary::-webkit-details-marker{ display:none; }
-.toc summary::after{
-  content: "▾";
-  float: right;
-  color: var(--ink-faint);
-}
-.toc[open] summary::after{ content: "▴"; }
-.toc-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px 24px;
-  margin-top: 16px;
-}
-.toc-part{
-  grid-column: 1 / -1;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-  margin: 10px 0 2px;
-  border-top: 1px solid var(--rule);
-  padding-top: 10px;
-}
-.toc-grid a{
-  font-size: 13.5px;
-  color: var(--ink-dim);
-  padding: 3px 0;
-  text-decoration: none;
-  border-bottom: 1px dotted transparent;
-}
-.toc-grid a:hover{ color: var(--accent); border-bottom-color: var(--accent); }
-@media (max-width: 640px){ .toc-grid{ grid-template-columns: 1fr; } }
-
-/* ---------- Content ---------- */
-main{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 8px 24px 80px;
-}
-.part-header{
-  margin-top: 56px;
-  padding-top: 28px;
-  border-top: 2px solid var(--rule-strong);
-}
-.part-eyebrow{
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-h2.part-title{
-  font-family: var(--serif);
-  font-size: clamp(24px, 3.4vw, 30px);
-  font-weight: 600;
-  margin: 6px 0 4px;
-  text-wrap: balance;
-}
-.part-sub{
-  font-size: 14.5px;
-  color: var(--ink-dim);
-  max-width: 62ch;
-  margin: 0 0 8px;
-}
-
-article.madde{
-  margin-top: 40px;
-  scroll-margin-top: 20px;
-}
-.madde-head{
-  display:flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-.madde-num{
-  font-family: var(--sans);
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--ink-faint);
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}
-h3.madde-title{
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0;
-  color: var(--ink);
-}
-.madde-body{
-  font-family: var(--serif);
-  font-size: 16.5px;
-  line-height: 1.68;
-  color: var(--ink);
-  max-width: 68ch;
-}
-.madde-body p{ margin: 0 0 14px; }
-.madde-body ol, .madde-body ul{ margin: 0 0 14px; padding-left: 22px; }
-.madde-body li{ margin-bottom: 8px; }
-.madde-body strong{ color: var(--ink); font-weight: 700; }
-.fill{
-  background: var(--accent-soft);
-  color: var(--accent-ink);
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-family: var(--sans);
-  font-size: 0.86em;
-  font-weight: 600;
-}
-
-.critical{
-  background: var(--critical-soft);
-  border: 1px solid var(--critical);
-  border-left-width: 4px;
-  border-radius: 8px;
-  padding: 16px 18px 4px;
-  margin: 0 0 14px;
-}
-.critical-label{
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--critical-ink);
-  display:flex;
-  align-items:center;
-  gap:6px;
-  margin-bottom: 8px;
-}
-.critical-label svg{ width:13px; height:13px; flex:none; }
-
-table.data-table{
-  width: 100%;
-  border-collapse: collapse;
-  font-family: var(--sans);
-  font-size: 13.5px;
-  margin: 4px 0 20px;
-}
-table.data-table caption{
-  text-align: left;
-  font-size: 12px;
-  color: var(--ink-faint);
-  margin-bottom: 6px;
-  font-style: italic;
-}
-table.data-table th, table.data-table td{
-  border: 1px solid var(--rule);
-  padding: 9px 11px;
-  text-align: left;
-  vertical-align: top;
-}
-table.data-table th{
-  background: var(--surface-2);
-  font-weight: 700;
-  color: var(--ink);
-  font-size: 12.5px;
-  letter-spacing: 0.02em;
-}
-table.data-table td{ color: var(--ink-dim); }
-.table-scroll{ overflow-x: auto; }
-
-.divider-quote{
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 15px;
-  color: var(--ink-faint);
-  border-left: 2px solid var(--rule-strong);
-  padding-left: 14px;
-  margin: 4px 0 20px;
-}
-
-footer.doc-footer{
-  border-top: 1px solid var(--rule);
-  background: var(--surface);
-  margin-top: 60px;
-}
-.doc-footer-inner{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 28px 24px 40px;
-  font-size: 13px;
-  color: var(--ink-faint);
-  display:flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.back-to-top{
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--link);
-  text-decoration: none;
-}
-
-@media (prefers-reduced-motion: no-preference){
-  html{ scroll-behavior: smooth; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syarat Layanan dan Kebijakan Privasi | DuoFine</title>
+    <meta name="description" content="Syarat Layanan dan Kebijakan Privasi Common Ground.">
+    <link rel="canonical" href="https://duofine.com/legal/id.html">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .legal-updated { text-align: center; color: var(--text-light); margin-bottom: 2.5rem; font-size: 0.95rem; }
+        .legal-part-title { font-size: 1.8rem; margin: 3rem 0 0.5rem; color: var(--dark-color); font-weight: 600; }
+        .legal-part-title:first-of-type { margin-top: 0; }
+        .legal-toc { columns: 2; column-gap: 2.5rem; margin: 0 0 3rem; padding-left: 1.2rem; }
+        .legal-toc li { margin-bottom: 0.5rem; break-inside: avoid; }
+        .legal-article { margin-top: 2.5rem; scroll-margin-top: 90px; }
+        .legal-article h3 { font-size: 1.25rem; color: var(--dark-color); margin-bottom: 0.8rem; }
+        .legal-article p, .legal-article li { margin-bottom: 1rem; }
+        .legal-article ul, .legal-article ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+        .legal-table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+        table.legal-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        table.legal-table caption { text-align: left; font-style: italic; color: var(--text-light); margin-bottom: 0.5rem; font-size: 0.9rem; }
+        table.legal-table th, table.legal-table td { border: 1px solid var(--border-color); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; }
+        table.legal-table th { background-color: var(--light-color); font-weight: 600; }
+        .back-to-toc { display: block; text-align: right; margin-top: 3rem; }
+    </style>
 </head>
 <body>
-<div class="masthead">
-  <div class="masthead-inner">
-    <div class="wordmark"><span class="dot"></span>COMMON GROUND — DUOFINE</div>
-    <h1 class="doc-title">Syarat Layanan &amp; Kebijakan Privasi</h1>
-    <div class="meta-row">
-      <span class="badge">Draf · Menunggu Peninjauan Hukum</span>
-      <span>Tanggal berlaku: 15 Agustus 2026</span>
-      <span>Versi: TR-1.3</span>
-      <span>Bahasa: Indonesia (diterjemahkan dari teks asli bahasa Turki) (sumber: versi Turki TR-1.3)</span>
-    </div>
-  </div>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="/" class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
+                    <path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
+                </svg>
+                <span>DuoFine</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/#about" class="nav-link" data-link="about">About</a></li>
+                <li class="nav-item"><a href="/#projects" class="nav-link" data-link="projects">Projects</a></li>
+                <li class="nav-item"><a href="/#contact" class="nav-link" data-link="contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="legal" class="content-section">
+            <h2>Syarat Layanan dan Kebijakan Privasi</h2>
+            <p class="legal-updated">Terakhir diperbarui: 15 Agustus 2026</p>
+            <ul class="legal-toc"><li><a href="#kk-0">PASAL 0 — Pendahuluan dan Persetujuan</a></li><li><a href="#kk-1">PASAL 1 — Definisi</a></li><li><a href="#kk-2">PASAL 2 — Cakupan Layanan</a></li><li><a href="#kk-3">PASAL 3 — Pembuatan Akun, Batas Usia, dan Keamanan Akun</a></li><li><a href="#kk-4">PASAL 4 — Penggunaan yang Dilarang</a></li><li><a href="#kk-5">PASAL 5 — Konten Pengguna dan Lisensi</a></li><li><a href="#kk-6">PASAL 6 — Layanan Lokasi dan Konten Peta</a></li><li><a href="#kk-7">PASAL 7 — Penawaran W-W (Deals) — Kampanye Bisnis Pihak Ketiga</a></li><li><a href="#kk-8">PASAL 8 — Langganan, Token, dan Pembelian Dalam Aplikasi</a></li><li><a href="#kk-9">PASAL 9 — Pertemanan, Perpesanan, dan Interaksi Antarpengguna</a></li><li><a href="#kk-10">PASAL 10 — Penanda (Bookmarks)</a></li><li><a href="#kk-11">PASAL 11 — Notifikasi dan Komunikasi</a></li><li><a href="#kk-12">PASAL 12 — Penangguhan, Pengakhiran, dan Penghapusan Akun</a></li><li><a href="#kk-13">PASAL 13 — Kekayaan Intelektual dan Hak Merek</a></li><li><a href="#kk-14">PASAL 14 — Penolakan Jaminan</a></li><li><a href="#kk-15">PASAL 15 — Pembatasan Tanggung Jawab</a></li><li><a href="#kk-16">PASAL 16 — Ganti Rugi</a></li><li><a href="#kk-17">PASAL 17 — Keadaan Kahar</a></li><li><a href="#kk-18">PASAL 18 — Hukum yang Berlaku dan Penyelesaian Sengketa</a></li><li><a href="#kk-19">PASAL 19 — Ketentuan Umum</a></li><li><a href="#kk-20">PASAL 20 — Perubahan</a></li><li><a href="#kk-21">PASAL 21 — Kontak</a></li><li><a href="#gp-1">PASAL 1 — Identitas Pengendali Data</a></li><li><a href="#gp-2">PASAL 2 — Cakupan Kebijakan Ini</a></li><li><a href="#gp-3">PASAL 3 — Kategori Data Pribadi yang Diproses</a></li><li><a href="#gp-4">PASAL 4 — Tujuan Pemrosesan Data Pribadi</a></li><li><a href="#gp-5">PASAL 5 — Dasar Hukum Pemrosesan Data Pribadi</a></li><li><a href="#gp-6">PASAL 6 — Ketentuan Khusus Mengenai Data Lokasi</a></li><li><a href="#gp-7">PASAL 7 — Ketentuan Khusus Mengenai Konten Google Maps/Places</a></li><li><a href="#gp-8">PASAL 8 — Data yang Diproses dalam Rangka Penawaran W-W</a></li><li><a href="#gp-9">PASAL 9 — Data Langganan dan Pembayaran</a></li><li><a href="#gp-10">PASAL 10 — Transfer Data Pribadi (Dalam Negeri/Luar Negeri)</a></li><li><a href="#gp-11">PASAL 11 — Jangka Waktu Penyimpanan</a></li><li><a href="#gp-12">PASAL 12 — Langkah-Langkah Keamanan Data</a></li><li><a href="#gp-13">PASAL 13 — Privasi Anak</a></li><li><a href="#gp-14">PASAL 14 — SDK dan Alat Analitik</a></li><li><a href="#gp-15">PASAL 15 — Hak-Hak Subjek Data (pasal 11 KVKK)</a></li><li><a href="#gp-16">PASAL 16 — Pemberitahuan Pelanggaran Data</a></li><li><a href="#gp-17">PASAL 17 — Perubahan Kebijakan</a></li><li><a href="#gp-18">PASAL 18 — Kontak dan Pengajuan Permohonan</a></li></ul>
+            <h3 class="legal-part-title" id="bolum-1">Syarat Layanan</h3><div class="legal-article" id="kk-0"><h3>PASAL 0. Pendahuluan dan Persetujuan</h3>
+<p>Syarat Layanan ini ("Syarat") mengatur hubungan hukum antara pengguna ("Anda", "Pengguna") dan pihak yang mengoperasikan aplikasi mobile Common Ground dengan nama dagang <strong>DuoFine</strong> ("Operator", "kami"), mencakup seluruh fitur yang ditawarkan aplikasi ini (termasuk penjelajahan lokasi, Penawaran W-W, perpesanan, pertemanan, dan penanda/bookmark).</p>
+<p>Dengan mengunduh Aplikasi, membuat akun, atau melanjutkan penggunaan, Anda menyatakan telah membaca, memahami, dan menyetujui Syarat ini beserta Kebijakan Privasi yang tercantum pada Bagian II di bawah. Jika Anda tidak menyetujui dokumen-dokumen ini, Anda tidak boleh menggunakan Aplikasi atau membuat akun.</p>
+<p>Untuk pembelian yang dilakukan melalui toko aplikasi (Apple App Store / Google Play) di dalam Aplikasi, selain Syarat ini, syarat penggunaan toko terkait juga berlaku; apabila terjadi pertentangan, untuk hal-hal terkait pembayaran dan penagihan, syarat toko yang berlaku, sedangkan untuk hal-hal lainnya, Syarat ini yang menjadi acuan.</p>
+</div><div class="legal-article" id="kk-1"><h3>PASAL 1. Definisi</h3>
+<ul>
+<li><strong>Aplikasi / Layanan:</strong> Aplikasi mobile bernama "Common Ground" yang didistribusikan di iOS dan Android, beserta infrastruktur server yang terintegrasi dengannya.</li>
+<li><strong>Pengguna:</strong> Orang perseorangan yang membuat akun di Aplikasi dan menyetujui Syarat ini.</li>
+<li><strong>Konten:</strong> Segala bentuk teks, gambar, lokasi, dan data serupa yang dibagikan Pengguna pada profil, pesan, penanda, atau di dalam Aplikasi.</li>
+<li><strong>Penawaran W-W / Deals:</strong> Penawaran diskon/promosi yang terdaftar di Aplikasi dan disediakan oleh pihak ketiga (pelaku usaha mitra), beserta sistem penggunaannya melalui kode/QR di dalam Aplikasi.</li>
+<li><strong>Langganan:</strong> Paket berbayar berulang (otomatis diperpanjang) yang dibeli melalui Apple App Store atau Google Play, yang memberikan fitur tambahan dalam Aplikasi dan hak atas token (misalnya Plus, Pro).</li>
+<li><strong>Token:</strong> Unit hak penggunaan virtual, yang tidak dapat ditukar dengan uang, yang mengukur penggunaan fitur tertentu dalam Aplikasi (misalnya pencarian/penjelajahan).</li>
+<li><strong>Toko:</strong> App Store yang dioperasikan oleh Apple Inc. atau toko Google Play yang dioperasikan oleh Google LLC.</li>
+</ul>
+</div><div class="legal-article" id="kk-2"><h3>PASAL 2. Cakupan Layanan</h3>
+<p>Common Ground adalah aplikasi penjelajahan dan interaksi sosial yang memungkinkan pengguna menjelajahi bisnis di sekitar mereka menggunakan filter seperti lokasi, jarak, moda transportasi, kategori, dan popularitas; menghitung titik pertemuan bersama di antara beberapa orang; melakukan perpesanan secara real-time dengan teman; menyimpan tempat yang disukai; dan memanfaatkan promosi khusus ("Penawaran W-W") yang ditawarkan oleh bisnis mitra.</p>
+<p>Operator berhak mengubah, menangguhkan, atau menghapus seluruh atau sebagian Aplikasi, termasuk fitur apa pun, tanpa pemberitahuan sebelumnya. Aplikasi disediakan "sebagaimana adanya" dan "sejauh tersedia"; tidak ada jaminan bahwa Aplikasi akan berfungsi tanpa gangguan atau bebas dari kesalahan.</p>
+</div><div class="legal-article" id="kk-3"><h3>PASAL 3. Pembuatan Akun, Batas Usia, dan Keamanan Akun</h3>
+<ol>
+<li><strong>Batas usia:</strong> Aplikasi hanya dapat digunakan oleh orang yang telah berusia 13 tahun ke atas. Karena pengguna berusia 13-18 tahun dapat dianggap memiliki kecakapan bertindak terbatas berdasarkan Kitab Undang-Undang Hukum Perdata Turki (Türk Medeni Kanunu), pengguna dalam kelompok usia ini hanya boleh menggunakan Aplikasi dengan sepengetahuan dan pengawasan orang tua atau wali mereka; persetujuan wakil sah secara khusus disyaratkan untuk transaksi langganan berbayar dan pembelian. Operator berhak menangguhkan akun yang terbukti memberikan keterangan usia yang tidak benar.</li>
+<li><strong>Kebenaran informasi:</strong> Anda menjamin bahwa nama, alamat surel, tanggal lahir, dan informasi lain yang Anda berikan saat pendaftaran adalah benar dan mutakhir. Membuat akun dengan identitas palsu atau mengatasnamakan orang lain dilarang.</li>
+<li><strong>Pembatasan satu akun / satu perangkat:</strong> Guna mencegah penyalahgunaan dan pendaftaran ganda, Aplikasi menerapkan verifikasi tingkat perangkat pada saat pendaftaran baru. Satu perangkat hanya dapat dikaitkan dengan satu akun untuk jangka waktu tertentu; setiap upaya untuk melewati pembatasan ini (misalnya melakukan reset perangkat, mendaftar ulang dengan identitas palsu) dianggap sebagai penggunaan yang dilarang sebagaimana diatur dalam Pasal 4.</li>
+<li><strong>Keamanan akun:</strong> Anda bertanggung jawab atas kerahasiaan kata sandi dan akses ke akun Anda. Anda dianggap bertanggung jawab atas seluruh transaksi yang dilakukan melalui akun Anda, kecuali dibuktikan sebaliknya. Apabila Anda mencurigai adanya akses tidak sah ke akun Anda, Anda wajib segera memberitahukannya kepada kami melalui <a href="mailto:info@duofine.com">info@duofine.com</a>.</li>
+<li><strong>Masuk melalui surel, Google, dan Apple:</strong> Selain pendaftaran melalui surel/kata sandi, Aplikasi menyediakan opsi masuk melalui akun Google dan Apple. Saat menggunakan metode ini, syarat penggunaan dan kebijakan privasi milik penyedia terkait juga berlaku.</li>
+</ol>
+</div><div class="legal-article" id="kk-4"><h3>PASAL 4. Penggunaan yang Dilarang</h3>
+<p>Saat menggunakan Aplikasi, Anda setuju untuk menghindari perilaku berikut:</p>
+<ol>
+<li>Membagikan konten atau melakukan kegiatan yang bertentangan dengan hukum, peraturan, atau hak pihak ketiga mana pun yang berlaku;</li>
+<li>Melecehkan, mengancam, terus-menerus mengganggu pengguna lain, atau membagikan ujaran kebencian, konten diskriminatif, atau konten cabul;</li>
+<li>Membuat profil palsu, meniru identitas orang atau badan hukum lain, atau memberikan informasi usia/identitas yang menyesatkan;</li>
+<li>Menggunakan Aplikasi untuk spam, pesan komersial yang tidak diinginkan, penipuan, phishing, atau penyebaran perangkat lunak berbahaya;</li>
+<li>Melakukan rekayasa balik (reverse engineering) terhadap kode sumber Aplikasi, mengumpulkan data menggunakan alat otomatis (bot, scraper), atau membebani infrastruktur server secara tidak proporsional;</li>
+<li>Mencoba melewati langkah-langkah teknis untuk melampaui pembatasan perangkat (Pasal 3.3) atau batas token/langganan (Pasal 8);</li>
+<li><strong>Menyalahgunakan sistem Penawaran W-W:</strong> menjual atau mengalihkan kode kampanye, mencoba menggunakannya lebih dari satu kali dengan menggandakan tangkapan layar, atau berkolusi secara tidak sah dengan bisnis mitra di luar mekanisme kode/QR untuk memanipulasi sistem (lihat Pasal 7);</li>
+<li>Menggunakan data lokasi untuk membuntuti, memata-matai, atau melecehkan pengguna lain secara fisik;</li>
+<li>Melakukan komunikasi yang tidak pantas dengan pengguna di bawah usia 18 tahun atau berperilaku sedemikian rupa sehingga membuat mereka rentan terhadap eksploitasi.</li>
+</ol>
+<p>Pelanggaran terhadap pasal ini dapat mengakibatkan penangguhan atau penghapusan permanen akun tanpa pemberitahuan sebelumnya (Pasal 12).</p>
+</div><div class="legal-article" id="kk-5"><h3>PASAL 5. Konten Pengguna dan Lisensi</h3>
+<p>Kepemilikan atas konten yang Anda bagikan di dalam Aplikasi (informasi profil, foto, pesan, label penanda, dan lain-lain) tetap menjadi milik Anda. Namun demikian, agar kami dapat menampilkan konten tersebut kepada pengguna lain melalui Aplikasi, menyimpannya, dan menjalankan Layanan, Anda memberikan kepada kami lisensi penggunaan yang berlaku secara global, tidak eksklusif, dan dapat disublisensikan; lisensi ini terbatas semata-mata untuk tujuan pengoperasian Layanan dan konten terkait akan dihapus saat Anda menghapus akun Anda (dengan tetap berlaku ketentuan Pasal 12.5 dan Bagian II Pasal 11).</p>
+<p>Anda menyatakan dan menjamin bahwa konten yang Anda bagikan adalah konten yang secara hukum berhak Anda bagikan dan tidak melanggar hak kekayaan intelektual, hak pribadi, atau hak privasi pihak ketiga mana pun.</p>
+</div><div class="legal-article" id="kk-6"><h3>PASAL 6. Layanan Lokasi dan Konten Peta</h3>
+<p><strong>Ketentuan Kritis — Data Lokasi:</strong></p>
+
+<p>Fungsi utama Aplikasi (penjelajahan lokasi, penghitungan titik pertemuan bersama, penampilan penawaran di sekitar Anda) bergantung pada data lokasi yang sensitif dan real-time. Jika Anda tidak memberikan izin lokasi, fitur-fitur ini tidak akan berfungsi. Dasar-dasar pemrosesan data lokasi dijelaskan secara rinci pada Bagian II Pasal 6.</p>
+
+<p>Data peta dan lokasi (tampilan peta, nama bisnis, alamat, foto, jenis, rating) disediakan melalui Google Maps Platform dan tunduk pada syarat penggunaan milik Google sendiri. Anda tidak boleh menyalin, menyimpan secara permanen, atau menggunakan kembali konten ini untuk tujuan komersial di luar Aplikasi; pembatasan ini juga berlaku bagi Operator dan desain teknis Aplikasi dibangun sesuai dengan ketentuan tersebut.</p>
+<p>Nama bisnis yang tampil pada penanda Anda bukan data yang diambil secara otomatis dari Google, melainkan label yang Anda tuliskan sendiri (lihat Pasal 10 dan Bagian II Pasal 7).</p>
+</div><div class="legal-article" id="kk-7"><h3>PASAL 7. Penawaran W-W (Deals) — Kampanye Bisnis Pihak Ketiga</h3>
+<p><strong>Ketentuan Kritis — Operator Hanya Bertindak sebagai Perantara:</strong></p>
+
+<p>Seluruh kampanye, diskon, dan penawaran yang terdaftar dalam Penawaran W-W disediakan oleh <strong>bisnis mitra pihak ketiga</strong>. Operator bukan merupakan pihak, penjual, atau penyedia produk atau jasa yang dijual; Operator hanya bertindak sebagai perantara teknis yang memungkinkan kampanye tersebut ditampilkan di Aplikasi dan digunakan melalui kode/QR.</p>
+
+<ol>
+<li><strong>Sifat penawaran:</strong> Setiap Penawaran W-W tunduk pada syarat yang ditentukan sendiri oleh bisnis terkait (jangka waktu berlaku, stok/kuota, minimum pembelanjaan, dan lain-lain). Operator tidak menjamin keakuratan, kemutakhiran, atau bahwa suatu kampanye akan benar-benar diterapkan oleh bisnis; bisnis dapat mengubah, menangguhkan, atau mengakhiri kampanye tanpa pemberitahuan sebelumnya.</li>
+<li><strong>Proses penukaran (redemption):</strong> Saat Anda hendak menggunakan suatu penawaran, Aplikasi akan menghasilkan kode/QR unik untuk Anda. Kode ini berlaku untuk jangka waktu terbatas (dalam hitungan menit sebagaimana tertera dalam Aplikasi) sejak dibuat, dan akan otomatis tidak berlaku setelah waktu tersebut habis. Kode hanya dapat digunakan satu kali, di lokasi bisnis terkait, dengan menunjukkannya kepada staf bisnis tersebut.</li>
+<li><strong>Batas penggunaan mingguan:</strong> Untuk mencegah penyalahgunaan, terdapat batas penggunaan yang berlaku untuk setiap penawaran dalam jangka waktu bergulir (rolling) tujuh hari. Batas ini diterapkan agar kampanye dapat menjangkau banyak pengguna secara adil, dan dapat diubah tanpa pemberitahuan sebelumnya.</li>
+<li><strong>Tidak memiliki nilai tunai:</strong> Kode penawaran tidak dapat ditukar dengan uang tunai, dialihkan kepada pengguna lain, dijual, atau digunakan secara massal (bulk). Apabila terdeteksi pelanggaran terhadap ketentuan ini, akun terkait dapat ditangguhkan sesuai dengan Pasal 4.7 dan Pasal 12.</li>
+<li><strong>Para pihak dalam transaksi dan tanggung jawab:</strong> Hubungan jual-beli/jasa yang terbentuk antara Anda dan bisnis sebagai akibat dari penggunaan suatu Penawaran W-W terjadi secara langsung antara Anda dan bisnis terkait. Untuk hal-hal seperti cacat produk/jasa yang dijual, kualitas, pengiriman, pengembalian, serta kepatuhan bisnis terkait terhadap ketentuan penjualan jarak jauh/perlindungan konsumen yang berlaku bagi mereka, pihak yang menjadi lawan bicara Anda adalah bisnis terkait; karena Operator bukan pihak dalam transaksi ini, Operator tidak menanggung tanggung jawab penjual/penyedia sebagaimana diatur dalam Undang-Undang No. 6502 tentang Perlindungan Konsumen (TKHK).</li>
+<li><strong>Lokasi dan visibilitas:</strong> Filter provinsi/kabupaten atau daftar "Semua" tempat suatu penawaran akan ditampilkan di dalam Aplikasi merupakan kebijakan editorial Operator, dan cabang berbeda dari bisnis yang sama dapat terdaftar sebagai kartu terpisah.</li>
+<li><strong>Hak pembatalan dan perubahan:</strong> Operator berhak menghapus Penawaran W-W apa pun dari Aplikasi tanpa pemberitahuan sebelumnya, dengan alasan seperti berakhirnya kerja sama bisnis, permintaan bisnis, atau dugaan penyalahgunaan.</li>
+</ol>
+</div><div class="legal-article" id="kk-8"><h3>PASAL 8. Langganan, Token, dan Pembelian Dalam Aplikasi</h3>
+<ol>
+<li><strong>Penagihan dilakukan melalui toko:</strong> Seluruh langganan berbayar (Plus, Pro) dan paket token sekali beli dibeli dan ditagihkan melalui Apple App Store atau Google Play. Harga ditampilkan di dalam Aplikasi sesuai dengan nilai tukar mata uang dan penerapan pajak toko terkait, dan dapat berubah tanpa pemberitahuan sebelumnya; harga yang berlaku selalu harga yang ditampilkan pada layar pembelian.</li>
+<li><strong>Perpanjangan otomatis:</strong> Langganan akan diperpanjang dan ditagih secara otomatis pada akhir periode kecuali dibatalkan. Kanal yang harus Anda gunakan untuk membatalkan langganan, mengelola langganan, dan mengajukan permohonan pengembalian dana adalah pengaturan akun Apple/Google Anda secara langsung; Operator tidak memiliki wewenang atau akses untuk mengembalikan dana pembayaran secara langsung.</li>
+<li><strong>Kebijakan pengembalian dana:</strong> Pengembalian dana pascapembelian tunduk pada kebijakan pengembalian dana toko terkait (Apple atau Google) sendiri. Operator akan menerapkan pengembalian dana yang telah disetujui oleh toko secara retroaktif ke dalam sistem; namun keputusan pengembalian dana itu sendiri berada di tangan toko.</li>
+<li><strong>Token:</strong> Token adalah unit virtual yang tidak dapat ditukar dengan uang tunai dan dapat kedaluwarsa, yang merepresentasikan hak penggunaan fitur tertentu dalam Aplikasi (misalnya kueri pencarian/penjelajahan). Token tidak dapat dialihkan kepada pengguna lain dan tidak dapat dibeli kembali dengan uang sungguhan.</li>
+<li><strong>Kebijakan Penggunaan Wajar:</strong> Paket langganan mencakup sejumlah token tertentu per bulan (jumlah terkini tercantum pada layar toko dalam Aplikasi). Apabila terdeteksi penggunaan yang berlebihan, terotomatisasi, atau bersifat penyalahgunaan sehingga mengganggu Layanan, Operator berhak menerapkan pembatasan tambahan; pembatasan ini tidak akan memengaruhi pengguna dengan tingkat penggunaan normal dan personal.</li>
+<li><strong>Berbagi keluarga dan perubahan akun:</strong> Langganan bersifat khusus untuk akun Apple/Google yang melakukan pembelian dan akun pengguna Common Ground yang terkait dengan akun tersebut; dalam hal terjadi perubahan akun, refleksi status langganan yang benar bergantung pada keakuratan informasi masuk (login) Anda dalam Aplikasi.</li>
+</ol>
+</div><div class="legal-article" id="kk-9"><h3>PASAL 9. Pertemanan, Perpesanan, dan Interaksi Antarpengguna</h3>
+<p>Aplikasi memungkinkan pengguna untuk saling menambahkan sebagai teman, melakukan perpesanan secara real-time, dan berbagi saran titik pertemuan bersama berbasis lokasi. Fitur-fitur ini hanya aktif di antara pengguna yang telah membentuk hubungan pertemanan secara timbal balik.</p>
+<p><strong>Peringatan keamanan pribadi:</strong> Keputusan untuk bertemu secara fisik dengan orang yang Anda kenal melalui Aplikasi sepenuhnya merupakan pilihan dan tanggung jawab Anda sendiri. Operator tidak melakukan verifikasi identitas pengguna dan tidak dapat dimintai pertanggungjawaban atas kerugian apa pun yang timbul dari pertemuan fisik. Kami menyarankan Anda untuk bertemu di tempat umum dan berhati-hati saat membagikan informasi pribadi (alamat rumah, informasi keuangan, dan sejenisnya).</p>
+<p>Anda dapat melaporkan pengguna yang mengganggu, mengancam, atau melanggar Syarat ini melalui mekanisme pemblokiran dan pelaporan yang tersedia di dalam Aplikasi.</p>
+</div><div class="legal-article" id="kk-10"><h3>PASAL 10. Penanda (Bookmarks)</h3>
+<p>Fitur penanda dirancang agar sesuai dengan syarat penggunaan Google yang tidak mengizinkan penyimpanan permanen konten bersifat data pribadi (nama bisnis, foto, dan sebagainya). Saat Anda menyimpan suatu tempat, <strong>Anda sendiri</strong> yang menuliskan nama tempat tersebut; Operator tidak mengambil atau mengisi nama tersebut secara otomatis dari Google. Sebagai kunci penyimpanan hanya digunakan identitas umum lokasi (place_id) atau entri yang dimasukkan secara manual (lihat Bagian II Pasal 7).</p>
+<p>Jumlah penanda dapat tunduk pada batas yang bergantung pada paket langganan Anda; batas ini berlaku secara bersamaan baik untuk entri berbasis Google maupun entri yang ditambahkan secara manual.</p>
+</div><div class="legal-article" id="kk-11"><h3>PASAL 11. Notifikasi dan Komunikasi</h3>
+<p>Apabila Anda memberikan izin, kami dapat mengirimkan notifikasi push untuk pesan baru, permintaan pertemanan, dan pengumuman penting dalam Aplikasi. Anda dapat mencabut izin ini kapan saja melalui pengaturan sistem perangkat Anda. Kami tetap berhak menghubungi alamat surel terdaftar Anda untuk hal-hal penting seperti keamanan akun, pemberitahuan hukum, atau perubahan Syarat ini, sekalipun Anda tidak memberikan izin notifikasi.</p>
+</div><div class="legal-article" id="kk-12"><h3>PASAL 12. Penangguhan, Pengakhiran, dan Penghapusan Akun</h3>
+<ol>
+<li><strong>Pengakhiran oleh pengguna:</strong> Anda dapat menghapus akun Anda kapan saja melalui menu pengaturan di dalam Aplikasi. Apabila Anda memiliki langganan aktif, penghapusan akun tidak secara otomatis membatalkan langganan tersebut; Anda harus membatalkan langganan secara terpisah melalui pengaturan akun Apple/Google Anda.</li>
+<li><strong>Penangguhan/pengakhiran oleh Operator:</strong> Kami berhak menangguhkan atau menutup akun Anda secara permanen tanpa pemberitahuan sebelumnya dalam hal terjadi pelanggaran terhadap Syarat ini, khususnya penggunaan yang dilarang sebagaimana tercantum dalam Pasal 4, dugaan penipuan, sengketa pembayaran (chargeback), atau kewajiban hukum.</li>
+<li><strong>Cakupan geografis wewenang ini:</strong> Wewenang kami untuk menangguhkan/mengakhiri akun merupakan langkah teknis dan kontraktual yang kami terapkan secara langsung di dalam Aplikasi; kami tidak memerlukan putusan pengadilan mana pun untuk menerapkannya. Oleh karena itu, wewenang ini berlaku sama terhadap setiap pengguna yang melanggar Syarat ini, terlepas dari kewarganegaraan, negara tempat tinggal Anda, atau hukum negara mana pun yang secara terpisah memberikan perlindungan kepada Anda. Penetapan hukum Turki dan pengadilan Turki sebagai pihak yang berwenang pada Pasal 18 sama sekali tidak membatasi atau memberikan batasan geografis terhadap langkah-langkah tingkat akun yang diatur dalam pasal ini.</li>
+<li><strong>Pemberitahuan dalam pelanggaran serius:</strong> Dalam hal terjadi perilaku yang berpotensi merupakan tindak pidana seperti penipuan, ancaman, pelecehan, atau upaya eksploitasi, selain menangguhkan akun, kami berhak — bergantung pada sifat kejadiannya — melaporkan situasi tersebut kepada otoritas berwenang di Turki, otoritas berwenang di negara tempat pengguna berada, dan/atau unit trust &amp; safety milik Apple App Store atau Google Play sendiri.</li>
+<li><strong>Data setelah penghapusan:</strong> Setelah akun dihapus, informasi profil, pesan, dan penanda Anda akan dihapus dari sistem dalam jangka waktu yang wajar; catatan keuangan yang tunduk pada kewajiban penyimpanan hukum (misalnya riwayat langganan/pembayaran) dapat disimpan selama jangka waktu yang ditentukan oleh peraturan perundang-undangan terkait (lihat Bagian II Pasal 11).</li>
+</ol>
+</div><div class="legal-article" id="kk-13"><h3>PASAL 13. Kekayaan Intelektual dan Hak Merek</h3>
+<p>Nama "Common Ground" dan "DuoFine", logo, serta seluruh unsur Aplikasi termasuk kode sumber, desain, dan antarmuka, adalah milik Operator atau pemberi lisensinya, dan dilindungi oleh peraturan perundang-undangan kekayaan intelektual. Syarat ini memberikan Anda hak untuk menggunakan Aplikasi untuk tujuan pribadi dan non-komersial; hal ini tidak berarti pengalihan hak kepemilikan apa pun atas Aplikasi.</p>
+</div><div class="legal-article" id="kk-14"><h3>PASAL 14. Penolakan Jaminan</h3>
+<p>Aplikasi disediakan "sebagaimana adanya" dan "sesuai ketersediaannya". Sejauh diizinkan oleh peraturan perundang-undangan yang berlaku, Operator tidak memberikan jaminan tersurat maupun tersirat apa pun bahwa Aplikasi akan berfungsi tanpa gangguan, bebas dari kesalahan, atau aman, maupun mengenai keakuratan penawaran pihak ketiga dalam Penawaran W-W atau perilaku pengguna lain.</p>
+</div><div class="legal-article" id="kk-15"><h3>PASAL 15. Pembatasan Tanggung Jawab</h3>
+<p><strong>Ketentuan Kritis — Batas Tanggung Jawab:</strong></p>
+
+<p>Sejauh diizinkan oleh peraturan perundang-undangan yang berlaku, Operator tidak dapat dimintai pertanggungjawaban atas: (a) transaksi yang Anda lakukan dengan bisnis pihak ketiga dalam rangka Penawaran W-W, (b) interaksi fisik maupun virtual Anda dengan pengguna lain, (c) kerugian tidak langsung, insidental, atau konsekuensial. Dalam hal apa pun, total tanggung jawab Operator dibatasi hingga sejumlah total biaya langganan/pembelian yang Anda bayarkan kepada Aplikasi dalam 12 bulan sebelum peristiwa yang menimbulkan kerugian tersebut terjadi.</p>
+
+<p>Pembatasan ini tidak menghapuskan hak-hak memaksa (mandatory) yang Anda miliki sebagai konsumen berdasarkan Undang-Undang No. 6502 tentang Perlindungan Konsumen (TKHK) dan peraturan terkait; hak-hak tersebut tetap berlaku.</p>
+</div><div class="legal-article" id="kk-16"><h3>PASAL 16. Ganti Rugi</h3>
+<p>Anda setuju untuk mengganti rugi Operator atas segala tuntutan, kerugian, dan biaya (termasuk biaya jasa hukum yang wajar) yang timbul akibat pelanggaran Anda terhadap Syarat ini, penggunaan Aplikasi secara melawan hukum, atau pelanggaran hak pihak ketiga oleh Anda.</p>
+</div><div class="legal-article" id="kk-17"><h3>PASAL 17. Keadaan Kahar</h3>
+<p>Operator tidak bertanggung jawab atas keterlambatan atau kegagalan dalam pelaksanaan kewajiban yang disebabkan oleh peristiwa di luar kendali wajar kami, seperti bencana alam, perang, wabah penyakit, atau gangguan layanan dari penyedia infrastruktur (hosting, pembayaran, toko aplikasi).</p>
+</div><div class="legal-article" id="kk-18"><h3>PASAL 18. Hukum yang Berlaku dan Penyelesaian Sengketa</h3>
+<p>Syarat ini tunduk pada hukum Republik Turki. Pengadilan dan Kantor Eksekusi Istanbul (Anadolu/Avrupa) berwenang untuk sengketa yang mungkin timbul di antara para pihak; pengguna yang bertindak sebagai konsumen berhak mengajukan permohonan kepada Badan Arbitrase Konsumen atau Pengadilan Konsumen di tempat tinggal mereka sendiri atau di tempat kedudukan Operator, sesuai dengan Undang-Undang No. 6502.</p>
+<p>Apabila Anda berdomisili di luar Turki, pilihan hukum dan yurisdiksi di atas tidak menghapuskan hak konsumen atau hak perlindungan data yang bersifat memaksa (mandatory) dan tidak dapat dikesampingkan melalui perjanjian, yang diberikan kepada Anda oleh negara tempat Anda berdomisili sehubungan dengan sengketa kontraktual; hak-hak tersebut tetap berlaku.</p>
+<p>Pilihan hukum dan pengadilan yang diatur dalam pasal ini hanya berlaku untuk tuntutan yang akan diajukan melalui jalur pengadilan (misalnya gugatan ganti rugi). Wewenang kami untuk menangguhkan/mengakhiri akun sebagaimana diatur dalam Pasal 12 bersifat independen dari hal ini dan berlaku terhadap seluruh pengguna, terlepas dari negara tempat mereka berada.</p>
+</div><div class="legal-article" id="kk-19"><h3>PASAL 19. Ketentuan Umum</h3>
+<p>Apabila salah satu ketentuan dalam Syarat ini dinyatakan tidak sah atau tidak dapat diberlakukan, hal tersebut tidak memengaruhi keberlakuan ketentuan lainnya. Tidak digunakannya suatu hak oleh Operator tidak berarti pengesampingan hak tersebut. Operator dapat mengalihkan hak dan kewajibannya berdasarkan Syarat ini apabila Layanan dialihkan kepada operator lain, dengan memberikan pemberitahuan terlebih dahulu kepada pengguna dalam jangka waktu yang wajar.</p>
+</div><div class="legal-article" id="kk-20"><h3>PASAL 20. Perubahan</h3>
+<p>Operator dapat memperbarui Syarat ini dari waktu ke waktu. Perubahan yang signifikan akan diumumkan melalui notifikasi dalam Aplikasi atau surel. Dengan tetap menggunakan Aplikasi setelah perubahan dilakukan, Anda dianggap telah menyetujui Syarat yang telah diperbarui.</p>
+</div><div class="legal-article" id="kk-21"><h3>PASAL 21. Kontak</h3>
+<p>Untuk pertanyaan terkait Syarat ini, silakan hubungi: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
+</div><h3 class="legal-part-title" id="bolum-2">Kebijakan Privasi dan Teks Pemberitahuan KVKK</h3><div class="legal-article" id="gp-1"><h3>PASAL 1. Identitas Pengendali Data</h3>
+<p>Sesuai dengan KVKK, data pribadi Anda diproses oleh badan usaha dengan nama dagang <strong>DuoFine</strong> (selanjutnya disebut "DuoFine" atau "kami"), dalam kapasitasnya sebagai pengendali data, dengan cakupan dan tujuan sebagaimana dijelaskan di bawah ini.</p>
+<div class="legal-table-wrap"><table class="legal-table">
+<tr><th>Nama Dagang</th><td>DuoFine</td></tr>
+<tr><th>Surel</th><td>info@duofine.com</td></tr>
+</table></div>
+<p><em>Catatan: Tabel ini didasarkan pada informasi minimum (nama dan kanal kontak) yang telah dianggap cukup untuk identitas pengendali data berdasarkan pasal 10 KVKK. Data pribadi sensitif seperti nomor identitas KTP Turki (T.C. kimlik no) atau alamat domisili milik orang perseorangan tidak dicantumkan di sini karena tidak ada ketentuan hukum yang mewajibkan pencantumannya secara terbuka dalam dokumen ini. Kolom Nomor Pajak dan Nomor MERSIS juga tidak tercantum dalam tabel karena saat ini belum ada kewajiban pajak atau pendaftaran badan hukum terpisah; apabila salah satunya dibentuk di kemudian hari, kolom tersebut akan ditambahkan ke dalam tabel, dan alamat tempat usaha yang terdaftar dalam registri perdagangan — yang memang sudah bersifat publik — juga akan diproses dengan cara yang sama; pendaftaran Registri Pengendali Data (VERBİS) juga akan dipertimbangkan secara terpisah jika diperlukan.</em></p>
+</div><div class="legal-article" id="gp-2"><h3>PASAL 2. Cakupan Kebijakan Ini</h3>
+<p>Kebijakan ini berkaitan dengan pemrosesan data pribadi pengguna terdaftar aplikasi mobile Common Ground, calon pengguna yang mengunjungi aplikasi, serta perwakilan bisnis mitra yang menghubungi kami dalam rangka Penawaran W-W. Data yang dikumpulkan melalui situs web korporat DuoFine juga termasuk dalam cakupan Kebijakan ini.</p>
+</div><div class="legal-article" id="gp-3"><h3>PASAL 3. Kategori Data Pribadi yang Diproses</h3>
+<div class="legal-table-wrap"><table class="legal-table">
+<caption>Kategori data yang secara nyata dikumpulkan di dalam Aplikasi beserta sumbernya</caption>
+<tr><th>Kategori</th><th>Contoh</th><th>Sumber</th></tr>
+<tr><td>Identitas</td><td>Nama, nama belakang, tanggal lahir</td><td>Langsung dari Anda (formulir pendaftaran)</td></tr>
+<tr><td>Kontak</td><td>Alamat surel</td><td>Langsung dari Anda</td></tr>
+<tr><td>Data visual</td><td>Foto profil</td><td>Langsung dari Anda (saat diunggah)</td></tr>
+<tr><td>Data lokasi</td><td>Koordinat GPS real-time</td><td>Layanan lokasi perangkat Anda (bergantung pada izin Anda)</td></tr>
+<tr><td>Data perangkat dan teknis</td><td>Model perangkat, sistem operasi, token notifikasi push, versi aplikasi</td><td>Otomatis (dari perangkat)</td></tr>
+<tr><td>Data penggunaan/transaksi</td><td>Hubungan pertemanan, metadata perpesanan, catatan penanda, riwayat penggunaan Penawaran W-W</td><td>Otomatis dari penggunaan Aplikasi Anda</td></tr>
+<tr><td>Data keamanan transaksi</td><td>Identitas perangkat pertama yang terhubung dengan akun (untuk deteksi akun ganda)</td><td>Otomatis (dari perangkat)</td></tr>
+<tr><td>Data keuangan (terbatas)</td><td>Status dan jumlah pembelian langganan/token (informasi kartu pembayaran tidak sampai kepada kami)</td><td>Melalui RevenueCat, via Apple/Google</td></tr>
+<tr><td>Data pemasaran/analitik</td><td>Statistik navigasi dan interaksi dalam Aplikasi</td><td>Otomatis (SDK analitik)</td></tr>
+</table></div>
+<p><strong>Data yang tidak dikumpulkan:</strong> Data kartu seperti nomor kartu pembayaran atau CVV tidak sampai kepada kami pada tahap mana pun; data ini diproses langsung oleh Apple/Google. Aplikasi tidak menyimpan isi pesan Anda secara permanen di sisi server (lihat Pasal 11).</p>
+</div><div class="legal-article" id="gp-4"><h3>PASAL 4. Tujuan Pemrosesan Data Pribadi</h3>
+<ol>
+<li>Pembuatan akun Anda, verifikasi identitas, dan pemberian akses Anda ke Layanan;</li>
+<li>Penyediaan fungsi inti Aplikasi, termasuk penjelajahan lokasi, penghitungan titik pertemuan bersama, dan penampilan Penawaran W-W kepada Anda;</li>
+<li>Pengoperasian fitur perpesanan dan interaksi sosial dengan teman Anda;</li>
+<li>Pemrosesan pembelian langganan dan token, serta perefleksiannya ke akun Anda;</li>
+<li>Deteksi dan pencegahan penyalahgunaan seperti akun palsu, pendaftaran ganda, atau penyalahgunaan Penawaran W-W;</li>
+<li>Pengiriman notifikasi push (sesuai dengan izin Anda);</li>
+<li>Pengukuran kualitas Layanan, deteksi kesalahan/kerusakan (crash), dan pengembangan produk;</li>
+<li>Pemenuhan kewajiban hukum (pajak, akuntansi, permintaan otoritas resmi);</li>
+<li>Pengelolaan sengketa hukum dan perlindungan hak-hak kami.</li>
+</ol>
+</div><div class="legal-article" id="gp-5"><h3>PASAL 5. Dasar Hukum Pemrosesan Data Pribadi</h3>
+<p>Data pribadi Anda diproses berdasarkan dasar hukum berikut ini sebagaimana diatur dalam pasal 5 KVKK:</p>
+<ul>
+<li><strong>Pembentukan/pelaksanaan kontrak (pasal 5/2-c):</strong> untuk data identitas dan kontak Anda dalam rangka pembuatan akun, penyediaan Layanan, dan pengelolaan langganan;</li>
+<li><strong>Persetujuan eksplisit (pasal 5/1):</strong> untuk pengumpulan data lokasi — yang meskipun tidak termasuk dalam definisi data pribadi khusus (data sensitif) menurut KVKK (pasal 6), tetap bersifat sangat personal dan berkaitan erat dengan lokasi Anda — dan untuk proses seperti berbagi lokasi dengan teman Anda; persetujuan ini diperoleh secara terpisah pada saat permintaan izin lokasi;</li>
+<li><strong>Pemenuhan kewajiban hukum (pasal 5/2-ç):</strong> untuk penyimpanan catatan keuangan dalam rangka peraturan perpajakan dan akuntansi;</li>
+<li><strong>Kepentingan yang sah (pasal 5/2-f):</strong> untuk pencegahan penipuan, akun ganda, dan penyalahgunaan, penjaminan keamanan layanan, serta analitik produk pada tingkat dasar — pemrosesan ini dilakukan secara proporsional dengan mempertimbangkan keseimbangan terhadap hak dan kebebasan dasar Anda;</li>
+<li><strong>Diperlukan untuk pembentukan, pelaksanaan, atau perlindungan suatu hak (pasal 5/2-e):</strong> untuk pemrosesan data yang diperlukan dalam proses sengketa hukum dan penuntutan hak.</li>
+</ul>
+</div><div class="legal-article" id="gp-6"><h3>PASAL 6. Ketentuan Khusus Mengenai Data Lokasi</h3>
+<p><strong>Ketentuan Kritis — Data Lokasi:</strong></p>
+
+<p>Izin lokasi diminta secara terpisah dan eksplisit melalui sistem operasi Anda; jika Anda tidak memberikannya, hanya fitur yang berbasis lokasi (penjelajahan, penghitungan titik bersama, penawaran di sekitar Anda) yang tidak akan berfungsi, sedangkan akun Anda tidak akan terpengaruh. Data lokasi diproses dalam memori (in-memory) selama sesi berlangsung untuk keperluan berfungsinya layar peta dan penjelajahan; sesuai dengan syarat penggunaan Google Maps Platform, koordinat Anda tidak ditulis secara permanen ke disk/basis data dan hanya dapat disimpan sementara dalam cache selama maksimal 30 hari kalender.</p>
+
+<p><strong>Berbagi lokasi dengan teman:</strong> Fitur tertentu (misalnya berbagi "kartu lokasi") hanya aktif dengan pengguna yang telah membentuk hubungan pertemanan timbal balik dengan Anda, dan hanya ketika Anda memilih untuk membagikannya; lokasi Anda secara default tidak terbuka bagi pengguna lain.</p>
+</div><div class="legal-article" id="gp-7"><h3>PASAL 7. Ketentuan Khusus Mengenai Konten Google Maps/Places</h3>
+<p>Sesuai dengan Persyaratan Layanan Google Maps Platform, konten yang bersumber dari Google seperti nama bisnis, foto, nomor telepon, dan rating tidak dapat disimpan secara permanen. Oleh karena itu:</p>
+<ul>
+<li>Nama bisnis yang ditampilkan pada fitur penanda (bookmark) tidak diambil dari Google; nama tersebut adalah label yang <strong>Anda tuliskan sendiri</strong> pada saat membuat entri, dan disimpan dalam bentuk tersebut.</li>
+<li>Identitas lokasi (place_id) dapat disimpan tanpa batas waktu; sedangkan informasi lintang/bujur hanya dapat disimpan sementara dalam cache selama 30 hari.</li>
+<li>Tab penanda tidak mengirimkan permintaan lokasi/foto/nama apa pun kepada Google; pencarian hanya dilakukan secara lokal terhadap catatan Anda sendiri.</li>
+</ul>
+</div><div class="legal-article" id="gp-8"><h3>PASAL 8. Data yang Diproses dalam Rangka Penawaran W-W</h3>
+<p>Saat Anda menggunakan suatu Penawaran W-W, kami akan mencatat penawaran mana yang Anda gunakan, di bisnis mana, serta pada tanggal dan waktu berapa (riwayat penggunaan). Data ini diproses untuk tujuan penerapan batas penggunaan mingguan, deteksi penyalahgunaan, dan penyediaan informasi kinerja yang anonim/teragregasi kepada bisnis mitra. Data ini dibagikan kepada bisnis mitra hanya dalam cakupan terbatas untuk tujuan verifikasi kampanye (konfirmasi keabsahan kode oleh staf bisnis); informasi identitas Anda (surel, nama lengkap) tidak diteruskan kepada bisnis tersebut.</p>
+</div><div class="legal-article" id="gp-9"><h3>PASAL 9. Data Langganan dan Pembayaran</h3>
+<p>Transaksi pembayaran dijalankan langsung oleh Apple App Store atau Google Play; informasi kartu Anda tidak sampai kepada kami. Status langganan/token Anda (paket aktif, tanggal pembelian, jumlah) disampaikan kepada kami melalui <strong>RevenueCat</strong>, integrasi penyedia pembayaran kami, dan diproses untuk tujuan pemberian hak akses (tingkat premium) yang tepat kepada akun Anda.</p>
+</div><div class="legal-article" id="gp-10"><h3>PASAL 10. Transfer Data Pribadi (Dalam Negeri/Luar Negeri)</h3>
+<p>Data pribadi Anda dibagikan dengan penyedia infrastruktur teknis kami yang diperlukan untuk penyediaan Layanan, hanya sejauh yang diperlukan oleh layanan tersebut. Sebagian penyedia ini berkedudukan di luar negeri (terutama di Amerika Serikat dan Uni Eropa); transfer ini dilakukan sesuai dengan pasal 9 KVKK dan mekanisme transfer yang ditetapkan oleh Otoritas Perlindungan Data Pribadi Turki (Kişisel Verileri Koruma Kurulu) (persetujuan eksplisit, kontrak standar yang disetujui Otoritas, dan sejenisnya).</p>
+<div class="legal-table-wrap"><table class="legal-table">
+<caption>Sub-pemroses / penyedia layanan utama</caption>
+<tr><th>Penyedia</th><th>Tujuan</th><th>Lokasi</th></tr>
+<tr><td>Railway</td><td>Hosting server (backend)</td><td>Luar negeri</td></tr>
+<tr><td>Backblaze B2</td><td>Penyimpanan foto profil dan gambar</td><td>Luar negeri</td></tr>
+<tr><td>RevenueCat</td><td>Pengelolaan langganan/pembelian</td><td>Luar negeri</td></tr>
+<tr><td>Google (Maps Platform, Sign-In)</td><td>Peta, data lokasi, masuk melalui Google</td><td>Luar negeri</td></tr>
+<tr><td>Apple (Sign in with Apple, App Store)</td><td>Verifikasi identitas, pembayaran</td><td>Luar negeri</td></tr>
+<tr><td>Sentry</td><td>Pemantauan kesalahan/kerusakan (crash)</td><td>Luar negeri</td></tr>
+<tr><td>PostHog</td><td>Analitik produk</td><td>Luar negeri</td></tr>
+</table></div>
+<p>Di dalam negeri, pembagian data hanya dapat dilakukan dengan lembaga dan badan publik yang berwenang (atas permintaan) dalam rangka pemenuhan kewajiban hukum kami.</p>
+</div><div class="legal-article" id="gp-11"><h3>PASAL 11. Jangka Waktu Penyimpanan</h3>
+<ul>
+<li><strong>Data profil:</strong> disimpan selama akun Anda aktif, dan dihapus dalam jangka waktu yang wajar setelah permohonan penghapusan akun Anda.</li>
+<li><strong>Data lokasi:</strong> tidak disimpan secara permanen; disimpan dalam memori selama sesi berlangsung untuk keperluan fungsi peta/penjelajahan (Pasal 6).</li>
+<li><strong>Pesan:</strong> tidak ada arsip pesan permanen yang disimpan di sisi server; cache lokal pada perangkat Anda tunduk pada pengaturan pencadangan/keamanan perangkat Anda sendiri.</li>
+<li><strong>Riwayat penggunaan Penawaran W-W:</strong> disimpan dalam jangka waktu yang wajar untuk keperluan perhitungan batas mingguan dan deteksi penyalahgunaan.</li>
+<li><strong>Catatan keuangan/langganan:</strong> dapat disimpan selama jangka waktu penyimpanan hukum yang ditetapkan berdasarkan Undang-Undang Perdagangan Turki dan Undang-Undang Prosedur Perpajakan (secara umum hingga 10 tahun).</li>
+<li><strong>Catatan kunci perangkat:</strong> untuk mencegah penyalahgunaan akun ganda, kecocokan antara akun dengan perangkat pertama yang terhubung disimpan untuk tujuan keamanan.</li>
+</ul>
+</div><div class="legal-article" id="gp-12"><h3>PASAL 12. Langkah-Langkah Keamanan Data</h3>
+<p>Guna menjamin keamanan data pribadi Anda, diterapkan langkah-langkah teknis dan administratif seperti enkripsi (TLS selama transmisi), kontrol akses, pencatatan (logging), dan evaluasi keamanan berkala. Meskipun demikian, Anda mengakui bahwa tidak ada metode transmisi melalui internet yang 100% aman.</p>
+</div><div class="legal-article" id="gp-13"><h3>PASAL 13. Privasi Anak</h3>
+<p>Layanan ini tidak ditujukan bagi orang yang berusia di bawah 13 tahun, dan kami tidak sengaja mengumpulkan data pribadi dari kelompok usia ini. Akun pengguna yang kami ketahui berusia di bawah 13 tahun akan segera ditutup begitu terdeteksi, dan data terkait akan dihapus. Apabila Anda mengetahui bahwa anak Anda telah memberikan data pribadi kepada kami, silakan hubungi kami melalui <a href="mailto:info@duofine.com">info@duofine.com</a>.</p>
+</div><div class="legal-article" id="gp-14"><h3>PASAL 14. SDK dan Alat Analitik</h3>
+<p>Aplikasi bukan situs web yang menggunakan cookie; sebagai gantinya, Aplikasi mengumpulkan data teknis/analitik terbatas melalui SDK mobile:</p>
+<ul>
+<li><strong>PostHog:</strong> untuk statistik penggunaan dalam Aplikasi (layar mana yang dikunjungi, fitur mana yang digunakan);</li>
+<li><strong>Sentry:</strong> untuk diagnosis kerusakan (crash) dan kesalahan Aplikasi (hanya data kesalahan teknis, dengan pembedaan antara build produksi/pengembangan);</li>
+<li><strong>RevenueCat:</strong> untuk verifikasi status langganan Anda.</li>
+</ul>
+<p>Alat-alat ini tidak digunakan untuk tujuan iklan yang dipersonalisasi; data Anda tidak dijual atau disewakan kepada pihak ketiga untuk tujuan pemasaran.</p>
+</div><div class="legal-article" id="gp-15"><h3>PASAL 15. Hak-Hak Subjek Data (pasal 11 KVKK)</h3>
+<p>Sesuai dengan pasal 11 KVKK, Anda memiliki hak-hak berikut:</p>
+<ol>
+<li>Mengetahui apakah data pribadi Anda diproses atau tidak;</li>
+<li>Meminta informasi terkait pemrosesan tersebut apabila telah dilakukan;</li>
+<li>Mengetahui tujuan pemrosesan dan apakah data tersebut digunakan sesuai dengan tujuannya;</li>
+<li>Mengetahui pihak ketiga yang menerima data Anda, baik di dalam maupun di luar negeri;</li>
+<li>Meminta perbaikan apabila data diproses secara tidak lengkap atau tidak benar;</li>
+<li>Meminta penghapusan atau pemusnahan data dalam kerangka syarat yang diatur dalam pasal 7 KVKK;</li>
+<li>Meminta agar perbaikan/penghapusan tersebut diberitahukan kepada pihak ketiga yang menerima data;</li>
+<li>Mengajukan keberatan terhadap timbulnya suatu hasil yang merugikan Anda akibat analisis data secara eksklusif melalui sistem otomatis;</li>
+<li>Meminta ganti rugi apabila Anda mengalami kerugian akibat pemrosesan yang melawan hukum.</li>
+</ol>
+<p>Anda dapat mengajukan permohonan tertulis kepada kami melalui kanal kontak pada Pasal 18 untuk menggunakan hak-hak ini. Permohonan Anda akan diselesaikan tanpa biaya dalam jangka waktu yang ditetapkan oleh KVKK (paling lambat 30 hari, bergantung pada sifat permohonan); apabila proses tersebut memerlukan biaya tambahan, biaya sesuai tarif yang ditetapkan oleh Otoritas Perlindungan Data Pribadi Turki (Kişisel Verileri Koruma Kurulu) dapat dikenakan.</p>
+<p><strong>Informasi Tambahan untuk Pengguna yang Berdomisili di Kawasan Ekonomi Eropa, Inggris Raya, atau Swiss:</strong></p>
+
+<p>Hak-hak di atas disusun berdasarkan KVKK; apabila Anda berdomisili di Kawasan Ekonomi Eropa (EEA), Inggris Raya, atau Swiss, data Anda juga dilindungi berdasarkan Peraturan Perlindungan Data Umum (GDPR) atau peraturan lokal terkait, dan hal ini tidak terpengaruh oleh pilihan hukum/pengadilan pada Bagian I Pasal 18. Secara konkret: selain hak-hak di atas, Anda dapat meminta agar data Anda disampaikan kepada Anda dalam format yang terstruktur dan umum digunakan (portabilitas data), dan apabila Anda tidak puas dengan hasil permohonan Anda, Anda dapat mengajukan pengaduan kepada otoritas pengawas perlindungan data yang berwenang di negara Anda, baik sebagai pengganti maupun sebagai tambahan atas pengajuan langsung kepada kami.</p>
+<p>Demi transparansi, kami sampaikan bahwa DuoFine, pada skala operasionalnya saat ini, belum menunjuk perwakilan GDPR yang berkedudukan di EEA; hal ini didasarkan pada penilaian bahwa kami tidak menjalankan kegiatan yang secara langsung ditujukan kepada pasar EEA dan volume pemrosesan data kami masih kecil. Seiring bertambahnya jumlah pengguna kami di EEA, penilaian ini akan dilakukan kembali dan perwakilan resmi akan ditunjuk apabila diperlukan.</p>
+
+</div><div class="legal-article" id="gp-16"><h3>PASAL 16. Pemberitahuan Pelanggaran Data</h3>
+<p>Apabila data pribadi Anda diperoleh oleh pihak lain secara melawan hukum, situasi tersebut akan segera diberitahukan kepada subjek data terkait dan kepada Otoritas Perlindungan Data Pribadi Turki (Kişisel Verileri Koruma Kurulu) sesuai dengan pasal 12 KVKK.</p>
+</div><div class="legal-article" id="gp-17"><h3>PASAL 17. Perubahan Kebijakan</h3>
+<p>Kebijakan ini dapat direvisi dari waktu ke waktu sesuai dengan perubahan peraturan perundang-undangan atau pembaruan pada Layanan. Versi terkini selalu dipublikasikan pada halaman ini dan di dalam Aplikasi; perubahan yang signifikan akan diberitahukan secara terpisah.</p>
+</div><div class="legal-article" id="gp-18"><h3>PASAL 18. Kontak dan Pengajuan Permohonan</h3>
+<p>Untuk permohonan terkait privasi dan KVKK, silakan hubungi: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
+<p class="divider-quote">Dalam permohonan tertulis, penyertaan informasi/dokumen yang membuktikan identitas Anda serta pernyataan permohonan Anda secara jelas akan membantu mempercepat penyelesaian permohonan Anda.</p>
 </div>
+        </section>
+    </main>
 
-<div class="notice">
-  <div class="notice-box">
-    <strong>Status dokumen ini:</strong> Teks ini adalah <strong>draf</strong> komprehensif yang disusun berdasarkan basis kode dan alur kerja aplikasi Common Ground yang berlaku saat ini. Dokumen ini disusun oleh kecerdasan buatan, tidak menggantikan peninjauan oleh advokat Turki yang memiliki lisensi, dan persetujuan akhir harus diperoleh darinya. Tidak ada lagi bagian dalam dokumen ini yang masih perlu dilengkapi. Terjemahan ke 16 bahasa tidak akan dilakukan sebelum teks berbahasa Turki disetujui sepenuhnya.
-    <br><br>
-    <strong>Catatan revisi TR-1.2 (15 Agustus 2026):</strong> Nama dagang "DuoFine" diperjelas; ditambahkan pada Pasal 12 dan 18 Syarat Layanan penjelasan bahwa wewenang penangguhan/pengakhiran akun berlaku terlepas dari kewarganegaraan/lokasi pengguna, beserta klausul cadangan mengenai hukum memaksa (mandatory law) luar negeri; pengadilan yang berwenang pada Pasal 18 ditetapkan sebagai Istanbul; baris nomor identitas KTP Turki (T.C. kimlik no), alamat domisili, serta Nomor Pajak/Nomor MERSIS yang belum ada dihapus dari tabel identitas pada Pasal 1 Kebijakan Privasi; ditambahkan bagian kesadaran GDPR untuk pengguna EEA/Inggris Raya pada Pasal 15.
-    <br><br>
-    <strong>Catatan revisi TR-1.3 (15 Agustus 2026 — pemeriksaan konsistensi):</strong> Rujukan pada KVKK pasal 5/6/7/9/10/11/12/13 diverifikasi satu per satu terhadap sumber resmi. Dua kesalahan penomoran/rujukan diperbaiki: (1) setelah penambahan poin baru pada Pasal 12, "Data setelah penghapusan" bergeser dari urutan ke-3 menjadi urutan ke-5, sehingga rujukan silang pada Pasal 5 diperbaiki dari "Pasal 12.3" menjadi "Pasal 12.5"; (2) pada kotak GDPR di Pasal 15 Kebijakan Privasi, awalan "Bagian I" yang seharusnya merujuk pada klausul pilihan hukum di Bagian I sebelumnya tidak tercantum (sehingga secara keliru merujuk pada Pasal 18 Bagian II miliknya sendiri, yaitu bagian Kontak), telah diperbaiki. Selain itu, rujukan "KVKK pasal 6" yang tidak terpakai/menggantung pada Pasal 5 Kebijakan Privasi dihapus, dan kalimat yang berpotensi menimbulkan kontradiksi terkait status data lokasi yang bukan merupakan data pribadi khusus (data sensitif) disederhanakan.
-  </div>
-</div>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <a href="/" class="nav-logo">
+                    <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/><path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/></svg>
+                    <span>DuoFine</span>
+                </a>
+                <p>Crafting meaningful connections and experiences through technology.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigate</h3>
+                <ul class="footer-links">
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#projects">Projects</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"></path></svg></a>
+                    <a href="https://x.com/duofine" target="_blank" rel="noopener noreferrer" aria-label="X" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © <span id="y">2026</span> DuoFine. All Rights Reserved. | <a href="mailto:info@duofine.com">info@duofine.com</a>
+        </div>
+    </footer>
 
-<div class="toc-wrap">
-  <details class="toc" open>
-    <summary>Daftar Isi</summary>
-    <div class="toc-grid">
-      <div class="toc-part">Bagian I — Syarat Layanan</div>
-      <a href="#kk-0">0. Pendahuluan dan Persetujuan</a>
-      <a href="#kk-1">1. Definisi</a>
-      <a href="#kk-2">2. Cakupan Layanan</a>
-      <a href="#kk-3">3. Pembuatan Akun, Usia, dan Keamanan</a>
-      <a href="#kk-4">4. Penggunaan yang Dilarang</a>
-      <a href="#kk-5">5. Konten Pengguna</a>
-      <a href="#kk-6">6. Lokasi dan Konten Peta</a>
-      <a href="#kk-7">7. Penawaran W-W (Deals)</a>
-      <a href="#kk-8">8. Langganan, Token, dan Pembelian</a>
-      <a href="#kk-9">9. Pertemanan dan Perpesanan</a>
-      <a href="#kk-10">10. Penanda (Bookmark)</a>
-      <a href="#kk-11">11. Notifikasi</a>
-      <a href="#kk-12">12. Penangguhan, Pengakhiran, Penghapusan</a>
-      <a href="#kk-13">13. Kekayaan Intelektual</a>
-      <a href="#kk-14">14. Penolakan Jaminan</a>
-      <a href="#kk-15">15. Pembatasan Tanggung Jawab</a>
-      <a href="#kk-16">16. Ganti Rugi</a>
-      <a href="#kk-17">17. Keadaan Kahar</a>
-      <a href="#kk-18">18. Hukum yang Berlaku dan Penyelesaian Sengketa</a>
-      <a href="#kk-19">19. Ketentuan Umum</a>
-      <a href="#kk-20">20. Perubahan</a>
-      <a href="#kk-21">21. Kontak</a>
-      <div class="toc-part">Bagian II — Kebijakan Privasi (Teks Pemberitahuan KVKK)</div>
-      <a href="#gp-1">1. Identitas Pengendali Data</a>
-      <a href="#gp-2">2. Cakupan</a>
-      <a href="#gp-3">3. Data Pribadi yang Diproses</a>
-      <a href="#gp-4">4. Tujuan Pemrosesan</a>
-      <a href="#gp-5">5. Dasar Hukum</a>
-      <a href="#gp-6">6. Data Lokasi — Ketentuan Khusus</a>
-      <a href="#gp-7">7. Konten Google Maps/Places</a>
-      <a href="#gp-8">8. Pemrosesan Data dalam Rangka Deals</a>
-      <a href="#gp-9">9. Data Langganan dan Pembayaran</a>
-      <a href="#gp-10">10. Transfer Data (Dalam Negeri/Luar Negeri)</a>
-      <a href="#gp-11">11. Jangka Waktu Penyimpanan</a>
-      <a href="#gp-12">12. Keamanan Data</a>
-      <a href="#gp-13">13. Privasi Anak</a>
-      <a href="#gp-14">14. SDK dan Analitik</a>
-      <a href="#gp-15">15. Hak-Hak Subjek Data</a>
-      <a href="#gp-16">16. Pemberitahuan Pelanggaran Data</a>
-      <a href="#gp-17">17. Perubahan Kebijakan</a>
-      <a href="#gp-18">18. Kontak dan Pengajuan Permohonan</a>
-    </div>
-  </details>
-</div>
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector('.main-header');
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if (header) header.classList.toggle('sticky', scrollY > 50);
+            });
+            if (hamburger && navMenu) {
+                hamburger.addEventListener("click", () => navMenu.classList.toggle("active"));
+            }
+        });
+    </script>
 
-<main>
-
-  <!-- ======================= BAGIAN I — SYARAT LAYANAN ======================= -->
-  <div class="part-header" id="bolum-1">
-    <div class="part-eyebrow">Bagian I</div>
-    <h2 class="part-title">Syarat Layanan</h2>
-    <p class="part-sub">Ketentuan perjanjian ini berlaku bagi setiap pengguna aplikasi mobile Common Ground ("Aplikasi" atau "Layanan").</p>
-  </div>
-
-  <article class="madde" id="kk-0">
-    <div class="madde-head"><span class="madde-num">PASAL 0</span><h3 class="madde-title">Pendahuluan dan Persetujuan</h3></div>
-    <div class="madde-body">
-      <p>Syarat Layanan ini ("Syarat") mengatur hubungan hukum antara pengguna ("Anda", "Pengguna") dan pihak yang mengoperasikan aplikasi mobile Common Ground dengan nama dagang <strong>DuoFine</strong> ("Operator", "kami"), mencakup seluruh fitur yang ditawarkan aplikasi ini (termasuk penjelajahan lokasi, Penawaran W-W, perpesanan, pertemanan, dan penanda/bookmark).</p>
-      <p>Dengan mengunduh Aplikasi, membuat akun, atau melanjutkan penggunaan, Anda menyatakan telah membaca, memahami, dan menyetujui Syarat ini beserta Kebijakan Privasi yang tercantum pada Bagian II di bawah. Jika Anda tidak menyetujui dokumen-dokumen ini, Anda tidak boleh menggunakan Aplikasi atau membuat akun.</p>
-      <p>Untuk pembelian yang dilakukan melalui toko aplikasi (Apple App Store / Google Play) di dalam Aplikasi, selain Syarat ini, syarat penggunaan toko terkait juga berlaku; apabila terjadi pertentangan, untuk hal-hal terkait pembayaran dan penagihan, syarat toko yang berlaku, sedangkan untuk hal-hal lainnya, Syarat ini yang menjadi acuan.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-1">
-    <div class="madde-head"><span class="madde-num">PASAL 1</span><h3 class="madde-title">Definisi</h3></div>
-    <div class="madde-body">
-      <ul>
-        <li><strong>Aplikasi / Layanan:</strong> Aplikasi mobile bernama "Common Ground" yang didistribusikan di iOS dan Android, beserta infrastruktur server yang terintegrasi dengannya.</li>
-        <li><strong>Pengguna:</strong> Orang perseorangan yang membuat akun di Aplikasi dan menyetujui Syarat ini.</li>
-        <li><strong>Konten:</strong> Segala bentuk teks, gambar, lokasi, dan data serupa yang dibagikan Pengguna pada profil, pesan, penanda, atau di dalam Aplikasi.</li>
-        <li><strong>Penawaran W-W / Deals:</strong> Penawaran diskon/promosi yang terdaftar di Aplikasi dan disediakan oleh pihak ketiga (pelaku usaha mitra), beserta sistem penggunaannya melalui kode/QR di dalam Aplikasi.</li>
-        <li><strong>Langganan:</strong> Paket berbayar berulang (otomatis diperpanjang) yang dibeli melalui Apple App Store atau Google Play, yang memberikan fitur tambahan dalam Aplikasi dan hak atas token (misalnya Plus, Pro).</li>
-        <li><strong>Token:</strong> Unit hak penggunaan virtual, yang tidak dapat ditukar dengan uang, yang mengukur penggunaan fitur tertentu dalam Aplikasi (misalnya pencarian/penjelajahan).</li>
-        <li><strong>Toko:</strong> App Store yang dioperasikan oleh Apple Inc. atau toko Google Play yang dioperasikan oleh Google LLC.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-2">
-    <div class="madde-head"><span class="madde-num">PASAL 2</span><h3 class="madde-title">Cakupan Layanan</h3></div>
-    <div class="madde-body">
-      <p>Common Ground adalah aplikasi penjelajahan dan interaksi sosial yang memungkinkan pengguna menjelajahi bisnis di sekitar mereka menggunakan filter seperti lokasi, jarak, moda transportasi, kategori, dan popularitas; menghitung titik pertemuan bersama di antara beberapa orang; melakukan perpesanan secara real-time dengan teman; menyimpan tempat yang disukai; dan memanfaatkan promosi khusus ("Penawaran W-W") yang ditawarkan oleh bisnis mitra.</p>
-      <p>Operator berhak mengubah, menangguhkan, atau menghapus seluruh atau sebagian Aplikasi, termasuk fitur apa pun, tanpa pemberitahuan sebelumnya. Aplikasi disediakan "sebagaimana adanya" dan "sejauh tersedia"; tidak ada jaminan bahwa Aplikasi akan berfungsi tanpa gangguan atau bebas dari kesalahan.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-3">
-    <div class="madde-head"><span class="madde-num">PASAL 3</span><h3 class="madde-title">Pembuatan Akun, Batas Usia, dan Keamanan Akun</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li><strong>Batas usia:</strong> Aplikasi hanya dapat digunakan oleh orang yang telah berusia 13 tahun ke atas. Karena pengguna berusia 13-18 tahun dapat dianggap memiliki kecakapan bertindak terbatas berdasarkan Kitab Undang-Undang Hukum Perdata Turki (Türk Medeni Kanunu), pengguna dalam kelompok usia ini hanya boleh menggunakan Aplikasi dengan sepengetahuan dan pengawasan orang tua atau wali mereka; persetujuan wakil sah secara khusus disyaratkan untuk transaksi langganan berbayar dan pembelian. Operator berhak menangguhkan akun yang terbukti memberikan keterangan usia yang tidak benar.</li>
-        <li><strong>Kebenaran informasi:</strong> Anda menjamin bahwa nama, alamat surel, tanggal lahir, dan informasi lain yang Anda berikan saat pendaftaran adalah benar dan mutakhir. Membuat akun dengan identitas palsu atau mengatasnamakan orang lain dilarang.</li>
-        <li><strong>Pembatasan satu akun / satu perangkat:</strong> Guna mencegah penyalahgunaan dan pendaftaran ganda, Aplikasi menerapkan verifikasi tingkat perangkat pada saat pendaftaran baru. Satu perangkat hanya dapat dikaitkan dengan satu akun untuk jangka waktu tertentu; setiap upaya untuk melewati pembatasan ini (misalnya melakukan reset perangkat, mendaftar ulang dengan identitas palsu) dianggap sebagai penggunaan yang dilarang sebagaimana diatur dalam Pasal 4.</li>
-        <li><strong>Keamanan akun:</strong> Anda bertanggung jawab atas kerahasiaan kata sandi dan akses ke akun Anda. Anda dianggap bertanggung jawab atas seluruh transaksi yang dilakukan melalui akun Anda, kecuali dibuktikan sebaliknya. Apabila Anda mencurigai adanya akses tidak sah ke akun Anda, Anda wajib segera memberitahukannya kepada kami melalui <a href="mailto:info@duofine.com">info@duofine.com</a>.</li>
-        <li><strong>Masuk melalui surel, Google, dan Apple:</strong> Selain pendaftaran melalui surel/kata sandi, Aplikasi menyediakan opsi masuk melalui akun Google dan Apple. Saat menggunakan metode ini, syarat penggunaan dan kebijakan privasi milik penyedia terkait juga berlaku.</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-4">
-    <div class="madde-head"><span class="madde-num">PASAL 4</span><h3 class="madde-title">Penggunaan yang Dilarang</h3></div>
-    <div class="madde-body">
-      <p>Saat menggunakan Aplikasi, Anda setuju untuk menghindari perilaku berikut:</p>
-      <ol>
-        <li>Membagikan konten atau melakukan kegiatan yang bertentangan dengan hukum, peraturan, atau hak pihak ketiga mana pun yang berlaku;</li>
-        <li>Melecehkan, mengancam, terus-menerus mengganggu pengguna lain, atau membagikan ujaran kebencian, konten diskriminatif, atau konten cabul;</li>
-        <li>Membuat profil palsu, meniru identitas orang atau badan hukum lain, atau memberikan informasi usia/identitas yang menyesatkan;</li>
-        <li>Menggunakan Aplikasi untuk spam, pesan komersial yang tidak diinginkan, penipuan, phishing, atau penyebaran perangkat lunak berbahaya;</li>
-        <li>Melakukan rekayasa balik (reverse engineering) terhadap kode sumber Aplikasi, mengumpulkan data menggunakan alat otomatis (bot, scraper), atau membebani infrastruktur server secara tidak proporsional;</li>
-        <li>Mencoba melewati langkah-langkah teknis untuk melampaui pembatasan perangkat (Pasal 3.3) atau batas token/langganan (Pasal 8);</li>
-        <li><strong>Menyalahgunakan sistem Penawaran W-W:</strong> menjual atau mengalihkan kode kampanye, mencoba menggunakannya lebih dari satu kali dengan menggandakan tangkapan layar, atau berkolusi secara tidak sah dengan bisnis mitra di luar mekanisme kode/QR untuk memanipulasi sistem (lihat Pasal 7);</li>
-        <li>Menggunakan data lokasi untuk membuntuti, memata-matai, atau melecehkan pengguna lain secara fisik;</li>
-        <li>Melakukan komunikasi yang tidak pantas dengan pengguna di bawah usia 18 tahun atau berperilaku sedemikian rupa sehingga membuat mereka rentan terhadap eksploitasi.</li>
-      </ol>
-      <p>Pelanggaran terhadap pasal ini dapat mengakibatkan penangguhan atau penghapusan permanen akun tanpa pemberitahuan sebelumnya (Pasal 12).</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-5">
-    <div class="madde-head"><span class="madde-num">PASAL 5</span><h3 class="madde-title">Konten Pengguna dan Lisensi</h3></div>
-    <div class="madde-body">
-      <p>Kepemilikan atas konten yang Anda bagikan di dalam Aplikasi (informasi profil, foto, pesan, label penanda, dan lain-lain) tetap menjadi milik Anda. Namun demikian, agar kami dapat menampilkan konten tersebut kepada pengguna lain melalui Aplikasi, menyimpannya, dan menjalankan Layanan, Anda memberikan kepada kami lisensi penggunaan yang berlaku secara global, tidak eksklusif, dan dapat disublisensikan; lisensi ini terbatas semata-mata untuk tujuan pengoperasian Layanan dan konten terkait akan dihapus saat Anda menghapus akun Anda (dengan tetap berlaku ketentuan Pasal 12.5 dan Bagian II Pasal 11).</p>
-      <p>Anda menyatakan dan menjamin bahwa konten yang Anda bagikan adalah konten yang secara hukum berhak Anda bagikan dan tidak melanggar hak kekayaan intelektual, hak pribadi, atau hak privasi pihak ketiga mana pun.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-6">
-    <div class="madde-head"><span class="madde-num">PASAL 6</span><h3 class="madde-title">Layanan Lokasi dan Konten Peta</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">Ketentuan Kritis — Data Lokasi</div>
-        <p>Fungsi utama Aplikasi (penjelajahan lokasi, penghitungan titik pertemuan bersama, penampilan penawaran di sekitar Anda) bergantung pada data lokasi yang sensitif dan real-time. Jika Anda tidak memberikan izin lokasi, fitur-fitur ini tidak akan berfungsi. Dasar-dasar pemrosesan data lokasi dijelaskan secara rinci pada Bagian II Pasal 6.</p>
-      </div>
-      <p>Data peta dan lokasi (tampilan peta, nama bisnis, alamat, foto, jenis, rating) disediakan melalui Google Maps Platform dan tunduk pada syarat penggunaan milik Google sendiri. Anda tidak boleh menyalin, menyimpan secara permanen, atau menggunakan kembali konten ini untuk tujuan komersial di luar Aplikasi; pembatasan ini juga berlaku bagi Operator dan desain teknis Aplikasi dibangun sesuai dengan ketentuan tersebut.</p>
-      <p>Nama bisnis yang tampil pada penanda Anda bukan data yang diambil secara otomatis dari Google, melainkan label yang Anda tuliskan sendiri (lihat Pasal 10 dan Bagian II Pasal 7).</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-7">
-    <div class="madde-head"><span class="madde-num">PASAL 7</span><h3 class="madde-title">Penawaran W-W (Deals) — Kampanye Bisnis Pihak Ketiga</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">Ketentuan Kritis — Operator Hanya Bertindak sebagai Perantara</div>
-        <p>Seluruh kampanye, diskon, dan penawaran yang terdaftar dalam Penawaran W-W disediakan oleh <strong>bisnis mitra pihak ketiga</strong>. Operator bukan merupakan pihak, penjual, atau penyedia produk atau jasa yang dijual; Operator hanya bertindak sebagai perantara teknis yang memungkinkan kampanye tersebut ditampilkan di Aplikasi dan digunakan melalui kode/QR.</p>
-      </div>
-      <ol>
-        <li><strong>Sifat penawaran:</strong> Setiap Penawaran W-W tunduk pada syarat yang ditentukan sendiri oleh bisnis terkait (jangka waktu berlaku, stok/kuota, minimum pembelanjaan, dan lain-lain). Operator tidak menjamin keakuratan, kemutakhiran, atau bahwa suatu kampanye akan benar-benar diterapkan oleh bisnis; bisnis dapat mengubah, menangguhkan, atau mengakhiri kampanye tanpa pemberitahuan sebelumnya.</li>
-        <li><strong>Proses penukaran (redemption):</strong> Saat Anda hendak menggunakan suatu penawaran, Aplikasi akan menghasilkan kode/QR unik untuk Anda. Kode ini berlaku untuk jangka waktu terbatas (dalam hitungan menit sebagaimana tertera dalam Aplikasi) sejak dibuat, dan akan otomatis tidak berlaku setelah waktu tersebut habis. Kode hanya dapat digunakan satu kali, di lokasi bisnis terkait, dengan menunjukkannya kepada staf bisnis tersebut.</li>
-        <li><strong>Batas penggunaan mingguan:</strong> Untuk mencegah penyalahgunaan, terdapat batas penggunaan yang berlaku untuk setiap penawaran dalam jangka waktu bergulir (rolling) tujuh hari. Batas ini diterapkan agar kampanye dapat menjangkau banyak pengguna secara adil, dan dapat diubah tanpa pemberitahuan sebelumnya.</li>
-        <li><strong>Tidak memiliki nilai tunai:</strong> Kode penawaran tidak dapat ditukar dengan uang tunai, dialihkan kepada pengguna lain, dijual, atau digunakan secara massal (bulk). Apabila terdeteksi pelanggaran terhadap ketentuan ini, akun terkait dapat ditangguhkan sesuai dengan Pasal 4.7 dan Pasal 12.</li>
-        <li><strong>Para pihak dalam transaksi dan tanggung jawab:</strong> Hubungan jual-beli/jasa yang terbentuk antara Anda dan bisnis sebagai akibat dari penggunaan suatu Penawaran W-W terjadi secara langsung antara Anda dan bisnis terkait. Untuk hal-hal seperti cacat produk/jasa yang dijual, kualitas, pengiriman, pengembalian, serta kepatuhan bisnis terkait terhadap ketentuan penjualan jarak jauh/perlindungan konsumen yang berlaku bagi mereka, pihak yang menjadi lawan bicara Anda adalah bisnis terkait; karena Operator bukan pihak dalam transaksi ini, Operator tidak menanggung tanggung jawab penjual/penyedia sebagaimana diatur dalam Undang-Undang No. 6502 tentang Perlindungan Konsumen (TKHK).</li>
-        <li><strong>Lokasi dan visibilitas:</strong> Filter provinsi/kabupaten atau daftar "Semua" tempat suatu penawaran akan ditampilkan di dalam Aplikasi merupakan kebijakan editorial Operator, dan cabang berbeda dari bisnis yang sama dapat terdaftar sebagai kartu terpisah.</li>
-        <li><strong>Hak pembatalan dan perubahan:</strong> Operator berhak menghapus Penawaran W-W apa pun dari Aplikasi tanpa pemberitahuan sebelumnya, dengan alasan seperti berakhirnya kerja sama bisnis, permintaan bisnis, atau dugaan penyalahgunaan.</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-8">
-    <div class="madde-head"><span class="madde-num">PASAL 8</span><h3 class="madde-title">Langganan, Token, dan Pembelian Dalam Aplikasi</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li><strong>Penagihan dilakukan melalui toko:</strong> Seluruh langganan berbayar (Plus, Pro) dan paket token sekali beli dibeli dan ditagihkan melalui Apple App Store atau Google Play. Harga ditampilkan di dalam Aplikasi sesuai dengan nilai tukar mata uang dan penerapan pajak toko terkait, dan dapat berubah tanpa pemberitahuan sebelumnya; harga yang berlaku selalu harga yang ditampilkan pada layar pembelian.</li>
-        <li><strong>Perpanjangan otomatis:</strong> Langganan akan diperpanjang dan ditagih secara otomatis pada akhir periode kecuali dibatalkan. Kanal yang harus Anda gunakan untuk membatalkan langganan, mengelola langganan, dan mengajukan permohonan pengembalian dana adalah pengaturan akun Apple/Google Anda secara langsung; Operator tidak memiliki wewenang atau akses untuk mengembalikan dana pembayaran secara langsung.</li>
-        <li><strong>Kebijakan pengembalian dana:</strong> Pengembalian dana pascapembelian tunduk pada kebijakan pengembalian dana toko terkait (Apple atau Google) sendiri. Operator akan menerapkan pengembalian dana yang telah disetujui oleh toko secara retroaktif ke dalam sistem; namun keputusan pengembalian dana itu sendiri berada di tangan toko.</li>
-        <li><strong>Token:</strong> Token adalah unit virtual yang tidak dapat ditukar dengan uang tunai dan dapat kedaluwarsa, yang merepresentasikan hak penggunaan fitur tertentu dalam Aplikasi (misalnya kueri pencarian/penjelajahan). Token tidak dapat dialihkan kepada pengguna lain dan tidak dapat dibeli kembali dengan uang sungguhan.</li>
-        <li><strong>Kebijakan Penggunaan Wajar:</strong> Paket langganan mencakup sejumlah token tertentu per bulan (jumlah terkini tercantum pada layar toko dalam Aplikasi). Apabila terdeteksi penggunaan yang berlebihan, terotomatisasi, atau bersifat penyalahgunaan sehingga mengganggu Layanan, Operator berhak menerapkan pembatasan tambahan; pembatasan ini tidak akan memengaruhi pengguna dengan tingkat penggunaan normal dan personal.</li>
-        <li><strong>Berbagi keluarga dan perubahan akun:</strong> Langganan bersifat khusus untuk akun Apple/Google yang melakukan pembelian dan akun pengguna Common Ground yang terkait dengan akun tersebut; dalam hal terjadi perubahan akun, refleksi status langganan yang benar bergantung pada keakuratan informasi masuk (login) Anda dalam Aplikasi.</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-9">
-    <div class="madde-head"><span class="madde-num">PASAL 9</span><h3 class="madde-title">Pertemanan, Perpesanan, dan Interaksi Antarpengguna</h3></div>
-    <div class="madde-body">
-      <p>Aplikasi memungkinkan pengguna untuk saling menambahkan sebagai teman, melakukan perpesanan secara real-time, dan berbagi saran titik pertemuan bersama berbasis lokasi. Fitur-fitur ini hanya aktif di antara pengguna yang telah membentuk hubungan pertemanan secara timbal balik.</p>
-      <p><strong>Peringatan keamanan pribadi:</strong> Keputusan untuk bertemu secara fisik dengan orang yang Anda kenal melalui Aplikasi sepenuhnya merupakan pilihan dan tanggung jawab Anda sendiri. Operator tidak melakukan verifikasi identitas pengguna dan tidak dapat dimintai pertanggungjawaban atas kerugian apa pun yang timbul dari pertemuan fisik. Kami menyarankan Anda untuk bertemu di tempat umum dan berhati-hati saat membagikan informasi pribadi (alamat rumah, informasi keuangan, dan sejenisnya).</p>
-      <p>Anda dapat melaporkan pengguna yang mengganggu, mengancam, atau melanggar Syarat ini melalui mekanisme pemblokiran dan pelaporan yang tersedia di dalam Aplikasi.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-10">
-    <div class="madde-head"><span class="madde-num">PASAL 10</span><h3 class="madde-title">Penanda (Bookmarks)</h3></div>
-    <div class="madde-body">
-      <p>Fitur penanda dirancang agar sesuai dengan syarat penggunaan Google yang tidak mengizinkan penyimpanan permanen konten bersifat data pribadi (nama bisnis, foto, dan sebagainya). Saat Anda menyimpan suatu tempat, <strong>Anda sendiri</strong> yang menuliskan nama tempat tersebut; Operator tidak mengambil atau mengisi nama tersebut secara otomatis dari Google. Sebagai kunci penyimpanan hanya digunakan identitas umum lokasi (place_id) atau entri yang dimasukkan secara manual (lihat Bagian II Pasal 7).</p>
-      <p>Jumlah penanda dapat tunduk pada batas yang bergantung pada paket langganan Anda; batas ini berlaku secara bersamaan baik untuk entri berbasis Google maupun entri yang ditambahkan secara manual.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-11">
-    <div class="madde-head"><span class="madde-num">PASAL 11</span><h3 class="madde-title">Notifikasi dan Komunikasi</h3></div>
-    <div class="madde-body">
-      <p>Apabila Anda memberikan izin, kami dapat mengirimkan notifikasi push untuk pesan baru, permintaan pertemanan, dan pengumuman penting dalam Aplikasi. Anda dapat mencabut izin ini kapan saja melalui pengaturan sistem perangkat Anda. Kami tetap berhak menghubungi alamat surel terdaftar Anda untuk hal-hal penting seperti keamanan akun, pemberitahuan hukum, atau perubahan Syarat ini, sekalipun Anda tidak memberikan izin notifikasi.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-12">
-    <div class="madde-head"><span class="madde-num">PASAL 12</span><h3 class="madde-title">Penangguhan, Pengakhiran, dan Penghapusan Akun</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li><strong>Pengakhiran oleh pengguna:</strong> Anda dapat menghapus akun Anda kapan saja melalui menu pengaturan di dalam Aplikasi. Apabila Anda memiliki langganan aktif, penghapusan akun tidak secara otomatis membatalkan langganan tersebut; Anda harus membatalkan langganan secara terpisah melalui pengaturan akun Apple/Google Anda.</li>
-        <li><strong>Penangguhan/pengakhiran oleh Operator:</strong> Kami berhak menangguhkan atau menutup akun Anda secara permanen tanpa pemberitahuan sebelumnya dalam hal terjadi pelanggaran terhadap Syarat ini, khususnya penggunaan yang dilarang sebagaimana tercantum dalam Pasal 4, dugaan penipuan, sengketa pembayaran (chargeback), atau kewajiban hukum.</li>
-        <li><strong>Cakupan geografis wewenang ini:</strong> Wewenang kami untuk menangguhkan/mengakhiri akun merupakan langkah teknis dan kontraktual yang kami terapkan secara langsung di dalam Aplikasi; kami tidak memerlukan putusan pengadilan mana pun untuk menerapkannya. Oleh karena itu, wewenang ini berlaku sama terhadap setiap pengguna yang melanggar Syarat ini, terlepas dari kewarganegaraan, negara tempat tinggal Anda, atau hukum negara mana pun yang secara terpisah memberikan perlindungan kepada Anda. Penetapan hukum Turki dan pengadilan Turki sebagai pihak yang berwenang pada Pasal 18 sama sekali tidak membatasi atau memberikan batasan geografis terhadap langkah-langkah tingkat akun yang diatur dalam pasal ini.</li>
-        <li><strong>Pemberitahuan dalam pelanggaran serius:</strong> Dalam hal terjadi perilaku yang berpotensi merupakan tindak pidana seperti penipuan, ancaman, pelecehan, atau upaya eksploitasi, selain menangguhkan akun, kami berhak — bergantung pada sifat kejadiannya — melaporkan situasi tersebut kepada otoritas berwenang di Turki, otoritas berwenang di negara tempat pengguna berada, dan/atau unit trust &amp; safety milik Apple App Store atau Google Play sendiri.</li>
-        <li><strong>Data setelah penghapusan:</strong> Setelah akun dihapus, informasi profil, pesan, dan penanda Anda akan dihapus dari sistem dalam jangka waktu yang wajar; catatan keuangan yang tunduk pada kewajiban penyimpanan hukum (misalnya riwayat langganan/pembayaran) dapat disimpan selama jangka waktu yang ditentukan oleh peraturan perundang-undangan terkait (lihat Bagian II Pasal 11).</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-13">
-    <div class="madde-head"><span class="madde-num">PASAL 13</span><h3 class="madde-title">Kekayaan Intelektual dan Hak Merek</h3></div>
-    <div class="madde-body">
-      <p>Nama "Common Ground" dan "DuoFine", logo, serta seluruh unsur Aplikasi termasuk kode sumber, desain, dan antarmuka, adalah milik Operator atau pemberi lisensinya, dan dilindungi oleh peraturan perundang-undangan kekayaan intelektual. Syarat ini memberikan Anda hak untuk menggunakan Aplikasi untuk tujuan pribadi dan non-komersial; hal ini tidak berarti pengalihan hak kepemilikan apa pun atas Aplikasi.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-14">
-    <div class="madde-head"><span class="madde-num">PASAL 14</span><h3 class="madde-title">Penolakan Jaminan</h3></div>
-    <div class="madde-body">
-      <p>Aplikasi disediakan "sebagaimana adanya" dan "sesuai ketersediaannya". Sejauh diizinkan oleh peraturan perundang-undangan yang berlaku, Operator tidak memberikan jaminan tersurat maupun tersirat apa pun bahwa Aplikasi akan berfungsi tanpa gangguan, bebas dari kesalahan, atau aman, maupun mengenai keakuratan penawaran pihak ketiga dalam Penawaran W-W atau perilaku pengguna lain.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-15">
-    <div class="madde-head"><span class="madde-num">PASAL 15</span><h3 class="madde-title">Pembatasan Tanggung Jawab</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">Ketentuan Kritis — Batas Tanggung Jawab</div>
-        <p>Sejauh diizinkan oleh peraturan perundang-undangan yang berlaku, Operator tidak dapat dimintai pertanggungjawaban atas: (a) transaksi yang Anda lakukan dengan bisnis pihak ketiga dalam rangka Penawaran W-W, (b) interaksi fisik maupun virtual Anda dengan pengguna lain, (c) kerugian tidak langsung, insidental, atau konsekuensial. Dalam hal apa pun, total tanggung jawab Operator dibatasi hingga sejumlah total biaya langganan/pembelian yang Anda bayarkan kepada Aplikasi dalam 12 bulan sebelum peristiwa yang menimbulkan kerugian tersebut terjadi.</p>
-      </div>
-      <p>Pembatasan ini tidak menghapuskan hak-hak memaksa (mandatory) yang Anda miliki sebagai konsumen berdasarkan Undang-Undang No. 6502 tentang Perlindungan Konsumen (TKHK) dan peraturan terkait; hak-hak tersebut tetap berlaku.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-16">
-    <div class="madde-head"><span class="madde-num">PASAL 16</span><h3 class="madde-title">Ganti Rugi</h3></div>
-    <div class="madde-body">
-      <p>Anda setuju untuk mengganti rugi Operator atas segala tuntutan, kerugian, dan biaya (termasuk biaya jasa hukum yang wajar) yang timbul akibat pelanggaran Anda terhadap Syarat ini, penggunaan Aplikasi secara melawan hukum, atau pelanggaran hak pihak ketiga oleh Anda.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-17">
-    <div class="madde-head"><span class="madde-num">PASAL 17</span><h3 class="madde-title">Keadaan Kahar</h3></div>
-    <div class="madde-body">
-      <p>Operator tidak bertanggung jawab atas keterlambatan atau kegagalan dalam pelaksanaan kewajiban yang disebabkan oleh peristiwa di luar kendali wajar kami, seperti bencana alam, perang, wabah penyakit, atau gangguan layanan dari penyedia infrastruktur (hosting, pembayaran, toko aplikasi).</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-18">
-    <div class="madde-head"><span class="madde-num">PASAL 18</span><h3 class="madde-title">Hukum yang Berlaku dan Penyelesaian Sengketa</h3></div>
-    <div class="madde-body">
-      <p>Syarat ini tunduk pada hukum Republik Turki. Pengadilan dan Kantor Eksekusi Istanbul (Anadolu/Avrupa) berwenang untuk sengketa yang mungkin timbul di antara para pihak; pengguna yang bertindak sebagai konsumen berhak mengajukan permohonan kepada Badan Arbitrase Konsumen atau Pengadilan Konsumen di tempat tinggal mereka sendiri atau di tempat kedudukan Operator, sesuai dengan Undang-Undang No. 6502.</p>
-      <p>Apabila Anda berdomisili di luar Turki, pilihan hukum dan yurisdiksi di atas tidak menghapuskan hak konsumen atau hak perlindungan data yang bersifat memaksa (mandatory) dan tidak dapat dikesampingkan melalui perjanjian, yang diberikan kepada Anda oleh negara tempat Anda berdomisili sehubungan dengan sengketa kontraktual; hak-hak tersebut tetap berlaku.</p>
-      <p>Pilihan hukum dan pengadilan yang diatur dalam pasal ini hanya berlaku untuk tuntutan yang akan diajukan melalui jalur pengadilan (misalnya gugatan ganti rugi). Wewenang kami untuk menangguhkan/mengakhiri akun sebagaimana diatur dalam Pasal 12 bersifat independen dari hal ini dan berlaku terhadap seluruh pengguna, terlepas dari negara tempat mereka berada.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-19">
-    <div class="madde-head"><span class="madde-num">PASAL 19</span><h3 class="madde-title">Ketentuan Umum</h3></div>
-    <div class="madde-body">
-      <p>Apabila salah satu ketentuan dalam Syarat ini dinyatakan tidak sah atau tidak dapat diberlakukan, hal tersebut tidak memengaruhi keberlakuan ketentuan lainnya. Tidak digunakannya suatu hak oleh Operator tidak berarti pengesampingan hak tersebut. Operator dapat mengalihkan hak dan kewajibannya berdasarkan Syarat ini apabila Layanan dialihkan kepada operator lain, dengan memberikan pemberitahuan terlebih dahulu kepada pengguna dalam jangka waktu yang wajar.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-20">
-    <div class="madde-head"><span class="madde-num">PASAL 20</span><h3 class="madde-title">Perubahan</h3></div>
-    <div class="madde-body">
-      <p>Operator dapat memperbarui Syarat ini dari waktu ke waktu. Perubahan yang signifikan akan diumumkan melalui notifikasi dalam Aplikasi atau surel. Dengan tetap menggunakan Aplikasi setelah perubahan dilakukan, Anda dianggap telah menyetujui Syarat yang telah diperbarui.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="kk-21">
-    <div class="madde-head"><span class="madde-num">PASAL 21</span><h3 class="madde-title">Kontak</h3></div>
-    <div class="madde-body">
-      <p>Untuk pertanyaan terkait Syarat ini, silakan hubungi: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
-    </div>
-  </article>
-
-  <!-- ======================= BAGIAN II — KEBIJAKAN PRIVASI ======================= -->
-  <div class="part-header" id="bolum-2">
-    <div class="part-eyebrow">Bagian II</div>
-    <h2 class="part-title">Kebijakan Privasi dan Teks Pemberitahuan KVKK</h2>
-    <p class="part-sub">Teks pemberitahuan ini disusun sesuai dengan pasal 10 Undang-Undang No. 6698 tentang Perlindungan Data Pribadi ("KVKK").</p>
-  </div>
-
-  <article class="madde" id="gp-1">
-    <div class="madde-head"><span class="madde-num">PASAL 1</span><h3 class="madde-title">Identitas Pengendali Data</h3></div>
-    <div class="madde-body">
-      <p>Sesuai dengan KVKK, data pribadi Anda diproses oleh badan usaha dengan nama dagang <strong>DuoFine</strong> (selanjutnya disebut "DuoFine" atau "kami"), dalam kapasitasnya sebagai pengendali data, dengan cakupan dan tujuan sebagaimana dijelaskan di bawah ini.</p>
-      <div class="table-scroll">
-        <table class="data-table">
-          <tr><th>Nama Dagang</th><td>DuoFine</td></tr>
-          <tr><th>Surel</th><td>info@duofine.com</td></tr>
-        </table>
-      </div>
-      <p><em>Catatan: Tabel ini didasarkan pada informasi minimum (nama dan kanal kontak) yang telah dianggap cukup untuk identitas pengendali data berdasarkan pasal 10 KVKK. Data pribadi sensitif seperti nomor identitas KTP Turki (T.C. kimlik no) atau alamat domisili milik orang perseorangan tidak dicantumkan di sini karena tidak ada ketentuan hukum yang mewajibkan pencantumannya secara terbuka dalam dokumen ini. Kolom Nomor Pajak dan Nomor MERSIS juga tidak tercantum dalam tabel karena saat ini belum ada kewajiban pajak atau pendaftaran badan hukum terpisah; apabila salah satunya dibentuk di kemudian hari, kolom tersebut akan ditambahkan ke dalam tabel, dan alamat tempat usaha yang terdaftar dalam registri perdagangan — yang memang sudah bersifat publik — juga akan diproses dengan cara yang sama; pendaftaran Registri Pengendali Data (VERBİS) juga akan dipertimbangkan secara terpisah jika diperlukan.</em></p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-2">
-    <div class="madde-head"><span class="madde-num">PASAL 2</span><h3 class="madde-title">Cakupan Kebijakan Ini</h3></div>
-    <div class="madde-body">
-      <p>Kebijakan ini berkaitan dengan pemrosesan data pribadi pengguna terdaftar aplikasi mobile Common Ground, calon pengguna yang mengunjungi aplikasi, serta perwakilan bisnis mitra yang menghubungi kami dalam rangka Penawaran W-W. Data yang dikumpulkan melalui situs web korporat DuoFine juga termasuk dalam cakupan Kebijakan ini.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-3">
-    <div class="madde-head"><span class="madde-num">PASAL 3</span><h3 class="madde-title">Kategori Data Pribadi yang Diproses</h3></div>
-    <div class="madde-body">
-      <div class="table-scroll">
-        <table class="data-table">
-          <caption>Kategori data yang secara nyata dikumpulkan di dalam Aplikasi beserta sumbernya</caption>
-          <tr><th>Kategori</th><th>Contoh</th><th>Sumber</th></tr>
-          <tr><td>Identitas</td><td>Nama, nama belakang, tanggal lahir</td><td>Langsung dari Anda (formulir pendaftaran)</td></tr>
-          <tr><td>Kontak</td><td>Alamat surel</td><td>Langsung dari Anda</td></tr>
-          <tr><td>Data visual</td><td>Foto profil</td><td>Langsung dari Anda (saat diunggah)</td></tr>
-          <tr><td>Data lokasi</td><td>Koordinat GPS real-time</td><td>Layanan lokasi perangkat Anda (bergantung pada izin Anda)</td></tr>
-          <tr><td>Data perangkat dan teknis</td><td>Model perangkat, sistem operasi, token notifikasi push, versi aplikasi</td><td>Otomatis (dari perangkat)</td></tr>
-          <tr><td>Data penggunaan/transaksi</td><td>Hubungan pertemanan, metadata perpesanan, catatan penanda, riwayat penggunaan Penawaran W-W</td><td>Otomatis dari penggunaan Aplikasi Anda</td></tr>
-          <tr><td>Data keamanan transaksi</td><td>Identitas perangkat pertama yang terhubung dengan akun (untuk deteksi akun ganda)</td><td>Otomatis (dari perangkat)</td></tr>
-          <tr><td>Data keuangan (terbatas)</td><td>Status dan jumlah pembelian langganan/token (informasi kartu pembayaran tidak sampai kepada kami)</td><td>Melalui RevenueCat, via Apple/Google</td></tr>
-          <tr><td>Data pemasaran/analitik</td><td>Statistik navigasi dan interaksi dalam Aplikasi</td><td>Otomatis (SDK analitik)</td></tr>
-        </table>
-      </div>
-      <p><strong>Data yang tidak dikumpulkan:</strong> Data kartu seperti nomor kartu pembayaran atau CVV tidak sampai kepada kami pada tahap mana pun; data ini diproses langsung oleh Apple/Google. Aplikasi tidak menyimpan isi pesan Anda secara permanen di sisi server (lihat Pasal 11).</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-4">
-    <div class="madde-head"><span class="madde-num">PASAL 4</span><h3 class="madde-title">Tujuan Pemrosesan Data Pribadi</h3></div>
-    <div class="madde-body">
-      <ol>
-        <li>Pembuatan akun Anda, verifikasi identitas, dan pemberian akses Anda ke Layanan;</li>
-        <li>Penyediaan fungsi inti Aplikasi, termasuk penjelajahan lokasi, penghitungan titik pertemuan bersama, dan penampilan Penawaran W-W kepada Anda;</li>
-        <li>Pengoperasian fitur perpesanan dan interaksi sosial dengan teman Anda;</li>
-        <li>Pemrosesan pembelian langganan dan token, serta perefleksiannya ke akun Anda;</li>
-        <li>Deteksi dan pencegahan penyalahgunaan seperti akun palsu, pendaftaran ganda, atau penyalahgunaan Penawaran W-W;</li>
-        <li>Pengiriman notifikasi push (sesuai dengan izin Anda);</li>
-        <li>Pengukuran kualitas Layanan, deteksi kesalahan/kerusakan (crash), dan pengembangan produk;</li>
-        <li>Pemenuhan kewajiban hukum (pajak, akuntansi, permintaan otoritas resmi);</li>
-        <li>Pengelolaan sengketa hukum dan perlindungan hak-hak kami.</li>
-      </ol>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-5">
-    <div class="madde-head"><span class="madde-num">PASAL 5</span><h3 class="madde-title">Dasar Hukum Pemrosesan Data Pribadi</h3></div>
-    <div class="madde-body">
-      <p>Data pribadi Anda diproses berdasarkan dasar hukum berikut ini sebagaimana diatur dalam pasal 5 KVKK:</p>
-      <ul>
-        <li><strong>Pembentukan/pelaksanaan kontrak (pasal 5/2-c):</strong> untuk data identitas dan kontak Anda dalam rangka pembuatan akun, penyediaan Layanan, dan pengelolaan langganan;</li>
-        <li><strong>Persetujuan eksplisit (pasal 5/1):</strong> untuk pengumpulan data lokasi — yang meskipun tidak termasuk dalam definisi data pribadi khusus (data sensitif) menurut KVKK (pasal 6), tetap bersifat sangat personal dan berkaitan erat dengan lokasi Anda — dan untuk proses seperti berbagi lokasi dengan teman Anda; persetujuan ini diperoleh secara terpisah pada saat permintaan izin lokasi;</li>
-        <li><strong>Pemenuhan kewajiban hukum (pasal 5/2-ç):</strong> untuk penyimpanan catatan keuangan dalam rangka peraturan perpajakan dan akuntansi;</li>
-        <li><strong>Kepentingan yang sah (pasal 5/2-f):</strong> untuk pencegahan penipuan, akun ganda, dan penyalahgunaan, penjaminan keamanan layanan, serta analitik produk pada tingkat dasar — pemrosesan ini dilakukan secara proporsional dengan mempertimbangkan keseimbangan terhadap hak dan kebebasan dasar Anda;</li>
-        <li><strong>Diperlukan untuk pembentukan, pelaksanaan, atau perlindungan suatu hak (pasal 5/2-e):</strong> untuk pemrosesan data yang diperlukan dalam proses sengketa hukum dan penuntutan hak.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-6">
-    <div class="madde-head"><span class="madde-num">PASAL 6</span><h3 class="madde-title">Ketentuan Khusus Mengenai Data Lokasi</h3></div>
-    <div class="madde-body">
-      <div class="critical">
-        <div class="critical-label">Ketentuan Kritis — Data Lokasi</div>
-        <p>Izin lokasi diminta secara terpisah dan eksplisit melalui sistem operasi Anda; jika Anda tidak memberikannya, hanya fitur yang berbasis lokasi (penjelajahan, penghitungan titik bersama, penawaran di sekitar Anda) yang tidak akan berfungsi, sedangkan akun Anda tidak akan terpengaruh. Data lokasi diproses dalam memori (in-memory) selama sesi berlangsung untuk keperluan berfungsinya layar peta dan penjelajahan; sesuai dengan syarat penggunaan Google Maps Platform, koordinat Anda tidak ditulis secara permanen ke disk/basis data dan hanya dapat disimpan sementara dalam cache selama maksimal 30 hari kalender.</p>
-      </div>
-      <p><strong>Berbagi lokasi dengan teman:</strong> Fitur tertentu (misalnya berbagi "kartu lokasi") hanya aktif dengan pengguna yang telah membentuk hubungan pertemanan timbal balik dengan Anda, dan hanya ketika Anda memilih untuk membagikannya; lokasi Anda secara default tidak terbuka bagi pengguna lain.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-7">
-    <div class="madde-head"><span class="madde-num">PASAL 7</span><h3 class="madde-title">Ketentuan Khusus Mengenai Konten Google Maps/Places</h3></div>
-    <div class="madde-body">
-      <p>Sesuai dengan Persyaratan Layanan Google Maps Platform, konten yang bersumber dari Google seperti nama bisnis, foto, nomor telepon, dan rating tidak dapat disimpan secara permanen. Oleh karena itu:</p>
-      <ul>
-        <li>Nama bisnis yang ditampilkan pada fitur penanda (bookmark) tidak diambil dari Google; nama tersebut adalah label yang <strong>Anda tuliskan sendiri</strong> pada saat membuat entri, dan disimpan dalam bentuk tersebut.</li>
-        <li>Identitas lokasi (place_id) dapat disimpan tanpa batas waktu; sedangkan informasi lintang/bujur hanya dapat disimpan sementara dalam cache selama 30 hari.</li>
-        <li>Tab penanda tidak mengirimkan permintaan lokasi/foto/nama apa pun kepada Google; pencarian hanya dilakukan secara lokal terhadap catatan Anda sendiri.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-8">
-    <div class="madde-head"><span class="madde-num">PASAL 8</span><h3 class="madde-title">Data yang Diproses dalam Rangka Penawaran W-W</h3></div>
-    <div class="madde-body">
-      <p>Saat Anda menggunakan suatu Penawaran W-W, kami akan mencatat penawaran mana yang Anda gunakan, di bisnis mana, serta pada tanggal dan waktu berapa (riwayat penggunaan). Data ini diproses untuk tujuan penerapan batas penggunaan mingguan, deteksi penyalahgunaan, dan penyediaan informasi kinerja yang anonim/teragregasi kepada bisnis mitra. Data ini dibagikan kepada bisnis mitra hanya dalam cakupan terbatas untuk tujuan verifikasi kampanye (konfirmasi keabsahan kode oleh staf bisnis); informasi identitas Anda (surel, nama lengkap) tidak diteruskan kepada bisnis tersebut.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-9">
-    <div class="madde-head"><span class="madde-num">PASAL 9</span><h3 class="madde-title">Data Langganan dan Pembayaran</h3></div>
-    <div class="madde-body">
-      <p>Transaksi pembayaran dijalankan langsung oleh Apple App Store atau Google Play; informasi kartu Anda tidak sampai kepada kami. Status langganan/token Anda (paket aktif, tanggal pembelian, jumlah) disampaikan kepada kami melalui <strong>RevenueCat</strong>, integrasi penyedia pembayaran kami, dan diproses untuk tujuan pemberian hak akses (tingkat premium) yang tepat kepada akun Anda.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-10">
-    <div class="madde-head"><span class="madde-num">PASAL 10</span><h3 class="madde-title">Transfer Data Pribadi (Dalam Negeri/Luar Negeri)</h3></div>
-    <div class="madde-body">
-      <p>Data pribadi Anda dibagikan dengan penyedia infrastruktur teknis kami yang diperlukan untuk penyediaan Layanan, hanya sejauh yang diperlukan oleh layanan tersebut. Sebagian penyedia ini berkedudukan di luar negeri (terutama di Amerika Serikat dan Uni Eropa); transfer ini dilakukan sesuai dengan pasal 9 KVKK dan mekanisme transfer yang ditetapkan oleh Otoritas Perlindungan Data Pribadi Turki (Kişisel Verileri Koruma Kurulu) (persetujuan eksplisit, kontrak standar yang disetujui Otoritas, dan sejenisnya).</p>
-      <div class="table-scroll">
-        <table class="data-table">
-          <caption>Sub-pemroses / penyedia layanan utama</caption>
-          <tr><th>Penyedia</th><th>Tujuan</th><th>Lokasi</th></tr>
-          <tr><td>Railway</td><td>Hosting server (backend)</td><td>Luar negeri</td></tr>
-          <tr><td>Backblaze B2</td><td>Penyimpanan foto profil dan gambar</td><td>Luar negeri</td></tr>
-          <tr><td>RevenueCat</td><td>Pengelolaan langganan/pembelian</td><td>Luar negeri</td></tr>
-          <tr><td>Google (Maps Platform, Sign-In)</td><td>Peta, data lokasi, masuk melalui Google</td><td>Luar negeri</td></tr>
-          <tr><td>Apple (Sign in with Apple, App Store)</td><td>Verifikasi identitas, pembayaran</td><td>Luar negeri</td></tr>
-          <tr><td>Sentry</td><td>Pemantauan kesalahan/kerusakan (crash)</td><td>Luar negeri</td></tr>
-          <tr><td>PostHog</td><td>Analitik produk</td><td>Luar negeri</td></tr>
-        </table>
-      </div>
-      <p>Di dalam negeri, pembagian data hanya dapat dilakukan dengan lembaga dan badan publik yang berwenang (atas permintaan) dalam rangka pemenuhan kewajiban hukum kami.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-11">
-    <div class="madde-head"><span class="madde-num">PASAL 11</span><h3 class="madde-title">Jangka Waktu Penyimpanan</h3></div>
-    <div class="madde-body">
-      <ul>
-        <li><strong>Data profil:</strong> disimpan selama akun Anda aktif, dan dihapus dalam jangka waktu yang wajar setelah permohonan penghapusan akun Anda.</li>
-        <li><strong>Data lokasi:</strong> tidak disimpan secara permanen; disimpan dalam memori selama sesi berlangsung untuk keperluan fungsi peta/penjelajahan (Pasal 6).</li>
-        <li><strong>Pesan:</strong> tidak ada arsip pesan permanen yang disimpan di sisi server; cache lokal pada perangkat Anda tunduk pada pengaturan pencadangan/keamanan perangkat Anda sendiri.</li>
-        <li><strong>Riwayat penggunaan Penawaran W-W:</strong> disimpan dalam jangka waktu yang wajar untuk keperluan perhitungan batas mingguan dan deteksi penyalahgunaan.</li>
-        <li><strong>Catatan keuangan/langganan:</strong> dapat disimpan selama jangka waktu penyimpanan hukum yang ditetapkan berdasarkan Undang-Undang Perdagangan Turki dan Undang-Undang Prosedur Perpajakan (secara umum hingga 10 tahun).</li>
-        <li><strong>Catatan kunci perangkat:</strong> untuk mencegah penyalahgunaan akun ganda, kecocokan antara akun dengan perangkat pertama yang terhubung disimpan untuk tujuan keamanan.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-12">
-    <div class="madde-head"><span class="madde-num">PASAL 12</span><h3 class="madde-title">Langkah-Langkah Keamanan Data</h3></div>
-    <div class="madde-body">
-      <p>Guna menjamin keamanan data pribadi Anda, diterapkan langkah-langkah teknis dan administratif seperti enkripsi (TLS selama transmisi), kontrol akses, pencatatan (logging), dan evaluasi keamanan berkala. Meskipun demikian, Anda mengakui bahwa tidak ada metode transmisi melalui internet yang 100% aman.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-13">
-    <div class="madde-head"><span class="madde-num">PASAL 13</span><h3 class="madde-title">Privasi Anak</h3></div>
-    <div class="madde-body">
-      <p>Layanan ini tidak ditujukan bagi orang yang berusia di bawah 13 tahun, dan kami tidak sengaja mengumpulkan data pribadi dari kelompok usia ini. Akun pengguna yang kami ketahui berusia di bawah 13 tahun akan segera ditutup begitu terdeteksi, dan data terkait akan dihapus. Apabila Anda mengetahui bahwa anak Anda telah memberikan data pribadi kepada kami, silakan hubungi kami melalui <a href="mailto:info@duofine.com">info@duofine.com</a>.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-14">
-    <div class="madde-head"><span class="madde-num">PASAL 14</span><h3 class="madde-title">SDK dan Alat Analitik</h3></div>
-    <div class="madde-body">
-      <p>Aplikasi bukan situs web yang menggunakan cookie; sebagai gantinya, Aplikasi mengumpulkan data teknis/analitik terbatas melalui SDK mobile:</p>
-      <ul>
-        <li><strong>PostHog:</strong> untuk statistik penggunaan dalam Aplikasi (layar mana yang dikunjungi, fitur mana yang digunakan);</li>
-        <li><strong>Sentry:</strong> untuk diagnosis kerusakan (crash) dan kesalahan Aplikasi (hanya data kesalahan teknis, dengan pembedaan antara build produksi/pengembangan);</li>
-        <li><strong>RevenueCat:</strong> untuk verifikasi status langganan Anda.</li>
-      </ul>
-      <p>Alat-alat ini tidak digunakan untuk tujuan iklan yang dipersonalisasi; data Anda tidak dijual atau disewakan kepada pihak ketiga untuk tujuan pemasaran.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-15">
-    <div class="madde-head"><span class="madde-num">PASAL 15</span><h3 class="madde-title">Hak-Hak Subjek Data (pasal 11 KVKK)</h3></div>
-    <div class="madde-body">
-      <p>Sesuai dengan pasal 11 KVKK, Anda memiliki hak-hak berikut:</p>
-      <ol>
-        <li>Mengetahui apakah data pribadi Anda diproses atau tidak;</li>
-        <li>Meminta informasi terkait pemrosesan tersebut apabila telah dilakukan;</li>
-        <li>Mengetahui tujuan pemrosesan dan apakah data tersebut digunakan sesuai dengan tujuannya;</li>
-        <li>Mengetahui pihak ketiga yang menerima data Anda, baik di dalam maupun di luar negeri;</li>
-        <li>Meminta perbaikan apabila data diproses secara tidak lengkap atau tidak benar;</li>
-        <li>Meminta penghapusan atau pemusnahan data dalam kerangka syarat yang diatur dalam pasal 7 KVKK;</li>
-        <li>Meminta agar perbaikan/penghapusan tersebut diberitahukan kepada pihak ketiga yang menerima data;</li>
-        <li>Mengajukan keberatan terhadap timbulnya suatu hasil yang merugikan Anda akibat analisis data secara eksklusif melalui sistem otomatis;</li>
-        <li>Meminta ganti rugi apabila Anda mengalami kerugian akibat pemrosesan yang melawan hukum.</li>
-      </ol>
-      <p>Anda dapat mengajukan permohonan tertulis kepada kami melalui kanal kontak pada Pasal 18 untuk menggunakan hak-hak ini. Permohonan Anda akan diselesaikan tanpa biaya dalam jangka waktu yang ditetapkan oleh KVKK (paling lambat 30 hari, bergantung pada sifat permohonan); apabila proses tersebut memerlukan biaya tambahan, biaya sesuai tarif yang ditetapkan oleh Otoritas Perlindungan Data Pribadi Turki (Kişisel Verileri Koruma Kurulu) dapat dikenakan.</p>
-      <div class="critical">
-        <div class="critical-label">Informasi Tambahan untuk Pengguna yang Berdomisili di Kawasan Ekonomi Eropa, Inggris Raya, atau Swiss</div>
-        <p>Hak-hak di atas disusun berdasarkan KVKK; apabila Anda berdomisili di Kawasan Ekonomi Eropa (EEA), Inggris Raya, atau Swiss, data Anda juga dilindungi berdasarkan Peraturan Perlindungan Data Umum (GDPR) atau peraturan lokal terkait, dan hal ini tidak terpengaruh oleh pilihan hukum/pengadilan pada Bagian I Pasal 18. Secara konkret: selain hak-hak di atas, Anda dapat meminta agar data Anda disampaikan kepada Anda dalam format yang terstruktur dan umum digunakan (portabilitas data), dan apabila Anda tidak puas dengan hasil permohonan Anda, Anda dapat mengajukan pengaduan kepada otoritas pengawas perlindungan data yang berwenang di negara Anda, baik sebagai pengganti maupun sebagai tambahan atas pengajuan langsung kepada kami.</p>
-        <p>Demi transparansi, kami sampaikan bahwa DuoFine, pada skala operasionalnya saat ini, belum menunjuk perwakilan GDPR yang berkedudukan di EEA; hal ini didasarkan pada penilaian bahwa kami tidak menjalankan kegiatan yang secara langsung ditujukan kepada pasar EEA dan volume pemrosesan data kami masih kecil. Seiring bertambahnya jumlah pengguna kami di EEA, penilaian ini akan dilakukan kembali dan perwakilan resmi akan ditunjuk apabila diperlukan.</p>
-      </div>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-16">
-    <div class="madde-head"><span class="madde-num">PASAL 16</span><h3 class="madde-title">Pemberitahuan Pelanggaran Data</h3></div>
-    <div class="madde-body">
-      <p>Apabila data pribadi Anda diperoleh oleh pihak lain secara melawan hukum, situasi tersebut akan segera diberitahukan kepada subjek data terkait dan kepada Otoritas Perlindungan Data Pribadi Turki (Kişisel Verileri Koruma Kurulu) sesuai dengan pasal 12 KVKK.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-17">
-    <div class="madde-head"><span class="madde-num">PASAL 17</span><h3 class="madde-title">Perubahan Kebijakan</h3></div>
-    <div class="madde-body">
-      <p>Kebijakan ini dapat direvisi dari waktu ke waktu sesuai dengan perubahan peraturan perundang-undangan atau pembaruan pada Layanan. Versi terkini selalu dipublikasikan pada halaman ini dan di dalam Aplikasi; perubahan yang signifikan akan diberitahukan secara terpisah.</p>
-    </div>
-  </article>
-
-  <article class="madde" id="gp-18">
-    <div class="madde-head"><span class="madde-num">PASAL 18</span><h3 class="madde-title">Kontak dan Pengajuan Permohonan</h3></div>
-    <div class="madde-body">
-      <p>Untuk permohonan terkait privasi dan KVKK, silakan hubungi: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
-      <p class="divider-quote">Dalam permohonan tertulis, penyertaan informasi/dokumen yang membuktikan identitas Anda serta pernyataan permohonan Anda secara jelas akan membantu mempercepat penyelesaian permohonan Anda.</p>
-    </div>
-  </article>
-
-  <p style="text-align:right; margin-top:40px;"><a class="back-to-top" href="#bolum-1">↑ Kembali ke atas</a></p>
-
-</main>
-
-<footer class="doc-footer">
-  <div class="doc-footer-inner">
-    <div>© 2026 DuoFine — Common Ground. Seluruh hak dilindungi undang-undang.</div>
-    <div>Dokumen ini hanyalah draf sumber berbahasa Turki; setelah disetujui, dokumen ini akan diterjemahkan ke 16 bahasa dan disinkronkan dengan berkas dalam aplikasi (<code>app/locales/*.json</code>).</div>
-  </div>
-</footer>
 </body>
 </html>
