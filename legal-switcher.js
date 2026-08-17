@@ -1,6 +1,7 @@
 (function () {
     var STORAGE_KEY = 'cg_legal_lang';
-    var select = document.getElementById('legal-lang-select');
+    var DEFAULT_LANG = 'en';
+    var flagButtons = document.querySelectorAll('.legal-lang-flag');
     var blocks = document.querySelectorAll('.legal-lang-block');
 
     function availableLangs() {
@@ -9,7 +10,7 @@
 
     function showLang(lang) {
         var langs = availableLangs();
-        if (langs.indexOf(lang) === -1) lang = 'en';
+        if (langs.indexOf(lang) === -1) lang = DEFAULT_LANG;
 
         var activeBlock = null;
         Array.prototype.forEach.call(blocks, function (b) {
@@ -20,7 +21,11 @@
 
         document.documentElement.setAttribute('lang', lang);
         document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-        if (select) select.value = lang;
+        Array.prototype.forEach.call(flagButtons, function (btn) {
+            var isActive = btn.getAttribute('data-lang') === lang;
+            btn.classList.toggle('is-active', isActive);
+            btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
         if (activeBlock) {
             var title = activeBlock.getAttribute('data-title');
             if (title) document.title = title;
@@ -38,18 +43,18 @@
             if (stored) return stored;
         } catch (e) { /* private mode etc. */ }
 
-        var nav = (navigator.language || 'en').split('-')[0];
-        return nav;
+        return DEFAULT_LANG;
     }
 
-    if (select) {
-        select.addEventListener('change', function () {
-            showLang(select.value);
+    Array.prototype.forEach.call(flagButtons, function (btn) {
+        btn.addEventListener('click', function () {
+            var lang = btn.getAttribute('data-lang');
+            showLang(lang);
             var url = new URL(window.location.href);
-            url.searchParams.set('lang', select.value);
+            url.searchParams.set('lang', lang);
             window.history.replaceState({}, '', url);
         });
-    }
+    });
 
     showLang(getInitialLang());
 })();
