@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Common Ground Juridische Documenten</title>
+<meta name="description" content="Gebruiksvoorwaarden en Privacybeleid van Common Ground.">
+<link rel="canonical" href="https://duofine.com/legal/nl.html">
+<style>
+/* ---------- Fonts: system stacks only (no external fonts, no CSP risk) ---------- */
+:root{
+  --serif: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Light palette (default root) ---------- */
+:root{
+  --bg: #F0EEE7;
+  --surface: #FFFFFF;
+  --surface-2: #F7F5EF;
+  --ink: #1C1B18;
+  --ink-dim: #56534A;
+  --ink-faint: #8A8678;
+  --rule: #DBD6C8;
+  --rule-strong: #C7C1AF;
+  --accent: #6A3E9E;
+  --accent-ink: #4C2C74;
+  --accent-soft: #EFE7F8;
+  --critical: #2E6D64;
+  --critical-soft: #E2EEEB;
+  --critical-ink: #1E4842;
+  --badge-bg: #B4542A;
+  --badge-ink: #FBEEE6;
+  --link: #6A3E9E;
+  --shadow: 0 1px 2px rgba(28,27,24,0.04), 0 8px 24px rgba(28,27,24,0.06);
+}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg: #17181A;
+    --surface: #1E2022;
+    --surface-2: #232527;
+    --ink: #ECE9E1;
+    --ink-dim: #B0AC9F;
+    --ink-faint: #7C786C;
+    --rule: #35373A;
+    --rule-strong: #43454A;
+    --accent: #C09EEB;
+    --accent-ink: #E2CFF7;
+    --accent-soft: #2B2438;
+    --critical: #7FCBC0;
+    --critical-soft: #1C2C29;
+    --critical-ink: #A9E4DA;
+    --badge-bg: #E08A55;
+    --badge-ink: #2A1608;
+    --link: #C09EEB;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg: #17181A;
+  --surface: #1E2022;
+  --surface-2: #232527;
+  --ink: #ECE9E1;
+  --ink-dim: #B0AC9F;
+  --ink-faint: #7C786C;
+  --rule: #35373A;
+  --rule-strong: #43454A;
+  --accent: #C09EEB;
+  --accent-ink: #E2CFF7;
+  --accent-soft: #2B2438;
+  --critical: #7FCBC0;
+  --critical-soft: #1C2C29;
+  --critical-ink: #A9E4DA;
+  --badge-bg: #E08A55;
+  --badge-ink: #2A1608;
+  --link: #C09EEB;
+  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+}
+
+*{ box-sizing: border-box; }
+html{ -webkit-text-size-adjust: 100%; }
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.5;
+}
+a{ color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, summary:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ---------- Masthead ---------- */
+.masthead{
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface);
+}
+.masthead-inner{
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 28px 24px 24px;
+  display:flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.wordmark{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.wordmark .dot{
+  width:7px; height:7px; border-radius:50%;
+  background: var(--accent);
+  flex: none;
+}
+h1.doc-title{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(28px, 4.2vw, 40px);
+  line-height: 1.14;
+  margin: 0;
+  text-wrap: balance;
+  color: var(--ink);
+}
+.meta-row{
+  display:flex;
+  flex-wrap: wrap;
+  align-items:center;
+  gap: 10px 16px;
+  font-size: 13px;
+  color: var(--ink-dim);
+  font-variant-numeric: tabular-nums;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--badge-bg);
+  color: var(--badge-ink);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ---------- Notice callouts ---------- */
+.notice{
+  max-width: 880px;
+  margin: 20px auto 0;
+  padding: 0 24px;
+}
+.notice-box{
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--badge-bg);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--ink-dim);
+  line-height: 1.55;
+}
+.notice-box strong{ color: var(--ink); }
+
+/* ---------- TOC ---------- */
+.toc-wrap{
+  max-width: 880px;
+  margin: 20px auto 0;
+  padding: 0 24px;
+}
+.toc{
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 20px 22px;
+  box-shadow: var(--shadow);
+}
+.toc summary{
+  cursor:pointer;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  list-style: none;
+}
+.toc summary::-webkit-details-marker{ display:none; }
+.toc summary::after{
+  content: "▾";
+  float: right;
+  color: var(--ink-faint);
+}
+.toc[open] summary::after{ content: "▴"; }
+.toc-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 24px;
+  margin-top: 16px;
+}
+.toc-part{
+  grid-column: 1 / -1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  margin: 10px 0 2px;
+  border-top: 1px solid var(--rule);
+  padding-top: 10px;
+}
+.toc-grid a{
+  font-size: 13.5px;
+  color: var(--ink-dim);
+  padding: 3px 0;
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+}
+.toc-grid a:hover{ color: var(--accent); border-bottom-color: var(--accent); }
+@media (max-width: 640px){ .toc-grid{ grid-template-columns: 1fr; } }
+
+/* ---------- Content ---------- */
+main{
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 8px 24px 80px;
+}
+.part-header{
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 2px solid var(--rule-strong);
+}
+.part-eyebrow{
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+h2.part-title{
+  font-family: var(--serif);
+  font-size: clamp(24px, 3.4vw, 30px);
+  font-weight: 600;
+  margin: 6px 0 4px;
+  text-wrap: balance;
+}
+.part-sub{
+  font-size: 14.5px;
+  color: var(--ink-dim);
+  max-width: 62ch;
+  margin: 0 0 8px;
+}
+
+article.madde{
+  margin-top: 40px;
+  scroll-margin-top: 20px;
+}
+.madde-head{
+  display:flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.madde-num{
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+h3.madde-title{
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ink);
+}
+.madde-body{
+  font-family: var(--serif);
+  font-size: 16.5px;
+  line-height: 1.68;
+  color: var(--ink);
+  max-width: 68ch;
+}
+.madde-body p{ margin: 0 0 14px; }
+.madde-body ol, .madde-body ul{ margin: 0 0 14px; padding-left: 22px; }
+.madde-body li{ margin-bottom: 8px; }
+.madde-body strong{ color: var(--ink); font-weight: 700; }
+.fill{
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 0.86em;
+  font-weight: 600;
+}
+
+.critical{
+  background: var(--critical-soft);
+  border: 1px solid var(--critical);
+  border-left-width: 4px;
+  border-radius: 8px;
+  padding: 16px 18px 4px;
+  margin: 0 0 14px;
+}
+.critical-label{
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--critical-ink);
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom: 8px;
+}
+.critical-label svg{ width:13px; height:13px; flex:none; }
+
+table.data-table{
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  margin: 4px 0 20px;
+}
+table.data-table caption{
+  text-align: left;
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-bottom: 6px;
+  font-style: italic;
+}
+table.data-table th, table.data-table td{
+  border: 1px solid var(--rule);
+  padding: 9px 11px;
+  text-align: left;
+  vertical-align: top;
+}
+table.data-table th{
+  background: var(--surface-2);
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+}
+table.data-table td{ color: var(--ink-dim); }
+.table-scroll{ overflow-x: auto; }
+
+.divider-quote{
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-faint);
+  border-left: 2px solid var(--rule-strong);
+  padding-left: 14px;
+  margin: 4px 0 20px;
+}
+
+footer.doc-footer{
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
+  margin-top: 60px;
+}
+.doc-footer-inner{
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 28px 24px 40px;
+  font-size: 13px;
+  color: var(--ink-faint);
+  display:flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.back-to-top{
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--link);
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: no-preference){
+  html{ scroll-behavior: smooth; }
+}
+</style>
+</head>
+<body>
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="wordmark"><span class="dot"></span>COMMON GROUND — DUOFINE</div>
+    <h1 class="doc-title">Gebruiksvoorwaarden &amp; Privacybeleid</h1>
+    <div class="meta-row">
+      <span class="badge">Concept · In afwachting van juridische toetsing</span>
+      <span>Ingangsdatum: 15 augustus 2026</span>
+      <span>Versie: TR-1.3</span>
+      <span>Taal: Nederlands (vertaald uit het Turkse origineel) (bron: Turkse versie TR-1.3)</span>
+    </div>
+  </div>
+</div>
+
+<div class="notice">
+  <div class="notice-box">
+    <strong>Status van dit document:</strong> Deze tekst is een uitgebreid <strong>concept</strong>, opgesteld op basis van de huidige codebase en werkprocessen van de Common Ground-applicatie. Het is samengesteld door kunstmatige intelligentie, vervangt niet de toetsing door een bevoegde Turkse advocaat, en de definitieve goedkeuring dient van diens zijde te komen. Het document bevat geen nog in te vullen open plekken meer. Zolang de Turkse brontekst niet volledig is goedgekeurd, wordt niet overgegaan tot vertaling naar 16 talen.
+    <br><br>
+    <strong>Revisienotitie TR-1.2 (15 augustus 2026):</strong> De handelsnaam "DuoFine" is verduidelijkt; aan Artikel 12 en 18 van de Gebruiksvoorwaarden is een toelichting toegevoegd dat de bevoegdheid tot opschorting/beëindiging van een account onafhankelijk van de nationaliteit/locatie van de gebruiker wordt toegepast, met een voorbehoud voor dwingend buitenlands recht; in Artikel 18 is Istanbul als bevoegde plaats vastgesteld; uit de identiteitstabel van Artikel 1 van het Privacybeleid zijn het Turkse identiteitsnummer, het woonadres en de (nog niet bestaande) regels voor Belastingnummer/MERSIS-nummer verwijderd; aan Artikel 15 is een AVG-bewustwordingsgedeelte toegevoegd voor gebruikers uit de EER/het Verenigd Koninkrijk.
+    <br><br>
+    <strong>Revisienotitie TR-1.3 (15 augustus 2026 — integriteitscontrole):</strong> De verwijzingen naar KVKK-artikel 5/6/7/9/10/11/12/13 zijn stuk voor stuk geverifieerd aan de officiële bron. Twee nummerings-/verwijzingsfouten zijn gecorrigeerd: (1) doordat aan Artikel 12 nieuwe onderdelen zijn toegevoegd, was "Gegevens na verwijdering" verschoven van de 3e naar de 5e positie; de kruisverwijzing in Artikel 5 is gecorrigeerd van "Artikel 12.3" naar "Artikel 12.5"; (2) in het AVG-kader van Artikel 15 van het Privacybeleid ontbrak het voorvoegsel "Deel I" bij de verwijzing naar de rechtskeuzebepaling van Deel I (deze verwees daardoor naar het eigen Artikel 18 van Deel II, namelijk Contact), en is dit gecorrigeerd. Daarnaast is in Artikel 5 van het Privacybeleid een ongebruikte/loshangende verwijzing naar "KVKK-artikel 6" verwijderd en is een tegenstrijdige zin die verduidelijkte dat locatiegegevens geen bijzondere categorie van persoonsgegevens vormen, vereenvoudigd.
+  </div>
+</div>
+
+<div class="toc-wrap">
+  <details class="toc" open>
+    <summary>Inhoudsopgave</summary>
+    <div class="toc-grid">
+      <div class="toc-part">Deel I — Gebruiksvoorwaarden</div>
+      <a href="#kk-0">0. Inleiding en Aanvaarding</a>
+      <a href="#kk-1">1. Definities</a>
+      <a href="#kk-2">2. Reikwijdte van de Dienst</a>
+      <a href="#kk-3">3. Accountaanmaak, Leeftijd en Beveiliging</a>
+      <a href="#kk-4">4. Verboden Gebruik</a>
+      <a href="#kk-5">5. Gebruikersinhoud</a>
+      <a href="#kk-6">6. Locatie- en Kaartinhoud</a>
+      <a href="#kk-7">7. W-W Deals (Aanbiedingen)</a>
+      <a href="#kk-8">8. Abonnementen, Tokens en Aankopen</a>
+      <a href="#kk-9">9. Vriendschappen en Berichtenverkeer</a>
+      <a href="#kk-10">10. Bladwijzers</a>
+      <a href="#kk-11">11. Meldingen</a>
+      <a href="#kk-12">12. Opschorting, Beëindiging, Verwijdering</a>
+      <a href="#kk-13">13. Intellectuele Eigendom</a>
+      <a href="#kk-14">14. Uitsluiting van Garanties</a>
+      <a href="#kk-15">15. Beperking van Aansprakelijkheid</a>
+      <a href="#kk-16">16. Vrijwaring</a>
+      <a href="#kk-17">17. Overmacht</a>
+      <a href="#kk-18">18. Toepasselijk Recht en Geschillen</a>
+      <a href="#kk-19">19. Algemene Bepalingen</a>
+      <a href="#kk-20">20. Wijzigingen</a>
+      <a href="#kk-21">21. Contact</a>
+      <div class="toc-part">Deel II — Privacybeleid (KVKK-informatietekst)</div>
+      <a href="#gp-1">1. Identiteit van de Verwerkingsverantwoordelijke</a>
+      <a href="#gp-2">2. Reikwijdte</a>
+      <a href="#gp-3">3. Verwerkte Persoonsgegevens</a>
+      <a href="#gp-4">4. Verwerkingsdoeleinden</a>
+      <a href="#gp-5">5. Rechtsgronden</a>
+      <a href="#gp-6">6. Locatiegegevens — Bijzondere Bepaling</a>
+      <a href="#gp-7">7. Google Maps/Places-inhoud</a>
+      <a href="#gp-8">8. Gegevensverwerking in het kader van Deals</a>
+      <a href="#gp-9">9. Abonnements- en Betalingsgegevens</a>
+      <a href="#gp-10">10. Doorgifte van Gegevens (Binnenlands/Buitenlands)</a>
+      <a href="#gp-11">11. Bewaartermijnen</a>
+      <a href="#gp-12">12. Gegevensbeveiliging</a>
+      <a href="#gp-13">13. Privacy van Kinderen</a>
+      <a href="#gp-14">14. SDK's en Analytics</a>
+      <a href="#gp-15">15. Rechten van de Betrokkene</a>
+      <a href="#gp-16">16. Melding van Datalekken</a>
+      <a href="#gp-17">17. Wijzigingen in het Beleid</a>
+      <a href="#gp-18">18. Contact en Verzoeken</a>
+    </div>
+  </details>
+</div>
+
+<main>
+
+  <!-- ======================= DEEL I — GEBRUIKSVOORWAARDEN ======================= -->
+  <div class="part-header" id="bolum-1">
+    <div class="part-eyebrow">Deel I</div>
+    <h2 class="part-title">Gebruiksvoorwaarden</h2>
+    <p class="part-sub">Contractuele bepalingen die van toepassing zijn op iedere gebruiker van de mobiele applicatie Common Ground ("Applicatie" of "Dienst").</p>
+  </div>
+
+  <article class="madde" id="kk-0">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 0</span><h3 class="madde-title">Inleiding en Aanvaarding</h3></div>
+    <div class="madde-body">
+      <p>Deze Gebruiksvoorwaarden ("Voorwaarden") regelen de rechtsverhouding tussen de gebruiker ("u", "Gebruiker") en de onderneming die handelt onder de naam <strong>DuoFine</strong> ("Exploitant", "wij"), met betrekking tot de mobiele applicatie Common Ground en alle functies die deze applicatie biedt, waaronder plaatsverkenning, W-W Deals, berichtenverkeer, vriendschappen en bladwijzers.</p>
+      <p>Door de Applicatie te downloaden, een account aan te maken of het gebruik ervan voort te zetten, verklaart u dat u deze Voorwaarden en het hieronder in Deel II opgenomen Privacybeleid hebt gelezen, begrepen en aanvaard. Indien u niet met deze documenten instemt, mag u de Applicatie niet gebruiken en geen account aanmaken.</p>
+      <p>Voor aankopen die binnen de Applicatie via een appstore (Apple App Store / Google Play) worden gedaan, gelden naast deze Voorwaarden ook de eigen gebruiksvoorwaarden van de betreffende appstore; in geval van strijdigheid zijn met betrekking tot betaling en facturering de voorwaarden van de appstore leidend, en voor alle overige aangelegenheden deze Voorwaarden.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-1">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 1</span><h3 class="madde-title">Definities</h3></div>
+    <div class="madde-body">
+      <ul>
+        <li><strong>Applicatie / Dienst:</strong> de mobiele applicatie genaamd "Common Ground", gedistribueerd via iOS en Android, en de daarmee geïntegreerde serverinfrastructuur.</li>
+        <li><strong>Gebruiker:</strong> de natuurlijke persoon die een account aanmaakt in de Applicatie en deze Voorwaarden aanvaardt.</li>
+        <li><strong>Inhoud:</strong> alle tekst, beeldmateriaal, locatiegegevens en soortgelijke gegevens die de Gebruiker deelt in zijn/haar profiel, berichten, bladwijzers of anderszins binnen de Applicatie.</li>
+        <li><strong>W-W Deals:</strong> in de Applicatie vermelde kortings-/promotieaanbiedingen van derde ondernemingen, en het systeem waarmee deze via een code/QR-code binnen de Applicatie kunnen worden verzilverd.</li>
+        <li><strong>Abonnement:</strong> een via de Apple App Store of Google Play aangeschaft, terugkerend (automatisch verlengend) betaald abonnement dat aanvullende functies en tokenrechten binnen de Applicatie biedt (bijv. Plus, Pro).</li>
+        <li><strong>Token:</strong> een virtuele, niet in geld inwisselbare gebruikseenheid waarmee het gebruik van bepaalde functies binnen de Applicatie (bijv. zoeken/verkennen) wordt gemeten.</li>
+        <li><strong>Store:</strong> de App Store, geëxploiteerd door Apple Inc., of de Google Play-winkel, geëxploiteerd door Google LLC.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-2">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 2</span><h3 class="madde-title">Reikwijdte van de Dienst</h3></div>
+    <div class="madde-body">
+      <p>Common Ground is een verken- en sociale-interactie-applicatie waarmee gebruikers ondernemingen in hun omgeving kunnen ontdekken aan de hand van filters zoals locatie, afstand, vervoerswijze, categorie en populariteit, een gemeenschappelijk ontmoetingspunt tussen meerdere personen kunnen berekenen, in realtime met vrienden kunnen chatten, favoriete plekken kunnen opslaan en gebruik kunnen maken van speciale promoties ("W-W Deals") van partnerondernemingen.</p>
+      <p>De Exploitant behoudt zich het recht voor om de Applicatie geheel of gedeeltelijk, of enige functie daarvan, zonder voorafgaande kennisgeving te wijzigen, op te schorten of te verwijderen. De Applicatie wordt aangeboden "zoals deze is" en "voor zover beschikbaar"; er wordt geen garantie gegeven dat deze ononderbroken of foutloos zal functioneren.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-3">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 3</span><h3 class="madde-title">Accountaanmaak, Leeftijdsgrens en Accountbeveiliging</h3></div>
+    <div class="madde-body">
+      <ol>
+        <li><strong>Leeftijdsgrens:</strong> de Applicatie mag uitsluitend worden gebruikt door personen van 13 jaar en ouder. Gebruikers tussen 13 en 18 jaar kunnen op grond van het Turks Burgerlijk Wetboek (Türk Medeni Kanunu) als beperkt handelingsonbekwaam worden aangemerkt, en dienen de Applicatie derhalve alleen te gebruiken met medeweten en onder toezicht van hun ouder(s) of wettelijk vertegenwoordiger(s); met name voor betaalde abonnementen en aankopen is de toestemming van de wettelijk vertegenwoordiger vereist. De Exploitant behoudt zich het recht voor accounts op te schorten waarvan wordt vastgesteld dat de leeftijd onjuist is opgegeven.</li>
+        <li><strong>Juistheid van gegevens:</strong> u verklaart dat de bij registratie verstrekte gegevens, zoals naam, e-mailadres en geboortedatum, juist en actueel zijn. Het aanmaken van een account onder een valse identiteit of met de identiteit van een ander is verboden.</li>
+        <li><strong>Beperking tot één account/apparaat:</strong> om misbruik en dubbele registraties te voorkomen, past de Applicatie bij nieuwe registraties een verificatie op apparaatniveau toe. Eén apparaat kan gedurende een bepaalde periode slechts aan één account worden gekoppeld; pogingen om deze beperking te omzeilen (bijv. het resetten van een apparaat, hernieuwde registratie onder een valse identiteit) worden aangemerkt als verboden gebruik in de zin van Artikel 4.</li>
+        <li><strong>Accountbeveiliging:</strong> u bent zelf verantwoordelijk voor de vertrouwelijkheid van uw wachtwoord en de toegang tot uw account. Voor alle handelingen die via uw account worden verricht, wordt u aansprakelijk gehouden, tenzij het tegendeel wordt bewezen. Bij vermoeden van ongeautoriseerde toegang tot uw account dient u ons onmiddellijk te informeren via <a href="mailto:info@duofine.com">info@duofine.com</a>.</li>
+        <li><strong>Inloggen met e-mail, Google en Apple:</strong> naast registratie met e-mail/wachtwoord biedt de Applicatie de mogelijkheid om in te loggen via een Google- of Apple-account. Bij gebruik van deze methoden zijn tevens de eigen gebruiksvoorwaarden en het privacybeleid van de betreffende aanbieder van toepassing.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-4">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 4</span><h3 class="madde-title">Verboden Gebruik</h3></div>
+    <div class="madde-body">
+      <p>Bij gebruik van de Applicatie stemt u ermee in de volgende gedragingen achterwege te laten:</p>
+      <ol>
+        <li>het delen van inhoud of het verrichten van handelingen die in strijd zijn met geldende wet- en regelgeving of met de rechten van derden;</li>
+        <li>het lastigvallen, bedreigen of stelselmatig hinderen van een andere gebruiker, of het delen van haatzaaiende, discriminerende of obscene inhoud;</li>
+        <li>het aanmaken van een vals profiel, het zich voordoen als een andere natuurlijke of rechtspersoon, of het verstrekken van misleidende leeftijds-/identiteitsgegevens;</li>
+        <li>het gebruiken van de Applicatie voor spam, ongewenste commerciële berichten, fraude, phishing of de verspreiding van kwaadaardige software;</li>
+        <li>het trachten de broncode van de Applicatie te reverse-engineeren, het met geautomatiseerde middelen (bots, scrapers) verzamelen van gegevens, of het onevenredig belasten van de serverinfrastructuur;</li>
+        <li>het trachten technische maatregelen te omzeilen met het doel de apparaatbeperking (Artikel 3.3) of de token-/abonnementslimieten (Artikel 8) te overschrijden;</li>
+        <li><strong>het misbruiken van het W-W Deals-systeem:</strong> het verkopen of overdragen van een actiecode, het door middel van vermenigvuldigde screenshots meermaals proberen te gebruiken van een code, of het buiten de code/QR-code om op onregelmatige wijze afspraken maken met de partneronderneming teneinde het systeem te manipuleren (zie Artikel 7);</li>
+        <li>het gebruiken van locatiegegevens om een andere gebruiker te volgen, te bespieden of fysiek lastig te vallen;</li>
+        <li>het onderhouden van ongepast contact met gebruikers jonger dan 18 jaar, of gedragingen die hen blootstellen aan het risico van misbruik.</li>
+      </ol>
+      <p>Schending van dit artikel kan, zonder voorafgaande kennisgeving, leiden tot opschorting of definitieve verwijdering van het account (Artikel 12).</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-5">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 5</span><h3 class="madde-title">Gebruikersinhoud en Licentie</h3></div>
+    <div class="madde-body">
+      <p>De eigendom van de inhoud die u binnen de Applicatie deelt (profielgegevens, foto's, berichten, bladwijzerlabels e.d.) berust bij u. U verleent ons echter een wereldwijde, niet-exclusieve, sublicentieerbare gebruikslicentie om deze inhoud aan andere gebruikers te tonen, op te slaan en de Dienst te kunnen exploiteren; deze licentie is beperkt tot het doel van exploitatie van de Dienst en vervalt wanneer u de betreffende inhoud verwijdert doordat u uw account verwijdert (onder voorbehoud van Artikel 12.5 en Deel II, Artikel 11).</p>
+      <p>U verklaart en garandeert dat u wettelijk gerechtigd bent de door u gedeelde inhoud te delen en dat deze geen inbreuk maakt op de intellectuele-eigendomsrechten, persoonlijkheidsrechten of privacyrechten van derden.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-6">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 6</span><h3 class="madde-title">Locatiediensten en Kaartinhoud</h3></div>
+    <div class="madde-body">
+      <div class="critical">
+        <div class="critical-label">Kritieke bepaling — Locatiegegevens</div>
+        <p>De kernfunctie van de Applicatie (plaatsverkenning, berekening van een gemeenschappelijk ontmoetingspunt, weergave van aanbiedingen in de buurt) berust op gevoelige, real-time locatiegegevens. Indien u geen locatietoestemming verleent, zullen deze functies van de Applicatie niet werken. De grondslagen voor de verwerking van locatiegegevens worden nader toegelicht in Deel II, Artikel 6.</p>
+      </div>
+      <p>Kaart- en plaatsgegevens (kaartweergave, bedrijfsnaam, adres, foto, categorie, beoordeling) worden verstrekt via het Google Maps Platform en vallen onder de eigen gebruiksvoorwaarden van Google. Het is u niet toegestaan deze inhoud buiten de Applicatie te kopiëren, permanent op te slaan of voor commerciële doeleinden te hergebruiken; deze beperking geldt evenzeer voor de Exploitant en het technische ontwerp van de Applicatie is hierop ingericht.</p>
+      <p>De bedrijfsnaam die bij uw bladwijzers wordt weergegeven, is geen automatisch van Google afkomstig gegeven, maar een label dat u zelf hebt ingevoerd (zie Artikel 10 en Deel II, Artikel 7).</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-7">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 7</span><h3 class="madde-title">W-W Deals — Promoties van Ondernemingen van Derden</h3></div>
+    <div class="madde-body">
+      <div class="critical">
+        <div class="critical-label">Kritieke bepaling — de Exploitant treedt uitsluitend op als tussenpersoon</div>
+        <p>Alle promoties, kortingen en aanbiedingen die in het kader van W-W Deals worden vermeld, worden aangeboden door <strong>onafhankelijke ondernemingen van derden waarmee overeenkomsten zijn gesloten</strong>. De Exploitant is geen partij, verkoper of aanbieder van het verkochte product of de verkochte dienst, maar treedt uitsluitend op als technisch tussenpersoon die de weergave van de promotie binnen de Applicatie en de verzilvering via code/QR-code mogelijk maakt.</p>
+      </div>
+      <ol>
+        <li><strong>Aard van het aanbod:</strong> iedere W-W Deal is onderworpen aan de eigen, door de betreffende onderneming vastgestelde voorwaarden (geldigheidsduur, voorraad/contingent, minimumbesteding, enz.). De Exploitant garandeert niet dat een promotie juist, actueel is of daadwerkelijk door de onderneming zal worden toegepast; ondernemingen kunnen een promotie zonder voorafgaande kennisgeving wijzigen, opschorten of beëindigen.</li>
+        <li><strong>Verzilveringsproces:</strong> wanneer u gebruik wilt maken van een aanbieding, genereert de Applicatie voor u een unieke code/QR-code. Deze code is vanaf het moment van generatie gedurende een beperkte tijd (het binnen de Applicatie vermelde aantal minuten) geldig en wordt na afloop daarvan automatisch ongeldig. De code kan uitsluitend bij de betreffende onderneming, na tonen aan het personeel, eenmalig worden gebruikt.</li>
+        <li><strong>Wekelijkse gebruikslimiet:</strong> ter voorkoming van misbruik geldt voor dezelfde aanbieding een gebruikslimiet binnen een voortschrijdende periode van zeven dagen. Deze limiet wordt toegepast om de promotie op eerlijke wijze aan een groot aantal gebruikers beschikbaar te kunnen stellen, en kan zonder voorafgaande kennisgeving worden gewijzigd.</li>
+        <li><strong>Geen geldwaarde:</strong> actiecodes zijn niet inwisselbaar voor contant geld, niet overdraagbaar aan een andere gebruiker, niet verkoopbaar en niet in bulk te gebruiken. Bij vaststelling van handelen in strijd met deze regel kan het betreffende account op grond van Artikel 4.7 en Artikel 12 worden opgeschort.</li>
+        <li><strong>Partijen bij de transactie en aansprakelijkheid:</strong> de koop-/dienstverleningsrelatie die ontstaat als gevolg van het gebruik van een W-W Deal, komt rechtstreeks tot stand tussen u en de betreffende onderneming. Voor kwesties als gebrekkigheid, kwaliteit, levering of retournering van het verkochte product/de verkochte dienst, of de naleving door de betreffende onderneming van haar eigen regelgeving inzake koop op afstand/consumentenbescherming, is de betreffende onderneming uw wederpartij; aangezien de Exploitant geen partij is bij deze transactie, aanvaardt de Exploitant niet de aansprakelijkheid van verkoper/aanbieder in de zin van de Wet nr. 6502 inzake de bescherming van de consument (TKHK).</li>
+        <li><strong>Locatie en zichtbaarheid:</strong> het is ter redactionele beoordeling van de Exploitant in welk(e) provincie-/districtsfilter of in de lijst "Alle" een aanbieding binnen de Applicatie wordt weergegeven, en verschillende vestigingen van dezelfde onderneming kunnen als afzonderlijke kaarten worden vermeld.</li>
+        <li><strong>Recht op intrekking en wijziging:</strong> de Exploitant behoudt zich het recht voor iedere W-W Deal, om redenen zoals het beëindigen van de samenwerking, een verzoek van de onderneming of een vermoeden van misbruik, zonder voorafgaande kennisgeving uit de Applicatie te verwijderen.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-8">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 8</span><h3 class="madde-title">Abonnementen, Tokens en Aankopen binnen de Applicatie</h3></div>
+    <div class="madde-body">
+      <ol>
+        <li><strong>Facturering via de store:</strong> alle betaalde abonnementen (Plus, Pro) en eenmalige tokenpakketten worden aangeschaft en gefactureerd via de Apple App Store of Google Play. Prijzen worden binnen de Applicatie weergegeven op basis van de wisselkoers en belastingregels van de betreffende store, en kunnen zonder voorafgaande kennisgeving wijzigen; de actuele prijs is steeds de op het aankoopscherm getoonde prijs.</li>
+        <li><strong>Automatische verlenging:</strong> abonnementen worden, tenzij opgezegd, aan het einde van de periode automatisch verlengd en in rekening gebracht. Voor het opzeggen van uw abonnement, het beheren van uw abonnement en het aanvragen van terugbetaling dient u rechtstreeks gebruik te maken van uw Apple-/Google-accountinstellingen; de Exploitant heeft geen bevoegdheid of toegang om een betaling rechtstreeks terug te betalen.</li>
+        <li><strong>Terugbetalingsbeleid:</strong> terugbetalingen na aankoop vallen onder het eigen terugbetalingsbeleid van de betreffende store (Apple of Google). De Exploitant verwerkt door de store goedgekeurde terugbetalingen met terugwerkende kracht in het systeem; de beslissing over de terugbetaling zelf ligt echter bij de store.</li>
+        <li><strong>Tokens:</strong> een token is een virtuele, niet in geld inwisselbare eenheid die kan verlopen en die het gebruiksrecht vertegenwoordigt van bepaalde functies binnen de Applicatie (bijv. zoek-/verkenningsopdrachten). Tokens zijn niet overdraagbaar aan een andere gebruiker en kunnen niet tegen betaling van geld worden teruggekocht.</li>
+        <li><strong>Fair-use-beleid:</strong> abonnementsplannen omvatten een bepaalde maandelijkse hoeveelheid tokens (de actuele hoeveelheden staan vermeld op het in-app winkelscherm). Indien gebruik wordt vastgesteld dat overmatig, geautomatiseerd of van misbruik getuigend is in een mate die de Dienst verstoort, behoudt de Exploitant zich het recht voor aanvullende beperkingen toe te passen; dit raakt gebruikers met een normaal, persoonlijk gebruiksniveau niet.</li>
+        <li><strong>Gezinsdeling en accountwijziging:</strong> abonnementen zijn gekoppeld aan het Apple-/Google-account waarmee zij zijn aangeschaft en aan het daaraan gekoppelde Common Ground-gebruikersaccount; in geval van een accountwijziging is de juiste weergave van uw abonnementsstatus afhankelijk van de juistheid van uw inloggegevens binnen de Applicatie.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-9">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 9</span><h3 class="madde-title">Vriendschappen, Berichtenverkeer en Interactie tussen Gebruikers</h3></div>
+    <div class="madde-body">
+      <p>De Applicatie stelt gebruikers in staat elkaar als vriend toe te voegen, in realtime te chatten en locatiegebaseerde voorstellen voor een gemeenschappelijk ontmoetingspunt te delen. Deze functies zijn uitsluitend actief tussen gebruikers die een wederzijdse vriendschapsrelatie hebben aangegaan.</p>
+      <p><strong>Waarschuwing voor persoonlijke veiligheid:</strong> of u ervoor kiest personen die u via de Applicatie hebt leren kennen fysiek te ontmoeten, is volledig ter eigen beoordeling en voor eigen risico. De Exploitant verifieert de identiteit van gebruikers niet en kan niet aansprakelijk worden gehouden voor enige schade voortvloeiend uit fysieke ontmoetingen. Wij adviseren u elkaar op openbare plaatsen te ontmoeten en voorzichtig te zijn met het delen van persoonlijke informatie (huisadres, financiële gegevens, enz.).</p>
+      <p>Personen die andere gebruikers lastigvallen, bedreigen of deze Voorwaarden schenden, kunt u melden via de blokkeer- en meldingsmechanismen binnen de Applicatie.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-10">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 10</span><h3 class="madde-title">Bladwijzers (Bookmarks)</h3></div>
+    <div class="madde-body">
+      <p>De bladwijzerfunctie is zodanig ontworpen dat deze voldoet aan de gebruiksvoorwaarden van Google, die het permanent bewaren van als persoonsgegevens aan te merken inhoud van Google (bedrijfsnaam, foto, enz.) niet toestaan. Wanneer u een locatie opslaat, voert <strong>u de naam van die locatie zelf in</strong>; de Exploitant haalt deze naam niet automatisch van Google en vult deze niet vooraf in. Als sleutel voor uw opgeslagen locatie wordt uitsluitend de algemene identificatie van de locatie (place_id) of een handmatig ingevoerde vermelding gebruikt (zie Deel II, Artikel 7).</p>
+      <p>Het aantal bladwijzers kan onderworpen zijn aan een limiet die afhangt van uw abonnementsplan; deze limiet geldt gezamenlijk voor zowel op Google gebaseerde als handmatig toegevoegde vermeldingen.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-11">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 11</span><h3 class="madde-title">Meldingen en Communicatie</h3></div>
+    <div class="madde-body">
+      <p>Indien u daarvoor toestemming geeft, kunnen wij pushmeldingen sturen voor nieuwe berichten, vriendschapsverzoeken en belangrijke aankondigingen binnen de Applicatie. U kunt deze toestemming te allen tijde intrekken via de systeeminstellingen van uw apparaat. Voor belangrijke aangelegenheden zoals accountbeveiliging, wettelijk verplichte kennisgevingen of wijzigingen in deze Voorwaarden behouden wij ons het recht voor om met u contact op te nemen via uw geregistreerde e-mailadres, ook indien u geen toestemming voor meldingen hebt gegeven.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-12">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 12</span><h3 class="madde-title">Opschorting, Beëindiging en Verwijdering van het Account</h3></div>
+    <div class="madde-body">
+      <ol>
+        <li><strong>Beëindiging door de gebruiker:</strong> u kunt uw account op elk gewenst moment verwijderen via het instellingenmenu binnen de Applicatie. Indien u een actief abonnement heeft, wordt het abonnement door het verwijderen van het account niet automatisch opgezegd; u dient het abonnement afzonderlijk op te zeggen via uw Apple-/Google-accountinstellingen.</li>
+        <li><strong>Opschorting/beëindiging door de Exploitant:</strong> bij schending van deze Voorwaarden, in het bijzonder de in Artikel 4 genoemde verboden gebruiksvormen, bij vermoeden van fraude, een betalingsgeschil (chargeback) of een wettelijke verplichting, behouden wij ons het recht voor uw account zonder voorafgaande kennisgeving op te schorten of definitief te sluiten.</li>
+        <li><strong>Geografische reikwijdte van deze bevoegdheid:</strong> onze bevoegdheid tot opschorting/beëindiging van een account is een technische en contractuele maatregel die wij rechtstreeks binnen de Applicatie toepassen; voor de uitoefening ervan is geen rechterlijke uitspraak vereist. Deze bevoegdheid wordt daarom op gelijke wijze toegepast op iedere gebruiker die deze Voorwaarden schendt, ongeacht diens nationaliteit, land van verblijf, of het recht van welk land hem of haar overigens bescherming biedt. Het feit dat in Artikel 18 het Turkse recht en de Turkse rechter bevoegd zijn verklaard, beperkt de in dit artikel geregelde maatregelen op accountniveau op geen enkele wijze en stelt daaraan geen geografische grens.</li>
+        <li><strong>Melding bij ernstige schendingen:</strong> bij gedragingen die een strafbaar feit kunnen opleveren, zoals fraude, bedreiging, intimidatie of poging tot misbruik, behouden wij ons het recht voor om, naast opschorting van het account, de situatie — afhankelijk van de aard van het incident — te melden aan de bevoegde autoriteiten in Turkije, de bevoegde autoriteiten in het land waar de gebruiker zich bevindt, en/of de eigen trust & safety-afdelingen van de Apple App Store of Google Play.</li>
+        <li><strong>Gegevens na verwijdering:</strong> bij verwijdering van het account worden uw profielgegevens, berichten en bladwijzers binnen een redelijke termijn uit het systeem verwijderd; financiële gegevens waarvoor een wettelijke bewaarplicht geldt (bijv. abonnements-/betalingsgeschiedenis) kunnen worden bewaard gedurende de door de toepasselijke regelgeving voorgeschreven termijn (zie Deel II, Artikel 11).</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-13">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 13</span><h3 class="madde-title">Intellectuele Eigendom en Merkrechten</h3></div>
+    <div class="madde-body">
+      <p>De namen "Common Ground" en "DuoFine", de bijbehorende logo's, en alle elementen van de Applicatie, met inbegrip van de broncode, het ontwerp en de gebruikersinterface, zijn eigendom van de Exploitant of diens licentiegevers en worden beschermd door de wetgeving inzake intellectuele eigendom. Deze Voorwaarden verlenen u het recht de Applicatie voor persoonlijke, niet-commerciële doeleinden te gebruiken; dit houdt geen overdracht van enig eigendomsrecht op de Applicatie in.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-14">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 14</span><h3 class="madde-title">Uitsluiting van Garanties</h3></div>
+    <div class="madde-body">
+      <p>De Applicatie wordt aangeboden "zoals deze is" en "in de staat waarin deze zich bevindt". Voor zover maximaal toegestaan door toepasselijke regelgeving, geeft de Exploitant geen enkele uitdrukkelijke of stilzwijgende garantie dat de Applicatie ononderbroken, foutloos of veilig zal functioneren, noch met betrekking tot de juistheid van aanbiedingen van derde ondernemingen in het kader van W-W Deals, noch met betrekking tot het gedrag van andere gebruikers.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-15">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 15</span><h3 class="madde-title">Beperking van Aansprakelijkheid</h3></div>
+    <div class="madde-body">
+      <div class="critical">
+        <div class="critical-label">Kritieke bepaling — Aansprakelijkheidsbeperking</div>
+        <p>Voor zover maximaal toegestaan door toepasselijke regelgeving, kan de Exploitant niet aansprakelijk worden gehouden voor (a) transacties die u aangaat met derde ondernemingen in het kader van W-W Deals, (b) uw fysieke of virtuele interacties met andere gebruikers, en (c) indirecte, incidentele of gevolgschade. De totale aansprakelijkheid van de Exploitant is in alle gevallen beperkt tot het totale bedrag aan abonnements-/aankoopvergoedingen dat u in de 12 maanden voorafgaand aan de gebeurtenis waaruit de schade voortvloeit, aan de Applicatie hebt betaald.</p>
+      </div>
+      <p>Deze beperking doet geen afbreuk aan de dwingendrechtelijke rechten die u als consument geniet op grond van de Wet nr. 6502 inzake de bescherming van de consument (TKHK) en de daarmee samenhangende regelgeving; deze rechten blijven onverkort van kracht.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-16">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 16</span><h3 class="madde-title">Vrijwaring</h3></div>
+    <div class="madde-body">
+      <p>U stemt ermee in de Exploitant te vrijwaren tegen alle claims, schade en kosten (met inbegrip van redelijke advocaatkosten) die voortvloeien uit uw schending van deze Voorwaarden, uw onrechtmatig gebruik van de Applicatie of uw inbreuk op de rechten van derden.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-17">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 17</span><h3 class="madde-title">Overmacht</h3></div>
+    <div class="madde-body">
+      <p>De Exploitant kan niet aansprakelijk worden gehouden voor vertraging of niet-nakoming die voortvloeit uit gebeurtenissen die redelijkerwijs buiten onze invloedssfeer liggen, zoals natuurrampen, oorlog, epidemieën, of onderbrekingen in de dienstverlening van infrastructuuraanbieders (hosting, betalingsverkeer, store).</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-18">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 18</span><h3 class="madde-title">Toepasselijk Recht en Geschillenbeslechting</h3></div>
+    <div class="madde-body">
+      <p>Deze Voorwaarden worden beheerst door het recht van de Republiek Turkije. Voor geschillen tussen partijen zijn de rechtbanken en deurwaarderskantoren van Istanbul (Anatolische/Europese zijde) bevoegd; gebruikers die als consument optreden, hebben op grond van Wet nr. 6502 het recht zich te wenden tot de Arbitragecommissie voor Consumentengeschillen of de Consumentenrechtbank van hun eigen woonplaats of van de vestigingsplaats van de Exploitant.</p>
+      <p>Indien u buiten Turkije woonachtig bent, doet de bovenstaande rechts- en forumkeuze geen afbreuk aan de dwingendrechtelijke consumenten- of gegevensbeschermingsrechten die het recht van uw land van verblijf u toekent met betrekking tot contractuele geschillen en die niet bij overeenkomst opzij kunnen worden gezet; deze rechten blijven onverkort van kracht.</p>
+      <p>De in dit artikel bepaalde rechts- en forumkeuze geldt uitsluitend voor vorderingen die langs gerechtelijke weg worden ingesteld (bijv. een schadevergoedingsvordering). Onze in Artikel 12 geregelde bevoegdheid tot opschorting/beëindiging van een account staat hier los van en wordt toegepast op alle gebruikers, ongeacht het land waarin zij zich bevinden.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-19">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 19</span><h3 class="madde-title">Algemene Bepalingen</h3></div>
+    <div class="madde-body">
+      <p>Indien enige bepaling van deze Voorwaarden nietig of onafdwingbaar wordt geacht, laat dit de geldigheid van de overige bepalingen onverlet. Het niet uitoefenen van enig recht door de Exploitant houdt geen afstand van dat recht in. De Exploitant kan de uit deze Voorwaarden voortvloeiende rechten en verplichtingen, in geval van overdracht van de Dienst aan een andere exploitant, overdragen, mits de gebruikers hiervan binnen een redelijke termijn vooraf op de hoogte worden gesteld.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-20">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 20</span><h3 class="madde-title">Wijzigingen</h3></div>
+    <div class="madde-body">
+      <p>De Exploitant kan deze Voorwaarden van tijd tot tijd bijwerken. Belangrijke wijzigingen worden bekendgemaakt via een melding binnen de Applicatie of per e-mail. Indien u de Applicatie na een wijziging blijft gebruiken, wordt u geacht de bijgewerkte Voorwaarden te hebben aanvaard.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="kk-21">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 21</span><h3 class="madde-title">Contact</h3></div>
+    <div class="madde-body">
+      <p>Voor vragen over deze Voorwaarden: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
+    </div>
+  </article>
+
+  <!-- ======================= DEEL II — PRIVACYBELEID ======================= -->
+  <div class="part-header" id="bolum-2">
+    <div class="part-eyebrow">Deel II</div>
+    <h2 class="part-title">Privacybeleid en KVKK-informatietekst</h2>
+    <p class="part-sub">Informatietekst opgesteld overeenkomstig artikel 10 van Wet nr. 6698 inzake de bescherming van persoonsgegevens ("KVKK").</p>
+  </div>
+
+  <article class="madde" id="gp-1">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 1</span><h3 class="madde-title">Identiteit van de Verwerkingsverantwoordelijke</h3></div>
+    <div class="madde-body">
+      <p>Op grond van de KVKK worden uw persoonsgegevens verwerkt door de onderneming die handelt onder de naam <strong>DuoFine</strong> (hierna "DuoFine" of "wij"), in de hoedanigheid van verwerkingsverantwoordelijke, binnen de hierna toegelichte reikwijdte en voor de hierna toegelichte doeleinden.</p>
+      <div class="table-scroll">
+        <table class="data-table">
+          <tr><th>Handelsnaam</th><td>DuoFine</td></tr>
+          <tr><th>E-mail</th><td>info@duofine.com</td></tr>
+        </table>
+      </div>
+      <p><em>Toelichting: in deze tabel is uitgegaan van de minimale gegevens (naam en contactkanaal) die op grond van artikel 10 van de KVKK voldoende zijn voor de identificatie van de verwerkingsverantwoordelijke. Gevoelige persoonsgegevens zoals het Turkse identiteitsnummer of het woonadres van een natuurlijke persoon zijn hier niet opgenomen, aangezien geen wettelijke bepaling voorschrijft dat deze in dit document openbaar worden gemaakt. Aangezien op dit moment geen afzonderlijke fiscale registratie of registratie als rechtspersoon bestaat, zijn de velden Belastingnummer en MERSIS-nummer evenmin in de tabel opgenomen; zodra een van beide in de toekomst tot stand komt, wordt deze aan de tabel toegevoegd en wordt op dezelfde wijze het reeds openbare, in het handelsregister ingeschreven vestigingsadres verwerkt; indien nodig wordt ook een afzonderlijke registratie in het Register van Verwerkingsverantwoordelijken (VERBİS) overwogen.</em></p>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-2">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 2</span><h3 class="madde-title">Reikwijdte van dit Beleid</h3></div>
+    <div class="madde-body">
+      <p>Dit Beleid heeft betrekking op de verwerking van persoonsgegevens van geregistreerde gebruikers van de mobiele applicatie Common Ground, potentiële gebruikers die de applicatie bezoeken, en vertegenwoordigers van partnerondernemingen die in het kader van W-W Deals met ons contact opnemen. Gegevens die via de bedrijfswebsite van DuoFine worden verzameld, vallen eveneens onder dit Beleid.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-3">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 3</span><h3 class="madde-title">Categorieën van Verwerkte Persoonsgegevens</h3></div>
+    <div class="madde-body">
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Binnen de Applicatie daadwerkelijk verzamelde gegevenscategorieën en hun bron</caption>
+          <tr><th>Categorie</th><th>Voorbeelden</th><th>Bron</th></tr>
+          <tr><td>Identiteit</td><td>Voornaam, achternaam, geboortedatum</td><td>Rechtstreeks van u (registratieformulier)</td></tr>
+          <tr><td>Contact</td><td>E-mailadres</td><td>Rechtstreeks van u</td></tr>
+          <tr><td>Beeldmateriaal</td><td>Profielfoto</td><td>Rechtstreeks van u (bij het uploaden)</td></tr>
+          <tr><td>Locatiegegevens</td><td>Real-time GPS-coördinaten</td><td>De locatiediensten van uw apparaat (afhankelijk van uw toestemming)</td></tr>
+          <tr><td>Apparaat- en technische gegevens</td><td>Apparaatmodel, besturingssysteem, pushmeldingstoken, applicatieversie</td><td>Automatisch (van het apparaat)</td></tr>
+          <tr><td>Gebruiks-/transactiegegevens</td><td>Vriendschapsrelaties, metadata van berichtenverkeer, bladwijzervermeldingen, gebruiksgeschiedenis van W-W Deals</td><td>Automatisch, uit uw gebruik van de Applicatie</td></tr>
+          <tr><td>Transactiebeveiligingsgegevens</td><td>Identificatie van het apparaat waarmee het account voor het eerst is gekoppeld (ten behoeve van detectie van meervoudige accounts)</td><td>Automatisch (van het apparaat)</td></tr>
+          <tr><td>Financiële gegevens (beperkt)</td><td>Status en bedrag van abonnements-/tokenaankopen (betaalkaartgegevens bereiken ons niet)</td><td>Via Apple/Google, door tussenkomst van RevenueCat</td></tr>
+          <tr><td>Marketing-/analysegegevens</td><td>Navigatie- en interactiestatistieken binnen de Applicatie</td><td>Automatisch (analytics-SDK)</td></tr>
+        </table>
+      </div>
+      <p><strong>Niet-verzamelde gegevens:</strong> gegevens zoals het betaalkaartnummer of de CVV-code bereiken ons in geen enkel stadium; deze gegevens worden rechtstreeks verwerkt door Apple/Google. De Applicatie bewaart de inhoud van uw berichten niet permanent aan serverzijde (zie Artikel 11).</p>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-4">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 4</span><h3 class="madde-title">Doeleinden van de Verwerking van Persoonsgegevens</h3></div>
+    <div class="madde-body">
+      <ol>
+        <li>het aanmaken van uw account, uw identiteitsverificatie en het verlenen van toegang tot de Dienst;</li>
+        <li>het aanbieden van de kernfuncties van de Applicatie, waaronder plaatsverkenning, de berekening van een gemeenschappelijk ontmoetingspunt en de weergave van W-W Deals;</li>
+        <li>het functioneren van chat- en sociale-interactiefuncties met uw vrienden;</li>
+        <li>de verwerking en verrekening van abonnements- en tokenaankopen op uw account;</li>
+        <li>de opsporing en preventie van misbruik, zoals valse accounts, dubbele registraties en misbruik van W-W Deals;</li>
+        <li>het versturen van pushmeldingen (met uw toestemming);</li>
+        <li>het meten van de kwaliteit van de Dienst, de opsporing van fouten/crashes, en productontwikkeling;</li>
+        <li>het voldoen aan wettelijke verplichtingen (belasting, boekhouding, verzoeken van overheidsinstanties);</li>
+        <li>het beheer van juridische geschillen en de bescherming van onze rechten.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-5">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 5</span><h3 class="madde-title">Rechtsgronden voor de Verwerking van Persoonsgegevens</h3></div>
+    <div class="madde-body">
+      <p>Uw persoonsgegevens worden verwerkt op basis van de volgende rechtsgronden, opgesomd in artikel 5 van de KVKK:</p>
+      <ul>
+        <li><strong>Totstandkoming/uitvoering van de overeenkomst (art. 5/2-c):</strong> uw identiteits- en contactgegevens ten behoeve van het aanmaken van een account, het leveren van de Dienst en het beheer van abonnementen;</li>
+        <li><strong>Uitdrukkelijke toestemming (art. 5/1):</strong> hoewel locatiegegevens niet vallen onder de definitie van bijzondere categorieën van persoonsgegevens in de zin van de KVKK (artikel 6), zijn zij intensief persoonlijk/aan een locatie gebonden; voor het verzamelen ervan en voor handelingen zoals het delen van locatie met uw vrienden wordt afzonderlijk toestemming gevraagd bij het locatietoestemmingsverzoek;</li>
+        <li><strong>Nakoming van een wettelijke verplichting (art. 5/2-ç):</strong> het bewaren van financiële gegevens op grond van de fiscale en boekhoudkundige regelgeving;</li>
+        <li><strong>Gerechtvaardigd belang (art. 5/2-f):</strong> het voorkomen van fraude, dubbele accounts en misbruik, het waarborgen van de veiligheid van de Dienst, en basale productanalyse — deze verwerking wordt op evenredige wijze uitgevoerd, afgewogen tegen uw fundamentele rechten en vrijheden;</li>
+        <li><strong>Noodzakelijk voor de vestiging, uitoefening of bescherming van een recht (art. 5/2-e):</strong> de verwerking van de daartoe benodigde gegevens in het kader van juridische geschillen en vorderingsprocedures.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-6">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 6</span><h3 class="madde-title">Bijzondere Bepaling betreffende Locatiegegevens</h3></div>
+    <div class="madde-body">
+      <div class="critical">
+        <div class="critical-label">Kritieke bepaling — Locatiegegevens</div>
+        <p>Toestemming voor locatiegegevens wordt afzonderlijk en uitdrukkelijk via uw besturingssysteem gevraagd; indien u deze niet verleent, werken uitsluitend de op locatie gebaseerde functies (verkenning, berekening van een gemeenschappelijk punt, aanbiedingen in de buurt) niet — uw account wordt hierdoor niet beïnvloed. Locatiegegevens worden uitsluitend gedurende de sessie (in-memory) verwerkt ten behoeve van het functioneren van de kaart- en verkenningsschermen; conform de gebruiksvoorwaarden van het Google Maps Platform worden uw coördinaten niet permanent op schijf/in een database opgeslagen en kunnen zij voor ten hoogste 30 kalenderdagen tijdelijk in de cache worden bewaard.</p>
+      </div>
+      <p><strong>Delen van locatie met vrienden:</strong> bepaalde functies (bijv. het delen van een "locatiekaart") zijn uitsluitend actief met gebruikers waarmee u een wederzijdse vriendschapsrelatie bent aangegaan, en alleen wanneer u ervoor kiest te delen; uw locatie is standaard niet zichtbaar voor andere gebruikers.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-7">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 7</span><h3 class="madde-title">Bijzondere Bepaling betreffende Google Maps/Places-inhoud</h3></div>
+    <div class="madde-body">
+      <p>Op grond van de Servicevoorwaarden van het Google Maps Platform mag van Google afkomstige inhoud, zoals de bedrijfsnaam, foto, telefoonnummer of beoordeling, niet permanent worden bewaard. Om die reden geldt het volgende:</p>
+      <ul>
+        <li>de bedrijfsnaam die bij de bladwijzerfunctie wordt weergegeven, is niet afkomstig van Google; het betreft een label dat <strong>u zelf hebt ingevoerd</strong> bij het aanmaken van de vermelding, en dat als zodanig wordt bewaard.</li>
+        <li>de locatie-identificatie (place_id) kan voor onbeperkte tijd worden bewaard; de gegevens over breedte-/lengtegraad worden echter uitsluitend voor 30 dagen tijdelijk in de cache bewaard.</li>
+        <li>het bladwijzertabblad verzendt geen enkele opvraging van plaats/foto/naam naar Google; er wordt uitsluitend lokaal gezocht binnen uw eigen vermeldingen.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-8">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 8</span><h3 class="madde-title">Gegevens Verwerkt in het Kader van W-W Deals</h3></div>
+    <div class="madde-body">
+      <p>Wanneer u gebruik maakt van een W-W Deal, wordt door ons een vastlegging (gebruiksgeschiedenis) bijgehouden van welke aanbieding, bij welke onderneming, op welke datum en welk tijdstip u hebt gebruikt. Deze gegevens worden verwerkt met het oog op de toepassing van de wekelijkse gebruikslimiet, de opsporing van misbruik en het verstrekken van geanonimiseerde/geaggregeerde prestatie-informatie aan partnerondernemingen. Deze gegevens worden slechts in beperkte mate met de betreffende partneronderneming gedeeld, uitsluitend ten behoeve van de verificatie van de promotie (de bevestiging van de geldigheid van de code door het personeel van de onderneming); uw identiteitsgegevens (e-mailadres, volledige naam) worden niet aan de onderneming overgedragen.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-9">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 9</span><h3 class="madde-title">Abonnements- en Betalingsgegevens</h3></div>
+    <div class="madde-body">
+      <p>Betalingstransacties worden rechtstreeks uitgevoerd door de Apple App Store of Google Play; uw kaartgegevens bereiken ons niet. Uw abonnements-/tokenstatus (actief plan, aankoopdatum, bedrag) wordt aan ons doorgegeven via <strong>RevenueCat</strong>, onze integratie voor betalingsverwerking, en verwerkt met het oog op het correct toekennen van de bijbehorende rechten (premiumniveau) aan uw account.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-10">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 10</span><h3 class="madde-title">Doorgifte van Persoonsgegevens (Binnenlands/Buitenlands)</h3></div>
+    <div class="madde-body">
+      <p>Uw persoonsgegevens worden, uitsluitend voor zover de dienst dit vereist, gedeeld met de technische-infrastructuuraanbieders die noodzakelijk zijn voor het leveren van de Dienst. Een deel van deze aanbieders is gevestigd in het buitenland (met name in de Verenigde Staten en de Europese Unie); deze doorgiften vinden plaats overeenkomstig artikel 9 van de KVKK en de door de Turkse Autoriteit Bescherming Persoonsgegevens (Kişisel Verileri Koruma Kurulu) vastgestelde doorgiftemechanismen (uitdrukkelijke toestemming, door de Autoriteit goedgekeurde standaardovereenkomst, enz.).</p>
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Belangrijkste subverwerkers / dienstverleners</caption>
+          <tr><th>Aanbieder</th><th>Doel</th><th>Locatie</th></tr>
+          <tr><td>Railway</td><td>Serverhosting (backend)</td><td>Buitenland</td></tr>
+          <tr><td>Backblaze B2</td><td>Opslag van profielfoto's en beeldmateriaal</td><td>Buitenland</td></tr>
+          <tr><td>RevenueCat</td><td>Beheer van abonnementen/aankopen</td><td>Buitenland</td></tr>
+          <tr><td>Google (Maps Platform, Sign-In)</td><td>Kaart, plaatsgegevens, inloggen met Google</td><td>Buitenland</td></tr>
+          <tr><td>Apple (Sign in with Apple, App Store)</td><td>Identiteitsverificatie, betalingen</td><td>Buitenland</td></tr>
+          <tr><td>Sentry</td><td>Fout-/crashmonitoring</td><td>Buitenland</td></tr>
+          <tr><td>PostHog</td><td>Productanalyse</td><td>Buitenland</td></tr>
+        </table>
+      </div>
+      <p>Binnenlands kunnen persoonsgegevens uitsluitend worden gedeeld met bevoegde overheidsinstanties en -organen, in het kader van onze wettelijke verplichtingen (op verzoek).</p>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-11">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 11</span><h3 class="madde-title">Bewaartermijnen</h3></div>
+    <div class="madde-body">
+      <ul>
+        <li><strong>Profielgegevens:</strong> worden bewaard zolang uw account actief is, en worden binnen een redelijke termijn na uw verzoek tot verwijdering van het account gewist.</li>
+        <li><strong>Locatiegegevens:</strong> worden niet permanent bewaard; zij worden uitsluitend in het sessiegeheugen bijgehouden ten behoeve van de kaart-/verkenningsfuncties (Artikel 6).</li>
+        <li><strong>Berichten:</strong> aan serverzijde wordt geen permanent berichtenarchief bijgehouden; de lokale cache op uw apparaat is onderworpen aan de eigen back-up-/beveiligingsinstellingen van uw apparaat.</li>
+        <li><strong>Gebruiksgeschiedenis van W-W Deals:</strong> wordt gedurende een redelijke termijn bewaard ten behoeve van de berekening van de wekelijkse limiet en de opsporing van misbruik.</li>
+        <li><strong>Financiële/abonnementsgegevens:</strong> kunnen worden bewaard gedurende de wettelijke bewaartermijn die voortvloeit uit het Turkse Wetboek van Koophandel (Türk Ticaret Kanunu) en de Wet op de Belastingprocedure (Vergi Usul Kanunu) (in het algemeen tot 10 jaar).</li>
+        <li><strong>Registratie van de apparaatkoppeling:</strong> de koppeling tussen het account en het apparaat waarmee het account voor het eerst is verbonden, wordt ter voorkoming van misbruik van meervoudige accounts, uit veiligheidsoverwegingen bewaard.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-12">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 12</span><h3 class="madde-title">Maatregelen voor Gegevensbeveiliging</h3></div>
+    <div class="madde-body">
+      <p>Ter waarborging van de veiligheid van uw persoonsgegevens worden technische en organisatorische maatregelen toegepast, zoals versleuteling (TLS tijdens doorgifte), toegangscontrole, logging en periodieke beveiligingsbeoordelingen. Niettemin erkent u dat geen enkele methode van doorgifte via het internet 100% veilig is.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-13">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 13</span><h3 class="madde-title">Privacy van Kinderen</h3></div>
+    <div class="madde-body">
+      <p>De Dienst is niet gericht op personen jonger dan 13 jaar en er worden bewust geen persoonsgegevens van deze leeftijdsgroep verzameld. Zodra wij vaststellen dat een gebruiker jonger is dan 13 jaar, wordt diens account onmiddellijk gesloten en worden de betreffende gegevens verwijderd. Indien u van mening bent dat uw kind persoonsgegevens aan ons heeft verstrekt, neem dan contact met ons op via <a href="mailto:info@duofine.com">info@duofine.com</a>.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-14">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 14</span><h3 class="madde-title">SDK's en Analytics-tools</h3></div>
+    <div class="madde-body">
+      <p>De Applicatie is geen website die gebruikmaakt van cookies; in plaats daarvan verzamelt zij, via mobiele SDK's, beperkte technische/analytische gegevens:</p>
+      <ul>
+        <li><strong>PostHog:</strong> voor gebruiksstatistieken binnen de Applicatie (welke schermen worden bezocht, welke functies worden gebruikt);</li>
+        <li><strong>Sentry:</strong> voor de diagnose van crashes en fouten in de Applicatie (uitsluitend technische foutgegevens, met onderscheid tussen productie- en ontwikkel-builds);</li>
+        <li><strong>RevenueCat:</strong> voor de verificatie van uw abonnementsstatus.</li>
+      </ul>
+      <p>Deze tools worden niet gebruikt voor gepersonaliseerde reclame; uw gegevens worden niet aan derden verkocht of verhuurd voor marketingdoeleinden.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-15">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 15</span><h3 class="madde-title">Rechten van de Betrokkene (KVKK art. 11)</h3></div>
+    <div class="madde-body">
+      <p>Op grond van artikel 11 van de KVKK beschikt u over de volgende rechten:</p>
+      <ol>
+        <li>te vernemen of uw persoonsgegevens worden verwerkt;</li>
+        <li>indien deze worden verwerkt, hierover informatie op te vragen;</li>
+        <li>te vernemen wat het doel van de verwerking is en of de gegevens overeenkomstig dat doel worden gebruikt;</li>
+        <li>te weten aan welke derden de gegevens, in binnen- of buitenland, zijn doorgegeven;</li>
+        <li>correctie te verzoeken indien de gegevens onvolledig of onjuist zijn verwerkt;</li>
+        <li>verwijdering of vernietiging van de gegevens te verzoeken binnen de in artikel 7 van de KVKK gestelde voorwaarden;</li>
+        <li>te verzoeken dat correctie-/verwijderingshandelingen worden meegedeeld aan de derden aan wie de gegevens zijn doorgegeven;</li>
+        <li>bezwaar te maken tegen een voor u nadelig resultaat dat uitsluitend voortvloeit uit geautomatiseerde analyse van de verwerkte gegevens;</li>
+        <li>vergoeding te vorderen van schade die u lijdt als gevolg van onrechtmatige verwerking.</li>
+      </ol>
+      <p>Om deze rechten uit te oefenen, kunt u zich schriftelijk tot ons wenden via het in Artikel 18 vermelde contactkanaal. Uw verzoek wordt, kosteloos, afgehandeld binnen de in de KVKK bepaalde termijn (afhankelijk van de aard van het verzoek uiterlijk 30 dagen); indien de afhandeling extra kosten met zich meebrengt, kan een vergoeding worden gevraagd overeenkomstig het door de Turkse Autoriteit Bescherming Persoonsgegevens vastgestelde tarief.</p>
+      <div class="critical">
+        <div class="critical-label">Aanvullende Informatie voor Gebruikers Gevestigd in de Europese Economische Ruimte, het Verenigd Koninkrijk of Zwitserland</div>
+        <p>Bovenstaande rechten zijn geformuleerd op basis van de KVKK; indien u gevestigd bent in de Europese Economische Ruimte (EER), het Verenigd Koninkrijk of Zwitserland, worden uw gegevens daarnaast beschermd op grond van de Algemene Verordening Gegevensbescherming (AVG) of de toepasselijke lokale regelgeving, en dit wordt niet beïnvloed door de rechts-/forumkeuze in Deel I, Artikel 18. Concreet betekent dit: naast bovengenoemde rechten kunt u verzoeken dat uw gegevens in een gestructureerd, gangbaar formaat aan u worden overgedragen (gegevensoverdraagbaarheid), en indien u niet tevreden bent met de afhandeling van uw verzoek, kunt u — in plaats van of naast een rechtstreeks verzoek aan ons — een klacht indienen bij de bevoegde toezichthoudende autoriteit voor gegevensbescherming van uw eigen land.</p>
+        <p>Ter wille van de transparantie merken wij op: DuoFine heeft, gelet op haar huidige schaal, geen in de EER gevestigde AVG-vertegenwoordiger aangewezen; dit is gebaseerd op de beoordeling dat wij geen activiteiten verrichten die rechtstreeks op de EER-markt zijn gericht en dat de omvang van de verwerking beperkt is. Naarmate ons aantal gebruikers in de EER groeit, zal deze beoordeling opnieuw worden verricht en zal, indien nodig, een formele vertegenwoordiger worden aangewezen.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-16">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 16</span><h3 class="madde-title">Melding van Datalekken</h3></div>
+    <div class="madde-body">
+      <p>Indien uw persoonsgegevens op onrechtmatige wijze in handen van derden komen, wordt de betreffende situatie, overeenkomstig artikel 12 van de KVKK, zo spoedig mogelijk gemeld aan de betrokkenen en aan de Turkse Autoriteit Bescherming Persoonsgegevens.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-17">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 17</span><h3 class="madde-title">Wijzigingen in het Beleid</h3></div>
+    <div class="madde-body">
+      <p>Dit Beleid kan van tijd tot tijd worden herzien naar aanleiding van wijzigingen in de regelgeving of updates van de Dienst. De actuele versie wordt steeds op deze pagina en binnen de Applicatie gepubliceerd; belangrijke wijzigingen worden bovendien afzonderlijk gemeld.</p>
+    </div>
+  </article>
+
+  <article class="madde" id="gp-18">
+    <div class="madde-head"><span class="madde-num">ARTIKEL 18</span><h3 class="madde-title">Contact en Verzoeken</h3></div>
+    <div class="madde-body">
+      <p>Voor privacygerelateerde en KVKK-verzoeken: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
+      <p class="divider-quote">Wanneer u bij een schriftelijk verzoek identiteitsbevestigende informatie/documentatie meestuurt en uw verzoek duidelijk omschrijft, draagt dit bij aan een snelle afhandeling van uw verzoek.</p>
+    </div>
+  </article>
+
+  <p style="text-align:right; margin-top:40px;"><a class="back-to-top" href="#bolum-1">↑ Terug naar boven</a></p>
+
+</main>
+
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <div>© 2026 DuoFine — Common Ground. Alle rechten voorbehouden.</div>
+    <div>Dit document is een vertaling van het Turkse bronconcept (versie TR-1.3); voor toepassing binnen de app (<code>app/locales/*.json</code>) is uitsluitend de Turkse brontekst leidend en bindend.</div>
+  </div>
+</footer>
+</body>
+</html>
