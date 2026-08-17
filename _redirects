@@ -1,1 +1,19 @@
+/legal/tr.html    /privacypolicy?lang=tr    301
+/legal/en.html    /privacypolicy?lang=en    301
+/legal/es.html    /privacypolicy?lang=es    301
+/legal/ar.html    /privacypolicy?lang=ar    301
+/legal/de.html    /privacypolicy?lang=de    301
+/legal/fr.html    /privacypolicy?lang=fr    301
+/legal/hi.html    /privacypolicy?lang=hi    301
+/legal/ja.html    /privacypolicy?lang=ja    301
+/legal/pt.html    /privacypolicy?lang=pt    301
+/legal/zh.html    /privacypolicy?lang=zh    301
+/legal/ko.html    /privacypolicy?lang=ko    301
+/legal/ru.html    /privacypolicy?lang=ru    301
+/legal/id.html    /privacypolicy?lang=id    301
+/legal/it.html    /privacypolicy?lang=it    301
+/legal/vi.html    /privacypolicy?lang=vi    301
+/legal/nl.html    /privacypolicy?lang=nl    301
+/legal/*          /privacypolicy            301
+
 /*    /404.html   404
