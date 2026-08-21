@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Uygulama yardımcı sayfaları — arama sonuçlarında yer almamalı
+Disallow: /activate.html
+Disallow: /email_change.html
+Disallow: /password_change.html
+Disallow: /form-handler.html
+
+Sitemap: https://duofine.com/sitemap.xml

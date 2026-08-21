@@ -1,191 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google SEO Başlık ve Açıklama -->
-    <title>DuoFine | High-Performance Digital Product Engineering</title>
-    <meta name="description" content="DuoFine is a global technology venture specializing in high-performance digital products, scalable backend systems, and award-winning user interfaces. Speed meets precision.">
-    
-    <!-- 1. Tarayıcı Sekmeleri İçin Kristal Netlikte SVG -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M30 85 C 80 85, 80 15, 30 15' stroke-width='14' stroke='%234364F7' fill='none' stroke-linecap='round'/%3E%3Cpath d='M70 15 C 20 15, 20 85, 70 85' stroke-width='14' stroke='%234364F7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
-    
-    <!-- 2. Google Arama Sonuçları İçin -->
-    <link rel="shortcut icon" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/favicon.png">
+<script>document.documentElement.className+=" js"</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://formsubmit.co https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; frame-src 'none'; upgrade-insecure-requests">
 
-    <!-- Google Arama Sonuçları İçin Logo Verisi -->
-    <script type="application/ld+json">
+<title>DuoFine | High-Performance Digital Product Engineering</title>
+<meta name="description" content="DuoFine is a global technology venture building high-performance digital products, scalable backend systems, and award-winning user interfaces. Speed meets precision.">
+<link rel="canonical" href="https://duofine.com/">
+<meta name="theme-color" content="#0B1020">
+
+<!-- Sosyal paylaşım -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DuoFine">
+<meta property="og:url" content="https://duofine.com/">
+<meta property="og:title" content="DuoFine — High-Performance Digital Product Engineering">
+<meta property="og:description" content="Scalable backends, award-winning interfaces, and products shipped in record time. Speed meets precision.">
+<meta property="og:image" content="https://duofine.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DuoFine — High-Performance Digital Product Engineering">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@duofine">
+<meta name="twitter:title" content="DuoFine — High-Performance Digital Product Engineering">
+<meta name="twitter:description" content="Scalable backends, award-winning interfaces, and products shipped in record time.">
+<meta name="twitter:image" content="https://duofine.com/assets/img/og-image.png">
+
+<!-- İkonlar -->
+<link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Yazı tipleri: self-hosted, kritik ağırlıklar öne alınır -->
+<link rel="preload" href="/assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://duofine.com/#organization",
       "name": "DuoFine",
-      "url": "https://duofine.com",
-      "logo": "https://duofine.com/favicon.png"
+      "url": "https://duofine.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://duofine.com/assets/img/logo-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Global technology venture building high-performance digital products, scalable backend systems, and award-winning user interfaces.",
+      "email": "info@duofine.com",
+      "sameAs": [
+        "https://www.instagram.com/duofineofficial",
+        "https://x.com/duofine"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "info@duofine.com",
+        "availableLanguage": ["English", "Turkish"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://duofine.com/#website",
+      "url": "https://duofine.com/",
+      "name": "DuoFine",
+      "publisher": { "@id": "https://duofine.com/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Common Ground",
+      "applicationCategory": "SocialNetworkingApplication",
+      "operatingSystem": "iOS, Android",
+      "author": { "@id": "https://duofine.com/#organization" },
+      "description": "A platform that brings people together under the most optimal, fun, and efficient conditions based on their location, with instant messaging, live location and meetup evaluation.",
+      "downloadUrl": [
+        "https://apps.apple.com/us/app/common-ground/id6748603386",
+        "https://play.google.com/store/apps/details?id=com.duofine.CG"
+      ],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "ShenTechin MED",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "iOS, Android",
+      "author": { "@id": "https://duofine.com/#organization" },
+      "description": "Health-tech ecosystem merging advanced algorithms with clinical research, supervised by medical professionals."
     }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31K97WJQ23"></script>
-    <script>
-      window.dataLayer = window.dataLayer ||[];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-31K97WJQ23');
-    </script>
+  ]
+}
+</script>
 </head>
 <body>
 
-    <header class="main-header">
-        <nav class="navbar">
-            <a href="#" class="nav-logo">
-                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
-                    <path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
-                </svg>
-                <span>DuoFine</span>
-            </a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#about" class="nav-link" data-link="about">About</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link" data-link="projects">Projects</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link" data-link="contact">Contact</a></li>
-                <!-- Ayırıcı ve Blog Butonu -->
-                <li class="nav-item nav-item-divider"></li>
-                <li class="nav-item"><a href="blog.html" class="nav-blog-btn">Blog</a></li>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="top-sentinel" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round">
+          <path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/>
+        </svg>
+        <span>DuoFine</span>
+      </a>
+
+      <ul class="nav-list" id="nav-list">
+        <li><a href="#about" data-spy="about">About</a></li>
+        <li><a href="#work" data-spy="work">Work</a></li>
+        <li><a href="#contact" data-spy="contact">Contact</a></li>
+        <li><a class="nav-cta" href="/blog/">Blog</a></li>
+      </ul>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <h1><span class="type">Building the Future, Together.</span><span class="caret" aria-hidden="true"></span></h1>
+      <p class="hero-sub">Reliable web and mobile products — from complex backend systems and real-time infrastructure to the interfaces people actually enjoy using.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Start a project</a>
+        <a class="btn btn-ghost" href="#work">See the work</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof" aria-label="Track record">
+    <div class="wrap">
+      <dl class="proof-grid">
+        <div class="proof-cell">
+          <dt>94<span class="unit">%</span></dt>
+          <dd>Faster system performance after architectural optimisation</dd>
+        </div>
+        <div class="proof-cell">
+          <dt>82<span class="unit">%</span></dt>
+          <dd>Lower operational cost through smarter infrastructure decisions</dd>
+        </div>
+        <div class="proof-cell">
+          <dt>38<span class="unit">ms</span></dt>
+          <dd>Chat query latency at p95, down from 700&nbsp;ms</dd>
+        </div>
+      </dl>
+      <p class="proof-note">The last one is written up in full — <a href="/blog/postgresql-700ms-to-38ms/">how a 700&nbsp;ms PostgreSQL query became 38&nbsp;ms</a>.</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">About</span>
+        <h2>Speed meets precision</h2>
+      </div>
+      <div class="prose reveal">
+        <p>DuoFine is a global technology venture where <strong>speed meets precision</strong>. The focus is turning complex ideas into high-performance digital products in record time — every solution scalable, secure, and ready for immediate market entry.</p>
+        <p>A track record of delivering acclaimed products sits at the core of this operation: optimising system performance by over <strong>94%</strong>, running infrastructure for thousands of concurrent users, and cutting operational cost by up to <strong>82%</strong> through smart architectural decisions.</p>
+        <p>Engineering here goes beyond writing code. It is about building assets that drive growth — bridging sophisticated backend logic and intuitive interfaces so every product is powerful <em>and</em> a delight to use.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Work</span>
+        <h2>Products in production</h2>
+        <p>Three shipped platforms, each with a different hard problem at its centre.</p>
+      </div>
+
+      <div class="projects">
+
+        <article class="project is-reverse reveal">
+          <figure class="project-media">
+            <picture>
+              <source type="image/avif" srcset="/assets/img/shentechin-480.avif 480w, /assets/img/shentechin-960.avif 960w, /assets/img/shentechin-1440.avif 1440w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
+              <source type="image/webp" srcset="/assets/img/shentechin-480.webp 480w, /assets/img/shentechin-960.webp 960w, /assets/img/shentechin-1440.webp 1440w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
+              <img src="/assets/img/shentechin-960.jpg" width="960" height="480" alt="ShenTechin MED healthcare technology platform" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <div class="project-body">
+            <h3>ShenTechin MED</h3>
+            <p>A health-tech ecosystem merging advanced algorithms with clinical research. Supervised by medical professionals, it decodes health and personality data through AI-driven analysis of sleep patterns, metabolic nutrition, and dermatology — turning complex medical data into actionable wellness insight.</p>
+            <ul class="project-metrics">
+              <li>AI-driven analysis</li>
+              <li>Clinically supervised</li>
+              <li>Three health domains</li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+          </div>
+        </article>
 
-    <main>
-        <section class="hero" data-section="home" data-title="Company">
-            <div class="hero-content">
-                <h1 id="typing-headline"></h1>
-                <p>Building reliable web and mobile solutions, from complex backend systems to simple, high-quality interfaces.</p>
-                <a href="#contact" class="cta-button">Get in Touch</a>
+        <article class="project reveal">
+          <figure class="project-media is-square">
+            <picture>
+              <source type="image/avif" srcset="/assets/img/commonground-480.avif 480w, /assets/img/commonground-960.avif 960w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
+              <source type="image/webp" srcset="/assets/img/commonground-480.webp 480w, /assets/img/commonground-960.webp 960w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
+              <img src="/assets/img/commonground-960.jpg" width="960" height="960" alt="Common Ground mobile app" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <div class="project-body">
+            <h3>Common Ground</h3>
+            <p>A platform engineered to bring people together under the most optimal, fun, and efficient conditions based on their location. Instant messaging, live location tracking, and a seamless meetup evaluation system maximise the potential for meaningful connections.</p>
+            <ul class="project-metrics">
+              <li>React Native + Django</li>
+              <li>Real-time WebSockets</li>
+              <li>38&nbsp;ms p95 chat load</li>
+            </ul>
+            <div class="store-badges">
+              <a href="https://apps.apple.com/us/app/common-ground/id6748603386" target="_blank" rel="noopener" aria-label="Download Common Ground on the App Store">
+                <img class="badge-appstore" src="/assets/img/badge-appstore.svg" width="120" height="40" alt="Download on the App Store" loading="lazy" decoding="async">
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.duofine.CG" target="_blank" rel="noopener" aria-label="Get Common Ground on Google Play">
+                <img class="badge-googleplay" src="/assets/img/badge-googleplay.png" width="646" height="250" alt="Get it on Google Play" loading="lazy" decoding="async">
+              </a>
             </div>
-        </section>
+          </div>
+        </article>
 
-        <section id="about" class="content-section hidden" data-section="about" data-title="About">
-            <h2>About</h2>
-            <div class="about-grid">
-                <p>DuoFine is a global technology venture where <strong>speed meets precision</strong>. The primary focus is turning complex ideas into high-performance digital products in record time. Every solution is designed to be scalable, secure, and ready for immediate market entry.</p>
-                <p>A proven track record of delivering highly acclaimed products stands as the core of this operation. Expertise includes optimizing system performance by over <strong>94%</strong>, managing infrastructures for thousands of concurrent users, and reducing operational costs by up to <strong>82%</strong> through smart architectural decisions.</p>
-                <p>Engineering at DuoFine goes beyond just writing code. It is about building assets that drive growth. By bridging the gap between sophisticated backend logic and intuitive user interfaces, DuoFine ensures that every product is not only powerful but also a delight to use.</p>
-            </div>
-        </section>
+        <article class="project is-reverse reveal">
+          <figure class="project-media">
+            <picture>
+              <source type="image/avif" srcset="/assets/img/ucdplast-480.avif 480w, /assets/img/ucdplast-960.avif 960w, /assets/img/ucdplast-1440.avif 1440w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
+              <source type="image/webp" srcset="/assets/img/ucdplast-480.webp 480w, /assets/img/ucdplast-960.webp 960w, /assets/img/ucdplast-1440.webp 1440w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
+              <img src="/assets/img/ucdplast-960.jpg" width="960" height="467" alt="UCD Plast — award-winning industrial B2B platform" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <div class="project-body">
+            <h3>UCD Plast</h3>
+            <p>A comprehensive industrial B2B platform. <a href="https://ucdplast.com" target="_blank" rel="noopener">ucdplast.com</a> was designed and built to convert organic traffic into high-quality leads — optimised mobile CTAs and rebuilt form flows removed the friction, and conversion rose sharply.</p>
+            <ul class="project-metrics">
+              <li>Industrial B2B</li>
+              <li>Organic lead conversion</li>
+            </ul>
+            <p class="award">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 8.4l6.1-.8z"/></svg>
+              Top 5 of 10,000+ entries — Corporate LiveWire Innovation &amp; Excellence Awards 2026
+            </p>
+          </div>
+        </article>
 
-        <!-- Project 1: ShenTechin MED -->
-        <section id="projects" class="feature-section layout-reverse hidden" data-section="projects" data-title="Projects">
-            <div class="feature-image">
-                <img src="feature-technology.jpg" alt="ShenTechin MED - Healthcare Technology Platform" loading="lazy">
-            </div>
-            <div class="feature-content">
-                <h2>ShenTechin MED</h2>
-                <p>ShenTechin MED is a health-tech ecosystem that merges advanced algorithms with clinical research. Supervised by medical professionals, it decodes health and personality DNA through AI-driven analysis of sleep patterns, metabolic nutrition, and dermatology. This platform transforms complex medical data into actionable wellness insights.</p>
-            </div>
-        </section>
+      </div>
+    </div>
+  </section>
 
-        <!-- Project 2: Common Ground -->
-        <section class="feature-section hidden">
-            <div class="feature-image">
-                <img src="common-ground.jpg" alt="Common Ground Mobile App" loading="lazy">
-            </div>
-            <div class="feature-content">
-                <h2 class="project-title" style="font-size: 2.2rem; text-align: left;">Common Ground</h2>
-                <p class="project-description">Common Ground is a platform engineered to bring people together under the most optimal, fun, and efficient conditions based on their location. Empowering users with features like instant messaging, live location tracking, and a seamless meetup evaluation system, the application maximizes the potential for meaningful connections.</p>
-                
-                <div class="store-buttons">
-                    <a href="https://apps.apple.com/us/app/common-ground/id6748603386" target="_blank" rel="noopener noreferrer" class="store-button">
-                        <img src="831327.png" class="store-icon" alt="App Store">
-                        <div class="store-text">
-                            <span class="store-subtitle">Download on the</span>
-                            <span class="store-title">App Store</span>
-                        </div>
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.duofine.CG" target="_blank" rel="noopener noreferrer" class="store-button">
-                        <img src="2111473.png" class="store-icon" alt="Google Play">
-                        <div class="store-text">
-                            <span class="store-subtitle">Get it on</span>
-                            <span class="store-title">Google Play</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Project 3: UCD Plast -->
-        <section class="feature-section layout-reverse hidden">
-            <div class="feature-image">
-                <img src="feature-vision.jpg" alt="UCD Plast - Award-winning industrial B2B platform." loading="lazy">
-            </div>
-            <div class="feature-content">
-                <h2>UCD Plast</h2>
-                <p>Delivered as a comprehensive industrial B2B platform, <a href="https://ucdplast.com" target="_blank" rel="noopener noreferrer">ucdplast.com</a> was designed and developed to convert organic traffic into high-quality leads. The project was recognized in the <strong>Corporate LiveWire Innovation & Excellence Awards 2026</strong>, ranking in the top 5 among over 10,000 global entries. By optimizing mobile CTAs and form flows, friction was eliminated, resulting in a significant increase in conversion rates.</p>
-            </div>
-        </section>
-
-        <section id="contact" class="content-section hidden" data-section="contact" data-title="Contact">
-            <h2>Contact Us</h2>
-            <p class="contact-intro">Have a project in mind or want to learn more? The form below will send a message directly to <a href="mailto:info@duofine.com">info@duofine.com</a>.</p>
-            <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" novalidate>
-                <input type="hidden" name="form-name" value="contact" />
-                <div class="form-group"> <label for="name">Name</label> <input type="text" id="name" name="name" required> </div>
-                <div class="form-group"> <label for="email">Email</label> <input type="email" id="email" name="email" required> </div>
-                <div class="form-group"> <label for="message">Message</label> <textarea id="message" name="message" rows="5" required></textarea> </div>
-                <button type="submit" class="cta-button">Send Message</button>
-            </form>
-            <div id="form-success-message">
-                <h3>Thank You!</h3>
-                <p>The message has been sent successfully. Expect a response shortly.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <a href="#" class="nav-logo">
-                    <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/><path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/></svg>
-                    <span>DuoFine</span>
-                </a>
-                <p>Crafting meaningful connections and experiences through technology.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Navigate</h3>
-                <ul class="footer-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Connect</h3>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"></path></svg></a>
-                    <a href="https://x.com/duofine" target="_blank" rel="noopener noreferrer" aria-label="X" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
-                </div>
-            </div>
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-aside reveal">
+          <span class="eyebrow">Contact</span>
+          <h2>Tell us what you are building</h2>
+          <p>The form sends straight to <a href="mailto:info@duofine.com">info@duofine.com</a>. Expect a reply within one business day.</p>
         </div>
-        <div class="footer-bottom">
-            © 2026 DuoFine. All Rights Reserved. | <a href="mailto:info@duofine.com">info@duofine.com</a>
+
+        <div class="reveal">
+          <form class="form" id="contact-form" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+              <p class="field-error" id="name-error" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+              <p class="field-error" id="email-error" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+              <p class="field-error" id="message-error" role="alert"></p>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="company">Company (leave blank)</label>
+              <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+            </div>
+
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <button class="btn btn-primary" type="submit">Send message</button>
+          </form>
+
+          <div class="form-done" id="form-done" hidden tabindex="-1">
+            <h3>Message sent</h3>
+            <p>Thank you — the message reached <strong>info@duofine.com</strong>. Expect a reply within one business day.</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <a href="#" class="back-to-top-btn" aria-label="Back to top"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/></svg> </a>
-    <div class="cookie-consent-banner" id="cookie-banner"><p>We use cookies to enhance the browsing experience.</p><button class="cta-button" id="cookie-accept-btn">Accept</button></div>
+</main>
 
-    <script src="script.js"></script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round">
+            <path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/>
+          </svg>
+          <span>DuoFine</span>
+        </a>
+        <p class="footer-tag">Crafting meaningful connections and experiences through technology.</p>
+      </div>
+      <div>
+        <h2>Navigate</h2>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Connect</h2>
+        <div class="socials">
+          <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener" aria-label="DuoFine on Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+          </a>
+          <a href="https://x.com/duofine" target="_blank" rel="noopener" aria-label="DuoFine on X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DuoFine. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="mailto:info@duofine.com">info@duofine.com</a>
+        <a href="/privacypolicy">Privacy &amp; Terms</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/></svg>
+</button>
+
+<div class="cookie" id="cookie-banner" role="region" aria-label="Cookie preferences">
+  <p>We use analytics cookies to understand how the site is used. Nothing is loaded until you choose.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-quiet" type="button" id="cookie-reject">Reject</button>
+    <button class="btn btn-primary" type="button" id="cookie-accept">Accept</button>
+  </div>
+</div>
+
+<script src="/script.js" defer></script>
 </body>
 </html>

@@ -1,2 +1,24 @@
+# Netlify / Cloudflare Pages formatı.
+# UYARI: GitHub Pages bu dosyayı OKUMAZ. Site şu anda GitHub Pages'te
+# barındığı için buradaki başlıklar üretimde uygulanmıyor.
+# Canlıda uygulamak için CLOUDFLARE-SETUP.md'ye bakın (Cloudflare zaten önde).
+# Bu dosya, barındırma Netlify/Cloudflare Pages'e taşınırsa doğru çalışsın diye
+# güncel tutuluyor.
+
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src 'self';
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://formsubmit.co https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  X-Frame-Options: DENY
+  Cross-Origin-Opener-Policy: same-origin
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/site.css
+  Cache-Control: public, max-age=604800
+
+/script.js
+  Cache-Control: public, max-age=604800
