@@ -102,6 +102,10 @@
 
 /* ---------- 4. Temel ---------- */
 *,*::before,*::after{box-sizing:border-box}
+/* HTML hidden attribute'u UA stylesheet'te element seviyesinde tanimli, bu yuzden
+   herhangi bir class seçici (.form-done{display:grid} gibi) onu eziyor.
+   Bunu her yerde geçerli kilalim ki `hidden` her zaman gercekten gizlesin. */
+[hidden]{display:none !important}
 html{-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{
