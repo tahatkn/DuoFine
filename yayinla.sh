@@ -8,13 +8,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-# 1. site.css / script.js sürüm damgasını bugüne çek
-NEW=$(date +%Y%m%d%H%M)
-sed -i '' -E "s|(site\.css\|script\.js)\?v=[0-9]+|\1?v=$NEW|g" \
-  index.html blog/index.html blog/postgresql-700ms-to-38ms/index.html 404.html blog.html
-echo "✓ Sürüm damgası: $NEW"
-
-# 2. Gizli dosya kontrolu — repo herkese acik, yanlislikla sir push etmeyelim
+# 1. Gizli dosya kontrolu — repo herkese acik, yanlislikla sir push etmeyelim
 RISKLI=$(git status --porcelain | awk '{print $2}' | grep -iE '(^|/)\.env|\.pem$|\.key$|credential|secret|id_rsa' || true)
 if [ -n "$RISKLI" ]; then
   echo "DUR — bu dosyalar herkese acik repoya gidecekti:"
@@ -22,6 +16,12 @@ if [ -n "$RISKLI" ]; then
   echo "Once bunlari .gitignore'a ekle."
   exit 1
 fi
+
+# 2. site.css / script.js sürüm damgasını bugüne çek
+NEW=$(date +%Y%m%d%H%M)
+sed -i '' -E "s|(site\.css\|script\.js)\?v=[0-9]+|\1?v=$NEW|g" \
+  index.html blog/index.html blog/postgresql-700ms-to-38ms/index.html 404.html blog.html
+echo "✓ Sürüm damgası: $NEW"
 
 # 3. Commit + push
 git add -A
