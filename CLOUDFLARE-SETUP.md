@@ -68,20 +68,21 @@ Tek tık. Değişiklik anında yayılır.
 
 ---
 
-## 3. `site.css` veya `script.js` değiştirdiğinde
+## 3. Sitede bir değişiklik yaptığında
 
-Bu iki dosya tarayıcıda 4 saat önbelleklenir. Değiştirdiğinde tarihi güncellemezsen
-kimse yeni halini göremez.
-
-Terminalde proje klasöründe şunu çalıştır:
+Terminalde proje klasöründe:
 
 ```bash
-NEW=$(date +%Y%m%d)
-sed -i '' -E "s|(site\.css\|script\.js)\?v=[0-9]+|\1?v=$NEW|g" \
-  index.html blog/index.html blog/postgresql-700ms-to-38ms/index.html 404.html blog.html
+./yayinla.sh "ne değiştirdiğin"
 ```
 
-Sonra commit + push.
+Bu script 3 şeyi yapar:
+1. `site.css` / `script.js` sürüm damgasını günceller (yoksa ziyaretçiler eski
+   halini görmeye devam eder)
+2. Commit + push
+3. Sana Cloudflare cache temizleme linkini verir
+
+Son adımı atlama: **Caching → Configuration → Purge Everything**
 
 ---
 
