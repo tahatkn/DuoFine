@@ -102,3 +102,34 @@ curl -sI https://duofine.com/ | grep -iE 'strict-transport|x-content-type|referr
 curl -sI https://duofine.com/assets/img/og-image.png | grep -i cache-control
 curl -sI https://duofine.com/privacypolicy | head -1   # 200 dönmeli
 ```
+
+---
+
+## 4. ÖNEMLİ: `site.css` veya `script.js` her değiştiğinde
+
+GitHub Pages bu iki dosyaya **`max-age=14400`** (4 saat) veriyor. Yani dosyayı
+güncelleyip push etseniz bile, siteyi daha önce açmış ziyaretçiler 4 saat
+boyunca eski sürümü görmeye devam eder.
+
+Bunu aşmak için HTML'deki bağlantılarda sürüm damgası var:
+
+```html
+<link rel="stylesheet" href="/site.css?v=20260822">
+<script src="/script.js?v=20260822" defer></script>
+```
+
+**`site.css` veya `script.js`'i her değiştirdiğinizde bu tarihi güncelleyin.**
+Beş dosyada geçiyor: `index.html`, `blog/index.html`,
+`blog/postgresql-700ms-to-38ms/index.html`, `404.html`, `blog.html`.
+
+Tek komutla:
+
+```bash
+NEW=$(date +%Y%m%d)
+sed -i '' -E "s|(site\.css\|script\.js)\?v=[0-9]+|\1?v=$NEW|g" \
+  index.html blog/index.html blog/postgresql-700ms-to-38ms/index.html 404.html blog.html
+```
+
+HTML'in kendisi `max-age=600` (10 dakika) olduğu için yeni bağlantı en geç
+10 dakikada yayılır. Bölüm 2'deki Cache Rules uygulandığında bu süreyi de
+kontrol altına alırsınız.
