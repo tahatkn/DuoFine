@@ -1,128 +1,69 @@
-# Cloudflare: güvenlik başlıkları ve önbellek kuralları
+# Cloudflare'de yapılacaklar
 
-Bu iki madde (K-02 ve P-11) depodan uygulanamaz — barındırma katmanında
-ayarlanır. Site **GitHub Pages** üzerinde ve önünde **Cloudflare** var
-(`server: cloudflare` + `x-github-request-id`), dolayısıyla doğru yer Cloudflare.
-
-GitHub Pages `_headers` ve `_redirects` dosyalarını okumaz. Depodaki `_headers`
-yalnızca ileride Netlify/Cloudflare Pages'e taşınırsa geçerli olur.
+3 iş var. Sırayla.
 
 ---
 
-## 1. Güvenlik başlıkları — Response Header Transform Rules
+## 1. Güvenlik başlıkları
 
-> **Dikkat — sayfada iki benzer bölüm var:**
-> `Request Header Transform Rules` tarayıcının sunucuya **gönderdiği** başlıkları
-> değiştirir. Bize gereken bu değil.
-> Aşağı inip **`Response Header Transform Rules`** bölümünü bulun — sunucunun
-> tarayıcıya **döndürdüğü** başlıklar orada ayarlanır. Güvenlik başlıklarının
-> hepsi response başlığıdır.
+**Nerede:** Cloudflare → duofine.com → Rules → Overview →
+**Response** Header Transform Rules → Create rule
 
-**Cloudflare Dashboard → duofine.com → Rules → Overview →
-`Response Header Transform Rules` → Create rule**
+> Yukarıda bir de "**Request** Header Transform Rules" var. O değil. Response olan.
 
-- Rule name: `security-headers`
-- If: `Hostname equals duofine.com`  (veya "All incoming requests")
-- Then: her satır için **Set static** seçip aşağıdaki başlıkları ekleyin.
+**Rule name:** `security-headers`
 
-| Header | Value |
-|---|---|
-| `Strict-Transport-Security` | `max-age=31536000; includeSubDomains; preload` |
-| `X-Content-Type-Options` | `nosniff` |
-| `Referrer-Policy` | `strict-origin-when-cross-origin` |
-| `Permissions-Policy` | `camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()` |
-| `X-Frame-Options` | `DENY` |
-| `Cross-Origin-Opener-Policy` | `same-origin` |
+**If:** Field `Hostname` · Operator `equals` · Value `duofine.com`
 
-`frame-ancestors` ve HSTS yalnızca gerçek başlık olarak çalışır; bu yüzden
-`<meta>` ile verilemezler ve bu adım atlanamaz.
+**Then:** "Modify response header" altında 6 satır ekle. Her biri için **Set static** seç.
 
-### CSP hakkında
+| Header name | Value | Ne işe yarar |
+|---|---|---|
+| `Strict-Transport-Security` | `max-age=31536000; includeSubDomains; preload` | Tarayıcı siteye hep HTTPS ile girer |
+| `X-Content-Type-Options` | `nosniff` | Tarayıcı dosya tipini tahmin etmeye çalışmaz |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` | Başka sitelere gidince tam adres sızmaz |
+| `Permissions-Policy` | `camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()` | Kamera/mikrofon/konumu tamamen kapatır (boş parantez = kimse kullanamaz) |
+| `X-Frame-Options` | `DENY` | Siten başkasının sayfasına iframe olarak gömülemez |
+| `Cross-Origin-Opener-Policy` | `same-origin` | Sekmeni açan başka siteler sana müdahale edemez |
 
-`index.html`, `/blog/*` ve `404.html` sayfalarına `<meta http-equiv>` ile
-çalışan bir CSP zaten eklendi — o kadarı bugün canlıda geçerli.
-İsterseniz aynı politikayı burada başlık olarak da verebilirsiniz
-(başlık sürümü `frame-ancestors` da içerebildiği için daha güçlüdür):
-
-```
-Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://formsubmit.co https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests
-```
-
-> **Dikkat:** CSP'yi başlık olarak verirken `/privacypolicy` ve CG hesap
-> sayfalarını da kapsayacağını unutmayın. O sayfalar `style.css` + kendi satır
-> içi `<style>` bloklarını kullanıyor; yukarıdaki politika `style-src
-> 'unsafe-inline'` içerdiği için onları bozmaz. Yine de yayına aldıktan sonra
-> `/privacypolicy` sayfasını bir kez açıp konsolu kontrol edin.
+**Deploy**'a bas.
 
 ---
 
-## 2. Önbellek — Cache Rules
+## 2. Önbellek kuralları
 
-GitHub Pages her şeye sabit `cache-control: max-age=600` veriyor ve Cloudflare
-şu anda HTML'i önbelleğe bile almıyor (`cf-cache-status: DYNAMIC`).
+**Nerede:** Rules → Overview → Cache Rules → Create rule
 
-**Rules → Overview → `Cache Rules` → Create rule**
+> Sende zaten `Cache Backblaze Files` diye aktif bir kural var. **Ona dokunma.**
+> Aşağıdakileri yeni kural olarak ekle, onu listede 1. sırada bırak.
 
-> **Mevcut kuralınıza dokunmayın.** Halihazırda `Cache Backblaze Files` adında,
-> `media.duofine.com` için çalışan aktif bir kural var. Aşağıdakileri **yeni**
-> kurallar olarak ekleyin. Cache Rules sırayla değerlendirilir; yeni kurallar
-> yalnızca `duofine.com` altındaki yollarla eşleştiği için mevcut kuralla
-> çakışmaz, ama yine de onu listede **birinci sırada** bırakın.
+### Kural A
+- **Name:** `assets-immutable`
+- **If:** Field `URI Path` · Operator `starts with` · Value `/assets/`
+- **Then:**
+  - Cache eligibility → **Eligible for cache**
+  - Edge TTL → Override origin → **1 year**
+  - Browser TTL → Override origin → **1 year**
 
-### Kural A — `assets-immutable`
-- If: `URI Path starts with /assets/`
-- Then:
-  - Cache eligibility: **Eligible for cache**
-  - Edge TTL: **Override origin → 1 year**
-  - Browser TTL: **Override origin → 1 year**
+### Kural B
+- **Name:** `html-short`
+- **If:** Field `URI Path` · Operator `ends with` · Value `.html`
+  → sonra **Or** → Field `URI Path` · Operator `ends with` · Value `/`
+- **Then:**
+  - Cache eligibility → **Eligible for cache**
+  - Edge TTL → Override origin → **1 hour**
+  - Browser TTL → Override origin → **Respect origin**
 
-`/assets/` altındaki her şey (fontlar, AVIF/WebP görseller, ikonlar) içerik
-bazında sabittir; değişirse yeni dosya adıyla eklenir.
-
-### Kural B — `html-short`
-- If: `URI Path ends with /` or `URI Path ends with .html`
-- Then:
-  - Cache eligibility: **Eligible for cache**
-  - Edge TTL: **Override origin → 1 hour**
-  - Browser TTL: **Override origin → 0 (no-cache)**
-
-Böylece HTML kenarda önbelleklenir ama tarayıcı her zaman tazeliğini doğrular —
-içerik güncellemesi anında yayılır.
-
-> `/assets/` dışındaki `site.css` ve `script.js` bilerek uzun TTL almıyor;
-> derleme adımı olmadığı için içerik hash'li ad taşımıyorlar. İleride hash'li
-> adlara geçilirse onları da Kural A'ya taşıyın.
+Her ikisine de **Deploy**.
 
 ---
 
-## 3. Uyguladıktan sonra doğrulama
+## 3. `site.css` veya `script.js` değiştirdiğinde
 
-```bash
-curl -sI https://duofine.com/ | grep -iE 'strict-transport|x-content-type|referrer-policy|permissions-policy|x-frame'
-curl -sI https://duofine.com/assets/img/og-image.png | grep -i cache-control
-curl -sI https://duofine.com/privacypolicy | head -1   # 200 dönmeli
-```
+Bu iki dosya tarayıcıda 4 saat önbelleklenir. Değiştirdiğinde tarihi güncellemezsen
+kimse yeni halini göremez.
 
----
-
-## 4. ÖNEMLİ: `site.css` veya `script.js` her değiştiğinde
-
-GitHub Pages bu iki dosyaya **`max-age=14400`** (4 saat) veriyor. Yani dosyayı
-güncelleyip push etseniz bile, siteyi daha önce açmış ziyaretçiler 4 saat
-boyunca eski sürümü görmeye devam eder.
-
-Bunu aşmak için HTML'deki bağlantılarda sürüm damgası var:
-
-```html
-<link rel="stylesheet" href="/site.css?v=20260822">
-<script src="/script.js?v=20260822" defer></script>
-```
-
-**`site.css` veya `script.js`'i her değiştirdiğinizde bu tarihi güncelleyin.**
-Beş dosyada geçiyor: `index.html`, `blog/index.html`,
-`blog/postgresql-700ms-to-38ms/index.html`, `404.html`, `blog.html`.
-
-Tek komutla:
+Terminalde proje klasöründe şunu çalıştır:
 
 ```bash
 NEW=$(date +%Y%m%d)
@@ -130,6 +71,27 @@ sed -i '' -E "s|(site\.css\|script\.js)\?v=[0-9]+|\1?v=$NEW|g" \
   index.html blog/index.html blog/postgresql-700ms-to-38ms/index.html 404.html blog.html
 ```
 
-HTML'in kendisi `max-age=600` (10 dakika) olduğu için yeni bağlantı en geç
-10 dakikada yayılır. Bölüm 2'deki Cache Rules uygulandığında bu süreyi de
-kontrol altına alırsınız.
+Sonra commit + push.
+
+---
+
+## Kontrol
+
+1. ve 2. adımdan sonra terminalde:
+
+```bash
+curl -sI https://duofine.com/ | grep -i "strict-transport\|x-frame\|referrer-policy"
+```
+
+Üç satır görünüyorsa oldu.
+
+---
+
+## Not: CSP neden burada yok
+
+CSP (hangi kodun çalışabileceğini kısıtlayan kural) zaten sayfaların içine
+gömülü ve çalışıyor. Ekstra bir şey yapman gerekmiyor.
+
+Sadece iki kural HTML içine gömülemiyor, sunucudan gelmesi şart: **HSTS** ve
+**iframe koruması**. Onları da yukarıdaki 1. adımda `Strict-Transport-Security`
+ve `X-Frame-Options` olarak ekliyorsun. Bu yüzden 1. adım atlanamaz.
