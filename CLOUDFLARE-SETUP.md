@@ -51,10 +51,20 @@
   → sonra **Or** → Field `URI Path` · Operator `ends with` · Value `/`
 - **Then:**
   - Cache eligibility → **Eligible for cache**
-  - Edge TTL → Override origin → **1 hour**
-  - Browser TTL → Override origin → **Respect origin**
+  - Edge TTL → Ignore cache-control header → **2 hours**
+    (ücretsiz planda en düşük seçenek bu, sorun değil)
+  - Browser TTL → **Respect origin TTL**
 
 Her ikisine de **Deploy**.
+
+### Bu kuraldan sonra: her push'tan sonra cache temizle
+
+Kural B, HTML'i Cloudflare'de 2 saat tutar. Yani siteye bir değişiklik
+push ettiğinde ziyaretçilere ulaşması 2 saati bulabilir.
+
+Her push'tan sonra: **Caching → Configuration → Purge Everything**
+
+Tek tık. Değişiklik anında yayılır.
 
 ---
 
