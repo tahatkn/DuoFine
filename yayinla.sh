@@ -14,7 +14,16 @@ sed -i '' -E "s|(site\.css\|script\.js)\?v=[0-9]+|\1?v=$NEW|g" \
   index.html blog/index.html blog/postgresql-700ms-to-38ms/index.html 404.html blog.html
 echo "✓ Sürüm damgası: $NEW"
 
-# 2. Commit + push
+# 2. Gizli dosya kontrolu — repo herkese acik, yanlislikla sir push etmeyelim
+RISKLI=$(git status --porcelain | awk '{print $2}' | grep -iE '(^|/)\.env|\.pem$|\.key$|credential|secret|id_rsa' || true)
+if [ -n "$RISKLI" ]; then
+  echo "DUR — bu dosyalar herkese acik repoya gidecekti:"
+  echo "$RISKLI" | sed 's/^/  /'
+  echo "Once bunlari .gitignore'a ekle."
+  exit 1
+fi
+
+# 3. Commit + push
 git add -A
 git commit -q -m "$1"
 git push -q origin main
