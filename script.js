@@ -289,12 +289,17 @@
         .catch(function (err) {
           button.disabled = false;
           button.textContent = label;
+          // Ham servis metni ziyaretçiye bir şey ifade etmiyor ("This form needs
+          // Activation" gibi) — konsola site sahibi için yaz, ekranda yapılabilir
+          // bir şey göster.
+          if (window.console && console.warn) {
+            console.warn("[DuoFine] Contact form could not send:", err.message);
+          }
           status.className = "form-status is-error";
           status.innerHTML =
-            "The message could not be sent (" +
-            String(err.message).replace(/[<>&]/g, "") +
-            "). Please email <a href=\"" + mailtoFallback(data) + "\">" + CONTACT_EMAIL + "</a> instead — " +
-            "the link opens a pre-filled draft so nothing you wrote is lost.";
+            "Something went wrong on our side and the message was not sent. " +
+            "Please email <a href=\"" + mailtoFallback(data) + "\">" + CONTACT_EMAIL + "</a> instead — " +
+            "the link opens a draft with everything you just wrote, so nothing is lost.";
         });
     });
   }

@@ -9,14 +9,21 @@ yalnızca ileride Netlify/Cloudflare Pages'e taşınırsa geçerli olur.
 
 ---
 
-## 1. Güvenlik başlıkları — Transform Rules
+## 1. Güvenlik başlıkları — Response Header Transform Rules
 
-**Cloudflare Dashboard → duofine.com → Rules → Transform Rules →
-Modify Response Header → Create rule**
+> **Dikkat — sayfada iki benzer bölüm var:**
+> `Request Header Transform Rules` tarayıcının sunucuya **gönderdiği** başlıkları
+> değiştirir. Bize gereken bu değil.
+> Aşağı inip **`Response Header Transform Rules`** bölümünü bulun — sunucunun
+> tarayıcıya **döndürdüğü** başlıklar orada ayarlanır. Güvenlik başlıklarının
+> hepsi response başlığıdır.
+
+**Cloudflare Dashboard → duofine.com → Rules → Overview →
+`Response Header Transform Rules` → Create rule**
 
 - Rule name: `security-headers`
 - If: `Hostname equals duofine.com`  (veya "All incoming requests")
-- Then: aşağıdaki başlıkları **Set static** olarak ekleyin.
+- Then: her satır için **Set static** seçip aşağıdaki başlıkları ekleyin.
 
 | Header | Value |
 |---|---|
@@ -54,7 +61,13 @@ Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none';
 GitHub Pages her şeye sabit `cache-control: max-age=600` veriyor ve Cloudflare
 şu anda HTML'i önbelleğe bile almıyor (`cf-cache-status: DYNAMIC`).
 
-**Rules → Cache Rules → Create rule**
+**Rules → Overview → `Cache Rules` → Create rule**
+
+> **Mevcut kuralınıza dokunmayın.** Halihazırda `Cache Backblaze Files` adında,
+> `media.duofine.com` için çalışan aktif bir kural var. Aşağıdakileri **yeni**
+> kurallar olarak ekleyin. Cache Rules sırayla değerlendirilir; yeni kurallar
+> yalnızca `duofine.com` altındaki yollarla eşleştiği için mevcut kuralla
+> çakışmaz, ama yine de onu listede **birinci sırada** bırakın.
 
 ### Kural A — `assets-immutable`
 - If: `URI Path starts with /assets/`
