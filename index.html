@@ -4,40 +4,48 @@
 <script>document.documentElement.className+=" js"</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://formsubmit.co https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self' 'sha256-pfgOMgfVZwm2ODyms34QYW9h8EwicylhV77q5LHK8c0=' 'sha256-c4d39nIZNqOORjxvQPDfA2scQBZtpB1spn3nFw5NaW4=' 'inline-speculation-rules' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://formsubmit.co https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
 
-<title>DuoFine | High-Performance Digital Product Engineering</title>
-<meta name="description" content="DuoFine is a global technology venture building high-performance digital products, scalable backend systems, and award-winning user interfaces. Speed meets precision.">
+<title>DuoFine | Product engineering — fast backends, interfaces people keep using</title>
+<meta name="description" content="DuoFine designs and builds web and mobile products end to end: real-time infrastructure, PostgreSQL that answers in milliseconds, and interfaces people keep using. Based in Türkiye, shipping worldwide.">
 <link rel="canonical" href="https://duofine.com/">
-<meta name="theme-color" content="#0B1020">
+<link rel="alternate" hreflang="en" href="https://duofine.com/">
+<link rel="alternate" hreflang="tr" href="https://duofine.com/tr/">
+<link rel="alternate" hreflang="x-default" href="https://duofine.com/">
+<link rel="alternate" type="application/atom+xml" title="DuoFine Engineering" href="/feed.xml">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151C2E" media="(prefers-color-scheme: dark)">
 
 <!-- Sosyal paylaşım -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DuoFine">
 <meta property="og:url" content="https://duofine.com/">
-<meta property="og:title" content="DuoFine — High-Performance Digital Product Engineering">
-<meta property="og:description" content="Scalable backends, award-winning interfaces, and products shipped in record time. Speed meets precision.">
+<meta property="og:title" content="DuoFine — Backends that stay fast at scale. Interfaces people keep using.">
+<meta property="og:description" content="Web and mobile products built end to end: real-time infrastructure, databases that answer in milliseconds, interfaces that earn their place on the home screen.">
 <meta property="og:image" content="https://duofine.com/assets/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="DuoFine — High-Performance Digital Product Engineering">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="tr_TR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@duofine">
-<meta name="twitter:title" content="DuoFine — High-Performance Digital Product Engineering">
-<meta name="twitter:description" content="Scalable backends, award-winning interfaces, and products shipped in record time.">
+<meta name="twitter:title" content="DuoFine — Backends that stay fast at scale. Interfaces people keep using.">
+<meta name="twitter:description" content="Web and mobile products built end to end: real-time infrastructure, databases that answer in milliseconds, interfaces people keep using.">
 <meta name="twitter:image" content="https://duofine.com/assets/img/og-image.png">
 
 <!-- İkonlar -->
-<link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 
-<!-- Yazı tipleri: self-hosted, kritik ağırlıklar öne alınır -->
+<!-- Yazı tipleri: self-hosted; ilk ekranda kullanılan üç ağırlık öne alınır -->
 <link rel="preload" href="/assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/site.css?v=20260822">
+<link rel="stylesheet" href="/site.css?v=a8e88dca">
 
 <script type="application/ld+json">
 {
@@ -48,24 +56,21 @@
       "@id": "https://duofine.com/#organization",
       "name": "DuoFine",
       "url": "https://duofine.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://duofine.com/assets/img/logo-512.png",
-        "width": 512,
-        "height": 512
-      },
-      "description": "Global technology venture building high-performance digital products, scalable backend systems, and award-winning user interfaces.",
+      "logo": { "@type": "ImageObject", "url": "https://duofine.com/assets/img/logo-512.png", "width": 512, "height": 512 },
+      "description": "Product engineering studio building high-performance web and mobile products: real-time infrastructure, scalable backends and interfaces people keep using.",
       "email": "info@duofine.com",
-      "sameAs": [
-        "https://www.instagram.com/duofineofficial",
-        "https://x.com/duofine"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "sales",
-        "email": "info@duofine.com",
-        "availableLanguage": ["English", "Turkish"]
-      }
+      "areaServed": "Worldwide",
+      "founder": { "@id": "https://duofine.com/#taha-tekin" },
+      "sameAs": ["https://www.instagram.com/duofineofficial", "https://x.com/duofine"],
+      "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "email": "info@duofine.com", "availableLanguage": ["English", "Turkish"] }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://duofine.com/#taha-tekin",
+      "name": "Taha Tekin",
+      "jobTitle": "Founder & lead engineer",
+      "worksFor": { "@id": "https://duofine.com/#organization" },
+      "url": "https://duofine.com/#about"
     },
     {
       "@type": "WebSite",
@@ -73,7 +78,7 @@
       "url": "https://duofine.com/",
       "name": "DuoFine",
       "publisher": { "@id": "https://duofine.com/#organization" },
-      "inLanguage": "en"
+      "inLanguage": ["en", "tr"]
     },
     {
       "@type": "SoftwareApplication",
@@ -82,62 +87,123 @@
       "operatingSystem": "iOS, Android",
       "author": { "@id": "https://duofine.com/#organization" },
       "description": "A platform that brings people together under the most optimal, fun, and efficient conditions based on their location, with instant messaging, live location and meetup evaluation.",
-      "downloadUrl": [
-        "https://apps.apple.com/us/app/common-ground/id6748603386",
-        "https://play.google.com/store/apps/details?id=com.duofine.CG"
-      ],
+      "downloadUrl": ["https://apps.apple.com/us/app/common-ground/id6748603386", "https://play.google.com/store/apps/details?id=com.duofine.CG"],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     },
     {
       "@type": "SoftwareApplication",
       "name": "ShenTechin MED",
       "applicationCategory": "HealthApplication",
-      "operatingSystem": "iOS, Android",
+      "operatingSystem": "Web, iOS, Android",
+      "url": "https://shentechin.com/",
       "author": { "@id": "https://duofine.com/#organization" },
       "description": "Health-tech ecosystem merging advanced algorithms with clinical research, supervised by medical professionals."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What does DuoFine build?", "acceptedAnswer": { "@type": "Answer", "text": "Web and mobile products end to end — backend, app and infrastructure — plus performance rescues that make an existing product fast again." } },
+        { "@type": "Question", "name": "How does an engagement start?", "acceptedAnswer": { "@type": "Answer", "text": "With a message describing what you are building. You get a reply within one business day, usually with questions, and a call if it makes sense. That conversation costs nothing." } },
+        { "@type": "Question", "name": "Who owns the code?", "acceptedAnswer": { "@type": "Answer", "text": "You do. Repositories, store accounts and infrastructure are set up in your name from day one." } },
+        { "@type": "Question", "name": "Where is DuoFine based, and does it work remotely?", "acceptedAnswer": { "@type": "Answer", "text": "DuoFine is based in Türkiye (UTC+3) and works remotely with clients worldwide." } },
+        { "@type": "Question", "name": "Does DuoFine take fixed-scope work?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — audits, performance rescues and well-defined builds. Larger products run in short iterations with working software every week." } }
+      ]
     }
   ]
 }
 </script>
 </head>
-<body>
+<body data-page="home" data-lang-switch="/tr/">
 
+<!-- @@header -->
 <a class="skip-link" href="#main">Skip to content</a>
 <div id="top-sentinel" aria-hidden="true"></div>
-
 <header class="site-header">
   <div class="wrap">
     <nav class="nav" aria-label="Primary">
       <a class="brand" href="/">
-        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round">
-          <path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/>
-        </svg>
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
         <span>DuoFine</span>
       </a>
-
-      <ul class="nav-list" id="nav-list">
-        <li><a href="#about" data-spy="about">About</a></li>
-        <li><a href="#work" data-spy="work">Work</a></li>
-        <li><a href="#contact" data-spy="contact">Contact</a></li>
-        <li><a class="nav-cta" href="/blog/">Blog</a></li>
-      </ul>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
+      <div class="nav-right">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="/#about" data-nav="about" data-spy="about">About</a></li>
+          <li><a href="/#work" data-nav="work" data-spy="work">Work</a></li>
+          <li><a href="/blog/" data-nav="blog">Blog</a></li>
+          <li><a class="nav-cta" href="/#contact" data-nav="contact" data-spy="contact">Start a project</a></li>
+        </ul>
+        <a class="lang-switch" href="/tr/" hreflang="tr" lang="tr" aria-label="TR: Türkçe sürüm" data-lang-switch>TR</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
     </nav>
   </div>
 </header>
+<!-- @@/header -->
 
 <main id="main">
 
   <section class="hero">
     <div class="wrap">
-      <h1><span class="type">Building the Future, Together.</span><span class="caret" aria-hidden="true"></span></h1>
-      <p class="hero-sub">Reliable web and mobile products — from complex backend systems and real-time infrastructure to the interfaces people actually enjoy using.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">Start a project</a>
-        <a class="btn btn-ghost" href="#work">See the work</a>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-kicker">Product engineering studio</p>
+          <h1>Backends that stay fast at scale. Interfaces people <em>keep using</em>.</h1>
+          <p class="hero-sub">DuoFine designs and builds web and mobile products end to end — real-time infrastructure, databases that answer in milliseconds, and interfaces that earn their place on the home screen.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Start a project</a>
+            <a class="btn btn-ghost" href="#work">See the work</a>
+          </div>
+          <ul class="hero-proofline" aria-label="Track record">
+            <li><b>38&nbsp;ms</b> p95 chat history, down from 700&nbsp;ms</li>
+            <li><b>82%</b> lower operating cost</li>
+            <li><b>Top 5</b> of 10,000+ entries, Innovation &amp; Excellence Awards 2026</li>
+          </ul>
+        </div>
+
+        <figure class="hero-visual" aria-label="How a DuoFine product is put together: a React Native app talking to a Django and WebSockets backend, backed by PostgreSQL answering in 38 milliseconds">
+          <svg class="schematic" viewBox="0 0 560 380" role="img" aria-hidden="true" focusable="false">
+            <!-- links -->
+            <path class="sch-link" d="M132 200 H214"/>
+            <path class="sch-flow" d="M132 200 H214"/>
+            <path class="sch-link" d="M376 200 H438"/>
+            <path class="sch-flow" d="M376 200 H438"/>
+            <!-- phone -->
+            <rect class="sch-node" x="34" y="72" width="98" height="256" rx="18"/>
+            <rect class="sch-node-hi" x="44" y="90" width="78" height="220" rx="10" fill="none"/>
+            <rect class="sch-bubble" x="52" y="116" width="46" height="18" rx="9"/>
+            <rect class="sch-bubble-me" x="68" y="142" width="46" height="18" rx="9"/>
+            <rect class="sch-bubble" x="52" y="168" width="58" height="18" rx="9"/>
+            <rect class="sch-bubble-me" x="60" y="194" width="54" height="18" rx="9"/>
+            <rect class="sch-bubble" x="52" y="220" width="40" height="18" rx="9"/>
+            <rect class="sch-node" x="52" y="278" width="62" height="14" rx="7"/>
+            <circle class="sch-dot" cx="120" cy="92" r="3"/>
+            <text class="sch-label" x="83" y="352" text-anchor="middle">React Native app</text>
+            <text class="sch-sub" x="83" y="368" text-anchor="middle">iOS · Android</text>
+            <!-- server -->
+            <rect class="sch-node" x="214" y="146" width="162" height="108" rx="14"/>
+            <rect class="sch-node-hi" x="228" y="162" width="134" height="18" rx="6"/>
+            <rect class="sch-node-hi" x="228" y="188" width="134" height="18" rx="6"/>
+            <rect class="sch-node-hi" x="228" y="214" width="134" height="18" rx="6"/>
+            <circle class="sch-dot" cx="238" cy="171" r="3"/>
+            <circle class="sch-dot" cx="238" cy="197" r="3"/>
+            <circle class="sch-dot" cx="238" cy="223" r="3"/>
+            <text class="sch-label" x="295" y="290" text-anchor="middle">Django · WebSockets</text>
+            <text class="sch-sub" x="295" y="306" text-anchor="middle">real-time API</text>
+            <!-- database -->
+            <path class="sch-cyl" d="M438 160 v90 a52 16 0 0 0 104 0 v-90"/>
+            <ellipse class="sch-cyl-top" cx="490" cy="160" rx="52" ry="16"/>
+            <path class="sch-link" d="M438 190 a52 16 0 0 0 104 0"/>
+            <path class="sch-link" d="M438 220 a52 16 0 0 0 104 0"/>
+            <text class="sch-label" x="490" y="290" text-anchor="middle">PostgreSQL</text>
+            <text class="sch-sub" x="490" y="306" text-anchor="middle">query-aligned indexes</text>
+            <!-- badge -->
+            <rect class="sch-badge" x="430" y="96" width="120" height="30" rx="15"/>
+            <text class="sch-badge-text" x="490" y="116" text-anchor="middle">38 ms · p95</text>
+            <path class="sch-link" d="M490 126 V144"/>
+          </svg>
+        </figure>
       </div>
     </div>
   </section>
@@ -146,18 +212,22 @@
     <div class="wrap">
       <dl class="proof-grid">
         <div class="proof-cell">
-          <dt>94<span class="unit">%</span></dt>
-          <dd>Faster system performance after architectural optimisation</dd>
+          <dt>Faster system performance after architectural optimisation</dt>
+          <dd><span data-count="94">0</span><span class="unit">%</span></dd>
         </div>
         <div class="proof-cell">
-          <dt>82<span class="unit">%</span></dt>
-          <dd>Lower operational cost through smarter infrastructure decisions</dd>
+          <dt>Lower operational cost through smarter infrastructure decisions</dt>
+          <dd><span data-count="82">0</span><span class="unit">%</span></dd>
         </div>
         <div class="proof-cell">
-          <dt>38<span class="unit">ms</span></dt>
-          <dd>Chat query latency at p95, down from 700&nbsp;ms</dd>
+          <dt>Chat history latency at p95, down from 700&nbsp;ms</dt>
+          <dd><span data-count="38">0</span><span class="unit">ms</span></dd>
         </div>
       </dl>
+      <div class="proof-compare" aria-label="Chat history query, before and after">
+        <div class="bar is-before"><span>Before</span><span class="bar-track"><span class="bar-fill w-before"></span></span><span class="bar-val">700 ms</span></div>
+        <div class="bar is-after"><span>After</span><span class="bar-track"><span class="bar-fill w-after"></span></span><span class="bar-val">38 ms</span></div>
+      </div>
       <p class="proof-note">The last one is written up in full — <a href="/blog/postgresql-700ms-to-38ms/">how a 700&nbsp;ms PostgreSQL query became 38&nbsp;ms</a>.</p>
     </div>
   </section>
@@ -168,10 +238,49 @@
         <span class="eyebrow">About</span>
         <h2>Speed meets precision</h2>
       </div>
-      <div class="prose reveal">
-        <p>DuoFine is a global technology venture where <strong>speed meets precision</strong>. The focus is turning complex ideas into high-performance digital products in record time — every solution scalable, secure, and ready for immediate market entry.</p>
-        <p>A track record of delivering acclaimed products sits at the core of this operation: optimising system performance by over <strong>94%</strong>, running infrastructure for thousands of concurrent users, and cutting operational cost by up to <strong>82%</strong> through smart architectural decisions.</p>
-        <p>Engineering here goes beyond writing code. It is about building assets that drive growth — bridging sophisticated backend logic and intuitive interfaces so every product is powerful <em>and</em> a delight to use.</p>
+      <div class="about-grid">
+        <div class="about-main">
+          <div class="prose reveal">
+            <p>DuoFine is a small product engineering studio. We take products from a rough idea to something people install, use daily and pay for — the backend that has to hold up under real traffic, and the interface that has to feel obvious.</p>
+            <p>We work in the layer most teams find hardest to staff: the join between <strong>infrastructure and experience</strong>. Query plans and WebSocket fan-out on one side; onboarding flows and empty states on the other. A product only feels fast when both are right.</p>
+            <p>Everything we ship is measured. The numbers on this page come from production systems we run or have handed over — and one of them is <a href="/blog/postgresql-700ms-to-38ms/">written up in full</a>.</p>
+          </div>
+
+          <div class="reveal">
+            <h3 class="h3-quiet">How we work</h3>
+            <ol class="steps">
+              <li><div><h3>Discover</h3><p>We map the product, the hard problem at its centre and the numbers that will define success. You get a scoped plan and an honest estimate.</p></div></li>
+              <li><div><h3>Build</h3><p>Working software every week, not slides. Backend, app and infrastructure grow together so nothing is integrated at the end.</p></div></li>
+              <li><div><h3>Ship &amp; measure</h3><p>Store releases, monitoring and the first weeks in production are part of the job. We stay until the numbers say it works.</p></div></li>
+            </ol>
+          </div>
+
+          <div class="reveal">
+            <h3 class="h3-quiet">Questions we get asked</h3>
+            <div class="faq">
+              <details><summary>What do you build?</summary><p>Web and mobile products end to end — backend, app and infrastructure — plus performance rescues that make an existing product fast again.</p></details>
+              <details><summary>How does an engagement start?</summary><p>With a message describing what you are building. You get a reply within one business day, usually with questions, and a call if it makes sense. That conversation costs nothing.</p></details>
+              <details><summary>Who owns the code?</summary><p>You do. Repositories, store accounts and infrastructure are set up in your name from day one.</p></details>
+              <details><summary>Where are you based, and do you work remotely?</summary><p>Türkiye (UTC+3). Everything we do is remote-first, and we have shipped for clients across time zones.</p></details>
+              <details><summary>Do you take fixed-scope work?</summary><p>Yes — audits, performance rescues and well-defined builds. Larger products run in short iterations with working software every week.</p></details>
+            </div>
+          </div>
+        </div>
+
+        <aside class="about-aside reveal" aria-label="Who you will work with">
+          <div class="card person">
+            <div class="person-head">
+              <span class="avatar" aria-hidden="true">TT</span>
+              <div><strong>Taha Tekin</strong><span class="role">Founder &amp; lead engineer</span></div>
+            </div>
+            <p>The engineer behind Common Ground's real-time backend and the 700&nbsp;→&nbsp;38&nbsp;ms write-up. Every project has one accountable owner — from the first query plan to the store release.</p>
+            <dl class="facts">
+              <div><dt>Based</dt><dd>Türkiye (UTC+3), working remotely with clients worldwide</dd></div>
+              <div><dt>Replies</dt><dd>Within one business day</dd></div>
+              <div><dt>Stack</dt><dd><ul class="chips"><li class="chip">React Native</li><li class="chip">Django</li><li class="chip">PostgreSQL</li><li class="chip">WebSockets</li><li class="chip">Cloudflare</li><li class="chip">Sentry</li></ul></dd></div>
+            </dl>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
@@ -191,31 +300,68 @@
             <picture>
               <source type="image/avif" srcset="/assets/img/shentechin-480.avif 480w, /assets/img/shentechin-960.avif 960w, /assets/img/shentechin-1440.avif 1440w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
               <source type="image/webp" srcset="/assets/img/shentechin-480.webp 480w, /assets/img/shentechin-960.webp 960w, /assets/img/shentechin-1440.webp 1440w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
-              <img src="/assets/img/shentechin-960.jpg" width="960" height="480" alt="ShenTechin MED healthcare technology platform" loading="lazy" decoding="async">
+              <img src="/assets/img/shentechin-960.jpg" width="960" height="480" alt="ShenTechin MED landing page: Decode your health and personality DNA" loading="lazy" decoding="async">
             </picture>
           </figure>
           <div class="project-body">
-            <h3>ShenTechin MED</h3>
-            <p>A health-tech ecosystem merging advanced algorithms with clinical research. Supervised by medical professionals, it decodes health and personality data through AI-driven analysis of sleep patterns, metabolic nutrition, and dermatology — turning complex medical data into actionable wellness insight.</p>
+            <span class="project-kicker">Health-tech · Web platform</span>
+            <h3><a href="/work/shentechin-med/">ShenTechin MED</a></h3>
+            <p>A health-tech ecosystem merging advanced algorithms with clinical research, supervised by medical professionals.</p>
+            <dl class="pao">
+              <div><dt>Problem</dt><dd>Clinical-grade health data is dense and intimidating; people abandon what they cannot read.</dd></div>
+              <div><dt>Approach</dt><dd>An assessment flow supervised by doctors, with AI-driven analysis across sleep, metabolic nutrition and dermatology.</dd></div>
+              <div><dt>Outcome</dt><dd>A live platform that turns medical data into actionable wellness insight across three health domains.</dd></div>
+            </dl>
             <ul class="project-metrics">
               <li>AI-driven analysis</li>
               <li>Clinically supervised</li>
               <li>Three health domains</li>
             </ul>
+            <div class="project-links">
+              <a class="more-link" href="/work/shentechin-med/">Read the case study</a>
+              <a href="https://shentechin.com" target="_blank" rel="noopener">shentechin.com</a>
+            </div>
           </div>
         </article>
 
         <article class="project reveal">
-          <figure class="project-media is-square">
-            <picture>
-              <source type="image/avif" srcset="/assets/img/commonground-480.avif 480w, /assets/img/commonground-960.avif 960w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
-              <source type="image/webp" srcset="/assets/img/commonground-480.webp 480w, /assets/img/commonground-960.webp 960w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
-              <img src="/assets/img/commonground-960.jpg" width="960" height="960" alt="Common Ground mobile app" loading="lazy" decoding="async">
-            </picture>
+          <figure class="project-media">
+            <svg class="illus illus-cg" viewBox="0 0 480 360" role="img" aria-label="Illustration: two people's locations and the meeting point Common Ground computes between them, with a chat message on top" focusable="false">
+              <rect class="cg-bg" width="480" height="360" rx="0"/>
+              <g class="cg-grid">
+                <path d="M0 60 H480 M0 120 H480 M0 180 H480 M0 240 H480 M0 300 H480 M60 0 V360 M120 0 V360 M180 0 V360 M240 0 V360 M300 0 V360 M360 0 V360 M420 0 V360" fill="none"/>
+              </g>
+              <path class="cg-road" d="M-10 250 C 90 240, 140 120, 250 150 S 400 90, 490 60"/>
+              <path class="cg-road" d="M40 -10 C 60 120, 200 200, 240 330"/>
+              <path class="cg-road" d="M300 370 C 320 260, 380 250, 470 230"/>
+              <path class="cg-route" d="M96 292 C 150 250, 200 200, 250 176"/>
+              <path class="cg-route" d="M398 108 C 350 130, 300 150, 250 176"/>
+              <!-- pins -->
+              <g transform="translate(96 292)"><path class="cg-pin" d="M0 -34 a14 14 0 0 1 14 14 c0 10 -14 26 -14 26 s-14 -16 -14 -26 a14 14 0 0 1 14 -14z"/><circle class="cg-pin-hole" cx="0" cy="-20" r="5"/></g>
+              <g transform="translate(398 108)"><path class="cg-pin" d="M0 -34 a14 14 0 0 1 14 14 c0 10 -14 26 -14 26 s-14 -16 -14 -26 a14 14 0 0 1 14 -14z"/><circle class="cg-pin-hole" cx="0" cy="-20" r="5"/></g>
+              <!-- meeting point -->
+              <circle class="cg-meet-ring" cx="250" cy="176" r="22"/>
+              <circle class="cg-meet" cx="250" cy="176" r="9"/>
+              <!-- chat card -->
+              <g transform="translate(262 232)">
+                <rect class="cg-card" width="190" height="96" rx="12"/>
+                <rect class="cg-bubble" x="14" y="16" width="96" height="20" rx="10"/>
+                <rect class="cg-bubble-me" x="80" y="44" width="96" height="20" rx="10"/>
+                <text class="cg-sub" x="14" y="84">chat history · 38 ms p95</text>
+              </g>
+              <text class="cg-text" x="24" y="40">Common Ground</text>
+              <text class="cg-sub" x="24" y="56">meet halfway, in real time</text>
+            </svg>
           </figure>
           <div class="project-body">
-            <h3>Common Ground</h3>
-            <p>A platform engineered to bring people together under the most optimal, fun, and efficient conditions based on their location. Instant messaging, live location tracking, and a seamless meetup evaluation system maximise the potential for meaningful connections.</p>
+            <span class="project-kicker">Consumer · iOS &amp; Android</span>
+            <h3><a href="/work/common-ground/">Common Ground</a></h3>
+            <p>A platform that brings people together under the most optimal, fun and efficient conditions based on where they are.</p>
+            <dl class="pao">
+              <div><dt>Problem</dt><dd>Meeting across a city means negotiating place, time and transport — and as the message table grew, chat history slowed to 700&nbsp;ms.</dd></div>
+              <div><dt>Approach</dt><dd>React Native + Django with real-time WebSockets, a meetup-point engine that weighs location, distance and transport, and query-aligned compound indexes for chat.</dd></div>
+              <div><dt>Outcome</dt><dd>Chat history at 38&nbsp;ms p95, live in the App Store and Google Play.</dd></div>
+            </dl>
             <ul class="project-metrics">
               <li>React Native + Django</li>
               <li>Real-time WebSockets</li>
@@ -229,6 +375,9 @@
                 <img class="badge-googleplay" src="/assets/img/badge-googleplay.png" width="646" height="250" alt="Get it on Google Play" loading="lazy" decoding="async">
               </a>
             </div>
+            <div class="project-links">
+              <a class="more-link" href="/work/common-ground/">Read the case study</a>
+            </div>
           </div>
         </article>
 
@@ -237,12 +386,18 @@
             <picture>
               <source type="image/avif" srcset="/assets/img/ucdplast-480.avif 480w, /assets/img/ucdplast-960.avif 960w, /assets/img/ucdplast-1440.avif 1440w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
               <source type="image/webp" srcset="/assets/img/ucdplast-480.webp 480w, /assets/img/ucdplast-960.webp 960w, /assets/img/ucdplast-1440.webp 1440w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
-              <img src="/assets/img/ucdplast-960.jpg" width="960" height="467" alt="UCD Plast — award-winning industrial B2B platform" loading="lazy" decoding="async">
+              <img src="/assets/img/ucdplast-960.jpg" width="960" height="467" alt="UCD Plast website: high-quality rPET flakes and PET sheets for global manufacturers" loading="lazy" decoding="async">
             </picture>
           </figure>
           <div class="project-body">
-            <h3>UCD Plast</h3>
-            <p>A comprehensive industrial B2B platform. <a href="https://ucdplast.com" target="_blank" rel="noopener">ucdplast.com</a> was designed and built to convert organic traffic into high-quality leads — optimised mobile CTAs and rebuilt form flows removed the friction, and conversion rose sharply.</p>
+            <span class="project-kicker">Industrial B2B · Website</span>
+            <h3><a href="/work/ucd-plast/">UCD Plast</a></h3>
+            <p>A comprehensive industrial B2B platform for a manufacturer of rPET flakes and PET sheets.</p>
+            <dl class="pao">
+              <div><dt>Problem</dt><dd>Organic traffic that arrived and left: buyers could not find products or a quick way to ask for a quote.</dd></div>
+              <div><dt>Approach</dt><dd>Rebuilt around the buyer's path — mobile-first calls to action, shorter quote forms, clear product pages built to convert search traffic into leads.</dd></div>
+              <div><dt>Outcome</dt><dd>Conversion rose sharply; the platform placed Top 5 of 10,000+ entries at the Corporate LiveWire Innovation &amp; Excellence Awards 2026.</dd></div>
+            </dl>
             <ul class="project-metrics">
               <li>Industrial B2B</li>
               <li>Organic lead conversion</li>
@@ -251,6 +406,10 @@
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 8.4l6.1-.8z"/></svg>
               Top 5 of 10,000+ entries — Corporate LiveWire Innovation &amp; Excellence Awards 2026
             </p>
+            <div class="project-links">
+              <a class="more-link" href="/work/ucd-plast/">Read the case study</a>
+              <a href="https://ucdplast.com" target="_blank" rel="noopener">ucdplast.com</a>
+            </div>
           </div>
         </article>
 
@@ -262,26 +421,90 @@
     <div class="wrap">
       <div class="contact-grid">
         <div class="contact-aside reveal">
-          <span class="eyebrow">Contact</span>
-          <h2>Tell us what you are building</h2>
-          <p>The form sends straight to <a href="mailto:info@duofine.com">info@duofine.com</a>. Expect a reply within one business day.</p>
+          <div>
+            <span class="eyebrow">Contact</span>
+            <h2>Tell us what you are building</h2>
+            <p>A few lines about the product and where it hurts is enough. The form sends straight to <!--email_off--><a href="mailto:info@duofine.com">info@duofine.com</a><!--/email_off-->.</p>
+          </div>
+          <div>
+            <h3 class="h3-quiet">What happens next</h3>
+            <ol class="next-steps">
+              <li>You get a reply within one business day — usually with a few questions.</li>
+              <li>If it fits, a 30-minute call to walk through the product together.</li>
+              <li>A scoped plan with an estimate, or a straight answer if we are not the right fit.</li>
+            </ol>
+          </div>
+          <dl class="contact-meta">
+            <div><dt>Email</dt><dd><!--email_off--><a href="mailto:info@duofine.com">info@duofine.com</a><!--/email_off--></dd></div>
+            <div><dt>Reply time</dt><dd>Within one business day</dd></div>
+            <div><dt>Time zone</dt><dd>UTC+3 (Türkiye)</dd></div>
+          </dl>
         </div>
 
         <div class="reveal">
-          <form class="form" id="contact-form" novalidate>
-            <div class="field">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
-              <p class="field-error" id="name-error" role="alert"></p>
+          <form class="form" id="contact-form" novalidate
+                data-msg-required="This field is required."
+                data-msg-email="Enter a valid email address (e.g. name@company.com)."
+                data-msg-url="Enter a full address starting with https://"
+                data-msg-short="Add a little more detail — at least 10 characters."
+                data-msg-sending="Sending…"
+                data-msg-error="Something went wrong on our side and the message was not sent. Please email {link} instead — the link opens a draft with everything you just wrote, so nothing is lost.">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error" enterkeyhint="next">
+                <p class="field-error" id="name-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required aria-describedby="email-error" enterkeyhint="next">
+                <p class="field-error" id="email-error" role="alert"></p>
+              </div>
             </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
-              <p class="field-error" id="email-error" role="alert"></p>
+
+            <fieldset class="field">
+              <legend>What do you need? <span class="field-hint">(pick any)</span></legend>
+              <div class="chip-group">
+                <label class="chip-check"><input type="checkbox" name="needs" value="New product"><span>New product</span></label>
+                <label class="chip-check"><input type="checkbox" name="needs" value="Mobile app"><span>Mobile app</span></label>
+                <label class="chip-check"><input type="checkbox" name="needs" value="Backend & infrastructure"><span>Backend &amp; infrastructure</span></label>
+                <label class="chip-check"><input type="checkbox" name="needs" value="Performance rescue"><span>Performance rescue</span></label>
+                <label class="chip-check"><input type="checkbox" name="needs" value="Something else"><span>Something else</span></label>
+              </div>
+            </fieldset>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="budget">Budget <span class="field-hint">(optional)</span></label>
+                <select id="budget" name="budget">
+                  <option value="">Not sure yet</option>
+                  <option>Under $5k</option>
+                  <option>$5k – $15k</option>
+                  <option>$15k – $50k</option>
+                  <option>$50k+</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="timeline">Timeline <span class="field-hint">(optional)</span></label>
+                <select id="timeline" name="timeline">
+                  <option value="">Not sure yet</option>
+                  <option>As soon as possible</option>
+                  <option>In the next 1–3 months</option>
+                  <option>Later this year</option>
+                </select>
+              </div>
             </div>
+
+            <div class="field">
+              <label for="link">Link <span class="field-hint">(optional — a site, app store page, repo or deck)</span></label>
+              <input type="url" id="link" name="link" inputmode="url" autocomplete="url" placeholder="https://" aria-describedby="link-error" enterkeyhint="next">
+              <p class="field-error" id="link-error" role="alert"></p>
+            </div>
+
             <div class="field">
               <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+              <textarea id="message" name="message" rows="5" required minlength="10" aria-describedby="message-error message-hint"></textarea>
+              <p class="field-hint" id="message-hint">What the product does, who it is for, and what is not working today.</p>
               <p class="field-error" id="message-error" role="alert"></p>
             </div>
 
@@ -296,7 +519,12 @@
 
           <div class="form-done" id="form-done" hidden tabindex="-1">
             <h3>Message sent</h3>
-            <p>Thank you — the message reached <strong>info@duofine.com</strong>. Expect a reply within one business day.</p>
+            <p>Thank you — it reached <!--email_off--><strong>info@duofine.com</strong><!--/email_off-->. Here is what happens now:</p>
+            <ol class="next-steps">
+              <li>A reply within one business day, usually with a few questions.</li>
+              <li>If it fits, a 30-minute call to walk through the product.</li>
+              <li>A scoped plan with an estimate.</li>
+            </ol>
           </div>
         </div>
       </div>
@@ -305,14 +533,17 @@
 
 </main>
 
+<div class="sticky-cta" aria-hidden="true">
+  <a class="btn btn-primary" href="#contact" tabindex="-1">Start a project</a>
+</div>
+
+<!-- @@footer -->
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
       <div>
         <a class="brand" href="/">
-          <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round">
-            <path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/>
-          </svg>
+          <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
           <span>DuoFine</span>
         </a>
         <p class="footer-tag">Crafting meaningful connections and experiences through technology.</p>
@@ -320,10 +551,10 @@
       <div>
         <h2>Navigate</h2>
         <ul class="footer-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Work</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#work">Work</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/#contact">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -336,13 +567,15 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </a>
         </div>
+        <!--email_off--><a class="footer-mail" href="mailto:info@duofine.com">info@duofine.com</a><!--/email_off-->
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 DuoFine. All rights reserved.</span>
       <nav aria-label="Legal">
-        <a href="mailto:info@duofine.com">info@duofine.com</a>
         <a href="/privacypolicy">Privacy &amp; Terms</a>
+        <a href="/delete-account.html">Account deletion</a>
+        <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
       </nav>
     </div>
   </div>
@@ -352,14 +585,20 @@
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/></svg>
 </button>
 
-<div class="cookie" id="cookie-banner" role="region" aria-label="Cookie preferences">
-  <p>We use analytics cookies to understand how the site is used. Nothing is loaded until you choose.</p>
+<div class="cookie" id="cookie-banner" role="region" aria-labelledby="cookie-text">
+  <p id="cookie-text">Analytics cookies help us see how the site is used. Nothing loads until you choose. <a href="/privacypolicy">Privacy policy</a></p>
   <div class="cookie-actions">
-    <button class="btn btn-quiet" type="button" id="cookie-reject">Reject</button>
+    <button class="btn" type="button" id="cookie-reject">Reject</button>
     <button class="btn btn-primary" type="button" id="cookie-accept">Accept</button>
   </div>
 </div>
 
-<script src="/script.js?v=20260822" defer></script>
+<script type="speculationrules">
+{"prerender":[{"where":{"and":[{"href_matches":"/blog/*"},{"not":{"href_matches":"/blog/"}}]},"eagerness":"moderate"},{"where":{"href_matches":"/work/*"},"eagerness":"moderate"}],
+ "prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}
+</script>
+<script src="/script.js?v=b53589af" defer></script>
+<!-- @@/footer -->
+
 </body>
 </html>
