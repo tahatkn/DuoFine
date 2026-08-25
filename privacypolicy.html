@@ -1,75 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service and Privacy Policy | DuoFine</title>
-    <meta name="description" content="Common Ground Terms of Service and Privacy Policy, available in 16 languages.">
-    <link rel="canonical" href="https://duofine.com/privacypolicy">
-    <link rel="shortcut icon" href="/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
-    <style>
-        .legal-switcher { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; margin-bottom: 2rem; }
-        .legal-switcher-label { font-weight: 500; color: var(--text-light); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
-        .legal-lang-flags { display: flex; align-items: center; justify-content: center; gap: 0.4rem; flex-wrap: wrap; max-width: 480px; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 14px; background-color: var(--white-color); box-shadow: var(--shadow); }
-        .legal-lang-flag { font-size: 1.35rem; line-height: 1; padding: 0.35rem 0.55rem; border-radius: 8px; border: 1px solid transparent; background: transparent; cursor: pointer; transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease; }
-        .legal-lang-flag:hover { background-color: var(--light-color); border-color: var(--border-color); transform: translateY(-1px); }
-        .legal-lang-flag.is-active { background-color: var(--light-color); border-color: var(--primary-color); box-shadow: 0 0 0 2px rgba(67, 100, 247, 0.18); }
-        .legal-updated { text-align: center; color: var(--text-light); margin-bottom: 2.5rem; font-size: 0.95rem; }
-        .legal-toc-group { margin-bottom: 1.5rem; }
-        .legal-toc-heading { font-weight: 600; color: var(--dark-color); margin-bottom: 0.5rem; font-size: 1rem; }
-        .legal-toc { columns: 2; column-gap: 2.5rem; margin: 0 0 1rem; padding-left: 1.2rem; }
-        .legal-toc li { margin-bottom: 0.5rem; break-inside: avoid; }
-        .legal-part-title { font-size: 1.8rem; margin: 3rem 0 0.5rem; color: var(--dark-color); font-weight: 600; }
-        .legal-part-title:first-of-type { margin-top: 2.5rem; }
-        .legal-article { margin-top: 2.5rem; scroll-margin-top: 90px; }
-        .legal-article h3 { font-size: 1.25rem; color: var(--dark-color); margin-bottom: 0.8rem; }
-        .legal-article p, .legal-article li { margin-bottom: 1rem; }
-        .legal-article ul, .legal-article ol { padding-left: 1.5rem; margin-bottom: 1rem; }
-        .legal-table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
-        table.legal-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-        table.legal-table caption { text-align: left; font-style: italic; color: var(--text-light); margin-bottom: 0.5rem; font-size: 0.9rem; }
-        table.legal-table th, table.legal-table td { border: 1px solid var(--border-color); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; }
-        table.legal-table th { background-color: var(--light-color); font-weight: 600; }
-        [dir="rtl"] .legal-toc { direction: rtl; }
-    </style>
+<script>document.documentElement.className+=" js"</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service and Privacy Policy | DuoFine</title>
+<meta name="description" content="Common Ground Terms of Service and Privacy Policy by DuoFine, available in 16 languages.">
+<link rel="canonical" href="https://duofine.com/privacypolicy">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151C2E" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DuoFine">
+<meta property="og:url" content="https://duofine.com/privacypolicy">
+<meta property="og:title" content="Terms of Service and Privacy Policy — Common Ground by DuoFine">
+<meta property="og:description" content="Terms of Service and Privacy Policy for the Common Ground app, in 16 languages.">
+<meta property="og:image" content="https://duofine.com/assets/img/og-image.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css?v=a8e88dca">
+<noscript><style>.legal-lang-block[hidden]{display:block !important}</style></noscript>
 </head>
-<body>
+<body data-page="legal">
 
-    <header class="main-header">
-        <nav class="navbar">
-            <a href="/" class="nav-logo">
-                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
-                    <path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/>
-                </svg>
-                <span>DuoFine</span>
-            </a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="/#about" class="nav-link" data-link="about">About</a></li>
-                <li class="nav-item"><a href="/#projects" class="nav-link" data-link="projects">Projects</a></li>
-                <li class="nav-item"><a href="/#contact" class="nav-link" data-link="contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+<!-- @@header -->
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="top-sentinel" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
+        <span>DuoFine</span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="/#about" data-nav="about" data-spy="about">About</a></li>
+          <li><a href="/#work" data-nav="work" data-spy="work">Work</a></li>
+          <li><a href="/blog/" data-nav="blog">Blog</a></li>
+          <li><a class="nav-cta" href="/#contact" data-nav="contact" data-spy="contact">Start a project</a></li>
+        </ul>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- @@/header -->
 
-    <main>
-        <section id="legal" class="content-section">
-            <div class="legal-switcher">
-                <span class="legal-switcher-label">Language</span>
-                <div class="legal-lang-flags" id="legal-lang-flags" role="group" aria-label="Language">
-                    <button type="button" class="legal-lang-flag" data-lang="en" aria-label="English" title="English">🇬🇧</button><button type="button" class="legal-lang-flag" data-lang="tr" aria-label="Türkçe" title="Türkçe">🇹🇷</button><button type="button" class="legal-lang-flag" data-lang="es" aria-label="Español" title="Español">🇪🇸</button><button type="button" class="legal-lang-flag" data-lang="ar" aria-label="العربية" title="العربية">🇸🇦</button><button type="button" class="legal-lang-flag" data-lang="de" aria-label="Deutsch" title="Deutsch">🇩🇪</button><button type="button" class="legal-lang-flag" data-lang="fr" aria-label="Français" title="Français">🇫🇷</button><button type="button" class="legal-lang-flag" data-lang="hi" aria-label="हिन्दी" title="हिन्दी">🇮🇳</button><button type="button" class="legal-lang-flag" data-lang="ja" aria-label="日本語" title="日本語">🇯🇵</button><button type="button" class="legal-lang-flag" data-lang="pt" aria-label="Português" title="Português">🇵🇹</button><button type="button" class="legal-lang-flag" data-lang="zh" aria-label="中文（简体）" title="中文（简体）">🇨🇳</button><button type="button" class="legal-lang-flag" data-lang="ko" aria-label="한국어" title="한국어">🇰🇷</button><button type="button" class="legal-lang-flag" data-lang="ru" aria-label="Русский" title="Русский">🇷🇺</button><button type="button" class="legal-lang-flag" data-lang="id" aria-label="Bahasa Indonesia" title="Bahasa Indonesia">🇮🇩</button><button type="button" class="legal-lang-flag" data-lang="it" aria-label="Italiano" title="Italiano">🇮🇹</button><button type="button" class="legal-lang-flag" data-lang="vi" aria-label="Tiếng Việt" title="Tiếng Việt">🇻🇳</button><button type="button" class="legal-lang-flag" data-lang="nl" aria-label="Nederlands" title="Nederlands">🇳🇱</button>
-                </div>
-            </div>
-            <div class="legal-lang-block" data-lang="tr" data-title="Kullanım Koşulları ve Gizlilik Politikası | DuoFine" lang="tr" hidden><h2>Kullanım Koşulları ve Gizlilik Politikası</h2><p class="legal-updated">Son güncelleme: 15 Ağustos 2026</p><div class="legal-toc-group"><p class="legal-toc-heading">Kullanım Koşulları</p><ul class="legal-toc"><li><a href="#tr-kk-0">MADDE 0. Giriş ve Kabul</a></li><li><a href="#tr-kk-1">MADDE 1. Tanımlar</a></li><li><a href="#tr-kk-2">MADDE 2. Hizmetin Kapsamı</a></li><li><a href="#tr-kk-3">MADDE 3. Hesap Oluşturma, Yaş Sınırı ve Hesap Güvenliği</a></li><li><a href="#tr-kk-4">MADDE 4. Yasaklı Kullanımlar</a></li><li><a href="#tr-kk-5">MADDE 5. Kullanıcı İçeriği ve Lisans</a></li><li><a href="#tr-kk-6">MADDE 6. Konum Servisleri ve Harita İçeriği</a></li><li><a href="#tr-kk-7">MADDE 7. W-W Fırsatlar (Deals) — Üçüncü Taraf İşletme Kampanyaları</a></li><li><a href="#tr-kk-8">MADDE 8. Abonelikler, Token'lar ve Uygulama İçi Satın Alımlar</a></li><li><a href="#tr-kk-9">MADDE 9. Arkadaşlık, Mesajlaşma ve Kullanıcılar Arası Etkileşim</a></li><li><a href="#tr-kk-10">MADDE 10. Yer İmleri (Bookmarks)</a></li><li><a href="#tr-kk-11">MADDE 11. Bildirimler ve İletişim</a></li><li><a href="#tr-kk-12">MADDE 12. Hesap Askıya Alma, Fesih ve Silme</a></li><li><a href="#tr-kk-13">MADDE 13. Fikri Mülkiyet ve Marka Hakları</a></li><li><a href="#tr-kk-14">MADDE 14. Garantilerin Reddi</a></li><li><a href="#tr-kk-15">MADDE 15. Sorumluluğun Sınırlandırılması</a></li><li><a href="#tr-kk-16">MADDE 16. Tazminat</a></li><li><a href="#tr-kk-17">MADDE 17. Mücbir Sebep</a></li><li><a href="#tr-kk-18">MADDE 18. Uygulanacak Hukuk ve Uyuşmazlıkların Çözümü</a></li><li><a href="#tr-kk-19">MADDE 19. Genel Hükümler</a></li><li><a href="#tr-kk-20">MADDE 20. Değişiklikler</a></li><li><a href="#tr-kk-21">MADDE 21. İletişim</a></li></ul></div><div class="legal-toc-group"><p class="legal-toc-heading">Gizlilik Politikası ve KVKK Aydınlatma Metni</p><ul class="legal-toc"><li><a href="#tr-gp-1">MADDE 1. Veri Sorumlusunun Kimliği</a></li><li><a href="#tr-gp-2">MADDE 2. Bu Politikanın Kapsamı</a></li><li><a href="#tr-gp-3">MADDE 3. İşlenen Kişisel Veri Kategorileri</a></li><li><a href="#tr-gp-4">MADDE 4. Kişisel Verilerin İşlenme Amaçları</a></li><li><a href="#tr-gp-5">MADDE 5. Kişisel Verilerin İşlenmesinin Hukuki Sebepleri</a></li><li><a href="#tr-gp-6">MADDE 6. Konum Verisine İlişkin Özel Hüküm</a></li><li><a href="#tr-gp-7">MADDE 7. Google Haritalar/Places İçeriğine İlişkin Özel Hüküm</a></li><li><a href="#tr-gp-8">MADDE 8. W-W Fırsatlar Kapsamında İşlenen Veriler</a></li><li><a href="#tr-gp-9">MADDE 9. Abonelik ve Ödeme Verileri</a></li><li><a href="#tr-gp-10">MADDE 10. Kişisel Verilerin Aktarımı (Yurt İçi/Yurt Dışı)</a></li><li><a href="#tr-gp-11">MADDE 11. Saklama Süreleri</a></li><li><a href="#tr-gp-12">MADDE 12. Veri Güvenliği Tedbirleri</a></li><li><a href="#tr-gp-13">MADDE 13. Çocukların Gizliliği</a></li><li><a href="#tr-gp-14">MADDE 14. SDK'lar ve Analitik Araçlar</a></li><li><a href="#tr-gp-15">MADDE 15. İlgili Kişinin Hakları (KVKK m.11)</a></li><li><a href="#tr-gp-16">MADDE 16. Veri İhlali Bildirimi</a></li><li><a href="#tr-gp-17">MADDE 17. Politika Değişiklikleri</a></li><li><a href="#tr-gp-18">MADDE 18. İletişim ve Başvuru</a></li></ul></div><h3 class="legal-part-title" id="tr-bolum-1">Kullanım Koşulları</h3><div class="legal-article" id="tr-kk-0"><h3>MADDE 0. Giriş ve Kabul</h3>
+<main id="main">
+  <section class="section">
+    <div class="wrap">
+      <div class="legal" id="legal">
+        <div class="legal-switcher">
+          <span class="legal-switcher-label" id="legal-lang-label">Language</span>
+          <div class="legal-lang-flags" id="legal-lang-flags" role="group" aria-labelledby="legal-lang-label">
+          <button type="button" class="legal-lang-flag" data-lang="en" lang="en">English</button>
+          <button type="button" class="legal-lang-flag" data-lang="tr" lang="tr">Türkçe</button>
+          <button type="button" class="legal-lang-flag" data-lang="es" lang="es">Español</button>
+          <button type="button" class="legal-lang-flag" data-lang="ar" lang="ar">العربية</button>
+          <button type="button" class="legal-lang-flag" data-lang="de" lang="de">Deutsch</button>
+          <button type="button" class="legal-lang-flag" data-lang="fr" lang="fr">Français</button>
+          <button type="button" class="legal-lang-flag" data-lang="hi" lang="hi">हिन्दी</button>
+          <button type="button" class="legal-lang-flag" data-lang="ja" lang="ja">日本語</button>
+          <button type="button" class="legal-lang-flag" data-lang="pt" lang="pt">Português</button>
+          <button type="button" class="legal-lang-flag" data-lang="zh" lang="zh">中文（简体）</button>
+          <button type="button" class="legal-lang-flag" data-lang="ko" lang="ko">한국어</button>
+          <button type="button" class="legal-lang-flag" data-lang="ru" lang="ru">Русский</button>
+          <button type="button" class="legal-lang-flag" data-lang="id" lang="id">Bahasa Indonesia</button>
+          <button type="button" class="legal-lang-flag" data-lang="it" lang="it">Italiano</button>
+          <button type="button" class="legal-lang-flag" data-lang="vi" lang="vi">Tiếng Việt</button>
+          <button type="button" class="legal-lang-flag" data-lang="nl" lang="nl">Nederlands</button>
+          </div>
+        </div>
+<div class="legal-lang-block" data-lang="tr" data-title="Kullanım Koşulları ve Gizlilik Politikası | DuoFine" lang="tr" hidden><h2>Kullanım Koşulları ve Gizlilik Politikası</h2><p class="legal-updated">Son güncelleme: 15 Ağustos 2026</p><div class="legal-toc-group"><p class="legal-toc-heading">Kullanım Koşulları</p><ul class="legal-toc"><li><a href="#tr-kk-0">MADDE 0. Giriş ve Kabul</a></li><li><a href="#tr-kk-1">MADDE 1. Tanımlar</a></li><li><a href="#tr-kk-2">MADDE 2. Hizmetin Kapsamı</a></li><li><a href="#tr-kk-3">MADDE 3. Hesap Oluşturma, Yaş Sınırı ve Hesap Güvenliği</a></li><li><a href="#tr-kk-4">MADDE 4. Yasaklı Kullanımlar</a></li><li><a href="#tr-kk-5">MADDE 5. Kullanıcı İçeriği ve Lisans</a></li><li><a href="#tr-kk-6">MADDE 6. Konum Servisleri ve Harita İçeriği</a></li><li><a href="#tr-kk-7">MADDE 7. W-W Fırsatlar (Deals) — Üçüncü Taraf İşletme Kampanyaları</a></li><li><a href="#tr-kk-8">MADDE 8. Abonelikler, Token'lar ve Uygulama İçi Satın Alımlar</a></li><li><a href="#tr-kk-9">MADDE 9. Arkadaşlık, Mesajlaşma ve Kullanıcılar Arası Etkileşim</a></li><li><a href="#tr-kk-10">MADDE 10. Yer İmleri (Bookmarks)</a></li><li><a href="#tr-kk-11">MADDE 11. Bildirimler ve İletişim</a></li><li><a href="#tr-kk-12">MADDE 12. Hesap Askıya Alma, Fesih ve Silme</a></li><li><a href="#tr-kk-13">MADDE 13. Fikri Mülkiyet ve Marka Hakları</a></li><li><a href="#tr-kk-14">MADDE 14. Garantilerin Reddi</a></li><li><a href="#tr-kk-15">MADDE 15. Sorumluluğun Sınırlandırılması</a></li><li><a href="#tr-kk-16">MADDE 16. Tazminat</a></li><li><a href="#tr-kk-17">MADDE 17. Mücbir Sebep</a></li><li><a href="#tr-kk-18">MADDE 18. Uygulanacak Hukuk ve Uyuşmazlıkların Çözümü</a></li><li><a href="#tr-kk-19">MADDE 19. Genel Hükümler</a></li><li><a href="#tr-kk-20">MADDE 20. Değişiklikler</a></li><li><a href="#tr-kk-21">MADDE 21. İletişim</a></li></ul></div><div class="legal-toc-group"><p class="legal-toc-heading">Gizlilik Politikası ve KVKK Aydınlatma Metni</p><ul class="legal-toc"><li><a href="#tr-gp-1">MADDE 1. Veri Sorumlusunun Kimliği</a></li><li><a href="#tr-gp-2">MADDE 2. Bu Politikanın Kapsamı</a></li><li><a href="#tr-gp-3">MADDE 3. İşlenen Kişisel Veri Kategorileri</a></li><li><a href="#tr-gp-4">MADDE 4. Kişisel Verilerin İşlenme Amaçları</a></li><li><a href="#tr-gp-5">MADDE 5. Kişisel Verilerin İşlenmesinin Hukuki Sebepleri</a></li><li><a href="#tr-gp-6">MADDE 6. Konum Verisine İlişkin Özel Hüküm</a></li><li><a href="#tr-gp-7">MADDE 7. Google Haritalar/Places İçeriğine İlişkin Özel Hüküm</a></li><li><a href="#tr-gp-8">MADDE 8. W-W Fırsatlar Kapsamında İşlenen Veriler</a></li><li><a href="#tr-gp-9">MADDE 9. Abonelik ve Ödeme Verileri</a></li><li><a href="#tr-gp-10">MADDE 10. Kişisel Verilerin Aktarımı (Yurt İçi/Yurt Dışı)</a></li><li><a href="#tr-gp-11">MADDE 11. Saklama Süreleri</a></li><li><a href="#tr-gp-12">MADDE 12. Veri Güvenliği Tedbirleri</a></li><li><a href="#tr-gp-13">MADDE 13. Çocukların Gizliliği</a></li><li><a href="#tr-gp-14">MADDE 14. SDK'lar ve Analitik Araçlar</a></li><li><a href="#tr-gp-15">MADDE 15. İlgili Kişinin Hakları (KVKK m.11)</a></li><li><a href="#tr-gp-16">MADDE 16. Veri İhlali Bildirimi</a></li><li><a href="#tr-gp-17">MADDE 17. Politika Değişiklikleri</a></li><li><a href="#tr-gp-18">MADDE 18. İletişim ve Başvuru</a></li></ul></div><h3 class="legal-part-title" id="tr-bolum-1">Kullanım Koşulları</h3><div class="legal-article" id="tr-kk-0"><h3>MADDE 0. Giriş ve Kabul</h3>
 <p>İşbu Kullanım Koşulları ("Koşullar"), ticari unvanı <strong>DuoFine</strong> olan işletme ("İşletmeci", "biz") tarafından işletilen Common Ground mobil uygulaması ile bu uygulamanın sunduğu tüm özellikleri (mekân keşfi, W-W Fırsatlar, mesajlaşma, arkadaşlık ve yer imi dahil) kapsayan, kullanıcı ("siz", "Kullanıcı") ile İşletmeci arasındaki hukuki ilişkiyi düzenler.</p>
 <p>Uygulamayı indirerek, bir hesap oluşturarak veya kullanmaya devam ederek bu Koşulları ve aşağıda Bölüm II'de yer alan Gizlilik Politikası'nı okuduğunuzu, anladığınızı ve kabul ettiğinizi beyan edersiniz. Bu belgeleri kabul etmiyorsanız Uygulamayı kullanmamalı, hesabınızı oluşturmamalısınız.</p>
 <p>Uygulama içinde uygulama mağazası (Apple App Store / Google Play) üzerinden yapılan satın alımlar için, işbu Koşullara ek olarak ilgili mağazanın kendi kullanım koşulları da geçerlidir; çelişki halinde ödeme ve faturalandırmaya ilişkin hususlarda mağazanın koşulları, diğer tüm hususlarda işbu Koşullar esas alınır.</p>
@@ -295,7 +305,7 @@
 </div><div class="legal-article" id="tr-gp-18"><h3>MADDE 18. İletişim ve Başvuru</h3>
 <p>Gizlilik ve KVKK başvurularınız için: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
 <p class="divider-quote">Yazılı başvurularda, kimliğinizi tevsik edici bilgi/belge ile talebinizi açıkça belirtmeniz, başvurunuzun hızlı sonuçlandırılmasına yardımcı olur.</p>
-</div></div><div class="legal-lang-block" data-lang="en" data-title="Terms of Service and Privacy Policy | DuoFine" lang="en" hidden><h2>Terms of Service and Privacy Policy</h2><p class="legal-updated">Last updated: August 15, 2026</p><div class="legal-toc-group"><p class="legal-toc-heading">Terms of Service</p><ul class="legal-toc"><li><a href="#en-kk-0">ARTICLE 0. Introduction and Acceptance</a></li><li><a href="#en-kk-1">ARTICLE 1. Definitions</a></li><li><a href="#en-kk-2">ARTICLE 2. Scope of the Service</a></li><li><a href="#en-kk-3">ARTICLE 3. Account Creation, Age Limit, and Account Security</a></li><li><a href="#en-kk-4">ARTICLE 4. Prohibited Uses</a></li><li><a href="#en-kk-5">ARTICLE 5. User Content and License</a></li><li><a href="#en-kk-6">ARTICLE 6. Location Services and Map Content</a></li><li><a href="#en-kk-7">ARTICLE 7. W-W Deals — Third-Party Business Campaigns</a></li><li><a href="#en-kk-8">ARTICLE 8. Subscriptions, Tokens, and In-App Purchases</a></li><li><a href="#en-kk-9">ARTICLE 9. Friendship, Messaging, and Interaction Between Users</a></li><li><a href="#en-kk-10">ARTICLE 10. Bookmarks</a></li><li><a href="#en-kk-11">ARTICLE 11. Notifications and Communications</a></li><li><a href="#en-kk-12">ARTICLE 12. Account Suspension, Termination, and Deletion</a></li><li><a href="#en-kk-13">ARTICLE 13. Intellectual Property and Trademark Rights</a></li><li><a href="#en-kk-14">ARTICLE 14. Disclaimer of Warranties</a></li><li><a href="#en-kk-15">ARTICLE 15. Limitation of Liability</a></li><li><a href="#en-kk-16">ARTICLE 16. Indemnification</a></li><li><a href="#en-kk-17">ARTICLE 17. Force Majeure</a></li><li><a href="#en-kk-18">ARTICLE 18. Governing Law and Dispute Resolution</a></li><li><a href="#en-kk-19">ARTICLE 19. General Provisions</a></li><li><a href="#en-kk-20">ARTICLE 20. Amendments</a></li><li><a href="#en-kk-21">ARTICLE 21. Contact</a></li></ul></div><div class="legal-toc-group"><p class="legal-toc-heading">Privacy Policy and KVKK Disclosure Text</p><ul class="legal-toc"><li><a href="#en-gp-1">ARTICLE 1. Identity of the Data Controller</a></li><li><a href="#en-gp-2">ARTICLE 2. Scope of This Policy</a></li><li><a href="#en-gp-3">ARTICLE 3. Categories of Personal Data Processed</a></li><li><a href="#en-gp-4">ARTICLE 4. Purposes of Processing Personal Data</a></li><li><a href="#en-gp-5">ARTICLE 5. Legal Grounds for Processing Personal Data</a></li><li><a href="#en-gp-6">ARTICLE 6. Special Provision Concerning Location Data</a></li><li><a href="#en-gp-7">ARTICLE 7. Special Provision Concerning Google Maps/Places Content</a></li><li><a href="#en-gp-8">ARTICLE 8. Data Processed Under W-W Deals</a></li><li><a href="#en-gp-9">ARTICLE 9. Subscription and Payment Data</a></li><li><a href="#en-gp-10">ARTICLE 10. Transfer of Personal Data (Domestic/International)</a></li><li><a href="#en-gp-11">ARTICLE 11. Retention Periods</a></li><li><a href="#en-gp-12">ARTICLE 12. Data Security Measures</a></li><li><a href="#en-gp-13">ARTICLE 13. Children's Privacy</a></li><li><a href="#en-gp-14">ARTICLE 14. SDKs and Analytics Tools</a></li><li><a href="#en-gp-15">ARTICLE 15. Rights of the Data Subject (KVKK Art. 11)</a></li><li><a href="#en-gp-16">ARTICLE 16. Data Breach Notification</a></li><li><a href="#en-gp-17">ARTICLE 17. Changes to This Policy</a></li><li><a href="#en-gp-18">ARTICLE 18. Contact and Requests</a></li></ul></div><h3 class="legal-part-title" id="en-bolum-1">Terms of Service</h3><div class="legal-article" id="en-kk-0"><h3>ARTICLE 0. Introduction and Acceptance</h3>
+</div></div><div class="legal-lang-block" data-lang="en" data-title="Terms of Service and Privacy Policy | DuoFine" lang="en"><h2>Terms of Service and Privacy Policy</h2><p class="legal-updated">Last updated: August 15, 2026</p><div class="legal-toc-group"><p class="legal-toc-heading">Terms of Service</p><ul class="legal-toc"><li><a href="#en-kk-0">ARTICLE 0. Introduction and Acceptance</a></li><li><a href="#en-kk-1">ARTICLE 1. Definitions</a></li><li><a href="#en-kk-2">ARTICLE 2. Scope of the Service</a></li><li><a href="#en-kk-3">ARTICLE 3. Account Creation, Age Limit, and Account Security</a></li><li><a href="#en-kk-4">ARTICLE 4. Prohibited Uses</a></li><li><a href="#en-kk-5">ARTICLE 5. User Content and License</a></li><li><a href="#en-kk-6">ARTICLE 6. Location Services and Map Content</a></li><li><a href="#en-kk-7">ARTICLE 7. W-W Deals — Third-Party Business Campaigns</a></li><li><a href="#en-kk-8">ARTICLE 8. Subscriptions, Tokens, and In-App Purchases</a></li><li><a href="#en-kk-9">ARTICLE 9. Friendship, Messaging, and Interaction Between Users</a></li><li><a href="#en-kk-10">ARTICLE 10. Bookmarks</a></li><li><a href="#en-kk-11">ARTICLE 11. Notifications and Communications</a></li><li><a href="#en-kk-12">ARTICLE 12. Account Suspension, Termination, and Deletion</a></li><li><a href="#en-kk-13">ARTICLE 13. Intellectual Property and Trademark Rights</a></li><li><a href="#en-kk-14">ARTICLE 14. Disclaimer of Warranties</a></li><li><a href="#en-kk-15">ARTICLE 15. Limitation of Liability</a></li><li><a href="#en-kk-16">ARTICLE 16. Indemnification</a></li><li><a href="#en-kk-17">ARTICLE 17. Force Majeure</a></li><li><a href="#en-kk-18">ARTICLE 18. Governing Law and Dispute Resolution</a></li><li><a href="#en-kk-19">ARTICLE 19. General Provisions</a></li><li><a href="#en-kk-20">ARTICLE 20. Amendments</a></li><li><a href="#en-kk-21">ARTICLE 21. Contact</a></li></ul></div><div class="legal-toc-group"><p class="legal-toc-heading">Privacy Policy and KVKK Disclosure Text</p><ul class="legal-toc"><li><a href="#en-gp-1">ARTICLE 1. Identity of the Data Controller</a></li><li><a href="#en-gp-2">ARTICLE 2. Scope of This Policy</a></li><li><a href="#en-gp-3">ARTICLE 3. Categories of Personal Data Processed</a></li><li><a href="#en-gp-4">ARTICLE 4. Purposes of Processing Personal Data</a></li><li><a href="#en-gp-5">ARTICLE 5. Legal Grounds for Processing Personal Data</a></li><li><a href="#en-gp-6">ARTICLE 6. Special Provision Concerning Location Data</a></li><li><a href="#en-gp-7">ARTICLE 7. Special Provision Concerning Google Maps/Places Content</a></li><li><a href="#en-gp-8">ARTICLE 8. Data Processed Under W-W Deals</a></li><li><a href="#en-gp-9">ARTICLE 9. Subscription and Payment Data</a></li><li><a href="#en-gp-10">ARTICLE 10. Transfer of Personal Data (Domestic/International)</a></li><li><a href="#en-gp-11">ARTICLE 11. Retention Periods</a></li><li><a href="#en-gp-12">ARTICLE 12. Data Security Measures</a></li><li><a href="#en-gp-13">ARTICLE 13. Children's Privacy</a></li><li><a href="#en-gp-14">ARTICLE 14. SDKs and Analytics Tools</a></li><li><a href="#en-gp-15">ARTICLE 15. Rights of the Data Subject (KVKK Art. 11)</a></li><li><a href="#en-gp-16">ARTICLE 16. Data Breach Notification</a></li><li><a href="#en-gp-17">ARTICLE 17. Changes to This Policy</a></li><li><a href="#en-gp-18">ARTICLE 18. Contact and Requests</a></li></ul></div><h3 class="legal-part-title" id="en-bolum-1">Terms of Service</h3><div class="legal-article" id="en-kk-0"><h3>ARTICLE 0. Introduction and Acceptance</h3>
 <p>These Terms of Service ("Terms") govern the legal relationship between the user ("you", "User") and the business operating under the trade name <strong>DuoFine</strong> ("Operator", "we"), covering the Common Ground mobile application and all features it offers, including venue discovery, W-W Deals, messaging, friendship, and bookmarks.</p>
 <p>By downloading the Application, creating an account, or continuing to use it, you represent that you have read, understood, and accepted these Terms and the Privacy Policy set out in Part II below. If you do not accept these documents, you must not use the Application or create an account.</p>
 <p>For in-app purchases made through an application store (Apple App Store / Google Play), that store's own terms of use apply in addition to these Terms; in the event of a conflict, the store's terms shall prevail on matters relating to payment and billing, and these Terms shall prevail on all other matters.</p>
@@ -3686,39 +3696,74 @@
 <p>Voor privacygerelateerde en KVKK-verzoeken: <a href="mailto:info@duofine.com">info@duofine.com</a></p>
 <p class="divider-quote">Wanneer u bij een schriftelijk verzoek identiteitsbevestigende informatie/documentatie meestuurt en uw verzoek duidelijk omschrijft, draagt dit bij aan een snelle afhandeling van uw verzoek.</p>
 </div></div>
-        </section>
-    </main>
+      </div>
+    </div>
+  </section>
+</main>
 
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <a href="/" class="nav-logo">
-                    <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30 85 C 80 85, 80 15, 30 15" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/><path d="M70 15 C 20 15, 20 85, 70 85" stroke-width="14" stroke="currentColor" fill="none" stroke-linecap="round"/></svg>
-                    <span>DuoFine</span>
-                </a>
-                <p>Crafting meaningful connections and experiences through technology.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Navigate</h3>
-                <ul class="footer-links">
-                    <li><a href="/#about">About</a></li>
-                    <li><a href="/#projects">Projects</a></li>
-                    <li><a href="/#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Connect</h3>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"></path></svg></a>
-                    <a href="https://x.com/duofine" target="_blank" rel="noopener noreferrer" aria-label="X" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
-                </div>
-            </div>
+<!-- @@footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
+          <span>DuoFine</span>
+        </a>
+        <p class="footer-tag">Crafting meaningful connections and experiences through technology.</p>
+      </div>
+      <div>
+        <h2>Navigate</h2>
+        <ul class="footer-links">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#work">Work</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Connect</h2>
+        <div class="socials">
+          <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener" aria-label="DuoFine on Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+          </a>
+          <a href="https://x.com/duofine" target="_blank" rel="noopener" aria-label="DuoFine on X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
         </div>
-        <div class="footer-bottom">
-            © <span id="y">2026</span> DuoFine. All Rights Reserved. | <a href="mailto:info@duofine.com">info@duofine.com</a>
-        </div>
-    </footer>
+        <!--email_off--><a class="footer-mail" href="mailto:info@duofine.com">info@duofine.com</a><!--/email_off-->
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DuoFine. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="/privacypolicy">Privacy &amp; Terms</a>
+        <a href="/delete-account.html">Account deletion</a>
+        <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+      </nav>
+    </div>
+  </div>
+</footer>
 
-    <script src="/legal-switcher.js"></script>
+<button class="to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/></svg>
+</button>
+
+<div class="cookie" id="cookie-banner" role="region" aria-labelledby="cookie-text">
+  <p id="cookie-text">Analytics cookies help us see how the site is used. Nothing loads until you choose. <a href="/privacypolicy">Privacy policy</a></p>
+  <div class="cookie-actions">
+    <button class="btn" type="button" id="cookie-reject">Reject</button>
+    <button class="btn btn-primary" type="button" id="cookie-accept">Accept</button>
+  </div>
+</div>
+
+<script type="speculationrules">
+{"prerender":[{"where":{"and":[{"href_matches":"/blog/*"},{"not":{"href_matches":"/blog/"}}]},"eagerness":"moderate"},{"where":{"href_matches":"/work/*"},"eagerness":"moderate"}],
+ "prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}
+</script>
+<script src="/script.js?v=b53589af" defer></script>
+<!-- @@/footer -->
+
+<script src="/legal-switcher.js"></script>
 </body>
 </html>
