@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<script>document.documentElement.className+=" js"</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self' 'sha256-pfgOMgfVZwm2ODyms34QYW9h8EwicylhV77q5LHK8c0=' 'sha256-c4d39nIZNqOORjxvQPDfA2scQBZtpB1spn3nFw5NaW4=' 'inline-speculation-rules' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://formsubmit.co https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
+
+<title>DuoFine | Ürün mühendisliği — hızlı backend'ler, kullanılmaya devam edilen arayüzler</title>
+<meta name="description" content="DuoFine web ve mobil ürünleri uçtan uca tasarlar ve geliştirir: gerçek zamanlı altyapı, milisaniyeler içinde yanıt veren PostgreSQL ve insanların kullanmaya devam ettiği arayüzler. Türkiye merkezli, dünyanın her yerine.">
+<link rel="canonical" href="https://duofine.com/tr/">
+<link rel="alternate" hreflang="tr" href="https://duofine.com/tr/">
+<link rel="alternate" hreflang="en" href="https://duofine.com/">
+<link rel="alternate" hreflang="x-default" href="https://duofine.com/">
+<link rel="alternate" type="application/atom+xml" title="DuoFine Engineering" href="/feed.xml">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151C2E" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DuoFine">
+<meta property="og:url" content="https://duofine.com/tr/">
+<meta property="og:title" content="DuoFine — Ölçekte hızlı kalan backend'ler. Kullanılmaya devam edilen arayüzler.">
+<meta property="og:description" content="Web ve mobil ürünler uçtan uca: gerçek zamanlı altyapı, milisaniyeler içinde yanıt veren veritabanları, ana ekranda yerini hak eden arayüzler.">
+<meta property="og:image" content="https://duofine.com/assets/og/tr-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DuoFine — Yüksek performanslı dijital ürün mühendisliği">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@duofine">
+<meta name="twitter:title" content="DuoFine — Ölçekte hızlı kalan backend'ler. Kullanılmaya devam edilen arayüzler.">
+<meta name="twitter:description" content="Web ve mobil ürünler uçtan uca: gerçek zamanlı altyapı, milisaniyeler içinde yanıt veren veritabanları, kullanılmaya devam edilen arayüzler.">
+<meta name="twitter:image" content="https://duofine.com/assets/og/tr-home.jpg">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preload" href="/assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/poppins-700-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/poppins-400-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css?v=a8e88dca">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://duofine.com/#organization",
+      "name": "DuoFine",
+      "url": "https://duofine.com/",
+      "logo": { "@type": "ImageObject", "url": "https://duofine.com/assets/img/logo-512.png", "width": 512, "height": 512 },
+      "description": "Yüksek performanslı web ve mobil ürünler geliştiren ürün mühendisliği stüdyosu: gerçek zamanlı altyapı, ölçeklenebilir backend'ler ve insanların kullanmaya devam ettiği arayüzler.",
+      "email": "info@duofine.com",
+      "areaServed": "Worldwide",
+      "founder": { "@id": "https://duofine.com/#taha-tekin" },
+      "sameAs": ["https://www.instagram.com/duofineofficial", "https://x.com/duofine"],
+      "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "email": "info@duofine.com", "availableLanguage": ["Turkish", "English"] }
+    },
+    { "@type": "Person", "@id": "https://duofine.com/#taha-tekin", "name": "Taha Tekin", "jobTitle": "Kurucu ve baş mühendis", "worksFor": { "@id": "https://duofine.com/#organization" }, "url": "https://duofine.com/tr/#about" },
+    { "@type": "WebPage", "@id": "https://duofine.com/tr/", "url": "https://duofine.com/tr/", "name": "DuoFine", "inLanguage": "tr", "isPartOf": { "@id": "https://duofine.com/#website" } },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "tr",
+      "mainEntity": [
+        { "@type": "Question", "name": "DuoFine ne geliştirir?", "acceptedAnswer": { "@type": "Answer", "text": "Web ve mobil ürünleri uçtan uca — backend, uygulama ve altyapı — ve mevcut bir ürünü yeniden hızlandıran performans kurtarma işleri." } },
+        { "@type": "Question", "name": "Bir çalışma nasıl başlar?", "acceptedAnswer": { "@type": "Answer", "text": "Ne inşa ettiğinizi anlatan bir mesajla. Bir iş günü içinde, genellikle birkaç soruyla yanıt alırsınız; uygunsa bir görüşme yaparız. Bu görüşmenin bir maliyeti yoktur." } },
+        { "@type": "Question", "name": "Kodun sahibi kim?", "acceptedAnswer": { "@type": "Answer", "text": "Siz. Depolar, mağaza hesapları ve altyapı ilk günden sizin adınıza kurulur." } },
+        { "@type": "Question", "name": "DuoFine nerede ve uzaktan çalışıyor mu?", "acceptedAnswer": { "@type": "Answer", "text": "DuoFine Türkiye merkezlidir (UTC+3) ve dünyanın her yerindeki müşterilerle uzaktan çalışır." } },
+        { "@type": "Question", "name": "Sabit kapsamlı iş alıyor musunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Evet — denetimler, performans kurtarma ve kapsamı net işler. Daha büyük ürünler, her hafta çalışan yazılım teslim edilen kısa yinelemelerle ilerler." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body data-page="home" data-lang-switch="/">
+
+<!-- @@header -->
+<a class="skip-link" href="#main">İçeriğe geç</a>
+<div id="top-sentinel" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Ana menü">
+      <a class="brand" href="/tr/">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
+        <span>DuoFine</span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="/tr/#about" data-nav="about" data-spy="about">Hakkında</a></li>
+          <li><a href="/tr/#work" data-nav="work" data-spy="work">İşler</a></li>
+          <li><a href="/blog/" data-nav="blog" hreflang="en">Blog</a></li>
+          <li><a class="nav-cta" href="/tr/#contact" data-nav="contact" data-spy="contact">Proje başlat</a></li>
+        </ul>
+        <a class="lang-switch" href="/" hreflang="en" lang="en" aria-label="EN: English version" data-lang-switch>EN</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Menü">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- @@/header -->
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-kicker">Ürün mühendisliği stüdyosu</p>
+          <h1>Ölçekte hızlı kalan backend'ler. İnsanların <em>bırakmadığı</em> arayüzler.</h1>
+          <p class="hero-sub">DuoFine, web ve mobil ürünleri uçtan uca tasarlar ve geliştirir: gerçek zamanlı altyapı, milisaniyeler içinde yanıt veren veritabanları ve ana ekranda yerini hak eden arayüzler.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Proje başlat</a>
+            <a class="btn btn-ghost" href="#work">İşlere bak</a>
+          </div>
+          <ul class="hero-proofline" aria-label="Sicil">
+            <li><b>38&nbsp;ms</b> p95 sohbet geçmişi, 700&nbsp;ms'den</li>
+            <li><b>%82</b> daha düşük işletme maliyeti</li>
+            <li><b>İlk 5</b> — 10.000+ başvuru arasında, Innovation &amp; Excellence Awards 2026</li>
+          </ul>
+        </div>
+
+        <figure class="hero-visual" aria-label="Bir DuoFine ürününün yapısı: Django ve WebSockets backend'iyle konuşan React Native uygulaması, 38 milisaniyede yanıt veren PostgreSQL">
+          <svg class="schematic" viewBox="0 0 560 380" role="img" aria-hidden="true" focusable="false">
+            <path class="sch-link" d="M132 200 H214"/>
+            <path class="sch-flow" d="M132 200 H214"/>
+            <path class="sch-link" d="M376 200 H438"/>
+            <path class="sch-flow" d="M376 200 H438"/>
+            <rect class="sch-node" x="34" y="72" width="98" height="256" rx="18"/>
+            <rect class="sch-node-hi" x="44" y="90" width="78" height="220" rx="10" fill="none"/>
+            <rect class="sch-bubble" x="52" y="116" width="46" height="18" rx="9"/>
+            <rect class="sch-bubble-me" x="68" y="142" width="46" height="18" rx="9"/>
+            <rect class="sch-bubble" x="52" y="168" width="58" height="18" rx="9"/>
+            <rect class="sch-bubble-me" x="60" y="194" width="54" height="18" rx="9"/>
+            <rect class="sch-bubble" x="52" y="220" width="40" height="18" rx="9"/>
+            <rect class="sch-node" x="52" y="278" width="62" height="14" rx="7"/>
+            <circle class="sch-dot" cx="120" cy="92" r="3"/>
+            <text class="sch-label" x="83" y="352" text-anchor="middle">React Native uygulama</text>
+            <text class="sch-sub" x="83" y="368" text-anchor="middle">iOS · Android</text>
+            <rect class="sch-node" x="214" y="146" width="162" height="108" rx="14"/>
+            <rect class="sch-node-hi" x="228" y="162" width="134" height="18" rx="6"/>
+            <rect class="sch-node-hi" x="228" y="188" width="134" height="18" rx="6"/>
+            <rect class="sch-node-hi" x="228" y="214" width="134" height="18" rx="6"/>
+            <circle class="sch-dot" cx="238" cy="171" r="3"/>
+            <circle class="sch-dot" cx="238" cy="197" r="3"/>
+            <circle class="sch-dot" cx="238" cy="223" r="3"/>
+            <text class="sch-label" x="295" y="290" text-anchor="middle">Django · WebSockets</text>
+            <text class="sch-sub" x="295" y="306" text-anchor="middle">gerçek zamanlı API</text>
+            <path class="sch-cyl" d="M438 160 v90 a52 16 0 0 0 104 0 v-90"/>
+            <ellipse class="sch-cyl-top" cx="490" cy="160" rx="52" ry="16"/>
+            <path class="sch-link" d="M438 190 a52 16 0 0 0 104 0"/>
+            <path class="sch-link" d="M438 220 a52 16 0 0 0 104 0"/>
+            <text class="sch-label" x="490" y="290" text-anchor="middle">PostgreSQL</text>
+            <text class="sch-sub" x="490" y="306" text-anchor="middle">sorguya hizalı indeksler</text>
+            <rect class="sch-badge" x="430" y="96" width="120" height="30" rx="15"/>
+            <text class="sch-badge-text" x="490" y="116" text-anchor="middle">38 ms · p95</text>
+            <path class="sch-link" d="M490 126 V144"/>
+          </svg>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof" aria-label="Sicil">
+    <div class="wrap">
+      <dl class="proof-grid">
+        <div class="proof-cell">
+          <dt>Mimari optimizasyon sonrası daha hızlı sistem performansı</dt>
+          <dd><span class="unit unit-pre">%</span><span data-count="94">0</span></dd>
+        </div>
+        <div class="proof-cell">
+          <dt>Daha akıllı altyapı kararlarıyla daha düşük işletme maliyeti</dt>
+          <dd><span class="unit unit-pre">%</span><span data-count="82">0</span></dd>
+        </div>
+        <div class="proof-cell">
+          <dt>p95 sohbet geçmişi gecikmesi, 700&nbsp;ms'den</dt>
+          <dd><span data-count="38">0</span><span class="unit">ms</span></dd>
+        </div>
+      </dl>
+      <div class="proof-compare" aria-label="Sohbet geçmişi sorgusu, önce ve sonra">
+        <div class="bar is-before"><span>Önce</span><span class="bar-track"><span class="bar-fill w-before"></span></span><span class="bar-val">700 ms</span></div>
+        <div class="bar is-after"><span>Sonra</span><span class="bar-track"><span class="bar-fill w-after"></span></span><span class="bar-val">38 ms</span></div>
+      </div>
+      <p class="proof-note">Sonuncusu ayrıntılarıyla yazıldı — <a href="/blog/postgresql-700ms-to-38ms/" hreflang="en">700&nbsp;ms'lik PostgreSQL sorgusu nasıl 38&nbsp;ms oldu</a> (İngilizce).</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Hakkında</span>
+        <h2>Hız, hassasiyetle buluşur</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-main">
+          <div class="prose reveal">
+            <p>DuoFine küçük bir ürün mühendisliği stüdyosu. Ürünleri kaba bir fikirden, insanların yükleyip her gün kullandığı ve ücret ödediği bir şeye taşıyoruz — gerçek trafik altında ayakta kalması gereken backend ve "zaten böyle olmalıydı" dedirten arayüz.</p>
+            <p>Çoğu ekibin kadro bulmakta en çok zorlandığı katmanda çalışıyoruz: <strong>altyapı ile deneyimin birleştiği yerde</strong>. Bir yanda sorgu planları ve WebSocket dağıtımı; öbür yanda onboarding akışları ve boş ekranlar. Bir ürün ancak ikisi de doğruysa hızlı hissettirir.</p>
+            <p>Yayınladığımız her şey ölçülür. Bu sayfadaki sayılar bizim işlettiğimiz ya da devrettiğimiz üretim sistemlerinden geliyor — biri de <a href="/blog/postgresql-700ms-to-38ms/" hreflang="en">ayrıntılarıyla yazıldı</a>.</p>
+          </div>
+
+          <div class="reveal">
+            <h3 class="h3-quiet">Nasıl çalışırız</h3>
+            <ol class="steps">
+              <li><div><h3>Keşif</h3><p>Ürünü, merkezindeki zor problemi ve başarıyı tanımlayacak sayıları haritalarız. Kapsamı belli bir plan ve dürüst bir tahmin alırsınız.</p></div></li>
+              <li><div><h3>İnşa</h3><p>Sunum değil, her hafta çalışan yazılım. Backend, uygulama ve altyapı birlikte büyür; sonda birleştirilecek bir şey kalmaz.</p></div></li>
+              <li><div><h3>Yayın ve ölçüm</h3><p>Mağaza yayınları, izleme ve üretimdeki ilk haftalar işin parçasıdır. Sayılar "çalışıyor" diyene kadar kalırız.</p></div></li>
+            </ol>
+          </div>
+
+          <div class="reveal">
+            <h3 class="h3-quiet">Sık sorulanlar</h3>
+            <div class="faq">
+              <details><summary>Ne geliştiriyorsunuz?</summary><p>Web ve mobil ürünleri uçtan uca — backend, uygulama ve altyapı — ve mevcut bir ürünü yeniden hızlandıran performans kurtarma işleri.</p></details>
+              <details><summary>Bir çalışma nasıl başlar?</summary><p>Ne inşa ettiğinizi anlatan bir mesajla. Bir iş günü içinde, genellikle birkaç soruyla yanıt alırsınız; uygunsa bir görüşme yaparız. Bu görüşmenin bir maliyeti yoktur.</p></details>
+              <details><summary>Kodun sahibi kim?</summary><p>Siz. Depolar, mağaza hesapları ve altyapı ilk günden sizin adınıza kurulur.</p></details>
+              <details><summary>Neredesiniz, uzaktan çalışıyor musunuz?</summary><p>Türkiye (UTC+3). Yaptığımız her şey uzaktan çalışmaya göre kurulu; farklı saat dilimlerindeki müşterilere teslimat yaptık.</p></details>
+              <details><summary>Sabit kapsamlı iş alıyor musunuz?</summary><p>Evet — denetimler, performans kurtarma ve kapsamı net işler. Daha büyük ürünler, her hafta çalışan yazılım teslim edilen kısa yinelemelerle ilerler.</p></details>
+            </div>
+          </div>
+        </div>
+
+        <aside class="about-aside reveal" aria-label="Kiminle çalışacaksınız">
+          <div class="card person">
+            <div class="person-head">
+              <span class="avatar" aria-hidden="true">TT</span>
+              <div><strong>Taha Tekin</strong><span class="role">Kurucu ve baş mühendis</span></div>
+            </div>
+            <p>Common Ground'un gerçek zamanlı backend'inin ve 700&nbsp;→&nbsp;38&nbsp;ms yazısının arkasındaki mühendis. Her projenin ilk sorgu planından mağaza yayınına kadar tek bir sorumlusu vardır.</p>
+            <dl class="facts">
+              <div><dt>Konum</dt><dd>Türkiye (UTC+3); dünyanın her yerindeki müşterilerle uzaktan</dd></div>
+              <div><dt>Yanıt</dt><dd>Bir iş günü içinde</dd></div>
+              <div><dt>Yığın</dt><dd><ul class="chips"><li class="chip">React Native</li><li class="chip">Django</li><li class="chip">PostgreSQL</li><li class="chip">WebSockets</li><li class="chip">Cloudflare</li><li class="chip">Sentry</li></ul></dd></div>
+            </dl>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">İşler</span>
+        <h2>Üretimdeki ürünler</h2>
+        <p>Üç yayınlanmış platform; her birinin merkezinde farklı bir zor problem.</p>
+      </div>
+
+      <div class="projects">
+
+        <article class="project is-reverse reveal">
+          <figure class="project-media">
+            <picture>
+              <source type="image/avif" srcset="/assets/img/shentechin-480.avif 480w, /assets/img/shentechin-960.avif 960w, /assets/img/shentechin-1440.avif 1440w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
+              <source type="image/webp" srcset="/assets/img/shentechin-480.webp 480w, /assets/img/shentechin-960.webp 960w, /assets/img/shentechin-1440.webp 1440w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
+              <img src="/assets/img/shentechin-960.jpg" width="960" height="480" alt="ShenTechin MED açılış sayfası" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <div class="project-body">
+            <span class="project-kicker">Sağlık teknolojisi · Web platformu</span>
+            <h3><a href="/work/shentechin-med/" hreflang="en">ShenTechin MED</a></h3>
+            <p>Gelişmiş algoritmaları klinik araştırmayla birleştiren, tıp uzmanlarının denetiminde bir sağlık teknolojisi ekosistemi.</p>
+            <dl class="pao">
+              <div><dt>Problem</dt><dd>Klinik düzeydeki sağlık verisi yoğun ve ürkütücü; insanlar okuyamadıkları şeyi bırakıyor.</dd></div>
+              <div><dt>Yaklaşım</dt><dd>Doktor denetiminde bir değerlendirme akışı; uyku, metabolik beslenme ve dermatolojide yapay zekâ destekli analiz.</dd></div>
+              <div><dt>Sonuç</dt><dd>Tıbbi veriyi üç sağlık alanında uygulanabilir içgörüye çeviren, yayında bir platform.</dd></div>
+            </dl>
+            <ul class="project-metrics">
+              <li>Yapay zekâ destekli analiz</li>
+              <li>Klinik denetim</li>
+              <li>Üç sağlık alanı</li>
+            </ul>
+            <div class="project-links">
+              <a class="more-link" href="/work/shentechin-med/" hreflang="en">Vaka çalışması (İngilizce)</a>
+              <a href="https://shentechin.com" target="_blank" rel="noopener">shentechin.com</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <figure class="project-media">
+            <svg class="illus illus-cg" viewBox="0 0 480 360" role="img" aria-label="İllüstrasyon: iki kişinin konumu ve Common Ground'un aralarında hesapladığı buluşma noktası, üstünde bir sohbet mesajı" focusable="false">
+              <rect class="cg-bg" width="480" height="360"/>
+              <g class="cg-grid"><path d="M0 60 H480 M0 120 H480 M0 180 H480 M0 240 H480 M0 300 H480 M60 0 V360 M120 0 V360 M180 0 V360 M240 0 V360 M300 0 V360 M360 0 V360 M420 0 V360" fill="none"/></g>
+              <path class="cg-road" d="M-10 250 C 90 240, 140 120, 250 150 S 400 90, 490 60"/>
+              <path class="cg-road" d="M40 -10 C 60 120, 200 200, 240 330"/>
+              <path class="cg-road" d="M300 370 C 320 260, 380 250, 470 230"/>
+              <path class="cg-route" d="M96 292 C 150 250, 200 200, 250 176"/>
+              <path class="cg-route" d="M398 108 C 350 130, 300 150, 250 176"/>
+              <g transform="translate(96 292)"><path class="cg-pin" d="M0 -34 a14 14 0 0 1 14 14 c0 10 -14 26 -14 26 s-14 -16 -14 -26 a14 14 0 0 1 14 -14z"/><circle class="cg-pin-hole" cx="0" cy="-20" r="5"/></g>
+              <g transform="translate(398 108)"><path class="cg-pin" d="M0 -34 a14 14 0 0 1 14 14 c0 10 -14 26 -14 26 s-14 -16 -14 -26 a14 14 0 0 1 14 -14z"/><circle class="cg-pin-hole" cx="0" cy="-20" r="5"/></g>
+              <circle class="cg-meet-ring" cx="250" cy="176" r="22"/>
+              <circle class="cg-meet" cx="250" cy="176" r="9"/>
+              <g transform="translate(262 232)">
+                <rect class="cg-card" width="190" height="96" rx="12"/>
+                <rect class="cg-bubble" x="14" y="16" width="96" height="20" rx="10"/>
+                <rect class="cg-bubble-me" x="80" y="44" width="96" height="20" rx="10"/>
+                <text class="cg-sub" x="14" y="84">sohbet geçmişi · 38 ms p95</text>
+              </g>
+              <text class="cg-text" x="24" y="40">Common Ground</text>
+              <text class="cg-sub" x="24" y="56">ortada buluş, gerçek zamanlı</text>
+            </svg>
+          </figure>
+          <div class="project-body">
+            <span class="project-kicker">Tüketici · iOS ve Android</span>
+            <h3><a href="/work/common-ground/" hreflang="en">Common Ground</a></h3>
+            <p>İnsanları bulundukları yere göre en uygun, en keyifli ve en verimli koşullarda bir araya getiren bir platform.</p>
+            <dl class="pao">
+              <div><dt>Problem</dt><dd>Şehrin iki ucundan buluşmak yer, zaman ve ulaşım pazarlığı demek — ve mesaj tablosu büyüdükçe sohbet geçmişi 700&nbsp;ms'ye yavaşlamıştı.</dd></div>
+              <div><dt>Yaklaşım</dt><dd>Gerçek zamanlı WebSockets ile React Native + Django; konum, mesafe ve ulaşımı tartan bir buluşma noktası motoru; sohbet için sorguya hizalı bileşik indeksler.</dd></div>
+              <div><dt>Sonuç</dt><dd>p95'te 38&nbsp;ms sohbet geçmişi; App Store ve Google Play'de yayında.</dd></div>
+            </dl>
+            <ul class="project-metrics">
+              <li>React Native + Django</li>
+              <li>Gerçek zamanlı WebSockets</li>
+              <li>38&nbsp;ms p95 sohbet yükleme</li>
+            </ul>
+            <div class="store-badges">
+              <a href="https://apps.apple.com/us/app/common-ground/id6748603386" target="_blank" rel="noopener" aria-label="Common Ground'u App Store'dan indir">
+                <img class="badge-appstore" src="/assets/img/badge-appstore.svg" width="120" height="40" alt="App Store'dan indir" loading="lazy" decoding="async">
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.duofine.CG" target="_blank" rel="noopener" aria-label="Common Ground'u Google Play'den edin">
+                <img class="badge-googleplay" src="/assets/img/badge-googleplay.png" width="646" height="250" alt="Google Play'den edinin" loading="lazy" decoding="async">
+              </a>
+            </div>
+            <div class="project-links">
+              <a class="more-link" href="/work/common-ground/" hreflang="en">Vaka çalışması (İngilizce)</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project is-reverse reveal">
+          <figure class="project-media">
+            <picture>
+              <source type="image/avif" srcset="/assets/img/ucdplast-480.avif 480w, /assets/img/ucdplast-960.avif 960w, /assets/img/ucdplast-1440.avif 1440w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
+              <source type="image/webp" srcset="/assets/img/ucdplast-480.webp 480w, /assets/img/ucdplast-960.webp 960w, /assets/img/ucdplast-1440.webp 1440w" sizes="(max-width: 900px) calc(100vw - 96px), 480px">
+              <img src="/assets/img/ucdplast-960.jpg" width="960" height="467" alt="UCD Plast web sitesi: küresel üreticiler için yüksek kaliteli rPET granül ve PET levha" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <div class="project-body">
+            <span class="project-kicker">Endüstriyel B2B · Web sitesi</span>
+            <h3><a href="/work/ucd-plast/" hreflang="en">UCD Plast</a></h3>
+            <p>rPET granül ve PET levha üreticisi için kapsamlı bir endüstriyel B2B platformu.</p>
+            <dl class="pao">
+              <div><dt>Problem</dt><dd>Gelip giden organik trafik: alıcılar ürünleri ve hızlı bir teklif yolunu bulamıyordu.</dd></div>
+              <div><dt>Yaklaşım</dt><dd>Alıcının yolu etrafında yeniden kuruldu — mobil öncelikli eylem çağrıları, daha kısa teklif formları, arama trafiğini müşteri adayına çeviren net ürün sayfaları.</dd></div>
+              <div><dt>Sonuç</dt><dd>Dönüşüm belirgin biçimde arttı; platform Corporate LiveWire Innovation &amp; Excellence Awards 2026'da 10.000+ başvuru arasında ilk 5'e girdi.</dd></div>
+            </dl>
+            <ul class="project-metrics">
+              <li>Endüstriyel B2B</li>
+              <li>Organik müşteri adayı dönüşümü</li>
+            </ul>
+            <p class="award">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 8.4l6.1-.8z"/></svg>
+              10.000+ başvuru arasında ilk 5 — Corporate LiveWire Innovation &amp; Excellence Awards 2026
+            </p>
+            <div class="project-links">
+              <a class="more-link" href="/work/ucd-plast/" hreflang="en">Vaka çalışması (İngilizce)</a>
+              <a href="https://ucdplast.com" target="_blank" rel="noopener">ucdplast.com</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-aside reveal">
+          <div>
+            <span class="eyebrow">İletişim</span>
+            <h2>Ne inşa ettiğinizi anlatın</h2>
+            <p>Ürünü ve nerede sıkıştığını anlatan birkaç satır yeter. Form doğrudan <!--email_off--><a href="mailto:info@duofine.com">info@duofine.com</a><!--/email_off--> adresine gider.</p>
+          </div>
+          <div>
+            <h3 class="h3-quiet">Sonra ne olur</h3>
+            <ol class="next-steps">
+              <li>Bir iş günü içinde, genellikle birkaç soruyla yanıt alırsınız.</li>
+              <li>Uygunsa ürünü birlikte gözden geçirdiğimiz 30 dakikalık bir görüşme.</li>
+              <li>Tahminli, kapsamı belli bir plan — ya da doğru ekip biz değilsek dürüst bir cevap.</li>
+            </ol>
+          </div>
+          <dl class="contact-meta">
+            <div><dt>E-posta</dt><dd><!--email_off--><a href="mailto:info@duofine.com">info@duofine.com</a><!--/email_off--></dd></div>
+            <div><dt>Yanıt süresi</dt><dd>Bir iş günü içinde</dd></div>
+            <div><dt>Saat dilimi</dt><dd>UTC+3 (Türkiye)</dd></div>
+          </dl>
+        </div>
+
+        <div class="reveal">
+          <form class="form" id="contact-form" novalidate
+                data-msg-required="Bu alan zorunlu."
+                data-msg-email="Geçerli bir e-posta adresi girin (ör. ad@sirket.com)."
+                data-msg-url="https:// ile başlayan tam bir adres girin."
+                data-msg-short="Biraz daha ayrıntı ekleyin — en az 10 karakter."
+                data-msg-sending="Gönderiliyor…"
+                data-msg-error="Bizim tarafımızda bir şey ters gitti ve mesaj gönderilemedi. Lütfen bunun yerine {link} adresine yazın — bağlantı, az önce yazdıklarınızla dolu bir taslak açar; hiçbir şey kaybolmaz.">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Ad</label>
+                <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error" enterkeyhint="next">
+                <p class="field-error" id="name-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="email">E-posta</label>
+                <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required aria-describedby="email-error" enterkeyhint="next">
+                <p class="field-error" id="email-error" role="alert"></p>
+              </div>
+            </div>
+
+            <fieldset class="field">
+              <legend>Neye ihtiyacınız var? <span class="field-hint">(birden fazla seçilebilir)</span></legend>
+              <div class="chip-group">
+                <label class="chip-check"><input type="checkbox" name="needs" value="Yeni ürün"><span>Yeni ürün</span></label>
+                <label class="chip-check"><input type="checkbox" name="needs" value="Mobil uygulama"><span>Mobil uygulama</span></label>
+                <label class="chip-check"><input type="checkbox" name="needs" value="Backend ve altyapı"><span>Backend ve altyapı</span></label>
+                <label class="chip-check"><input type="checkbox" name="needs" value="Performans kurtarma"><span>Performans kurtarma</span></label>
+                <label class="chip-check"><input type="checkbox" name="needs" value="Başka bir şey"><span>Başka bir şey</span></label>
+              </div>
+            </fieldset>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="budget">Bütçe <span class="field-hint">(isteğe bağlı)</span></label>
+                <select id="budget" name="budget">
+                  <option value="">Henüz belli değil</option>
+                  <option>5.000 $ altı</option>
+                  <option>5.000 – 15.000 $</option>
+                  <option>15.000 – 50.000 $</option>
+                  <option>50.000 $ ve üzeri</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="timeline">Zaman planı <span class="field-hint">(isteğe bağlı)</span></label>
+                <select id="timeline" name="timeline">
+                  <option value="">Henüz belli değil</option>
+                  <option>En kısa sürede</option>
+                  <option>Önümüzdeki 1–3 ay</option>
+                  <option>Bu yıl içinde</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="link">Bağlantı <span class="field-hint">(isteğe bağlı — site, mağaza sayfası, depo ya da sunum)</span></label>
+              <input type="url" id="link" name="link" inputmode="url" autocomplete="url" placeholder="https://" aria-describedby="link-error" enterkeyhint="next">
+              <p class="field-error" id="link-error" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <label for="message">Mesaj</label>
+              <textarea id="message" name="message" rows="5" required minlength="10" aria-describedby="message-error message-hint"></textarea>
+              <p class="field-hint" id="message-hint">Ürün ne yapıyor, kimin için, bugün ne çalışmıyor.</p>
+              <p class="field-error" id="message-error" role="alert"></p>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="company">Şirket (boş bırakın)</label>
+              <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+            </div>
+
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <button class="btn btn-primary" type="submit">Mesaj gönder</button>
+          </form>
+
+          <div class="form-done" id="form-done" hidden tabindex="-1">
+            <h3>Mesaj gönderildi</h3>
+            <p>Teşekkürler — mesajınız <!--email_off--><strong>info@duofine.com</strong><!--/email_off--> adresine ulaştı. Şimdi olacaklar:</p>
+            <ol class="next-steps">
+              <li>Bir iş günü içinde, genellikle birkaç soruyla yanıt.</li>
+              <li>Uygunsa ürünü birlikte gözden geçirdiğimiz 30 dakikalık bir görüşme.</li>
+              <li>Tahminli, kapsamı belli bir plan.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="sticky-cta" aria-hidden="true">
+  <a class="btn btn-primary" href="#contact" tabindex="-1">Proje başlat</a>
+</div>
+
+<!-- @@footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/tr/">
+          <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
+          <span>DuoFine</span>
+        </a>
+        <p class="footer-tag">Teknolojiyle anlamlı bağlar ve deneyimler kuruyoruz.</p>
+      </div>
+      <div>
+        <h2>Gezin</h2>
+        <ul class="footer-links">
+          <li><a href="/tr/#about">Hakkında</a></li>
+          <li><a href="/tr/#work">İşler</a></li>
+          <li><a href="/blog/" hreflang="en">Blog (İngilizce)</a></li>
+          <li><a href="/tr/#contact">İletişim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Bağlantı</h2>
+        <div class="socials">
+          <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener" aria-label="DuoFine Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+          </a>
+          <a href="https://x.com/duofine" target="_blank" rel="noopener" aria-label="DuoFine X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <!--email_off--><a class="footer-mail" href="mailto:info@duofine.com">info@duofine.com</a><!--/email_off-->
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DuoFine. Tüm hakları saklıdır.</span>
+      <nav aria-label="Yasal">
+        <a href="/privacypolicy?lang=tr">Gizlilik ve Koşullar</a>
+        <a href="/delete-account.html" hreflang="en">Hesap silme</a>
+        <a href="/" hreflang="en" lang="en">English</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="Başa dön">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/></svg>
+</button>
+
+<div class="cookie" id="cookie-banner" role="region" aria-labelledby="cookie-text">
+  <p id="cookie-text">Analitik çerezler sitenin nasıl kullanıldığını görmemize yardımcı olur. Siz seçmeden hiçbir şey yüklenmez. <a href="/privacypolicy?lang=tr">Gizlilik politikası</a></p>
+  <div class="cookie-actions">
+    <button class="btn" type="button" id="cookie-reject">Reddet</button>
+    <button class="btn btn-primary" type="button" id="cookie-accept">Kabul et</button>
+  </div>
+</div>
+
+<script type="speculationrules">
+{"prerender":[{"where":{"and":[{"href_matches":"/blog/*"},{"not":{"href_matches":"/blog/"}}]},"eagerness":"moderate"},{"where":{"href_matches":"/work/*"},"eagerness":"moderate"}],
+ "prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}
+</script>
+<script src="/script.js?v=b53589af" defer></script>
+<!-- @@/footer -->
+
+</body>
+</html>

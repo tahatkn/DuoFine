@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js"</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self' 'sha256-pfgOMgfVZwm2ODyms34QYW9h8EwicylhV77q5LHK8c0=' 'sha256-c4d39nIZNqOORjxvQPDfA2scQBZtpB1spn3nFw5NaW4=' 'inline-speculation-rules' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://formsubmit.co https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
+
+<title>Common Ground — meet halfway, in real time | DuoFine Work</title>
+<meta name="description" content="Case study: Common Ground, a location-based social app for iOS and Android built and run by DuoFine — meeting-point engine, real-time chat over WebSockets, and a PostgreSQL chat query taken from 700 ms to 38 ms.">
+<link rel="canonical" href="https://duofine.com/work/common-ground/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151C2E" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DuoFine">
+<meta property="og:url" content="https://duofine.com/work/common-ground/">
+<meta property="og:title" content="Common Ground — meet halfway, in real time">
+<meta property="og:description" content="A location-based social app for iOS and Android: meeting-point engine, real-time chat, and a chat query taken from 700 ms to 38 ms.">
+<meta property="og:image" content="https://duofine.com/assets/og/work-common-ground.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@duofine">
+<meta name="twitter:title" content="Common Ground — meet halfway, in real time">
+<meta name="twitter:description" content="A location-based social app for iOS and Android: meeting-point engine, real-time chat, and a chat query taken from 700 ms to 38 ms.">
+<meta name="twitter:image" content="https://duofine.com/assets/og/work-common-ground.jpg">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preload" href="/assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css?v=a8e88dca">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"CreativeWork","@id":"https://duofine.com/work/common-ground/#case",
+  "name":"Common Ground — case study","url":"https://duofine.com/work/common-ground/",
+  "headline":"Common Ground — meet halfway, in real time",
+  "description":"A location-based social app for iOS and Android built and run by DuoFine.",
+  "creator":{"@id":"https://duofine.com/#organization"},
+  "about":{"@type":"SoftwareApplication","name":"Common Ground","applicationCategory":"SocialNetworkingApplication","operatingSystem":"iOS, Android",
+    "downloadUrl":["https://apps.apple.com/us/app/common-ground/id6748603386","https://play.google.com/store/apps/details?id=com.duofine.CG"]},
+  "image":"https://duofine.com/assets/og/work-common-ground.jpg","inLanguage":"en"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"DuoFine","item":"https://duofine.com/"},
+  {"@type":"ListItem","position":2,"name":"Work","item":"https://duofine.com/#work"},
+  {"@type":"ListItem","position":3,"name":"Common Ground","item":"https://duofine.com/work/common-ground/"}]}
+]}
+</script>
+</head>
+<body data-page="work">
+
+<!-- @@header -->
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="top-sentinel" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
+        <span>DuoFine</span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="/#about" data-nav="about" data-spy="about">About</a></li>
+          <li><a href="/#work" data-spy="work" data-nav="work" aria-current="page">Work</a></li>
+          <li><a href="/blog/" data-nav="blog">Blog</a></li>
+          <li><a class="nav-cta" href="/#contact" data-nav="contact" data-spy="contact">Start a project</a></li>
+        </ul>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- @@/header -->
+
+<main id="main">
+  <section class="case-hero">
+    <div class="wrap">
+      <ol class="breadcrumb" aria-label="Breadcrumb">
+        <li><a href="/">DuoFine</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li aria-current="page">Common Ground</li>
+      </ol>
+      <span class="eyebrow">Case study · Consumer app</span>
+      <h1>Common Ground</h1>
+      <p class="lede">A location-based social app for iOS and Android: find the best place to meet, chat in real time, and see where your friends are — designed, built and run by DuoFine.</p>
+      <dl class="case-meta">
+        <div><dt>Platform</dt><dd>iOS · Android</dd></div>
+        <div><dt>Stack</dt><dd>React Native · Django · PostgreSQL · WebSockets · Google Maps Platform</dd></div>
+        <div><dt>Role</dt><dd>Product, design, engineering, operations</dd></div>
+        <div><dt>Status</dt><dd><a href="https://apps.apple.com/us/app/common-ground/id6748603386" target="_blank" rel="noopener">App Store</a> · <a href="https://play.google.com/store/apps/details?id=com.duofine.CG" target="_blank" rel="noopener">Google Play</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <article class="article">
+        <div class="article-body">
+<h2 id="problem">The problem</h2>
+<p>Meeting friends across a city is a negotiation: who travels how far, by what means, to which kind of place, at what time. Every group chat has the same twenty messages before anyone leaves the house. Common Ground exists to skip them — take everyone's location and preferences, and propose the place that is fair, reachable and worth going to.</p>
+<p>Under that friendly surface sits an unforgiving set of engineering constraints: live location from many devices, messaging that has to feel instant, venue data from a third-party platform, and a database that keeps growing with every conversation.</p>
+
+<figure class="case-visual">
+  <svg class="illus illus-cg" viewBox="0 0 480 360" role="img" aria-label="Illustration: two people's locations and the meeting point Common Ground computes between them, with a chat message on top" focusable="false">
+    <rect class="cg-bg" width="480" height="360"/>
+    <g class="cg-grid"><path d="M0 60 H480 M0 120 H480 M0 180 H480 M0 240 H480 M0 300 H480 M60 0 V360 M120 0 V360 M180 0 V360 M240 0 V360 M300 0 V360 M360 0 V360 M420 0 V360" fill="none"/></g>
+    <path class="cg-road" d="M-10 250 C 90 240, 140 120, 250 150 S 400 90, 490 60"/>
+    <path class="cg-road" d="M40 -10 C 60 120, 200 200, 240 330"/>
+    <path class="cg-road" d="M300 370 C 320 260, 380 250, 470 230"/>
+    <path class="cg-route" d="M96 292 C 150 250, 200 200, 250 176"/>
+    <path class="cg-route" d="M398 108 C 350 130, 300 150, 250 176"/>
+    <g transform="translate(96 292)"><path class="cg-pin" d="M0 -34 a14 14 0 0 1 14 14 c0 10 -14 26 -14 26 s-14 -16 -14 -26 a14 14 0 0 1 14 -14z"/><circle class="cg-pin-hole" cx="0" cy="-20" r="5"/></g>
+    <g transform="translate(398 108)"><path class="cg-pin" d="M0 -34 a14 14 0 0 1 14 14 c0 10 -14 26 -14 26 s-14 -16 -14 -26 a14 14 0 0 1 14 -14z"/><circle class="cg-pin-hole" cx="0" cy="-20" r="5"/></g>
+    <circle class="cg-meet-ring" cx="250" cy="176" r="22"/>
+    <circle class="cg-meet" cx="250" cy="176" r="9"/>
+    <g transform="translate(262 232)">
+      <rect class="cg-card" width="190" height="96" rx="12"/>
+      <rect class="cg-bubble" x="14" y="16" width="96" height="20" rx="10"/>
+      <rect class="cg-bubble-me" x="80" y="44" width="96" height="20" rx="10"/>
+      <text class="cg-sub" x="14" y="84">chat history · 38 ms p95</text>
+    </g>
+    <text class="cg-text" x="24" y="40">Common Ground</text>
+    <text class="cg-sub" x="24" y="56">meet halfway, in real time</text>
+  </svg>
+  <figcaption>Two locations in, one fair meeting point out — and a conversation about it that loads in 38&nbsp;ms.</figcaption>
+</figure>
+
+<h2 id="built">What we built</h2>
+<ul>
+  <li><strong>Venue discovery</strong> with filters for distance, transport mode, category and popularity, backed by Google Maps Platform data.</li>
+  <li><strong>A common meeting point</strong> computed for two or more people from their live locations and how each of them is travelling.</li>
+  <li><strong>Friends and live location</strong> so a plan can be made — and adjusted — while people are already on the move.</li>
+  <li><strong>Real-time chat</strong> over WebSockets, with a history that stays fast as the message table grows (more on that below).</li>
+  <li><strong>Bookmarks</strong> with personal labels, and <strong>W-W Deals</strong>: offers from partner businesses redeemed in-app with a code or QR.</li>
+  <li><strong>Plus and Pro subscriptions</strong> through the App Store and Google Play, with a token system that meters discovery features.</li>
+  <li><strong>Sign-in with email, Google or Apple</strong>, device-level checks against duplicate accounts, and account deletion from inside the app.</li>
+</ul>
+
+<h2 id="hard">The hard problem: chat history at 700 ms</h2>
+<p>As the <code>Message</code> table grew, the query that loads a conversation drifted from instant to 700&nbsp;ms at p95. <code>EXPLAIN ANALYZE</code> showed why: a sequential scan over the whole table followed by an in-memory Top-N sort. The fix was not more hardware but two compound B-tree indexes aligned with the exact shape of the query — equality columns first, the sort column last — so PostgreSQL could walk an already-ordered index backwards and stop after a hundred rows.</p>
+<p>The result was 38&nbsp;ms at p95, a 94.6% reduction, and a database that spends its CPU on something else. The full diagnosis is written up in <a href="/blog/postgresql-700ms-to-38ms/">Fixing a 700ms PostgreSQL Query: From Seq Scan to 38ms</a>.</p>
+
+<h2 id="outcome">Outcome</h2>
+<dl class="outcomes">
+  <div><dd>38<span class="unit">ms</span></dd><dt>Chat history at p95, down from 700&nbsp;ms</dt></div>
+  <div><dd>94.6<span class="unit">%</span></dd><dt>Reduction in query latency</dt></div>
+  <div class="is-quiet"><dd>Live on both stores</dd><dt>App Store and Google Play, with in-app subscriptions</dt></div>
+  <div class="is-quiet"><dd>16 languages</dd><dt>Terms and privacy policy, served from this site</dt></div>
+</dl>
+
+<h2 id="operating">Operating it</h2>
+<p>Shipping a consumer app is the beginning of the work, not the end. Alongside the app itself, DuoFine runs the pieces that stores and regulators expect: the <a href="/privacypolicy">terms and privacy policy</a> in sixteen languages, an <a href="/delete-account.html">account-deletion path</a> that works with or without the app installed, and the account activation, e-mail change and password reset flows that the app hands off to the web.</p>
+
+<div class="store-badges">
+  <a href="https://apps.apple.com/us/app/common-ground/id6748603386" target="_blank" rel="noopener" aria-label="Download Common Ground on the App Store">
+    <img class="badge-appstore" src="/assets/img/badge-appstore.svg" width="120" height="40" alt="Download on the App Store" loading="lazy" decoding="async">
+  </a>
+  <a href="https://play.google.com/store/apps/details?id=com.duofine.CG" target="_blank" rel="noopener" aria-label="Get Common Ground on Google Play">
+    <img class="badge-googleplay" src="/assets/img/badge-googleplay.png" width="646" height="250" alt="Get it on Google Play" loading="lazy" decoding="async">
+  </a>
+</div>
+
+<div class="callout">Building something with the same shape — real-time, location-aware, store-bound? <a href="/#contact">Tell us what you are building</a>.</div>
+        </div>
+
+        <nav class="post-nav" aria-label="More work">
+          <a href="/work/shentechin-med/"><small>Previous</small><span>ShenTechin MED</span></a>
+          <a class="is-next" href="/work/ucd-plast/"><small>Next</small><span>UCD Plast</span></a>
+        </nav>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- @@footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
+          <span>DuoFine</span>
+        </a>
+        <p class="footer-tag">Crafting meaningful connections and experiences through technology.</p>
+      </div>
+      <div>
+        <h2>Navigate</h2>
+        <ul class="footer-links">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#work">Work</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Connect</h2>
+        <div class="socials">
+          <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener" aria-label="DuoFine on Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+          </a>
+          <a href="https://x.com/duofine" target="_blank" rel="noopener" aria-label="DuoFine on X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <!--email_off--><a class="footer-mail" href="mailto:info@duofine.com">info@duofine.com</a><!--/email_off-->
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DuoFine. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="/privacypolicy">Privacy &amp; Terms</a>
+        <a href="/delete-account.html">Account deletion</a>
+        <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/></svg>
+</button>
+
+<div class="cookie" id="cookie-banner" role="region" aria-labelledby="cookie-text">
+  <p id="cookie-text">Analytics cookies help us see how the site is used. Nothing loads until you choose. <a href="/privacypolicy">Privacy policy</a></p>
+  <div class="cookie-actions">
+    <button class="btn" type="button" id="cookie-reject">Reject</button>
+    <button class="btn btn-primary" type="button" id="cookie-accept">Accept</button>
+  </div>
+</div>
+
+<script type="speculationrules">
+{"prerender":[{"where":{"and":[{"href_matches":"/blog/*"},{"not":{"href_matches":"/blog/"}}]},"eagerness":"moderate"},{"where":{"href_matches":"/work/*"},"eagerness":"moderate"}],
+ "prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}
+</script>
+<script src="/script.js?v=b53589af" defer></script>
+<!-- @@/footer -->
+
+</body>
+</html>
