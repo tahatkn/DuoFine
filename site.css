@@ -292,6 +292,21 @@ button{font:inherit}
 .hero-proofline li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--band-brand)}
 .hero-proofline b{color:var(--band-ink);font-weight:700;white-space:nowrap}
 
+
+/* Türkçe kapak: kelimeler uzun, ölçü dar — aynı puntoda başlık 5 satıra çıkıp
+   hero'yu ilk ekranın dışına taşıyor. Metin kolonu biraz genişler, başlık
+   ölçeği ~%89'a iner; sonuç 3 dengeli satır ve tek ekrana sığan bir hero. */
+html[lang="tr"] .hero h1{font-size:clamp(1.9rem,.5rem + 3.6vw,3.2rem)}
+/* İki kolon yalnızca ölçü yeterince genişken; 901–1000 px'te Türkçe başlık
+   tek kelimelik satırlara dağılıyordu, orada da tek kolona geçiyoruz. */
+@media (min-width:1001px){
+  html[lang="tr"] .hero-grid{grid-template-columns:minmax(0,1.22fr) minmax(0,.95fr)}
+}
+@media (min-width:901px) and (max-width:1000px){
+  html[lang="tr"] .hero-grid{grid-template-columns:minmax(0,1fr);gap:var(--s7)}
+  html[lang="tr"] .hero-visual{max-width:460px}
+}
+
 /* şema */
 .hero-visual{max-width:560px;margin-inline:auto;width:100%;min-width:0}
 .schematic{width:100%;height:auto;overflow:visible;font-family:inherit}
@@ -334,13 +349,17 @@ button{font:inherit}
 .proof-cell dd .unit-pre{margin:0 .08em 0 0}
 .proof-compare{padding:var(--s6) var(--s5) var(--s7);display:grid;gap:var(--s3);max-width:720px;margin-inline:auto}
 .proof-compare .bar{display:grid;grid-template-columns:7ch 1fr 6ch;align-items:center;gap:var(--s3);font-size:var(--t-xs);color:var(--band-muted);font-weight:600;font-variant-numeric:tabular-nums}
-.proof-compare .bar-track{height:10px;border-radius:var(--r-full);background:var(--band-3);overflow:hidden}
-.proof-compare .bar-fill{height:100%;border-radius:var(--r-full);background:var(--band-line);width:0;transition:width 1.1s var(--ease)}
+.proof-compare .bar-track{height:10px;border-radius:var(--r-full);background:var(--band-3);box-shadow:inset 0 0 0 1px var(--band-line);overflow:hidden}
+/* display:block şart — span satır içi kalırsa genişlik uygulanmaz, çubuk hiç çizilmez */
+.proof-compare .bar-fill{display:block;height:100%;border-radius:var(--r-full);background:color-mix(in srgb,var(--band-muted) 42%,transparent);width:var(--w)}
 .proof-compare .bar.is-after .bar-fill{background:var(--band-brand)}
 .proof-compare .bar.is-after .bar-val{color:var(--band-ink)}
 .proof-compare .w-before{--w:100%}
+/* 38 ms / 700 ms — oran birebir, uzunluk farkı bu yüzden gerçek */
 .proof-compare .w-after{--w:5.43%}
-.proof-compare.is-visible .bar-fill{width:var(--w)}
+/* JS varsa sıfırdan büyür; JS yoksa çubuklar zaten doğru oranda durur */
+.js .proof-compare .bar-fill{width:0;transition:width 1.1s var(--ease)}
+.js .proof-compare.is-visible .bar-fill{width:var(--w)}
 .proof-note{text-align:center;padding:0 var(--s5) var(--s7);font-size:var(--t-sm);color:var(--band-muted)}
 .proof-note a{color:var(--band-brand);font-weight:600}
 
@@ -833,7 +852,7 @@ table.legal-table th{background:var(--surface-2);font-weight:600}
   *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
   .js .reveal{opacity:1 !important;transform:none !important}
   .js .hero-sub,.js .hero-actions,.js .hero-proofline,.js .hero-visual{opacity:1 !important;transform:none !important}
-  .proof-compare .bar-fill{width:var(--w)}
+  .js .proof-compare .bar-fill{width:var(--w)}
 }
 
 /* ---------- 23. Duyarlı ---------- */
