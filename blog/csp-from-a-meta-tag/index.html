@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js"</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self' 'sha256-pfgOMgfVZwm2ODyms34QYW9h8EwicylhV77q5LHK8c0=' 'sha256-c4d39nIZNqOORjxvQPDfA2scQBZtpB1spn3nFw5NaW4=' 'inline-speculation-rules' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://formsubmit.co https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
+
+<title>A Content-Security-Policy you can ship from a meta tag | DuoFine Engineering</title>
+<meta name="description" content="GitHub Pages cannot send response headers. A meta-tag Content-Security-Policy covers most of what you want — including dropping 'unsafe-inline' with script hashes — as long as you know the three directives it silently ignores.">
+<link rel="canonical" href="https://duofine.com/blog/csp-from-a-meta-tag/">
+<link rel="alternate" type="application/atom+xml" title="DuoFine Engineering" href="/feed.xml">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151C2E" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DuoFine">
+<meta property="og:url" content="https://duofine.com/blog/csp-from-a-meta-tag/">
+<meta property="og:title" content="A Content-Security-Policy you can ship from a meta tag">
+<meta property="og:description" content="Static host, no headers. What a meta CSP can do, the three directives it ignores, and how to drop 'unsafe-inline' with hashes.">
+<meta property="og:image" content="https://duofine.com/assets/og/csp-from-a-meta-tag.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-25">
+<meta property="article:tag" content="Security">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@duofine">
+<meta name="twitter:title" content="A Content-Security-Policy you can ship from a meta tag">
+<meta name="twitter:description" content="Static host, no headers. What a meta CSP can do, the three directives it ignores, and how to drop 'unsafe-inline' with hashes.">
+<meta name="twitter:image" content="https://duofine.com/assets/og/csp-from-a-meta-tag.jpg">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preload" href="/assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css?v=a8e88dca">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BlogPosting",
+  "headline":"A Content-Security-Policy you can ship from a meta tag",
+  "description":"GitHub Pages cannot send response headers. A meta-tag Content-Security-Policy covers most of what you want — including dropping 'unsafe-inline' with script hashes — as long as you know the three directives it silently ignores.",
+  "url":"https://duofine.com/blog/csp-from-a-meta-tag/",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://duofine.com/blog/csp-from-a-meta-tag/"},
+  "datePublished":"2026-08-25","dateModified":"2026-08-25",
+  "author":{"@id":"https://duofine.com/#organization"},
+  "publisher":{"@id":"https://duofine.com/#organization"},
+  "image":"https://duofine.com/assets/og/csp-from-a-meta-tag.jpg",
+  "keywords":"Content-Security-Policy, CSP, GitHub Pages, static site, unsafe-inline, script hash, speculation rules",
+  "inLanguage":"en"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"DuoFine","item":"https://duofine.com/"},
+  {"@type":"ListItem","position":2,"name":"Engineering notes","item":"https://duofine.com/blog/"},
+  {"@type":"ListItem","position":3,"name":"A CSP you can ship from a meta tag","item":"https://duofine.com/blog/csp-from-a-meta-tag/"}]}
+]}
+</script>
+</head>
+<body data-page="blog">
+
+<!-- @@header -->
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="top-sentinel" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
+        <span>DuoFine</span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="/#about" data-nav="about" data-spy="about">About</a></li>
+          <li><a href="/#work" data-nav="work" data-spy="work">Work</a></li>
+          <li><a href="/blog/" data-nav="blog" aria-current="page">Blog</a></li>
+          <li><a class="nav-cta" href="/#contact" data-nav="contact" data-spy="contact">Start a project</a></li>
+        </ul>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- @@/header -->
+
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<main id="main">
+  <section class="section">
+    <div class="wrap">
+      <div class="article-layout">
+      <article class="article">
+        <a class="back-link" href="/blog/">&larr; All notes</a>
+        <header class="article-head">
+          <h1>A Content-Security-Policy you can ship from a meta tag</h1>
+          <p class="lede">GitHub Pages cannot send headers. A <code>&lt;meta&gt;</code> policy covers most of what you want anyway — including dropping <code>'unsafe-inline'</code> — as long as you know the three directives it will silently ignore.</p>
+          <div class="post-meta">
+            <time datetime="2026-08-25">25 August 2026</time>
+            <span>DuoFine Engineering</span>
+            <span class="tag">Security</span>
+            <span>6 min read</span>
+          </div>
+        </header>
+
+        <nav class="toc toc-inline" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#why-meta">Why a meta tag at all</a></li>
+            <li><a href="#ignored">The three directives a meta CSP ignores</a></li>
+            <li><a href="#policy">The policy, line by line</a></li>
+            <li><a href="#inline">Getting rid of 'unsafe-inline'</a></li>
+            <li><a href="#styles">No inline styles, really</a></li>
+            <li><a href="#injected">Scripts you did not write</a></li>
+            <li><a href="#checking">Keeping it true at deploy time</a></li>
+          </ol>
+        </nav>
+
+        <div class="article-body">
+<p>A Content-Security-Policy is the one line of defence that turns "someone injected a script" from a breach into a console error. Ours is delivered in the least glamorous way possible: a <code>&lt;meta http-equiv&gt;</code> tag at the top of every page. This note is about what that buys, what it cannot buy, and the small amount of tooling that keeps it honest.</p>
+
+<h2 id="why-meta">Why a meta tag at all</h2>
+<p>This site is served by GitHub Pages, which does not let you set response headers. Cloudflare sits in front and <em>can</em> add headers with a transform rule — we use that for <code>Strict-Transport-Security</code>, <code>X-Frame-Options</code> and friends. But a CSP is tightly coupled to the HTML it protects: add a font host, add a script hash, and the policy has to change with the same commit. A header configured in a dashboard drifts. A meta tag lives in the repository, next to the code it describes, and gets reviewed in the same diff.</p>
+<p>Two rules for the tag itself: put it before any <code>&lt;script&gt;</code> or <code>&lt;link&gt;</code> in <code>&lt;head&gt;</code>, because it only applies from the point the parser reaches it; and put <code>charset</code> before it, so the policy is parsed in the encoding you think it is.</p>
+
+<h2 id="ignored">The three directives a meta CSP ignores</h2>
+<p>Per the specification, a policy delivered via <code>&lt;meta&gt;</code> drops three things, silently:</p>
+<ul>
+  <li><strong><code>frame-ancestors</code></strong> — clickjacking protection. Browsers refuse to honour it from a meta tag because the framing decision is made before the document is parsed. Use the <code>X-Frame-Options: DENY</code> header instead; ours comes from Cloudflare.</li>
+  <li><strong><code>report-uri</code> / <code>report-to</code></strong> — violation reporting. If you want reports, you need a header.</li>
+  <li><strong><code>sandbox</code></strong> — also header-only.</li>
+</ul>
+<p>Everything else — <code>default-src</code>, <code>script-src</code>, <code>style-src</code>, <code>connect-src</code>, <code>img-src</code>, <code>font-src</code>, <code>form-action</code>, <code>base-uri</code>, <code>object-src</code>, <code>upgrade-insecure-requests</code> — works exactly as it would in a header.</p>
+
+<h2 id="policy">The policy, line by line</h2>
+<p>Here is the policy on this page, wrapped for reading. Hashes are computed at deploy time, which is the last section.</p>
+
+<div class="code">
+  <div class="code-head"><span>Content-Security-Policy</span><button class="copy-btn" type="button" data-done="Copied">Copy</button></div>
+<pre><code>default-src 'self';
+base-uri 'self';
+object-src 'none';
+frame-src 'none';
+script-src 'self' 'sha256-…' 'inline-speculation-rules'
+           https://www.googletagmanager.com https://static.cloudflareinsights.com;
+style-src 'self';
+img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com;
+font-src 'self';
+connect-src 'self' https://formsubmit.co https://cloudflareinsights.com
+            https://*.google-analytics.com https://*.analytics.google.com
+            https://www.googletagmanager.com;
+form-action 'self' https://formsubmit.co;
+upgrade-insecure-requests</code></pre>
+</div>
+
+<ul>
+  <li><code>default-src 'self'</code> is the floor: anything not listed comes from this origin or not at all.</li>
+  <li><code>object-src 'none'</code> and <code>frame-src 'none'</code> because the site embeds nothing.</li>
+  <li><code>base-uri 'self'</code> stops an injected <code>&lt;base&gt;</code> from redirecting every relative URL.</li>
+  <li><code>form-action</code> lists the one host the contact form posts to. Without it, an injected form could exfiltrate what people type.</li>
+  <li><code>font-src 'self'</code> because the fonts are self-hosted — <a href="/blog/self-hosting-poppins-turkish/">that is its own note</a>.</li>
+</ul>
+
+<h2 id="inline">Getting rid of 'unsafe-inline'</h2>
+<p><code>'unsafe-inline'</code> in <code>script-src</code> is the directive that makes a CSP mostly decorative: it allows exactly the injected inline script you were trying to stop. We used to have it, for one reason — a single one-line script at the top of each page:</p>
+
+<div class="code">
+  <div class="code-head"><span>HTML</span><button class="copy-btn" type="button" data-done="Copied">Copy</button></div>
+<pre><code><span class="tk-o">&lt;</span><span class="tk-k">script</span><span class="tk-o">&gt;</span>document.documentElement.className<span class="tk-o">+=</span><span class="tk-s">" js"</span><span class="tk-o">&lt;/</span><span class="tk-k">script</span><span class="tk-o">&gt;</span></code></pre>
+</div>
+
+<p>It adds a class so that reveal animations only hide content when JavaScript is actually running. It has to be inline and it has to be first. The answer is a hash: the SHA-256 of the script's exact text, base64-encoded, listed in <code>script-src</code> as <code>'sha256-…'</code>. Change one character of the script and the browser refuses to run it — which is the point.</p>
+<p>Two other kinds of inline script turned out to need nothing or something else:</p>
+<ul>
+  <li><strong>JSON-LD</strong> (<code>type="application/ld+json"</code>) is data, not code. The browser never executes it, so CSP does not apply.</li>
+  <li><strong>Speculation rules</strong> (<code>type="speculationrules"</code>, the JSON that asks Chrome to prerender the next page) <em>are</em> subject to <code>script-src</code>. CSP3 added a dedicated keyword, <code>'inline-speculation-rules'</code>, for exactly this. We list the keyword and the block's hash, so browsers that know either one are covered.</li>
+</ul>
+
+<h2 id="styles">No inline styles, really</h2>
+<p><code>style-src 'self'</code> without <code>'unsafe-inline'</code> means no <code>style=""</code> attributes anywhere in the markup and no <code>&lt;style&gt;</code> blocks. That sounds restrictive until you notice the loophole you actually need: setting styles from JavaScript through the CSSOM (<code>el.style.transform = …</code>, <code>el.style.setProperty('--w', …)</code>) is allowed. Only the attribute in the HTML is blocked.</p>
+<p>So the reading-progress bar on this page is driven by <code>style.transform</code> from a scroll handler, the before/after bars on the homepage get their widths from CSS classes that set a custom property, and inline SVG uses presentation <em>attributes</em> (<code>fill</code>, <code>stroke</code>), which CSP does not touch. We removed exactly one <code>style</code> attribute from the whole site and nothing was lost.</p>
+
+<h2 id="injected">Scripts you did not write</h2>
+<p>The interesting part of a CSP on a real site is the code other people add to your pages:</p>
+<ul>
+  <li><strong>Cloudflare Web Analytics</strong> injects <code>&lt;script src="https://static.cloudflareinsights.com/beacon.min.js"&gt;</code>. It is an external script from a fixed host, so the host goes in <code>script-src</code> and <code>connect-src</code>.</li>
+  <li><strong>Cloudflare Email Obfuscation</strong> rewrites e-mail addresses and injects a decoder from <code>/cdn-cgi/scripts/…</code> on your own origin — covered by <code>'self'</code>. We turned the feature off for our own addresses anyway (wrap them in <code>&lt;!--email_off--&gt;</code> comments), because it also rewrote the address inside our "message sent" panel into <code>[email protected]</code> until the decoder ran.</li>
+  <li><strong>Rocket Loader</strong>, if you enable it, rewrites your script tags and would break under a hash-based policy. We do not use it.</li>
+  <li><strong>Google Analytics</strong> is loaded by us, after consent — <a href="/blog/consent-mode-v2-static-site/">that note</a> lists the exact allowances.</li>
+</ul>
+
+<h2 id="checking">Keeping it true at deploy time</h2>
+<p>A hash-based policy has one failure mode: someone edits the inline script and forgets the hash, and the site's JavaScript silently stops. So the hash is never typed by hand. The deploy script walks every HTML file, finds inline scripts that execute, computes their SHA-256 and rewrites the <code>content</code> of the meta tag. A separate check refuses to deploy if any page still contains <code>'unsafe-inline'</code>, a <code>style=""</code> attribute, or an inline script whose hash is missing.</p>
+
+<div class="code">
+  <div class="code-head"><span>JavaScript · scripts/stamp.mjs (excerpt)</span><button class="copy-btn" type="button" data-done="Copied">Copy</button></div>
+<pre><code><span class="tk-k">const</span> hashes <span class="tk-o">=</span> inlineScripts
+  .<span class="tk-f">filter</span>(s <span class="tk-o">=&gt;</span> <span class="tk-o">!</span>s.type <span class="tk-o">||</span> s.type <span class="tk-o">===</span> <span class="tk-s">"speculationrules"</span>)
+  .<span class="tk-f">map</span>(s <span class="tk-o">=&gt;</span> <span class="tk-s">"'sha256-"</span> <span class="tk-o">+</span> <span class="tk-f">createHash</span>(<span class="tk-s">"sha256"</span>).<span class="tk-f">update</span>(s.body).<span class="tk-f">digest</span>(<span class="tk-s">"base64"</span>) <span class="tk-o">+</span> <span class="tk-s">"'"</span>);
+
+<span class="tk-k">const</span> policy <span class="tk-o">=</span> POLICY.<span class="tk-f">replace</span>(<span class="tk-s">"{HASHES}"</span>, hashes.<span class="tk-f">join</span>(<span class="tk-s">" "</span>));</code></pre>
+</div>
+
+<div class="callout">The result is a policy that is part of the code review, cannot drift from the HTML it protects, and no longer contains the one keyword that made it optional.</div>
+        </div>
+
+        <div class="author-box">
+          <span class="avatar" aria-hidden="true">DF</span>
+          <div>
+            <strong>DuoFine Engineering</strong>
+            <p>Notes from building and running production systems at DuoFine. The policy in this note is the one protecting the page you are reading.</p>
+          </div>
+        </div>
+
+        <div class="share">
+          <span>Share:</span>
+          <a href="https://x.com/intent/post?text=A%20Content-Security-Policy%20you%20can%20ship%20from%20a%20meta%20tag&amp;url=https%3A%2F%2Fduofine.com%2Fblog%2Fcsp-from-a-meta-tag%2F" target="_blank" rel="noopener">X</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fduofine.com%2Fblog%2Fcsp-from-a-meta-tag%2F" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:?subject=A%20Content-Security-Policy%20you%20can%20ship%20from%20a%20meta%20tag&amp;body=https%3A%2F%2Fduofine.com%2Fblog%2Fcsp-from-a-meta-tag%2F">Email</a>
+        </div>
+
+        <nav class="post-nav" aria-label="More notes">
+          <a href="/blog/github-pages-cloudflare-caching/"><small>Previous</small><span>GitHub Pages behind Cloudflare: cache rules, and the purge you cannot skip</span></a>
+          <a class="is-next" href="/blog/consent-mode-v2-static-site/"><small>Next</small><span>Consent Mode v2 on a static site, without a consent platform</span></a>
+        </nav>
+      </article>
+
+      <nav class="toc toc-side" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#why-meta">Why a meta tag</a></li>
+          <li><a href="#ignored">What it ignores</a></li>
+          <li><a href="#policy">The policy</a></li>
+          <li><a href="#inline">No 'unsafe-inline'</a></li>
+          <li><a href="#styles">No inline styles</a></li>
+          <li><a href="#injected">Injected scripts</a></li>
+          <li><a href="#checking">Deploy-time check</a></li>
+        </ol>
+      </nav>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- @@footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
+          <span>DuoFine</span>
+        </a>
+        <p class="footer-tag">Crafting meaningful connections and experiences through technology.</p>
+      </div>
+      <div>
+        <h2>Navigate</h2>
+        <ul class="footer-links">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#work">Work</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Connect</h2>
+        <div class="socials">
+          <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener" aria-label="DuoFine on Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+          </a>
+          <a href="https://x.com/duofine" target="_blank" rel="noopener" aria-label="DuoFine on X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <!--email_off--><a class="footer-mail" href="mailto:info@duofine.com">info@duofine.com</a><!--/email_off-->
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DuoFine. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="/privacypolicy">Privacy &amp; Terms</a>
+        <a href="/delete-account.html">Account deletion</a>
+        <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/></svg>
+</button>
+
+<div class="cookie" id="cookie-banner" role="region" aria-labelledby="cookie-text">
+  <p id="cookie-text">Analytics cookies help us see how the site is used. Nothing loads until you choose. <a href="/privacypolicy">Privacy policy</a></p>
+  <div class="cookie-actions">
+    <button class="btn" type="button" id="cookie-reject">Reject</button>
+    <button class="btn btn-primary" type="button" id="cookie-accept">Accept</button>
+  </div>
+</div>
+
+<script type="speculationrules">
+{"prerender":[{"where":{"and":[{"href_matches":"/blog/*"},{"not":{"href_matches":"/blog/"}}]},"eagerness":"moderate"},{"where":{"href_matches":"/work/*"},"eagerness":"moderate"}],
+ "prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}
+</script>
+<script src="/script.js?v=b53589af" defer></script>
+<!-- @@/footer -->
+
+</body>
+</html>

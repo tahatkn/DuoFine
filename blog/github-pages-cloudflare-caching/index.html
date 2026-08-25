@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js"</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self' 'sha256-pfgOMgfVZwm2ODyms34QYW9h8EwicylhV77q5LHK8c0=' 'sha256-c4d39nIZNqOORjxvQPDfA2scQBZtpB1spn3nFw5NaW4=' 'inline-speculation-rules' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://formsubmit.co https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
+
+<title>GitHub Pages behind Cloudflare: cache rules, and the purge you cannot skip | DuoFine Engineering</title>
+<meta name="description" content="Two Cloudflare cache rules, content-hashed asset URLs and one manual step: how the HTML of a GitHub Pages site is served from the edge without ever being two hours stale by accident.">
+<link rel="canonical" href="https://duofine.com/blog/github-pages-cloudflare-caching/">
+<link rel="alternate" type="application/atom+xml" title="DuoFine Engineering" href="/feed.xml">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151C2E" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DuoFine">
+<meta property="og:url" content="https://duofine.com/blog/github-pages-cloudflare-caching/">
+<meta property="og:title" content="GitHub Pages behind Cloudflare: cache rules, and the purge you cannot skip">
+<meta property="og:description" content="Two cache rules, content-hashed asset URLs and one manual step. How a static site is served from the edge without being two hours stale by accident.">
+<meta property="og:image" content="https://duofine.com/assets/og/github-pages-cloudflare-caching.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-25">
+<meta property="article:tag" content="Infrastructure">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@duofine">
+<meta name="twitter:title" content="GitHub Pages behind Cloudflare: cache rules, and the purge you cannot skip">
+<meta name="twitter:description" content="Two cache rules, content-hashed asset URLs and one manual step.">
+<meta name="twitter:image" content="https://duofine.com/assets/og/github-pages-cloudflare-caching.jpg">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preload" href="/assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css?v=a8e88dca">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BlogPosting",
+  "headline":"GitHub Pages behind Cloudflare: cache rules, and the purge you cannot skip",
+  "description":"Two Cloudflare cache rules, content-hashed asset URLs and one manual step: how the HTML of a GitHub Pages site is served from the edge without ever being two hours stale by accident.",
+  "url":"https://duofine.com/blog/github-pages-cloudflare-caching/",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://duofine.com/blog/github-pages-cloudflare-caching/"},
+  "datePublished":"2026-08-25","dateModified":"2026-08-25",
+  "author":{"@id":"https://duofine.com/#organization"},
+  "publisher":{"@id":"https://duofine.com/#organization"},
+  "image":"https://duofine.com/assets/og/github-pages-cloudflare-caching.jpg",
+  "keywords":"GitHub Pages, Cloudflare, cache rules, edge TTL, cache purge, content hashing, static site",
+  "inLanguage":"en"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"DuoFine","item":"https://duofine.com/"},
+  {"@type":"ListItem","position":2,"name":"Engineering notes","item":"https://duofine.com/blog/"},
+  {"@type":"ListItem","position":3,"name":"GitHub Pages behind Cloudflare","item":"https://duofine.com/blog/github-pages-cloudflare-caching/"}]}
+]}
+</script>
+</head>
+<body data-page="blog">
+
+<!-- @@header -->
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="top-sentinel" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
+        <span>DuoFine</span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="/#about" data-nav="about" data-spy="about">About</a></li>
+          <li><a href="/#work" data-nav="work" data-spy="work">Work</a></li>
+          <li><a href="/blog/" data-nav="blog" aria-current="page">Blog</a></li>
+          <li><a class="nav-cta" href="/#contact" data-nav="contact" data-spy="contact">Start a project</a></li>
+        </ul>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- @@/header -->
+
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<main id="main">
+  <section class="section">
+    <div class="wrap">
+      <div class="article-layout">
+      <article class="article">
+        <a class="back-link" href="/blog/">&larr; All notes</a>
+        <header class="article-head">
+          <h1>GitHub Pages behind Cloudflare: cache rules, and the purge you cannot skip</h1>
+          <p class="lede">Two cache rules, content-hashed asset URLs and one manual step. How the HTML of this site is served from the edge without ever being two hours stale by accident.</p>
+          <div class="post-meta">
+            <time datetime="2026-08-25">25 August 2026</time>
+            <span>DuoFine Engineering</span>
+            <span class="tag">Infrastructure</span>
+            <span>5 min read</span>
+          </div>
+        </header>
+
+        <nav class="toc toc-inline" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#origin">What GitHub Pages gives you</a></li>
+            <li><a href="#rules">Two cache rules</a></li>
+            <li><a href="#hashes">Why the asset rule needs content hashes</a></li>
+            <li><a href="#purge">The purge you cannot skip</a></li>
+            <li><a href="#headers">Headers that have to come from the edge</a></li>
+            <li><a href="#verify">Verifying from the command line</a></li>
+          </ol>
+        </nav>
+
+        <div class="article-body">
+<p>duofine.com is a static site in a public repository. GitHub Pages builds it, Fastly serves it for GitHub, and Cloudflare sits in front of both because the domain's DNS lives there. Three layers of cache for a few HTML files sounds like a lot. Used carefully, it means a visitor in São Paulo or Seoul gets the page from a machine near them, and the origin is barely touched. Used carelessly, it means you push a fix and stare at the old page for two hours.</p>
+
+<h2 id="origin">What GitHub Pages gives you</h2>
+<p>Every response from Pages carries <code>cache-control: max-age=600</code> — ten minutes, for HTML and assets alike — and nothing you can configure. There is no <code>_headers</code> file (that is a Netlify and Cloudflare Pages convention; Pages ignores it), no way to set <code>immutable</code> on fingerprinted files, no way to send a security header. Whatever policy you want has to be layered on top.</p>
+
+<h2 id="rules">Two cache rules</h2>
+<p>In Cloudflare, under Rules → Cache Rules, we have exactly two:</p>
+<ul>
+  <li><strong><code>assets-immutable</code></strong> — <em>URI path starts with <code>/assets/</code></em>. Eligible for cache; edge TTL one year; browser TTL one year. Fonts, images and icons live here and never change in place.</li>
+  <li><strong><code>html-short</code></strong> — <em>URI path ends with <code>.html</code>, or ends with <code>/</code></em>. Eligible for cache; edge TTL two hours, ignoring the origin's ten minutes (two hours is the lowest option on the free plan); browser TTL respects origin, so a visitor's own browser still re-checks after ten minutes.</li>
+</ul>
+<p>The stylesheet and the script are deliberately in neither rule: they sit at the root, not under <code>/assets/</code>, and they are the files that change most often. They get Cloudflare's default treatment, and their URLs carry a version, which is the next section.</p>
+
+<h2 id="hashes">Why the asset rule needs content hashes</h2>
+<p>"Cache for a year" is only safe for a URL whose content can never change. For images that is naturally true — a new image gets a new file name. For <code>site.css</code> and <code>script.js</code> it is not, so their URLs include a version: <code>/site.css?v=…</code>. Originally that was a timestamp, stamped by the deploy script into a hard-coded list of five HTML files. Two problems: a page added later was forgotten, and every deploy busted the cache for both files even when only one had changed.</p>
+<p>Now the version is the first eight characters of the file's SHA-256, and the stamping script walks every HTML file in the repository rather than a list:</p>
+
+<div class="code">
+  <div class="code-head"><span>JavaScript · scripts/stamp.mjs (excerpt)</span><button class="copy-btn" type="button" data-done="Copied">Copy</button></div>
+<pre><code><span class="tk-k">const</span> <span class="tk-f">hashOf</span> <span class="tk-o">=</span> file <span class="tk-o">=&gt;</span> <span class="tk-f">createHash</span>(<span class="tk-s">"sha256"</span>).<span class="tk-f">update</span>(<span class="tk-f">readFileSync</span>(file)).<span class="tk-f">digest</span>(<span class="tk-s">"hex"</span>).<span class="tk-f">slice</span>(<span class="tk-n">0</span>, <span class="tk-n">8</span>);
+<span class="tk-k">const</span> versions <span class="tk-o">=</span> { <span class="tk-s">"site.css"</span>: <span class="tk-f">hashOf</span>(<span class="tk-s">"site.css"</span>), <span class="tk-s">"script.js"</span>: <span class="tk-f">hashOf</span>(<span class="tk-s">"script.js"</span>) };
+
+<span class="tk-k">for</span> (<span class="tk-k">const</span> page <span class="tk-k">of</span> htmlFiles) {
+  html <span class="tk-o">=</span> html.<span class="tk-f">replace</span>(<span class="tk-s">/\/(site\.css|script\.js)\?v=[0-9a-f]+/g</span>,
+    (m, f) <span class="tk-o">=&gt;</span> <span class="tk-s">"/"</span> <span class="tk-o">+</span> f <span class="tk-o">+</span> <span class="tk-s">"?v="</span> <span class="tk-o">+</span> versions[f]);
+}</code></pre>
+</div>
+
+<p>Unchanged file, unchanged URL, cache kept. Changed file, new URL, fetched once and cached again. The <code>?v=</code> query string works with Cloudflare because the default cache key includes the query.</p>
+
+<h2 id="purge">The purge you cannot skip</h2>
+<p>The two-hour HTML rule has a consequence that is easy to forget on the day you are in a hurry: after a push, the edge keeps serving the previous HTML until its two hours are up. The HTML is what references the new <code>?v=</code>, so the new CSS is not even requested. The fix is one click — Caching → Configuration → Purge Everything — and it is the last thing the deploy script prints, in capital letters, with the link.</p>
+<p>It is also the reason we keep two files around that no page references any more, for two hours after the change that made them orphans: a cached old page may still ask for them. Deleting an asset in the same commit as the pages that stop using it is how you get a broken icon on a legal page for an afternoon.</p>
+<p>Could this be automated with the Cloudflare API? Yes, with an API token in the deploy script. We chose not to: the repository is public, the deploy script is in it, and a token that can purge (or worse) is not something we want one careless commit away from the internet. One click is cheap.</p>
+
+<h2 id="headers">Headers that have to come from the edge</h2>
+<p>Because Pages sends no security headers, they are added with a Cloudflare response header transform rule: <code>Strict-Transport-Security</code> with preload, <code>X-Content-Type-Options: nosniff</code>, <code>Referrer-Policy: strict-origin-when-cross-origin</code>, a <code>Permissions-Policy</code> that turns off camera, microphone, geolocation and payment, <code>X-Frame-Options: DENY</code> and <code>Cross-Origin-Opener-Policy: same-origin</code>. The Content-Security-Policy is the one exception — it travels with the HTML, <a href="/blog/csp-from-a-meta-tag/">as a meta tag</a>, for reasons that note explains.</p>
+
+<h2 id="verify">Verifying from the command line</h2>
+<p>Three headers tell you everything about a request's journey:</p>
+
+<div class="code">
+  <div class="code-head"><span>Shell</span><button class="copy-btn" type="button" data-done="Copied">Copy</button></div>
+<pre><code>curl -sI https://duofine.com/ | grep -iE <span class="tk-s">'cf-cache-status|^age|cache-control'</span></code></pre>
+</div>
+
+<ul>
+  <li><code>cf-cache-status: HIT</code> with a non-zero <code>age</code> means Cloudflare served it from the edge without asking the origin.</li>
+  <li><code>MISS</code> or <code>EXPIRED</code> means it went to the origin this time; the next request should be a <code>HIT</code>.</li>
+  <li><code>cache-control</code> is still the origin's <code>max-age=600</code> — that is the <em>browser</em> TTL, untouched by the edge rule.</li>
+</ul>
+<p>Run it after a deploy and a purge, and you have a one-line proof that the new version is live: the <code>age</code> resets to zero.</p>
+<div class="callout">Setup cost: two rules and one transform rule, once. Running cost: one click per deploy. What you get: HTML from the edge everywhere, assets that never expire, and a stylesheet URL that only changes when the stylesheet does.</div>
+        </div>
+
+        <div class="author-box">
+          <span class="avatar" aria-hidden="true">DF</span>
+          <div>
+            <strong>DuoFine Engineering</strong>
+            <p>Notes from building and running production systems at DuoFine. The deploy script described here is <code>yayinla.sh</code> in the site's repository.</p>
+          </div>
+        </div>
+
+        <div class="share">
+          <span>Share:</span>
+          <a href="https://x.com/intent/post?text=GitHub%20Pages%20behind%20Cloudflare%3A%20cache%20rules%2C%20and%20the%20purge%20you%20cannot%20skip&amp;url=https%3A%2F%2Fduofine.com%2Fblog%2Fgithub-pages-cloudflare-caching%2F" target="_blank" rel="noopener">X</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fduofine.com%2Fblog%2Fgithub-pages-cloudflare-caching%2F" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:?subject=GitHub%20Pages%20behind%20Cloudflare&amp;body=https%3A%2F%2Fduofine.com%2Fblog%2Fgithub-pages-cloudflare-caching%2F">Email</a>
+        </div>
+
+        <nav class="post-nav" aria-label="More notes">
+          <a href="/blog/self-hosting-poppins-turkish/"><small>Previous</small><span>Self-hosting Poppins: subsets, unicode-range and the missing Turkish letters</span></a>
+          <a class="is-next" href="/blog/csp-from-a-meta-tag/"><small>Next</small><span>A Content-Security-Policy you can ship from a meta tag</span></a>
+        </nav>
+      </article>
+
+      <nav class="toc toc-side" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#origin">What Pages gives you</a></li>
+          <li><a href="#rules">Two cache rules</a></li>
+          <li><a href="#hashes">Content hashes</a></li>
+          <li><a href="#purge">The purge</a></li>
+          <li><a href="#headers">Edge headers</a></li>
+          <li><a href="#verify">Verifying</a></li>
+        </ol>
+      </nav>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- @@footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
+          <span>DuoFine</span>
+        </a>
+        <p class="footer-tag">Crafting meaningful connections and experiences through technology.</p>
+      </div>
+      <div>
+        <h2>Navigate</h2>
+        <ul class="footer-links">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#work">Work</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Connect</h2>
+        <div class="socials">
+          <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener" aria-label="DuoFine on Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+          </a>
+          <a href="https://x.com/duofine" target="_blank" rel="noopener" aria-label="DuoFine on X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <!--email_off--><a class="footer-mail" href="mailto:info@duofine.com">info@duofine.com</a><!--/email_off-->
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DuoFine. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="/privacypolicy">Privacy &amp; Terms</a>
+        <a href="/delete-account.html">Account deletion</a>
+        <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/></svg>
+</button>
+
+<div class="cookie" id="cookie-banner" role="region" aria-labelledby="cookie-text">
+  <p id="cookie-text">Analytics cookies help us see how the site is used. Nothing loads until you choose. <a href="/privacypolicy">Privacy policy</a></p>
+  <div class="cookie-actions">
+    <button class="btn" type="button" id="cookie-reject">Reject</button>
+    <button class="btn btn-primary" type="button" id="cookie-accept">Accept</button>
+  </div>
+</div>
+
+<script type="speculationrules">
+{"prerender":[{"where":{"and":[{"href_matches":"/blog/*"},{"not":{"href_matches":"/blog/"}}]},"eagerness":"moderate"},{"where":{"href_matches":"/work/*"},"eagerness":"moderate"}],
+ "prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}
+</script>
+<script src="/script.js?v=b53589af" defer></script>
+<!-- @@/footer -->
+
+</body>
+</html>

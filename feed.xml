@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>DuoFine Engineering</title>
+  <subtitle>Notes from production — what broke, how it was measured, and what actually fixed it.</subtitle>
+  <link href="https://duofine.com/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://duofine.com/blog/" rel="alternate" type="text/html"/>
+  <id>https://duofine.com/blog/</id>
+  <updated>2026-08-25T00:00:00Z</updated>
+  <icon>https://duofine.com/assets/img/icon-192.png</icon>
+  <author><name>DuoFine</name><uri>https://duofine.com/</uri></author>
+  <entry>
+    <title>Self-hosting Poppins: subsets, unicode-range and the missing Turkish letters</title>
+    <link href="https://duofine.com/blog/self-hosting-poppins-turkish/" rel="alternate" type="text/html"/>
+    <id>https://duofine.com/blog/self-hosting-poppins-turkish/</id>
+    <published>2026-08-25T00:00:00Z</published>
+    <updated>2026-08-25T00:00:00Z</updated>
+    <author><name>DuoFine Engineering</name></author>
+    <category term="Front-end"/>
+    <summary type="text">The 'latin' subset of a Google Font does not contain ş, ğ or İ. What that looks like on a Turkish page, why the browser falls back mid-word, and the six-kilobyte fix with unicode-range and a metric-matched fallback.</summary>
+  </entry>
+  <entry>
+    <title>GitHub Pages behind Cloudflare: cache rules, and the purge you cannot skip</title>
+    <link href="https://duofine.com/blog/github-pages-cloudflare-caching/" rel="alternate" type="text/html"/>
+    <id>https://duofine.com/blog/github-pages-cloudflare-caching/</id>
+    <published>2026-08-25T00:00:00Z</published>
+    <updated>2026-08-25T00:00:00Z</updated>
+    <author><name>DuoFine Engineering</name></author>
+    <category term="Infrastructure"/>
+    <summary type="text">Two Cloudflare cache rules, content-hashed asset URLs and one manual step: how the HTML of a GitHub Pages site is served from the edge without ever being two hours stale by accident.</summary>
+  </entry>
+  <entry>
+    <title>A Content-Security-Policy you can ship from a meta tag</title>
+    <link href="https://duofine.com/blog/csp-from-a-meta-tag/" rel="alternate" type="text/html"/>
+    <id>https://duofine.com/blog/csp-from-a-meta-tag/</id>
+    <published>2026-08-25T00:00:00Z</published>
+    <updated>2026-08-25T00:00:00Z</updated>
+    <author><name>DuoFine Engineering</name></author>
+    <category term="Security"/>
+    <summary type="text">GitHub Pages cannot send response headers. A meta-tag Content-Security-Policy covers most of what you want — including dropping 'unsafe-inline' with script hashes — as long as you know the three directives it silently ignores.</summary>
+  </entry>
+  <entry>
+    <title>Consent Mode v2 on a static site, without a consent platform</title>
+    <link href="https://duofine.com/blog/consent-mode-v2-static-site/" rel="alternate" type="text/html"/>
+    <id>https://duofine.com/blog/consent-mode-v2-static-site/</id>
+    <published>2026-08-25T00:00:00Z</published>
+    <updated>2026-08-25T00:00:00Z</updated>
+    <author><name>DuoFine Engineering</name></author>
+    <category term="Privacy"/>
+    <summary type="text">How duofine.com runs Google Analytics 4 with Consent Mode v2 on a static site: nothing loads until the visitor says yes, the banner never becomes the LCP element, and there is no consent-management vendor in the loop.</summary>
+  </entry>
+  <entry>
+    <title>Fixing a 700ms PostgreSQL Query: From Seq Scan to 38ms</title>
+    <link href="https://duofine.com/blog/postgresql-700ms-to-38ms/" rel="alternate" type="text/html"/>
+    <id>https://duofine.com/blog/postgresql-700ms-to-38ms/</id>
+    <published>2026-03-20T00:00:00Z</published>
+    <updated>2026-08-25T00:00:00Z</updated>
+    <author><name>Taha Tekin</name></author>
+    <category term="PostgreSQL"/>
+    <summary type="text">How a 700 ms PostgreSQL chat query was diagnosed with EXPLAIN ANALYZE and brought down to 38 ms using query-aligned compound B-tree indexes.</summary>
+  </entry>
+</feed>

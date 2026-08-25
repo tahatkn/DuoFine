@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js"</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self' 'sha256-pfgOMgfVZwm2ODyms34QYW9h8EwicylhV77q5LHK8c0=' 'sha256-c4d39nIZNqOORjxvQPDfA2scQBZtpB1spn3nFw5NaW4=' 'inline-speculation-rules' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://formsubmit.co https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
+
+<title>Consent Mode v2 on a static site, without a consent platform | DuoFine Engineering</title>
+<meta name="description" content="How duofine.com runs Google Analytics 4 with Consent Mode v2 on a static site: nothing loads until the visitor says yes, the banner never becomes the LCP element, and there is no consent-management vendor in the loop.">
+<link rel="canonical" href="https://duofine.com/blog/consent-mode-v2-static-site/">
+<link rel="alternate" type="application/atom+xml" title="DuoFine Engineering" href="/feed.xml">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151C2E" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DuoFine">
+<meta property="og:url" content="https://duofine.com/blog/consent-mode-v2-static-site/">
+<meta property="og:title" content="Consent Mode v2 on a static site, without a consent platform">
+<meta property="og:description" content="Nothing loads until the visitor says yes, the banner never becomes the largest thing on screen, and there is no third party in the loop. Forty lines of JavaScript.">
+<meta property="og:image" content="https://duofine.com/assets/og/consent-mode-v2-static-site.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-25">
+<meta property="article:tag" content="Privacy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@duofine">
+<meta name="twitter:title" content="Consent Mode v2 on a static site, without a consent platform">
+<meta name="twitter:description" content="Nothing loads until the visitor says yes, the banner never becomes the largest thing on screen, and there is no third party in the loop.">
+<meta name="twitter:image" content="https://duofine.com/assets/og/consent-mode-v2-static-site.jpg">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preload" href="/assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css?v=a8e88dca">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BlogPosting",
+  "headline":"Consent Mode v2 on a static site, without a consent platform",
+  "description":"How duofine.com runs Google Analytics 4 with Consent Mode v2 on a static site: nothing loads until the visitor says yes, the banner never becomes the LCP element, and there is no consent-management vendor in the loop.",
+  "url":"https://duofine.com/blog/consent-mode-v2-static-site/",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://duofine.com/blog/consent-mode-v2-static-site/"},
+  "datePublished":"2026-08-25","dateModified":"2026-08-25",
+  "author":{"@id":"https://duofine.com/#organization"},
+  "publisher":{"@id":"https://duofine.com/#organization"},
+  "image":"https://duofine.com/assets/og/consent-mode-v2-static-site.jpg",
+  "keywords":"Consent Mode v2, Google Analytics 4, GDPR, static site, cookie banner, LCP",
+  "inLanguage":"en"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"DuoFine","item":"https://duofine.com/"},
+  {"@type":"ListItem","position":2,"name":"Engineering notes","item":"https://duofine.com/blog/"},
+  {"@type":"ListItem","position":3,"name":"Consent Mode v2 on a static site","item":"https://duofine.com/blog/consent-mode-v2-static-site/"}]}
+]}
+</script>
+</head>
+<body data-page="blog">
+
+<!-- @@header -->
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="top-sentinel" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
+        <span>DuoFine</span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="/#about" data-nav="about" data-spy="about">About</a></li>
+          <li><a href="/#work" data-nav="work" data-spy="work">Work</a></li>
+          <li><a href="/blog/" data-nav="blog" aria-current="page">Blog</a></li>
+          <li><a class="nav-cta" href="/#contact" data-nav="contact" data-spy="contact">Start a project</a></li>
+        </ul>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- @@/header -->
+
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<main id="main">
+  <section class="section">
+    <div class="wrap">
+      <div class="article-layout">
+      <article class="article">
+        <a class="back-link" href="/blog/">&larr; All notes</a>
+        <header class="article-head">
+          <h1>Consent Mode v2 on a static site, without a consent platform</h1>
+          <p class="lede">Google Analytics stays off until someone says yes, the banner never becomes the largest thing on the screen, and the whole thing is about forty lines of JavaScript with no third party in the loop.</p>
+          <div class="post-meta">
+            <time datetime="2026-08-25">25 August 2026</time>
+            <span>DuoFine Engineering</span>
+            <span class="tag">Privacy</span>
+            <span>5 min read</span>
+          </div>
+        </header>
+
+        <nav class="toc toc-inline" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#requirement">What Consent Mode v2 actually requires</a></li>
+            <li><a href="#default">Step 1: deny everything before anything loads</a></li>
+            <li><a href="#load">Step 2: load gtag.js only after consent</a></li>
+            <li><a href="#banner">Step 3: a banner that is not the LCP element</a></li>
+            <li><a href="#csp">Step 4: the CSP allowances</a></li>
+            <li><a href="#tradeoffs">What you give up</a></li>
+          </ol>
+        </nav>
+
+        <div class="article-body">
+<p>This site is a handful of static HTML files on GitHub Pages behind Cloudflare. It uses Google Analytics 4. It also has visitors in the EU, which means analytics cookies need consent, and Google's own rules for EEA traffic mean the consent has to be signalled to Google in the format it expects — <em>Consent Mode v2</em>.</p>
+<p>The usual answer is a consent-management platform: a script tag, a hosted banner, a vendor list. On a site whose whole homepage weighs about sixty kilobytes, adding a hundred-kilobyte banner from a third party is a strange trade. So this is what we do instead. It is not legal advice; it is the engineering.</p>
+
+<h2 id="requirement">What Consent Mode v2 actually requires</h2>
+<p>Stripped of marketing, Consent Mode is a small contract between your page and <code>gtag.js</code>:</p>
+<ul>
+  <li>Before Google's tag runs, you push a <strong>default</strong> consent state onto <code>dataLayer</code> with four signals — <code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code> and <code>analytics_storage</code> — each <code>granted</code> or <code>denied</code>.</li>
+  <li>When the visitor decides, you push an <strong>update</strong>.</li>
+</ul>
+<p>Google's tag then adjusts what it stores and sends. In "advanced" mode, the tag still loads and sends cookieless pings while consent is denied. We do not want even that, so we go one step further: the tag is not on the page at all until consent is granted.</p>
+
+<h2 id="default">Step 1: deny everything before anything loads</h2>
+<p>The first thing our site script does — before any element is touched — is declare the default. Everything is denied except the two signals that describe the site's own functioning:</p>
+
+<div class="code">
+  <div class="code-head"><span>JavaScript · script.js</span><button class="copy-btn" type="button" data-done="Copied">Copy</button></div>
+<pre><code>window.dataLayer <span class="tk-o">=</span> window.dataLayer <span class="tk-o">||</span> [];
+<span class="tk-k">function</span> <span class="tk-f">gtag</span>() { window.dataLayer.<span class="tk-f">push</span>(arguments); }
+
+<span class="tk-f">gtag</span>(<span class="tk-s">"consent"</span>, <span class="tk-s">"default"</span>, {
+  ad_storage: <span class="tk-s">"denied"</span>,
+  ad_user_data: <span class="tk-s">"denied"</span>,
+  ad_personalization: <span class="tk-s">"denied"</span>,
+  analytics_storage: <span class="tk-s">"denied"</span>,
+  functionality_storage: <span class="tk-s">"granted"</span>,
+  security_storage: <span class="tk-s">"granted"</span>,
+  wait_for_update: <span class="tk-n">500</span>
+});</code></pre>
+</div>
+
+<p>The <code>gtag</code> function is just a push onto an array. That is the whole trick: <code>gtag.js</code>, whenever it eventually loads, replays the array in order, so the default is always seen before anything else.</p>
+
+<h2 id="load">Step 2: load gtag.js only after consent</h2>
+<p>The choice is stored in <code>localStorage</code> under a versioned key. Bumping the key (we are on <code>df_consent_v2</code>) re-asks everyone, which is exactly what you want when the policy text changes.</p>
+
+<div class="code">
+  <div class="code-head"><span>JavaScript · script.js</span><button class="copy-btn" type="button" data-done="Copied">Copy</button></div>
+<pre><code><span class="tk-k">var</span> gaLoaded <span class="tk-o">=</span> <span class="tk-k">false</span>;
+<span class="tk-k">function</span> <span class="tk-f">loadAnalytics</span>() {
+  <span class="tk-k">if</span> (gaLoaded) <span class="tk-k">return</span>;
+  gaLoaded <span class="tk-o">=</span> <span class="tk-k">true</span>;
+  <span class="tk-f">gtag</span>(<span class="tk-s">"js"</span>, <span class="tk-k">new</span> <span class="tk-f">Date</span>());
+  <span class="tk-f">gtag</span>(<span class="tk-s">"config"</span>, GA_ID, { anonymize_ip: <span class="tk-k">true</span> });
+  <span class="tk-k">var</span> s <span class="tk-o">=</span> document.<span class="tk-f">createElement</span>(<span class="tk-s">"script"</span>);
+  s.async <span class="tk-o">=</span> <span class="tk-k">true</span>;
+  s.src <span class="tk-o">=</span> <span class="tk-s">"https://www.googletagmanager.com/gtag/js?id="</span> <span class="tk-o">+</span> GA_ID;
+  document.head.<span class="tk-f">appendChild</span>(s);
+}
+
+<span class="tk-k">function</span> <span class="tk-f">grantConsent</span>() {
+  <span class="tk-f">gtag</span>(<span class="tk-s">"consent"</span>, <span class="tk-s">"update"</span>, { analytics_storage: <span class="tk-s">"granted"</span> });
+  <span class="tk-f">loadAnalytics</span>();
+}</code></pre>
+</div>
+
+<p>Returning visitors who accepted get analytics immediately, with no banner. Visitors who rejected get nothing, with no banner. Only the undecided see the panel. And until "Accept" is pressed, there is no request to any Google domain — you can verify it in the network tab, which is a nicer thing to be able to say to an auditor than "the pings are cookieless".</p>
+<p>One more detail that matters in 2026: pages can be <em>prerendered</em> by the browser before anyone looks at them. Consent must not be asked, and analytics must not fire, for a page nobody has opened yet. So the consent module waits for <code>document.prerendering</code> to flip:</p>
+
+<div class="code">
+  <div class="code-head"><span>JavaScript · script.js</span><button class="copy-btn" type="button" data-done="Copied">Copy</button></div>
+<pre><code><span class="tk-k">if</span> (document.prerendering) {
+  document.<span class="tk-f">addEventListener</span>(<span class="tk-s">"prerenderingchange"</span>, initConsent, { once: <span class="tk-k">true</span> });
+} <span class="tk-k">else</span> {
+  <span class="tk-f">initConsent</span>();
+}</code></pre>
+</div>
+
+<h2 id="banner">Step 3: a banner that is not the LCP element</h2>
+<p>Our first version of the banner slid in 1.2 seconds after load. On a phone it covered about a quarter of the viewport, and in one Lighthouse run it was selected as the <em>Largest Contentful Paint</em> element — the biggest thing to appear on the screen was the cookie notice. That is a bad first impression and a worse metric.</p>
+<p>The fix is timing, not styling. The panel opens after the page has fully loaded <em>and</em> the visitor has done something — scrolled, tapped, pressed a key — or after four seconds, whichever comes first. By then the real content has painted and been measured.</p>
+
+<div class="code">
+  <div class="code-head"><span>JavaScript · script.js</span><button class="copy-btn" type="button" data-done="Copied">Copy</button></div>
+<pre><code><span class="tk-k">function</span> <span class="tk-f">arm</span>() {
+  <span class="tk-k">var</span> t <span class="tk-o">=</span> <span class="tk-f">setTimeout</span>(open, <span class="tk-n">4000</span>);
+  <span class="tk-k">var</span> once <span class="tk-o">=</span> <span class="tk-k">function</span> () { <span class="tk-f">clearTimeout</span>(t); <span class="tk-f">open</span>(); };
+  window.<span class="tk-f">addEventListener</span>(<span class="tk-s">"scroll"</span>, once, { once: <span class="tk-k">true</span>, passive: <span class="tk-k">true</span> });
+  document.<span class="tk-f">addEventListener</span>(<span class="tk-s">"pointerdown"</span>, once, { once: <span class="tk-k">true</span> });
+  document.<span class="tk-f">addEventListener</span>(<span class="tk-s">"keydown"</span>, once, { once: <span class="tk-k">true</span> });
+}
+<span class="tk-k">if</span> (document.readyState <span class="tk-o">===</span> <span class="tk-s">"complete"</span>) <span class="tk-f">arm</span>();
+<span class="tk-k">else</span> window.<span class="tk-f">addEventListener</span>(<span class="tk-s">"load"</span>, arm, { once: <span class="tk-k">true</span> });</code></pre>
+</div>
+
+<p>Two smaller rules we follow: "Reject" and "Accept" are the same size and weight, and the panel is a single-line bar rather than a card. A choice that is visually rigged is not a choice, and regulators have started saying so.</p>
+
+<h2 id="csp">Step 4: the CSP allowances</h2>
+<p>Because the tag is injected at runtime, the page's Content-Security-Policy has to allow it explicitly. Three lines are involved:</p>
+<ul>
+  <li><code>script-src … https://www.googletagmanager.com</code> — for <code>gtag.js</code> and the scripts it chains.</li>
+  <li><code>connect-src … https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com</code> — for the collect requests, which go to regional hosts.</li>
+  <li><code>img-src … https://*.google-analytics.com</code> — the fallback pixel some browsers use.</li>
+</ul>
+<p>Nothing needs <code>'unsafe-inline'</code>; <a href="/blog/csp-from-a-meta-tag/">the CSP note</a> covers how we got rid of that too.</p>
+
+<h2 id="tradeoffs">What you give up</h2>
+<ul>
+  <li><strong>No modelled data.</strong> Because the tag is absent until consent, Google cannot model the behaviour of people who declined. For a studio site that only wants to know which pages are read, that is fine. For an ad-driven business it might not be.</li>
+  <li><strong>You own the banner.</strong> Its copy, its accessibility (<code>role="region"</code>, a label, keyboard-reachable buttons) and its translations are yours to maintain. Ours is in English and Turkish.</li>
+  <li><strong>You own the record.</strong> A consent platform logs consents for you. Here the only record is the visitor's <code>localStorage</code>. Whether that is enough depends on what you are being asked to prove; ask someone who can answer that.</li>
+</ul>
+<div class="callout">Total cost: forty-odd lines in a file that was already there, zero kilobytes from third parties until consent, and a banner that shows up after the page rather than instead of it.</div>
+        </div>
+
+        <div class="author-box">
+          <span class="avatar" aria-hidden="true">DF</span>
+          <div>
+            <strong>DuoFine Engineering</strong>
+            <p>Notes from building and running production systems at DuoFine. The code in this note is live on this site — view source.</p>
+          </div>
+        </div>
+
+        <div class="share">
+          <span>Share:</span>
+          <a href="https://x.com/intent/post?text=Consent%20Mode%20v2%20on%20a%20static%20site%2C%20without%20a%20consent%20platform&amp;url=https%3A%2F%2Fduofine.com%2Fblog%2Fconsent-mode-v2-static-site%2F" target="_blank" rel="noopener">X</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fduofine.com%2Fblog%2Fconsent-mode-v2-static-site%2F" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:?subject=Consent%20Mode%20v2%20on%20a%20static%20site&amp;body=https%3A%2F%2Fduofine.com%2Fblog%2Fconsent-mode-v2-static-site%2F">Email</a>
+        </div>
+
+        <nav class="post-nav" aria-label="More notes">
+          <a href="/blog/csp-from-a-meta-tag/"><small>Previous</small><span>A Content-Security-Policy you can ship from a meta tag</span></a>
+          <a class="is-next" href="/blog/"><small>All notes</small><span>Back to the index</span></a>
+        </nav>
+      </article>
+
+      <nav class="toc toc-side" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#requirement">What v2 requires</a></li>
+          <li><a href="#default">Deny by default</a></li>
+          <li><a href="#load">Load after consent</a></li>
+          <li><a href="#banner">Banner timing</a></li>
+          <li><a href="#csp">CSP allowances</a></li>
+          <li><a href="#tradeoffs">What you give up</a></li>
+        </ol>
+      </nav>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- @@footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"><path d="M30 85 C 80 85, 80 15, 30 15"/><path d="M70 15 C 20 15, 20 85, 70 85"/></svg>
+          <span>DuoFine</span>
+        </a>
+        <p class="footer-tag">Crafting meaningful connections and experiences through technology.</p>
+      </div>
+      <div>
+        <h2>Navigate</h2>
+        <ul class="footer-links">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#work">Work</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Connect</h2>
+        <div class="socials">
+          <a href="https://www.instagram.com/duofineofficial" target="_blank" rel="noopener" aria-label="DuoFine on Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+          </a>
+          <a href="https://x.com/duofine" target="_blank" rel="noopener" aria-label="DuoFine on X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <!--email_off--><a class="footer-mail" href="mailto:info@duofine.com">info@duofine.com</a><!--/email_off-->
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DuoFine. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="/privacypolicy">Privacy &amp; Terms</a>
+        <a href="/delete-account.html">Account deletion</a>
+        <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/></svg>
+</button>
+
+<div class="cookie" id="cookie-banner" role="region" aria-labelledby="cookie-text">
+  <p id="cookie-text">Analytics cookies help us see how the site is used. Nothing loads until you choose. <a href="/privacypolicy">Privacy policy</a></p>
+  <div class="cookie-actions">
+    <button class="btn" type="button" id="cookie-reject">Reject</button>
+    <button class="btn btn-primary" type="button" id="cookie-accept">Accept</button>
+  </div>
+</div>
+
+<script type="speculationrules">
+{"prerender":[{"where":{"and":[{"href_matches":"/blog/*"},{"not":{"href_matches":"/blog/"}}]},"eagerness":"moderate"},{"where":{"href_matches":"/work/*"},"eagerness":"moderate"}],
+ "prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}
+</script>
+<script src="/script.js?v=b53589af" defer></script>
+<!-- @@/footer -->
+
+</body>
+</html>
