@@ -1,14 +1,18 @@
 {
+  "id": "/",
   "name": "DuoFine",
   "short_name": "DuoFine",
   "description": "High-performance digital product engineering.",
+  "lang": "en",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#0B1020",
   "theme_color": "#0B1020",
   "icons": [
-    { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "/assets/img/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+    { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/img/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/assets/img/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ]
 }

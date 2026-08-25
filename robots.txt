@@ -5,6 +5,9 @@ Allow: /
 Disallow: /activate.html
 Disallow: /email_change.html
 Disallow: /password_change.html
-Disallow: /form-handler.html
+
+# Derleme girdileri — sayfa değil
+Disallow: /partials/
+Disallow: /scripts/
 
 Sitemap: https://duofine.com/sitemap.xml

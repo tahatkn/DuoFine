@@ -1,0 +1,22 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Node (only used by scripts/, never deployed)
+node_modules/
+npm-debug.log*
+
+# Local build / measurement output
+.lighthouse/
+*.log
+
+# Secrets — never in a public repo
+.env
+.env.*
+*.pem
+*.key
+*credential*
+*secret*
