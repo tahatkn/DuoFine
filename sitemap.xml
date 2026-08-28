@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://duofine.com/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://duofine.com/"/>
@@ -11,7 +11,7 @@
   </url>
   <url>
     <loc>https://duofine.com/tr/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://duofine.com/tr/"/>
@@ -20,73 +20,73 @@
   </url>
   <url>
     <loc>https://duofine.com/blog/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://duofine.com/blog/consent-mode-v2-static-site/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://duofine.com/blog/csp-from-a-meta-tag/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://duofine.com/blog/github-pages-cloudflare-caching/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://duofine.com/blog/postgresql-700ms-to-38ms/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://duofine.com/blog/self-hosting-poppins-turkish/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://duofine.com/work/common-ground/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://duofine.com/work/shentechin-med/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://duofine.com/work/ucd-plast/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://duofine.com/delete-account.html</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://duofine.com/isbirligi/v1</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://duofine.com/privacypolicy</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
