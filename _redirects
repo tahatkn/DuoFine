@@ -16,4 +16,9 @@
 /legal/nl.html    /privacypolicy?lang=nl    301
 /legal/*          /privacypolicy            301
 
+/isbirligi            /isbirligi/v2    301
+/isbirligi/v1         /isbirligi/v2    301
+/isbirligi/v1.html    /isbirligi/v2    301
+/isbirligi/CommonGround-IsBirligi-Kosullari-v1-2026-08-29.pdf    /isbirligi/CommonGround-IsBirligi-Kosullari-v2-2026-09-03.pdf    301
+
 /*    /404.html   404
