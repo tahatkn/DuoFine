@@ -6,6 +6,9 @@ Disallow: /activate.html
 Disallow: /email_change.html
 Disallow: /password_change.html
 
+# Mağaza inceleme materyali (App Store / Google Play) — arama sonuçlarında yer almamalı
+Disallow: /review/
+
 # Derleme girdileri — sayfa değil
 Disallow: /partials/
 Disallow: /scripts/
